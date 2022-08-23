@@ -1,0 +1,50 @@
+@import '../variables';
+@import '../mixinis';
+
+.footer-cmp {
+  background: $brand-dark;
+  padding: 30px 0;
+  margin-top: 2rem;
+
+  .upper-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    h2 {
+      font-size: 1.1rem;
+      color: $brand-2;
+    }
+    .footer-link {
+      font-size: 0.8rem;
+      color: $brand-white;
+    }
+
+    @include mobile-l {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 24px;
+    }
+    .button {
+      background: $brand-1;
+      color: white;
+      padding: 5px 20px;
+      border: 1px solid white;
+      border-radius: 30px;
+    }
+  }
+  .lower-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    p {
+      color: $brand-2;
+      font-size: 0.8rem;
+      b {
+        color: white;
+      }
+    }
+    img {
+      height: 40px;
+    }
+  }
+}

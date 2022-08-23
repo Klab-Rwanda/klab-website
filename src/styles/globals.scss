@@ -4,6 +4,7 @@
 @import './variables';
 @import './mixinis';
 @import './components/navbar.scss';
+@import './components/footer.scss';
 
 html {
   scroll-behavior: smooth;
@@ -36,6 +37,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+.landingPage {
+  min-height: 100vh;
 }
 .container {
   max-width: 1440px;

@@ -4,7 +4,7 @@ import NavBar from '../components/websiteComponents/Navbar';
 
 const LandingPage = () => {
   return (
-    <div>
+    <div className='landingPage'>
       <NavBar />
       <div>Home page</div>
       <Footer />
