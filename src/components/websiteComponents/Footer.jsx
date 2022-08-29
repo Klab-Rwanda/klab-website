@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '/assets/img/website/images/logo.svg';
-import FB from '/assets/img/website/icons/fb.svg';
-import TWITTER from '/assets/img/website/icons/twitter.svg';
-import LINKEDIN from '/assets/img/website/icons/linkedin.svg';
-import YOUTUBE from '/assets/img/website/icons/youtube.svg';
-import IG from '/assets/img/website/icons/ig.svg';
-import CALL from '/assets/img/website/icons/call.svg';
-import LOCATION from '/assets/img/website/icons/location.svg';
-import EMAIL from '/assets/img/website/icons/email.svg';
+import Logo from '/assets/website/images/logo.svg';
+import FB from '/assets/website/icons/fb.svg';
+import TWITTER from '/assets/website/icons/twitter.svg';
+import LINKEDIN from '/assets/website/icons/linkedin.svg';
+import YOUTUBE from '/assets/website/icons/youtube.svg';
+import IG from '/assets/website/icons/ig.svg';
+import CALL from '/assets/website/icons/call.svg';
+import LOCATION from '/assets/website/icons/location.svg';
+import EMAIL from '/assets/website/icons/email.svg';
 
 const Footer = () => {
   return (

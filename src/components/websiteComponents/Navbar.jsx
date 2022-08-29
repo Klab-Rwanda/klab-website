@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NavItem from './NavItem';
-import Logo from '../../../public/assets/img/website/images/logo.svg';
+import Logo from '../../../public/assets/website/images/logo.svg';
 
 const MENU_LIST = [
   { text: 'Home', href: '/' },
