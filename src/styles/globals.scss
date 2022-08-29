@@ -3,7 +3,12 @@
 
 @import './variables';
 @import './mixinis';
+
+// COMPONENTS
 @import './components/navbar.scss';
+@import './pages/LandingPage.scss';
+
+// PAGES CSS
 @import './components/footer.scss';
 
 html {
@@ -78,4 +83,14 @@ a {
 .swiper-pagination-progressbar {
   background: rgb(20, 20, 20) !important;
   height: 3px !important;
+}
+.button {
+  margin-top: 16px;
+  background: $brand-1;
+  color: white;
+  padding: 5px 20px;
+  font-size: 1rem;
+  border: 1px solid white;
+  border-radius: 30px;
+  border: none;
 }

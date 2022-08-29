@@ -1,0 +1,72 @@
+@import '../variables';
+@import '../mixinis';
+
+.landingPage {
+  .hero-banner {
+    height: 60vh;
+    position: relative;
+    &::before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background: black;
+      position: absolute;
+      z-index: 2;
+      opacity: 0.8;
+    }
+    @include mobile-l {
+      height: 40vh;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .content {
+      position: absolute;
+      z-index: 3;
+      width: 100%;
+      top: 10%;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        color: white;
+        font-weight: 600;
+        @include fontSize(56px);
+        @include mobile-l {
+          font-size: 2rem;
+        }
+      }
+      p {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 28px;
+        color: $brand-2;
+        max-width: 500px;
+        margin: 20px auto;
+        margin-bottom: 40px;
+        @include mobile-l {
+          font-size: 0.9rem;
+        }
+      }
+      .white-decoration {
+        margin-top: auto;
+        margin-bottom: 49px;
+        @include mobile-l {
+          margin-bottom: 32px;
+        }
+      }
+    }
+    .colored-decorations {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: -35%;
+      z-index: 7;
+      @include mobile-l {
+        bottom: -45%;
+      }
+    }
+  }
+}
