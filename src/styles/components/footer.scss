@@ -12,23 +12,54 @@
     h2 {
       font-size: 1.1rem;
       color: $brand-2;
+      margin-bottom: 1.4rem;
     }
     .footer-link {
       font-size: 0.8rem;
       color: $brand-white;
+      margin: 10px 0;
+    }
+    .flex {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      p {
+        color: $brand-white;
+      }
     }
 
     @include mobile-l {
       display: flex;
       flex-direction: column-reverse;
       gap: 24px;
+      justify-content: center;
+      text-align: center;
+      .flex {
+        justify-content: center;
+      }
+    }
+    .cta {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      font-size: 1rem;
+      background: $brand-2;
+      border: none;
+      color: black;
+      padding: 5px;
+      border-radius: 5px;
     }
     .button {
+      margin-top: 16px;
       background: $brand-1;
       color: white;
       padding: 5px 20px;
+      font-size: 1rem;
       border: 1px solid white;
       border-radius: 30px;
+      border: none;
     }
   }
   .lower-footer {
@@ -36,6 +67,23 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 2rem;
+    @include mobile-l {
+      flex-direction: column;
+      gap: 24px;
+      border-top: 1px solid $brand-white;
+      padding-top: 24px;
+    }
+    .socials {
+      display: flex;
+      gap: 12px;
+      .item {
+        width: 24px;
+        height: 24px;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
     p {
       color: $brand-2;
       font-size: 0.8rem;
