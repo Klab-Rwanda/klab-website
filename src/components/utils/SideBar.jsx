@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { NavLink } from 'react-router-dom';
+import { nav } from '../util/AdminSidebar';
 
 const SideBar = () => {
+  const [display,setDisplay]= useState(false)
+  const [program, setProgram] = useState(false)
+  const[events, setEvents] = useState(false);
+
+
   return (
     <>
       {/*  BEGIN SIDEBAR  */}
@@ -10,8 +16,7 @@ const SideBar = () => {
           <div className="shadow-bottom" />
           <ul className="list-unstyled menu-categories" id="accordionExample">
             <li className="menu">
-              <a
-                href="#dashboard"
+              <p onClick={()=>setDisplay(display===false ? true:false)}
                 data-active="true"
                 data-toggle="collapse"
                 aria-expanded="true"
@@ -35,36 +40,19 @@ const SideBar = () => {
                   </svg>
                   <span>Dashboard</span>
                 </div>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="feather feather-chevron-right"
-                  >
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </div>
-              </a>
-              <ul
+              </p>
+            { display && (<ul
                 className="collapse submenu list-unstyled show"
                 id="dashboard"
                 data-parent="#accordionExample"
               >
                 <li className="active">
-                  <NavLink to="/">Home </NavLink>
+                  <NavLink to="/admin">Home </NavLink>
                 </li>
-              </ul>
+              </ul>)}
             </li>
             <li className="menu">
-              <a
-                href="#app"
+              <p onClick={()=>setProgram(program===false ? true : false)}
                 data-toggle="collapse"
                 aria-expanded="false"
                 className="dropdown-toggle"
@@ -95,33 +83,18 @@ const SideBar = () => {
                   </svg>
                   <span>Program</span>
                 </div>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="feather feather-chevron-right"
-                  >
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </div>
-              </a>
-              <ul
+                
+              </p>
+              {program && (<ul
                 className="collapse submenu list-unstyled"
                 id="app"
                 data-parent="#accordionExample"
               >
                 <li>
-                  <a href="apps_chat.html">Add Program</a>
+                  <NavLink to="/add-program">Add Program</NavLink>
                 </li>
                 <li>
-                  <a href="apps_mailbox.html">kLab Startups Academy</a>
+                  <NavLink to="/startup-academy">kLab Startups Academy</NavLink>
                 </li>
                 <li>
                   <a href="apps_todoList.html">Techup Skills</a>
@@ -130,12 +103,13 @@ const SideBar = () => {
                 <li>
                   <a
                     href="#appInvoice"
+                    to="/future-koder"
                     data-toggle="collapse"
                     aria-expanded="false"
                     className="dropdown-toggle"
                   >
-                    {" "}
-                    Future Koders{" "}
+                  
+                    Future Koders
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={24}
@@ -156,19 +130,19 @@ const SideBar = () => {
                     id="appInvoice"
                     data-parent="#app"
                   >
+                   
                     <li>
-                      <a href="apps_invoice-add.html">Weekend Program</a>
+                      <NavLink to="/future-koder">Weekend Program</NavLink>
                     </li>
                     <li>
-                      <a href="apps_invoice-edit.html">Holiday Program</a>
+                      <NavLink to="/future-koder">Holiday Program</NavLink>
                     </li>
                   </ul>
                 </li>
-              </ul>
+              </ul>)}
             </li>
             <li className="menu">
-              <a
-                href="#components"
+              <p onClick={()=>{setEvents(events=== false ? true :false)}}
                 data-toggle="collapse"
                 aria-expanded="false"
                 className="dropdown-toggle"
@@ -192,24 +166,9 @@ const SideBar = () => {
                   </svg>
                   <span>Events</span>
                 </div>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="feather feather-chevron-right"
-                  >
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </div>
-              </a>
-              <ul
+                
+              </p>
+              {events && (<ul
                 className="collapse submenu list-unstyled"
                 id="components"
                 data-parent="#accordionExample"
@@ -217,16 +176,12 @@ const SideBar = () => {
                 <li>
                   <a href="component_tabs.html">Blogs</a>
                 </li>
-                <li>
-                  <a href="component_accordion.html">News</a>
-                </li>
+                
                 <li>
                   <a href="component_modal.html">Events</a>
                 </li>
-                {/* <li>
-                  <a href="component_cards.html"> Messages</a>
-                </li> */}
-              </ul>
+                
+              </ul>)}
             </li>
             <li className="menu">
               <a

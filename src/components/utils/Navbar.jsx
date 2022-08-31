@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
 import image1 from "../img/90x90.jpg";
 import image2 from "../img/ca.png";
-import image3 from "../img/de.png"
+import image3 from "../img/de.png";
+import {Link} from "react-router-dom"
 
 const Navbar = () => {
   return (
@@ -12,18 +13,13 @@ const Navbar = () => {
           <ul className="navbar-item theme-brand flex-row  text-center">
             <li className="nav-item theme-logo">
               <a href="index.html">
-                <img
-                  src={image1}
-                  className="navbar-logo"
-                  alt="logo"
-                />
+                <img src={image1} className="navbar-logo" alt="logo" />
               </a>
             </li>
             <li className="nav-item theme-text">
-              <a href="index.html" className="nav-link">
-                {" "}
-                kLab{" "}
-              </a>
+              <Link to="/admin" className="nav-link">
+                kLab
+              </Link>
             </li>
           </ul>
           <ul className="navbar-item flex-row ml-md-0 ml-auto">
@@ -546,6 +542,6 @@ const Navbar = () => {
       {/*  END NAVBAR  */}
     </>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
