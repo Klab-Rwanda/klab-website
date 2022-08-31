@@ -4,6 +4,7 @@ const ProgramTable = () => {
   return (
     <div className="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
       <div className="widget-content widget-content-area br-6">
+        <p>Program Candidates List</p>
         <table
           id="default-ordering"
           className="table table-hover"
