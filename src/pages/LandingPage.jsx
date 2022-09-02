@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../components/websiteComponents/Footer';
 import NavBar from '../components/websiteComponents/Navbar';
+import ProgramsCards from '../components/websiteComponents/ProgramsCards';
 import HERO_BANNER_IMG from '/assets/website/images/heroBanner.png';
 import BlueDecoration from '/assets/website/decorations/blue.svg';
 import grayDecoration from '/assets/website/decorations/gray.svg';
@@ -36,7 +37,9 @@ const LandingPage = () => {
             <img src={BlueDecoration} alt='decoration' />
           </div>
         </div>
-        <div></div>
+        <div className='Program-cards-container'>
+          <ProgramsCards />
+        </div>
       </div>
       <Footer />
     </div>
