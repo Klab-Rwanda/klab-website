@@ -3,6 +3,12 @@
 
 .navbar-cmp {
   border-bottom: 1px solid $brand-2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  background: $brand-white;
   nav {
     display: flex;
     justify-content: space-between;
@@ -27,6 +33,7 @@
     display: flex;
     padding: 16px 0;
     transition: all 0.2s;
+    z-index: 10;
     min-height: calc(100vh - 50px);
     @include mobile-l {
       flex-direction: column;
