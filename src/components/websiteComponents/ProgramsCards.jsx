@@ -16,6 +16,21 @@ const ProgramsCards = () => {
             title='Future kids'
             desc='A program dedicate for kids in their school vacancies and weekend programs'
           />
+          <ProgramCard
+            number='1'
+            title='Future kids'
+            desc='A program dedicate for kids in their school vacancies and weekend programs'
+          />
+          <ProgramCard
+            number='1'
+            title='Future kids'
+            desc='A program dedicate for kids in their school vacancies and weekend programs'
+          />
+          <ProgramCard
+            number='1'
+            title='Future kids'
+            desc='A program dedicate for kids in their school vacancies and weekend programs'
+          />
         </div>
       </div>
     </div>

@@ -5,12 +5,15 @@
 @import './mixinis';
 
 // COMPONENTS
-@import './pages/LandingPage.scss';
 @import './components/navbar.scss';
 @import './components/headIntro.scss';
+@import './components/programsCards.scss';
+@import './components/mission.scss';
+@import './components/footer.scss';
+@import './components/partners.scss';
 
 // PAGES CSS
-@import './components/footer.scss';
+@import './pages/LandingPage.scss';
 
 html {
   scroll-behavior: smooth;

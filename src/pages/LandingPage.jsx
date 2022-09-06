@@ -6,6 +6,9 @@ import HERO_BANNER_IMG from '/assets/website/images/heroBanner.png';
 import BlueDecoration from '/assets/website/decorations/blue.svg';
 import grayDecoration from '/assets/website/decorations/gray.svg';
 import WhiteDecoration from '/assets/website/decorations/white.svg';
+import Mission from '../components/websiteComponents/Mission';
+import Partners from '../components/websiteComponents/Partners';
+import HeadIntro from '../components/websiteComponents/HeadIntro';
 
 const LandingPage = () => {
   return (
@@ -39,6 +42,12 @@ const LandingPage = () => {
         </div>
         <div className='Program-cards-container'>
           <ProgramsCards />
+        </div>
+        <div className='mission-container container'>
+          <Mission />
+        </div>
+        <div className='paartners-cmp-container'>
+          <Partners />
         </div>
       </div>
       <Footer />

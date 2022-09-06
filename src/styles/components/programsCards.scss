@@ -1,0 +1,64 @@
+@import '../variables';
+@import '../mixinis';
+
+.programCards-cmp {
+  .programCards-wrapper {
+    display: flex;
+    gap: 24px;
+    margin: 5rem 0;
+    justify-content: center;
+    @include mobile-l {
+      flex-direction: column;
+      margin: unset;
+    }
+  }
+  .program-card-cmp {
+    position: relative;
+    background: #ffffff;
+    box-shadow: 3px 5px 31px 6px rgba(193, 193, 193, 0.25);
+    border-radius: 15px;
+    width: 100%;
+    padding: 20px;
+    max-width: 268px;
+    @include mobile-l {
+      margin: auto;
+      margin-top: 3rem;
+    }
+    .title {
+      margin-top: 32px;
+    }
+    .number {
+      width: 64px;
+      height: 64px;
+      background: $brand-1;
+      border-radius: 200px;
+      position: absolute;
+      left: 40%;
+      top: -30px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 25px;
+      display: flex;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      p {
+        color: white;
+      }
+    }
+    .desc {
+      padding: 12px 0;
+    }
+    .link {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    a {
+      color: $brand-1;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
