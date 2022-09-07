@@ -9,6 +9,9 @@
   z-index: 9;
   width: 100%;
   background: $brand-white;
+  @include mobile-l {
+    padding: 5px;
+  }
   nav {
     display: flex;
     justify-content: space-between;
@@ -41,7 +44,7 @@
       top: 64px;
       row-gap: 24px;
       right: -288px;
-      padding: 20px;
+      padding: 40px 20px;
       width: 288px;
       background-color: $brand-dark;
       color: white;

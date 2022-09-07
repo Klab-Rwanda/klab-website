@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <header className='navbar-cmp'>
-      <nav className='container'>
+      <nav className='container-default'>
         <Link to={'/'}>
           <a>
             <img src={Logo} alt='logo' />

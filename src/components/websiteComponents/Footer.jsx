@@ -13,7 +13,7 @@ import EMAIL from '/assets/website/icons/email.svg';
 const Footer = () => {
   return (
     <div className='footer-cmp'>
-      <div className='container'>
+      <div className='container-default'>
         <div className='upper-footer'>
           <div className='grid'>
             <h2>Klab</h2>
