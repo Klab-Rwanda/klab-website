@@ -67,17 +67,32 @@
   }
   .Program-cards-container {
     padding-top: 3rem;
+    @include mobile-l {
+      padding-top: 2rem;
+    }
   }
   .mission-container {
     padding: 3rem 0;
+    @include mobile-l {
+      padding: 2rem 0;
+    }
   }
   .paartners-cmp-container {
     padding-bottom: 6rem;
+    @include mobile-l {
+      padding-bottom: 4rem;
+    }
   }
   .testimonials-cmp-container {
     padding: 3rem 0;
+    @include mobile-l {
+      padding: 2rem 0;
+    }
   }
   .contacts-cmp-container {
     padding: 3rem 0;
+    @include mobile-l {
+      padding: 2rem 0;
+    }
   }
 }
