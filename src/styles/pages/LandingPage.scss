@@ -3,7 +3,7 @@
 
 .landingPage {
   .hero-banner {
-    height: 70vh;
+    height: 90vh;
     position: relative;
     margin-bottom: 50px;
     &::before {
@@ -16,7 +16,7 @@
       opacity: 0.8;
     }
     @include mobile-l {
-      height: 40vh;
+      height: 50vh;
       margin-bottom: 40px;
     }
     img {
@@ -29,6 +29,7 @@
       width: 100%;
       top: 10%;
       height: 100%;
+      padding-top: 4rem;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -63,5 +64,20 @@
       bottom: 2%;
       z-index: 7;
     }
+  }
+  .Program-cards-container {
+    padding-top: 3rem;
+  }
+  .mission-container {
+    padding: 3rem 0;
+  }
+  .paartners-cmp-container {
+    padding-bottom: 6rem;
+  }
+  .testimonials-cmp-container {
+    padding: 3rem 0;
+  }
+  .contacts-cmp-container {
+    padding: 3rem 0;
   }
 }

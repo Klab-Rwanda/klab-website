@@ -1,0 +1,53 @@
+@import '../variables';
+@import '../mixinis';
+
+.partners-cmp {
+  background: url('/public/assets/website/images/blackBg.svg');
+  position: relative;
+  width: 100%;
+  .content {
+    padding: 163px 0;
+    @include mobile-l {
+      padding: 60px 0;
+    }
+    .head {
+      color: white;
+    }
+    .decs {
+      color: $brand-white;
+    }
+    .partners-logos {
+      display: flex;
+      gap: 24px;
+      padding-top: 3rem;
+      justify-content: center;
+      @include tablet-mobile {
+        flex-direction: column;
+      }
+      .partner {
+        background: white;
+        padding: 2px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        align-items: center;
+        img {
+          width: 250px;
+          height: 120px;
+        }
+      }
+    }
+  }
+  .decoration-blue {
+    position: absolute;
+    width: 100%;
+    bottom: -100px;
+    @include tablet-mobile {
+      bottom: -30px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
