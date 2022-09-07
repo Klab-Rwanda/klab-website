@@ -11,6 +11,7 @@
 @import './components/mission.scss';
 @import './components/footer.scss';
 @import './components/partners.scss';
+@import './components/testimonials.scss';
 
 // PAGES CSS
 @import './pages/LandingPage.scss';
@@ -64,30 +65,6 @@ a {
   display: none !important;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 93% !important;
-  &::after {
-    color: $brand-1;
-    font-size: 40px !important;
-  }
-  @include tablet-mobile {
-    top: 97% !important;
-    &::after {
-      color: $brand-1;
-      font-size: 32px !important;
-    }
-  }
-}
-.swiper-pagination-progressbar-fill {
-  background-color: $brand-1 !important;
-  border-radius: 5px;
-  height: 3px !important;
-}
-.swiper-pagination-progressbar {
-  background: rgb(20, 20, 20) !important;
-  height: 3px !important;
-}
 .button {
   margin-top: 16px;
   background: $brand-1;

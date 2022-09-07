@@ -9,6 +9,7 @@ import WhiteDecoration from '/assets/website/decorations/white.svg';
 import Mission from '../components/websiteComponents/Mission';
 import Partners from '../components/websiteComponents/Partners';
 import HeadIntro from '../components/websiteComponents/HeadIntro';
+import Testimonials from '../components/websiteComponents/Testimonials';
 
 const LandingPage = () => {
   return (
@@ -48,6 +49,9 @@ const LandingPage = () => {
         </div>
         <div className='paartners-cmp-container'>
           <Partners />
+        </div>
+        <div className='testimonials-cmp-container container'>
+          <Testimonials />
         </div>
       </div>
       <Footer />
