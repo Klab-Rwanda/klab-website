@@ -2,7 +2,7 @@ import React from 'react';
 
 const SingleTestimonial = ({ testmonial }) => {
   return (
-    <div className='single-testmonial-cmp'>
+    <div className='single-testmonial-cmp '>
       <div className='upper'>
         <div className='image'>
           <img src={testmonial.image} alt='profile' />

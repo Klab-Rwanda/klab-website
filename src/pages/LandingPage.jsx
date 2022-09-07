@@ -10,6 +10,7 @@ import Mission from '../components/websiteComponents/Mission';
 import Partners from '../components/websiteComponents/Partners';
 import HeadIntro from '../components/websiteComponents/HeadIntro';
 import Testimonials from '../components/websiteComponents/Testimonials';
+import Contacts from '../components/websiteComponents/Contacts';
 
 const LandingPage = () => {
   return (
@@ -44,14 +45,17 @@ const LandingPage = () => {
         <div className='Program-cards-container'>
           <ProgramsCards />
         </div>
-        <div className='mission-container container'>
+        <div className='mission-container container-default'>
           <Mission />
         </div>
         <div className='paartners-cmp-container'>
           <Partners />
         </div>
-        <div className='testimonials-cmp-container container'>
+        <div className='testimonials-cmp-container container-default'>
           <Testimonials />
+        </div>
+        <div className='contacts-cmp-container container-default'>
+          <Contacts />
         </div>
       </div>
       <Footer />

@@ -12,6 +12,7 @@
 @import './components/footer.scss';
 @import './components/partners.scss';
 @import './components/testimonials.scss';
+@import './components/contacts.scss';
 
 // PAGES CSS
 @import './pages/LandingPage.scss';
@@ -51,7 +52,7 @@ a {
 .landingPage {
   min-height: 100vh;
 }
-.container {
+.container-default {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 100px;
