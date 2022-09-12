@@ -10,6 +10,12 @@ import RegisterPage from "../pages/RegisterPage";
 import EventsPage from "../pages/EventsPage";
 import ProgramsPage from "../pages/ProgramsPage";
 import AboutPage from "../pages/AboutPage";
+import Events from "../components/dashboard/Events/Events";
+import Program from "../components/dashboard/Program/Program";
+import MemberLayout from "../components/dashboard/Members/MemberLayout";
+import SignIn from "../components/dashboard/auth/SignIn";
+import ForgotPassword from "../components/dashboard/auth/ForgotPassword";
+import Register from "../components/dashboard/auth/Register";
 
 const Index = () => {
   return (
@@ -27,6 +33,12 @@ const Index = () => {
       <Route path="add-program" element={<AddProgram />}></Route>
       <Route path="startup-academy" element={<StartupAcademy />}></Route>
       <Route path="future-koder" element={<FutureCoder />}></Route>
+      <Route path="event" element={<Events />}></Route>
+      <Route path="program" element={<Program />}></Route>
+      <Route path="members" element={<MemberLayout />}></Route>
+      <Route path="login" element={<SignIn />}></Route>
+      <Route path="forgot-password" element={<ForgotPassword />}></Route>
+      <Route path="sign-up" element={<Register />}></Route>
     </Routes>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import HeadIntro from './HeadIntro';
-import ProgramCard from './programCard';
+import ProgramCard from './ProgramCard';
 
 const ProgramsCards = () => {
   return (

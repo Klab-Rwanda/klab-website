@@ -1,22 +1,27 @@
 import React from 'react'
+import Footer from '../../utils/Footer';
 import Navbar from '../../utils/Navbar';
 import SideBar from '../../utils/SideBar';
-import Footer from '../../utils/Footer';
-import FurureContent from './FurureContent';
 
-const FutureCoder = () => {
+import Members from './Members';
+
+function MemberLayout() {
   return (
-    <div>
+    <>
+      {/*  BEGIN MAIN CONTAINER  */}
       <Navbar />
       <div className="main-container" id="container">
         <div className="overlay" />
         <div className="search-overlay" />
         <SideBar />
-       <FurureContent />
+        <div id="content" className="main-content">
+          <Members/>
+        </div>
       </div>
       <Footer />
-    </div>
+      {/* END MAIN CONTAINER */}
+    </>
   );
 }
 
-export default FutureCoder
+export default MemberLayout

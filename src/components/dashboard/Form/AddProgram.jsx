@@ -1,83 +1,60 @@
-import React from "react";
-import SideBar from "../../utils/SideBar";
-import Footer from "../../utils/Footer";
-import Navbar from "../../utils/Navbar";
+import React, { useState } from "react";
+import axios from "axios";
+const userAdmin = JSON.parse(localStorage.getItem("admin"));
+const adminToken = userAdmin.access_token;
 
 const AddProgram = () => {
-  return (
-    <div>
-      <Navbar />
-      <div className="main-container" id="container">
-        <div className="overlay" />
-        <div className="search-overlay" />
-        <SideBar />
-        <div id="content" class="main-content">
-          <div class="container">
-            <div class="container">
-              <div className="row" style={{display:"flex", justifyContent:"center"}}>
-                <div
-                  id="flStackForm"
-                  className="col-lg-6  layout-spacing layout-top-spacing"
-                >
-                  <div className="statbox widget box box-shadow">
-                    <div className="widget-header">
-                      <div className="row">
-                        <div className="col-xl-12 col-md-12 col-sm-12 col-12">
-                          <h4>Add Program</h4>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="widget-content widget-content-area">
-                      <form >
-                        <div className="form-group mb-3">
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="isTitle"
-                            aria-describedby="titleHelp1"
-                            placeholder="Enter Title"
-                          />
-                        </div>
-                        <div className="form-group mb-4">
-                          <textarea
-                            type="description"
-                            className="form-control"
-                            id="sDescription"
-                            placeholder="Description"
-                          />
-                        </div>
-                        
-                          <div className="form-group mb-3">
-                            <label className="custom-file-container__custom-file">
-                              <input
-                                type="file"
-                                className="custom-file-container__custom-file__custom-file-input"
-                                accept="image/*"
-                              />
-                              {/* <input
-                                type="hidden"
-                                name="MAX_FILE_SIZE"
-                                defaultValue={10485760}
-                              /> */}
-                              <span className="custom-file-container__custom-file__custom-file-control" />
-                            </label>
-                            <div className="custom-file-container__image-preview" />
-                          
-                        </div>
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [banner, setBanner] = useState(null);
 
-                        <button type="submit" className="btn btn-primary mt-3">
-                          Submit
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  const handleFile = (e) => {
+    setBanner(e.target.files[0]);
+  };
+
+  const handleForm = async (e) => {
+    e.preventDefault();
+    const url =
+      "https://klabattendees.herokuapp.com/api/futureCoderStore/createProgram";
+      const formData = new FormData();
+      formData.append("banner", banner);
+      // formData.append("fileName", banner.name);
+      formData.append("title", title)
+      formData.append("description", desc)
+   
+    const response = await axios.post(url, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${adminToken}`,
+      },
+    });
+    console.log(response)
+  };
+
+  return (
+    <div className="program-container">
+      <div className="program-form">
+        <form onSubmit={handleForm}>
+          <h2>Add Program</h2>
+          <div className="">
+            <div className="program-data">
+              <label>Program Title</label>
+              <input placeholder="Enter Title"  onChange={(e)=>{setTitle(e.target.value)}}/>
+            </div>
+            <div className="program-data">
+              <label>Program Description</label>
+              <textarea placeholder="Enter Description" onChange={(e)=>{setDesc(e.target.value)}}/>
+            </div>
+            <div className="program-data">
+              <label>Banner</label>
+              <input type="file" onChange={handleFile}/>
+            </div>
+            <div className="program-button">
+              <button className="button">Add Program</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
-      <Footer />
     </div>
   );
 };
