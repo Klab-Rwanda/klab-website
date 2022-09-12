@@ -1,0 +1,94 @@
+@import '../variables';
+@import '../mixinis';
+
+.testimonials-cmp {
+  .testimonial-wrapper {
+    padding: 3rem 0;
+    display: flex;
+    gap: 24px;
+    span {
+      color: $brand-1;
+      font-weight: bold;
+    }
+    @include mobile-l {
+      flex-direction: column;
+      gap: 48px;
+    }
+    .intro {
+      width: 50%;
+      .title {
+        width: 60%;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+      }
+      .desc {
+        padding: 1rem 0;
+      }
+      @include mobile-l {
+        width: 100%;
+        .title {
+          width: unset;
+        }
+      }
+    }
+    .right {
+      width: 50%;
+      background: rgba(252, 252, 252, 0.67);
+      box-shadow: 3px 5px 31px 6px rgba(193, 193, 193, 0.25);
+      border-radius: 20px;
+      padding: 30px;
+
+      @include mobile-l {
+        width: 100%;
+      }
+      .single-testmonial-cmp {
+        .upper {
+          display: flex;
+          gap: 24px;
+          padding: 10px 0;
+
+          .profile-info {
+            width: 75%;
+            border-bottom: 2px solid $brand-2;
+            p {
+              margin: -5px 0;
+              color: $brand-2;
+              font-weight: bold;
+            }
+            h4 {
+              font-size: 1rem;
+              font-weight: bold;
+              padding-top: 5px;
+            }
+          }
+        }
+        .bottom {
+          .testimonial {
+            color: $brand-2;
+            padding: 10px 20px;
+          }
+        }
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        top: 55% !important;
+        position: absolute !important;
+        &::after {
+          color: $brand-white;
+          font-size: 24px !important;
+          border-radius: 50px;
+          background: $brand-1;
+          box-shadow: 3px 5px 31px 6px rgba(193, 193, 193, 0.25);
+          padding: 10px 16px;
+        }
+      }
+      .swiper-button-prev {
+        left: -20px !important;
+      }
+      .swiper-button-next {
+        right: -20px !important;
+      }
+    }
+  }
+}

@@ -5,12 +5,17 @@
 @import './mixinis';
 
 // COMPONENTS
-@import './pages/LandingPage.scss';
 @import './components/navbar.scss';
 @import './components/headIntro.scss';
+@import './components/programsCards.scss';
+@import './components/mission.scss';
+@import './components/footer.scss';
+@import './components/partners.scss';
+@import './components/testimonials.scss';
+@import './components/contacts.scss';
 
 // PAGES CSS
-@import './components/footer.scss';
+@import './pages/LandingPage.scss';
 
 // Dashboard CSS
 @import './dashboard/AddEvent.scss';
@@ -54,13 +59,13 @@ a {
 .landingPage {
   min-height: 100vh;
 }
-.container {
-  max-width: 1440px;
+.container-default {
+  max-width: 1440px !important;
   margin: 0 auto;
-  padding: 0 100px;
+  padding: 0 100px !important;
   color: $brand-3;
   @include tablet-mobile {
-    padding: 12px;
+    padding: 12px !important;
   }
 }
 
@@ -68,30 +73,6 @@ a {
   display: none !important;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 93% !important;
-  &::after {
-    color: $brand-1;
-    font-size: 40px !important;
-  }
-  @include tablet-mobile {
-    top: 97% !important;
-    &::after {
-      color: $brand-1;
-      font-size: 32px !important;
-    }
-  }
-}
-.swiper-pagination-progressbar-fill {
-  background-color: $brand-1 !important;
-  border-radius: 5px;
-  height: 3px !important;
-}
-.swiper-pagination-progressbar {
-  background: rgb(20, 20, 20) !important;
-  height: 3px !important;
-}
 .button {
   margin-top: 16px;
   background: $brand-1;
