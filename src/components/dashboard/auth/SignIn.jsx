@@ -34,8 +34,7 @@ const SignIn = () => {
           headers: { "Content-Type": "application/json" },
          }
       );
-      // const accessToken = response?.data?.accessToken;
-      // console.log(response.)
+   
       localStorage.setItem("admin", JSON.stringify(response?.data?.Token.original));
       navigate("/admin");
         setEmail("");
