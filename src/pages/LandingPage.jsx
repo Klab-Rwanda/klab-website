@@ -8,7 +8,6 @@ import grayDecoration from '/assets/website/decorations/gray.svg';
 import WhiteDecoration from '/assets/website/decorations/white.svg';
 import Mission from '../components/websiteComponents/Mission';
 import Partners from '../components/websiteComponents/Partners';
-import HeadIntro from '../components/websiteComponents/HeadIntro';
 import Testimonials from '../components/websiteComponents/Testimonials';
 import Contacts from '../components/websiteComponents/Contacts';
 

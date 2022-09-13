@@ -1,18 +1,18 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-const userAdmin = JSON.parse(localStorage.getItem("admin"));
-const adminToken = userAdmin.access_token;
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+const userAdmin = JSON.parse(localStorage.getItem('admin'));
+// const adminToken = userAdmin.access_token;
 
 export const getMembers = createAsyncThunk(
-  "members/getMembers",
+  'members/getMembers',
   async (_, { rejectWithValue }) => {
     try {
       const respnse = await axios.get(
-        "https://klabattendees.herokuapp.com/api/memberInfo",
+        'https://klabattendees.herokuapp.com/api/memberInfo',
         {
           headers: {
-            Authorization: `Bearer ${adminToken}`,
-          },
+            Authorization: `Bearer ${adminToken}`
+          }
         }
       );
 
@@ -28,24 +28,24 @@ export const getMembers = createAsyncThunk(
 );
 
 export const membersSlice = createSlice({
-  name: "members",
+  name: 'members',
   initialState: {
-    members: [],
+    members: []
   },
 
   extraReducers: {
     [getMembers.pending]: (state) => {
-      state.status = "loading";
+      state.status = 'loading';
     },
     [getMembers.fulfilled]: (state, { payload }) => {
-      (state.status = "success"), (state.members = payload);
+      (state.status = 'success'), (state.members = payload);
       console.log(payload);
     },
     [getMembers.rejected]: (state, { payload }) => {
-      (state.status = "failed"),
-      (state.error = payload.error || payload.toString());
-    },
-  },
+      (state.status = 'failed'),
+        (state.error = payload.error || payload.toString());
+    }
+  }
 });
 
 export const membersSelector = (state) => state.members;

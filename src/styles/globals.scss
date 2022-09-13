@@ -13,16 +13,18 @@
 @import './components/partners.scss';
 @import './components/testimonials.scss';
 @import './components/contacts.scss';
+@import './components/eventsCards.scss';
 
 // PAGES CSS
 @import './pages/LandingPage.scss';
+@import './pages/EventsPage.scss';
 
 // Dashboard CSS
 @import './dashboard/AddEvent.scss';
 @import './dashboard/AddProgram.scss';
 @import './dashboard/event.scss';
 @import './dashboard/member.scss';
-@import'./dashboard//Login.scss';
+@import './dashboard//Login.scss';
 
 html {
   scroll-behavior: smooth;
@@ -83,5 +85,3 @@ a {
   border-radius: 30px;
   border: none;
 }
-
-
