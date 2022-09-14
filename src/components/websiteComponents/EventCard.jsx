@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const EventCard = ({ id, image, date, title, desc }) => {
   return (
     <div className='eventCard-cmp'>
-      <a href=''>
+      <Link to='/event'>
         <div className='thumbnail'>
           <img src={image} alt='event image' />
         </div>
@@ -18,7 +19,7 @@ const EventCard = ({ id, image, date, title, desc }) => {
             <p className='desc'>{desc}</p>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
