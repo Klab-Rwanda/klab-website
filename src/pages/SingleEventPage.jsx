@@ -5,9 +5,32 @@ import HERO_BANNER_IMG from '/assets/website/images/event.png';
 import BlueDecoration from '/assets/website/decorations/blue.svg';
 import WhiteDecoration from '/assets/website/decorations/white.svg';
 import EventCard from '../components/websiteComponents/EventCard';
+import { Link } from 'react-router-dom';
+import FB from '/assets/website/icons/fb.svg';
 import HeadIntro from '../components/websiteComponents/HeadIntro';
+import TWITTER from '/assets/website/icons/twitter.svg';
+import LINKEDIN from '/assets/website/icons/linkedin.svg';
+import YOUTUBE from '/assets/website/icons/youtube.svg';
+import IG from '/assets/website/icons/ig.svg';
+import PLACE_HOLDER from '/assets/website/images/event.png';
 
 const SingleEventPage = () => {
+  const eventsList = [
+    {
+      id: 1,
+      image: PLACE_HOLDER,
+      date: '12/sept/2022',
+      title: 'Huye -Techup Skills',
+      desc: 'We have several programs that helps people with different experinces getting started and strengthening '
+    },
+    {
+      id: 2,
+      image: PLACE_HOLDER,
+      date: '12/sept/2022',
+      title: 'Huye -Techup Skills',
+      desc: 'We have several programs that helps people with different experinces getting started and strengthening '
+    }
+  ];
   return (
     <div className='single-event-page'>
       <NavBar />
@@ -99,7 +122,60 @@ const SingleEventPage = () => {
                 <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5327136866454!2d30.08853461543378!3d-1.939467698586016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6eb4b136305%3A0xfa7ecaf4c40f3383!2skLab!5e0!3m2!1sen!2srw!4v1662556691905!5m2!1sen!2srw'></iframe>
               </div>
               <div className='title-xl'>Tags</div>
-              <div className='tags'></div>
+              <div className='tags'>
+                <div className='tag'>Techup skills</div>
+                <div className='tag'>Meet ups</div>
+                <div className='tag'>Entepreneurs</div>
+                <div className='tag'>Ihuzo</div>
+              </div>
+              <div className='social-share'>
+                <div className='title-xl'>Share with friends</div>
+                <div className='socials'>
+                  <div className='item'>
+                    <Link to='/'>
+                      <img src={FB} alt='fb' />
+                    </Link>
+                  </div>
+                  <div className='item'>
+                    <Link to='/'>
+                      <img src={TWITTER} alt='twitter' />
+                    </Link>
+                  </div>
+                  <div className='item'>
+                    <Link to='/'>
+                      <img src={YOUTUBE} alt='twitter' />
+                    </Link>
+                  </div>
+                  <div className='item'>
+                    <Link to='/'>
+                      <img src={IG} alt='twitter' />
+                    </Link>
+                  </div>
+                  <div className='item'>
+                    <Link to='/'>
+                      <img src={LINKEDIN} alt='twitter' />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='eventsCards-cmp'>
+            <div className='events-page__events-header'>
+              <HeadIntro title='Upcoming Events' />
+            </div>
+            <div className='cards-wrapper'>
+              {eventsList.map((event) => (
+                <EventCard
+                  key={event.id}
+                  id={event.id}
+                  image={event.image}
+                  date={event.date}
+                  title={event.title}
+                  desc={event.desc}
+                />
+              ))}
+              <EventCard />
             </div>
           </div>
         </div>

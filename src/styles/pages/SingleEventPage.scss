@@ -13,7 +13,7 @@
       background: black;
       position: absolute;
       z-index: 2;
-      opacity: 0.8;
+      opacity: 0.5;
     }
     @include mobile-l {
       height: 80vh;
@@ -101,6 +101,10 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 6rem;
+    @include mobile-l {
+      display: flex;
+      flex-direction: column;
+    }
     .desc-part {
       .title {
         display: flex;
@@ -108,6 +112,9 @@
       .form {
         margin-top: 2rem;
         width: 80%;
+        @include mobile-l {
+          width: 100%;
+        }
         .input {
           width: 100%;
           input {
@@ -149,6 +156,24 @@
       .tags {
         display: flex;
         flex-wrap: wrap;
+        gap: 12px;
+        color: white;
+        margin-top: 12px;
+        .tag {
+          background: $brand-dark;
+          padding: 5px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+      .social-share {
+        margin-top: 2rem;
+        .socials {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          font-size: 24px;
+        }
       }
     }
 
