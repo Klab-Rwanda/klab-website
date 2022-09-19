@@ -14,13 +14,16 @@ const EventsPage = () => {
         <div className='hero-banner-events'>
           <img src={HERO_BANNER_IMG} alt='herobaner-bg' />
           <div className='content '>
-            <div className='content-container container-default'>
-              <h1>Klab Events</h1>
-              <p>
-                kLab provides an open space for IT entrepreneurs to collaborate
-                and innovate in Kigali, Rwanda
-              </p>
+            <div className='events-summary'>
+              <div className='content-container container-default'>
+                <h1>Klab Events</h1>
+                <p>
+                  kLab provides an open space for IT entrepreneurs to
+                  collaborate and innovate in Kigali, Rwanda
+                </p>
+              </div>
             </div>
+
             <div className='white-decoration'>
               <img src={WhiteDecoration} alt='decoration' />
             </div>

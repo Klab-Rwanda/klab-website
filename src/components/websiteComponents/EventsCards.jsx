@@ -40,27 +40,23 @@ const EventsCards = () => {
       date: '12/sept/2022',
       title: 'Huye -Techup Skills',
       desc: 'We have several programs that helps people with different experinces getting started and strengthening '
-    },
+    }
+  ];
+
+  const recentEvents = [
     {
-      id: 6,
+      id: 1,
       image: PLACE_HOLDER,
       date: '12/sept/2022',
       title: 'Huye -Techup Skills',
       desc: 'We have several programs that helps people with different experinces getting started and strengthening '
     },
     {
-      id: 4,
+      id: 2,
       image: PLACE_HOLDER,
       date: '12/sept/2022',
       title: 'Huye -Techup Skills',
       desc: 'We have several programs that helps people with different experinces getting started and strengthening '
-    },
-    {
-      id: 5,
-      image: PLACE_HOLDER,
-      date: '12/sept/2022',
-      title: 'Huye -Techup Skills',
-      desc: 'We have several programs We have several programs that helps people with different experinces getting started and strengtheninWe have several programs that helps people with different experinces getting started and strengthenin that helps people with different experinces getting started and strengthening '
     }
   ];
   return (
@@ -90,6 +86,26 @@ const EventsCards = () => {
           />
         ))}
         <EventCard />
+      </div>
+
+      <div className='recent-events'>
+        <div className='events-page__events-header'>
+          <HeadIntro title='Recent Events' />
+        </div>
+
+        <div className='cards-wrapper'>
+          {recentEvents.map((event) => (
+            <EventCard
+              key={event.id}
+              id={event.id}
+              image={event.image}
+              date={event.date}
+              title={event.title}
+              desc={event.desc}
+            />
+          ))}
+          <EventCard />
+        </div>
       </div>
     </div>
   );
