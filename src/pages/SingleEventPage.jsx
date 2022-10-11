@@ -29,6 +29,13 @@ const SingleEventPage = () => {
       date: '12/sept/2022',
       title: 'Huye -Techup Skills',
       desc: 'We have several programs that helps people with different experinces getting started and strengthening '
+    },
+    {
+      id: 3,
+      image: PLACE_HOLDER,
+      date: '12/sept/2022',
+      title: 'Huye -Techup Skills',
+      desc: 'We have several programs that helps people with different experinces getting started and strengthening '
     }
   ];
   return (
@@ -175,7 +182,6 @@ const SingleEventPage = () => {
                   desc={event.desc}
                 />
               ))}
-              <EventCard />
             </div>
           </div>
         </div>

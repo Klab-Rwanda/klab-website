@@ -1,0 +1,10 @@
+@import '../variables';
+@import '../mixinis';
+
+.loginPage {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  .loginPage-container{
+    border: 1px solid gray;
+  }
+}

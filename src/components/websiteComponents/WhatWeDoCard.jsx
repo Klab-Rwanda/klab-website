@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const EventCard = ({ id, image, date, title, desc }) => {
+const WhatWeDoCard = ({ image, date, title, desc }) => {
   return (
-    <div className='eventCard-cmp'>
+    <div className='whatWeDoCard-cmp'>
       <div className='thumbnail'>
         <img src={image} alt='event image' />
       </div>
@@ -22,4 +21,4 @@ const EventCard = ({ id, image, date, title, desc }) => {
   );
 };
 
-export default EventCard;
+export default WhatWeDoCard;

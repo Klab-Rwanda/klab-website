@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import EventCard from './EventCard';
 import HeadIntro from './HeadIntro';
 import PLACE_HOLDER from '/assets/website/images/event.png';
@@ -40,6 +41,13 @@ const EventsCards = () => {
       date: '12/sept/2022',
       title: 'Huye -Techup Skills',
       desc: 'We have several programs that helps people with different experinces getting started and strengthening '
+    },
+    {
+      id: 6,
+      image: PLACE_HOLDER,
+      date: '12/sept/2022',
+      title: 'Huye -Techup Skills',
+      desc: 'We have several programs that helps people with different experinces getting started and strengthening '
     }
   ];
 
@@ -76,16 +84,17 @@ const EventsCards = () => {
       </div>
       <div className='cards-wrapper'>
         {eventsList.map((event) => (
-          <EventCard
-            key={event.id}
-            id={event.id}
-            image={event.image}
-            date={event.date}
-            title={event.title}
-            desc={event.desc}
-          />
+          <Link to='/singleEvent'>
+            <EventCard
+              key={event.id}
+              id={event.id}
+              image={event.image}
+              date={event.date}
+              title={event.title}
+              desc={event.desc}
+            />
+          </Link>
         ))}
-        <EventCard />
       </div>
 
       <div className='recent-events'>
@@ -104,7 +113,6 @@ const EventsCards = () => {
               desc={event.desc}
             />
           ))}
-          <EventCard />
         </div>
       </div>
     </div>

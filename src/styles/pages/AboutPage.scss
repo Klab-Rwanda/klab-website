@@ -1,0 +1,116 @@
+@import '../variables';
+@import '../mixinis';
+
+.about-page {
+  .hero-banner {
+    height: 60vh;
+    position: relative;
+    margin-bottom: 50px;
+    &::before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background: black;
+      position: absolute;
+      z-index: 2;
+      opacity: 0.8;
+    }
+    @include mobile-l {
+      height: 50vh;
+      margin-bottom: 40px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .content {
+      position: absolute;
+      z-index: 3;
+      width: 100%;
+      top: 10%;
+      height: 100%;
+      padding-top: 4rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        color: white;
+        font-weight: 600;
+        @include fontSize(56px);
+        @include mobile-l {
+          font-size: 2rem;
+        }
+      }
+      p {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 28px;
+        color: $brand-2;
+        max-width: 500px;
+        margin: 20px auto;
+        margin-bottom: 40px;
+        @include mobile-l {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  .missionCards-container {
+    display: flex;
+    gap: 48px;
+    text-align: center;
+    @include mobile-l {
+      flex-direction: column;
+    }
+  }
+  .what-wedo {
+    margin: 6rem 0;
+    background: url('/public/assets/website/images/aboutDarkBg.svg');
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    .content {
+      padding: 163px 100px !important;
+      @include mobile-l {
+        padding: 60px 12px !important;
+      }
+      .head {
+        color: white;
+      }
+      .decs {
+        color: $brand-white;
+      }
+      .partners-logos {
+        display: flex;
+        gap: 24px;
+        padding-top: 3rem;
+        justify-content: center;
+        @include tablet-mobile {
+          flex-direction: column;
+        }
+        .partner {
+          background: white;
+          padding: 2px;
+          border-radius: 30px;
+          display: flex;
+          justify-content: center;
+          margin: auto;
+          align-items: center;
+          img {
+            width: 250px;
+            height: 120px;
+          }
+        }
+      }
+      .cards-container {
+        display: flex;
+        gap: 24px;
+      }
+      .whatWeDoCard-cmp {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+    }
+  }
+}

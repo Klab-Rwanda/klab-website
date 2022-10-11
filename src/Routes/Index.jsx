@@ -17,6 +17,7 @@ import SignIn from '../components/dashboard/auth/SignIn';
 import ForgotPassword from '../components/dashboard/auth/ForgotPassword';
 import Register from '../components/dashboard/auth/Register';
 import SingleEventPage from '../pages/SingleEventPage';
+import LoginPage from '../pages/LoginPage';
 
 const Index = () => {
   return (
@@ -25,10 +26,11 @@ const Index = () => {
       <Route path='/' element={<LandingPage />}></Route>
       <Route path='/community' element={<CommunityPage />}></Route>
       <Route path='/events' exact element={<EventsPage />}></Route>
-      <Route path='/event' element={<SingleEventPage />}></Route>
+      <Route path='/singleEvent' element={<SingleEventPage />}></Route>
       <Route path='/about' element={<AboutPage />}></Route>
       <Route path='/programs' element={<ProgramsPage />}></Route>
       <Route path='/register' element={<RegisterPage />}></Route>
+      <Route path='/login' element={<LoginPage />}></Route>
       {/* Website routes ends here */}
 
       <Route path='admin' element={<Main />}></Route>
