@@ -29,9 +29,6 @@ const Partners = () => {
           </div>
         </div>
       </div>
-      <div className='decoration-blue'>
-        <img src={BLUE} alt='blue decoration' />
-      </div>
     </div>
   );
 };

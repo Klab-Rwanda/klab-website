@@ -96,10 +96,10 @@
         padding: 60px 12px !important;
       }
       .head {
-        color: white;
+        color: $brand-dark;
       }
       .decs {
-        color: $brand-white;
+        color: $brand-dark;
       }
       .partners-logos {
         display: flex;
@@ -127,11 +127,21 @@
         display: flex;
         gap: 24px;
         margin-top: 4rem;
+        @include mobile-l {
+          flex-direction: column;
+        }
 
         .whatWeDoCard-cmp {
           background: white;
           padding: 35px;
           border-radius: 10px;
+          height: 420px;
+          &:nth-child(odd) {
+            margin-top: 100px;
+            @include mobile-l {
+              margin-top: 20px;
+            }
+          }
           .icon {
             background-color: $brand-dark;
             width: 50px;
