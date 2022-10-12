@@ -57,10 +57,31 @@
   }
   .missionCards-container {
     display: flex;
+    justify-content: center;
     gap: 48px;
-    text-align: center;
     @include mobile-l {
       flex-direction: column;
+      justify-content: center;
+    }
+    margin-top: 8rem;
+    .missionCard-cmp {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      position: relative;
+      padding-top: 100px;
+      max-width: 324px;
+      margin: auto;
+      .title {
+        color: $brand-1;
+        font-weight: 700;
+        font-size: 24px;
+      }
+      .image {
+        position: absolute;
+        top: -70px;
+        left: 26%;
+      }
     }
   }
   .what-wedo {
@@ -105,11 +126,36 @@
       .cards-container {
         display: flex;
         gap: 24px;
-      }
-      .whatWeDoCard-cmp {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
+        margin-top: 4rem;
+
+        .whatWeDoCard-cmp {
+          background: white;
+          padding: 35px;
+          border-radius: 10px;
+          .icon {
+            background-color: $brand-dark;
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .details {
+            .title {
+              font-size: 26px;
+            }
+            .desc {
+              padding-left: 20px;
+              color: $brand-2;
+            }
+            padding-bottom: 10px;
+            border-bottom: 1px solid gray;
+          }
+        }
       }
     }
   }

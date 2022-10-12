@@ -3,19 +3,12 @@ import React from 'react';
 const WhatWeDoCard = ({ image, date, title, desc }) => {
   return (
     <div className='whatWeDoCard-cmp'>
-      <div className='thumbnail'>
-        <img src={image} alt='event image' />
+      <div className='icon'>
+        <img src={image} alt='What we do image' />
       </div>
-      <div className='content'>
-        <div className='date'>
-          <p className='month'>sep</p>
-          <p className='day'>09</p>
-          <p className='year'>2022</p>
-        </div>
-        <div className='event-details'>
-          <p className='title'>{title}</p>
-          <p className='desc'>{desc}</p>
-        </div>
+      <div className='details'>
+        <h3 className='title'>{title}</h3>
+        <p className='desc'>{desc}</p>
       </div>
     </div>
   );

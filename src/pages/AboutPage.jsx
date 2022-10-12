@@ -8,6 +8,7 @@ import VISSION from '/assets/website/icons/vission.svg';
 import OBJECTIVE from '/assets/website/icons/objective.svg';
 import HeadIntro from '../components/websiteComponents/HeadIntro';
 import WhatWeDoCard from '../components/websiteComponents/WhatWeDoCard';
+import WHAT_WE_DO from '/assets/website/icons/whatWeDoIcon.svg';
 
 const AboutPage = () => {
   return (
@@ -28,45 +29,81 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className='missionCards-container container-default'>
-        <MissionCard
-          image={MISSION}
-          title='Our Mission'
-          desc='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to '
-        />{' '}
-        <MissionCard
-          image={VISSION}
-          title='Our Vission'
-          desc='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to '
-        />{' '}
-        <MissionCard
-          image={OBJECTIVE}
-          title='Our Objective'
-          desc='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to '
+
+        <HeadIntro
+          title='Klab Rwanda'
+          desc=' We have several programs that helps people with different
+                  experinces getting started and strengthening their careers in
+                  tech We have several programs that helps people with different
+                  experinces.'
         />
-      </div>
-      <div className='what-wedo'>
-        <div className='content'>
-          <div className='container-default'>
-            <HeadIntro title='What we do' />
-            <div className='desc'>
-              <p>
-                We have several programs that helps people with different
-                experinces getting started and strengthening their careers in
-                tech We have several programs that helps people with different
-                experinces getting started and strengthening their careers in
-                tech We have several programs that helps people with different
-                experinces getting started and strengthening their careers in
-                tech{' '}
-              </p>
-            </div>
-            <div className='cards-container'>
-              <WhatWeDoCard />
+
+        <div className='missionCards-container container-default'>
+          <MissionCard
+            image={MISSION}
+            title='Our Mission'
+            desc='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to '
+          />{' '}
+          <MissionCard
+            image={VISSION}
+            title='Our Vission'
+            desc='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to '
+          />{' '}
+          <MissionCard
+            image={OBJECTIVE}
+            title='Our Objective'
+            desc='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to '
+          />
+        </div>
+
+        <div className='what-wedo'>
+          <div className='content'>
+            <div className='container-default'>
+              <HeadIntro
+                title='What we do'
+                desc=' We have several programs that helps people with different
+                  experinces getting started and strengthening their careers in
+                  tech We have several programs that helps people with different
+                  experinces getting started and strengthening their careers in
+                  tech.'
+              />
+
+              <div className='cards-container'>
+                <div>
+                  <WhatWeDoCard
+                    image={WHAT_WE_DO}
+                    title='IT Support'
+                    desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
+                  />
+                </div>
+
+                <div>
+                  <WhatWeDoCard
+                    image={WHAT_WE_DO}
+                    title='IT Support'
+                    desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
+                  />
+                </div>
+                <div>
+                  <WhatWeDoCard
+                    image={WHAT_WE_DO}
+                    title='IT Support'
+                    desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
+                  />
+                </div>
+                <div>
+                  <WhatWeDoCard
+                    image={WHAT_WE_DO}
+                    title='IT Support'
+                    desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
