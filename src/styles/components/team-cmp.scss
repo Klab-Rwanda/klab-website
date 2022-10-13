@@ -3,7 +3,7 @@
 
 .team-cmp {
   padding: 4rem 0;
-  padding-bottom: 20rem;
+  padding-bottom: 8rem;
   position: relative;
   background: linear-gradient(
     180deg,
@@ -66,12 +66,37 @@
 
   .content {
     padding: 50px;
-    max-width: 600px;
+    max-width: 700px;
     height: 100%;
     display: none;
-    border: 1px solid gray;
     border-radius: 5px;
-    box-shadow: 0px 4px 4px gray, 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 3;
+    padding: 80px;
+    text-align: center;
+    height: 550px;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url('/public/assets/website/images/trapeziode.svg') no-repeat;
+      background-size: contain;
+      top: -30px;
+      left: 0;
+      z-index: -1;
+    }
+    .intro {
+      border-bottom: 2px solid $brand-2;
+      margin-bottom: 2rem;
+    }
+    .socials {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
   }
 
   .active-content {

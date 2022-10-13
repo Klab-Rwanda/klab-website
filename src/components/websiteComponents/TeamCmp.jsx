@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import HeadIntro from './HeadIntro';
 import PLACE_HOLDER from '/assets/website/images/profilePlaceHolder.svg';
+import FB from '/assets/website/icons/fb.svg';
+import TWITTER from '/assets/website/icons/twitter.svg';
+import LINKEDIN from '/assets/website/icons/linkedin.svg';
+import YOUTUBE from '/assets/website/icons/youtube.svg';
+import IG from '/assets/website/icons/ig.svg';
+import { Link } from 'react-router-dom';
 
 function TeamCmp() {
   const [toggleState, setToggleState] = useState(1);
@@ -41,7 +47,7 @@ function TeamCmp() {
                 <img src={PLACE_HOLDER} />
               </div>
               <div className='intro'>
-                <h3 className='name'>B.Consolatrice</h3>
+                <h3 className='name'>U.Nicole</h3>
                 <p className='role'>Project manager</p>
               </div>
             </div>
@@ -55,7 +61,7 @@ function TeamCmp() {
                 <img src={PLACE_HOLDER} />
               </div>
               <div className='intro'>
-                <h3 className='name'>B.Consolatrice</h3>
+                <h3 className='name'>N. Issa</h3>
                 <p className='role'>Project manager</p>
               </div>
             </div>
@@ -117,10 +123,34 @@ function TeamCmp() {
               <p>
                 We have several programs that helps people with different
                 experinces getting started and strengthening their careers in
-                tech{' '}
+                tech We have several programs that helps people with different
+                experinces getting started and strengthening their careers in
+                tech We have
               </p>
             </div>
-            <div className='socials'>social medias</div>
+            <div className='socials'>
+              <div className='item'>
+                <Link to='/'>
+                  <img src={FB} alt='fb' />
+                </Link>
+              </div>
+              <div className='item'>
+                <Link to='/'>
+                  <img src={TWITTER} alt='twitter' />
+                </Link>
+              </div>
+
+              <div className='item'>
+                <Link to='/'>
+                  <img src={IG} alt='twitter' />
+                </Link>
+              </div>
+              <div className='item'>
+                <Link to='/'>
+                  <img src={LINKEDIN} alt='twitter' />
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div
@@ -128,29 +158,80 @@ function TeamCmp() {
               toggleState === 2 ? 'content  active-content' : 'content'
             }
           >
-            <h2>Content 2</h2>
-            <hr />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-              voluptatum qui adipisci.
-            </p>
-          </div>
+            <div className='intro'>
+              <h3 className='name'>U. Nicole</h3>
+              <p className='role'>Project manager</p>
+            </div>
+            <div className='desc'>
+              <p>
+                We have several programs that helps people with different
+                experinces getting started and strengthening their careers in
+                tech{' '}
+              </p>
+            </div>
+            <div className='socials'>
+              <div className='item'>
+                <Link to='/'>
+                  <img src={FB} alt='fb' />
+                </Link>
+              </div>
+              <div className='item'>
+                <Link to='/'>
+                  <img src={TWITTER} alt='twitter' />
+                </Link>
+              </div>
 
+              <div className='item'>
+                <Link to='/'>
+                  <img src={IG} alt='twitter' />
+                </Link>
+              </div>
+              <div className='item'>
+                <Link to='/'>
+                  <img src={LINKEDIN} alt='twitter' />
+                </Link>
+              </div>
+            </div>
+          </div>
           <div
             className={
               toggleState === 3 ? 'content  active-content' : 'content'
             }
           >
-            <h2>Content 3</h2>
-            <hr />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed
-              nostrum rerum laudantium totam unde adipisci incidunt modi alias!
-              Accusamus in quia odit aspernatur provident et ad vel distinctio
-              recusandae totam quidem repudiandae omnis veritatis nostrum
-              laboriosam architecto optio rem, dignissimos voluptatum beatae
-              aperiam voluptatem atque. Beatae rerum dolores sunt.
-            </p>
+            <div className='intro'>
+              <h3 className='name'>N. Issa</h3>
+              <p className='role'>Engineer</p>
+            </div>
+            <div className='desc'>
+              <p>
+                We have several programs that helps people with different
+                experinces getting started and strengthening their careers in
+                tech{' '}
+              </p>
+            </div>
+            <div className='socials'>
+              <div className='item'>
+                <Link to='/'>
+                  <img src={FB} alt='fb' />
+                </Link>
+              </div>
+              <div className='item'>
+                <Link to='/'>
+                  <img src={TWITTER} alt='twitter' />
+                </Link>
+              </div>
+
+              <div className='item'>
+                <Link to='/'>
+                  <img src={IG} alt='twitter' />
+                </Link>
+              </div>
+              <div className='item'>
+                <Link to='/'>
+                  <img src={LINKEDIN} alt='twitter' />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
