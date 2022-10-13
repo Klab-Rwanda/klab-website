@@ -9,6 +9,7 @@ import OBJECTIVE from '/assets/website/icons/objective.svg';
 import HeadIntro from '../components/websiteComponents/HeadIntro';
 import WhatWeDoCard from '../components/websiteComponents/WhatWeDoCard';
 import WHAT_WE_DO from '/assets/website/icons/whatWeDoIcon.svg';
+import TeamCmp from '../components/websiteComponents/TeamCmp';
 
 const AboutPage = () => {
   return (
@@ -69,38 +70,35 @@ const AboutPage = () => {
               />
 
               <div className='cards-container'>
-                <div>
-                  <WhatWeDoCard
-                    image={WHAT_WE_DO}
-                    title='IT Support'
-                    desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
-                  />
-                </div>
+                <WhatWeDoCard
+                  image={WHAT_WE_DO}
+                  title='IT Support'
+                  desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
+                />
 
-                <div>
-                  <WhatWeDoCard
-                    image={WHAT_WE_DO}
-                    title='IT Support'
-                    desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
-                  />
-                </div>
-                <div>
-                  <WhatWeDoCard
-                    image={WHAT_WE_DO}
-                    title='IT Support'
-                    desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
-                  />
-                </div>
-                <div>
-                  <WhatWeDoCard
-                    image={WHAT_WE_DO}
-                    title='IT Support'
-                    desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
-                  />
-                </div>
+                <WhatWeDoCard
+                  image={WHAT_WE_DO}
+                  title='IT Support'
+                  desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
+                />
+
+                <WhatWeDoCard
+                  image={WHAT_WE_DO}
+                  title='IT Support'
+                  desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
+                />
+
+                <WhatWeDoCard
+                  image={WHAT_WE_DO}
+                  title='IT Support'
+                  desc='We have several programs that helps people with different experinces getting started and strengthening their careers in tech '
+                />
               </div>
             </div>
           </div>
+        </div>
+        <div className='team-container'>
+          <TeamCmp />
         </div>
       </div>
 

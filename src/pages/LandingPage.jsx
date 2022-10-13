@@ -3,13 +3,11 @@ import Footer from '../components/websiteComponents/Footer';
 import NavBar from '../components/websiteComponents/Navbar';
 import ProgramsCards from '../components/websiteComponents/ProgramsCards';
 import HERO_BANNER_IMG from '/assets/website/images/heroBanner.png';
-import BlueDecoration from '/assets/website/decorations/blue.svg';
-import grayDecoration from '/assets/website/decorations/gray.svg';
-import WhiteDecoration from '/assets/website/decorations/white.svg';
 import Mission from '../components/websiteComponents/Mission';
 import Partners from '../components/websiteComponents/Partners';
 import Testimonials from '../components/websiteComponents/Testimonials';
 import Contacts from '../components/websiteComponents/Contacts';
+import TeamCmp from '../components/websiteComponents/TeamCmp';
 
 const LandingPage = () => {
   return (
@@ -29,16 +27,6 @@ const LandingPage = () => {
                 Become a member
               </button>
             </div>
-            <div className='white-decoration'>
-              <img src={WhiteDecoration} alt='decoration' />
-            </div>
-          </div>
-
-          <div className='colored-decorations '>
-            <img src={grayDecoration} alt='decoration' />
-          </div>
-          <div className='colored-decorations '>
-            <img src={BlueDecoration} alt='decoration' />
           </div>
         </div>
         <div className='Program-cards-container'>
@@ -52,6 +40,9 @@ const LandingPage = () => {
         </div>
         <div className='testimonials-cmp-container container-default'>
           <Testimonials />
+        </div>
+        <div className='team-container'>
+          <TeamCmp />
         </div>
         <div className='contacts-cmp-container container-default'>
           <Contacts />

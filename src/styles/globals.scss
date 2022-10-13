@@ -14,6 +14,7 @@
 @import './components/testimonials.scss';
 @import './components/contacts.scss';
 @import './components/eventsCards.scss';
+@import './components/team-cmp.scss';
 
 // PAGES CSS
 @import './pages/LandingPage.scss';
@@ -37,10 +38,10 @@ html {
 }
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 2px;
-  background: $brand-3;
+  background: white;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: $brand-1;
+  background-color: gray;
   border-radius: 1px;
 }
 

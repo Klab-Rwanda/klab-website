@@ -3,7 +3,7 @@
 
 .landingPage {
   .hero-banner {
-    height: 90vh;
+    height: 100vh;
     position: relative;
     margin-bottom: 50px;
     &::before {
@@ -27,12 +27,13 @@
       position: absolute;
       z-index: 3;
       width: 100%;
-      top: 10%;
       height: 100%;
+      top: 30%;
       padding-top: 4rem;
       text-align: center;
       display: flex;
       flex-direction: column;
+      margin: auto;
       h1 {
         color: white;
         font-weight: 600;
@@ -58,12 +59,6 @@
         margin-bottom: 20px;
       }
     }
-    .colored-decorations {
-      position: absolute;
-      width: 100%;
-      bottom: 2%;
-      z-index: 7;
-    }
   }
   .Program-cards-container {
     padding-top: 3rem;
@@ -88,6 +83,19 @@
     @include mobile-l {
       padding: 2rem 0;
     }
+  }
+
+  .team-cmp {
+    &::after {
+      content: '';
+      height: 240px;
+      width: 100%;
+      background: url('/assets/website/decorations/white.svg') no-repeat;
+      background-size: cover;
+      position: absolute;
+      bottom: -70px;
+    }
+    margin-bottom: 6rem;
   }
   .contacts-cmp-container {
     padding: 3rem 0;
