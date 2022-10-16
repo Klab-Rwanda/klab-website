@@ -1,8 +1,8 @@
 @import '../variables';
 @import '../mixinis';
 
-.loginPage {
-  .loginPage-container {
+.registerPage {
+  .registerPage-container {
     margin-top: 6rem;
     margin-bottom: 4rem;
     border: 1px solid gray;
@@ -19,7 +19,7 @@
     );
 
     .left-part {
-      width: 50%;
+      width: 40%;
       background: url('/assets/website/images/heroBanner.png') no-repeat;
       background-size: cover;
       display: flex;
@@ -48,21 +48,15 @@
       }
     }
     .right {
-      width: 50%;
+      width: 60%;
       padding: 30px;
       .intro {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        img {
-          width: 150px;
-          height: 150px;
-          border-radius: 100px;
+        h2{
+          font-size:28px;
         }
         p {
           font-weight: 600;
-          font-size: 30px;
+          font-size: 14px;
         }
       }
       .form {

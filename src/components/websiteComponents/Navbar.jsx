@@ -9,7 +9,7 @@ const MENU_LIST = [
   { text: 'Comunity', href: '/community' },
   { text: 'Programs', href: '/programs' },
   { text: 'Events', href: '/events' },
-  { text: 'Register', href: '/register', btn: true }
+  { text: 'Sign in', href: '/signin', btn: true }
 ];
 const Navbar = () => {
   const [navActive, setNavActive] = useState(null);
