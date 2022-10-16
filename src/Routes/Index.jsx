@@ -30,7 +30,7 @@ const Index = () => {
       <Route path='/about' element={<AboutPage />}></Route>
       <Route path='/programs' element={<ProgramsPage />}></Route>
       <Route path='/register' element={<RegisterPage />}></Route>
-      <Route path='/login' element={<LoginPage />}></Route>
+      <Route path='/signin' element={<LoginPage />}></Route>
       {/* Website routes ends here */}
 
       <Route path='admin' element={<Main />}></Route>
