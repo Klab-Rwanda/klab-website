@@ -24,14 +24,8 @@ const EventsPage = () => {
               </div>
             </div>
 
-            <div className='white-decoration'>
-              <img src={WhiteDecoration} alt='decoration' />
-            </div>
           </div>
 
-          <div className='colored-decorations '>
-            <img src={BlueDecoration} alt='decoration' />
-          </div>
         </div>
         <div className='events-cards-container container-default'>
           <EventsCards />
