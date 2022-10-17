@@ -2,8 +2,6 @@ import React from 'react';
 import Footer from '../components/websiteComponents/Footer';
 import NavBar from '../components/websiteComponents/Navbar';
 import HERO_BANNER_IMG from '/assets/website/images/event.png';
-import BlueDecoration from '/assets/website/decorations/blue.svg';
-import WhiteDecoration from '/assets/website/decorations/white.svg';
 import EventCard from '../components/websiteComponents/EventCard';
 import { Link } from 'react-router-dom';
 import FB from '/assets/website/icons/fb.svg';
@@ -64,9 +62,7 @@ const SingleEventPage = () => {
                 <button className='button'>+ Book Now </button>
               </div>
             </div>
-
           </div>
-
         </div>
         <div className='container-default'>
           <div className='single-event-body '>

@@ -8,7 +8,9 @@ const ProgramCard = ({ number, title, desc, linkTo }) => {
       <div className='number'>
         <p>{number}</p>
       </div>
-      <h3 className='title'>{title}</h3>
+      <Link to={`${linkTo}`}>
+        <h3 className='title'>{title}</h3>
+      </Link>
       <p className='desc'>{desc}</p>
       <Link to='#'>
         <div className='link'>

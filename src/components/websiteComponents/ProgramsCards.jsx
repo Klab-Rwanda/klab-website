@@ -15,21 +15,25 @@ const ProgramsCards = () => {
             number='1'
             title='Future kids'
             desc='A program dedicate for kids in their school vacancies and weekend programs'
+            linkTo='/program'
           />
           <ProgramCard
             number='1'
             title='Future kids'
             desc='A program dedicate for kids in their school vacancies and weekend programs'
+            linkTo='/program'
           />
           <ProgramCard
             number='1'
             title='Future kids'
             desc='A program dedicate for kids in their school vacancies and weekend programs'
+            linkTo='/program'
           />
           <ProgramCard
             number='1'
             title='Future kids'
             desc='A program dedicate for kids in their school vacancies and weekend programs'
+            linkTo='/program'
           />
         </div>
       </div>
