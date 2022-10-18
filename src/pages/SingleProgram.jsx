@@ -93,9 +93,9 @@ const SingleProgramPage = () => {
               <button className='button'>Apply now</button>
             </Link>
           </div>
-          <div className='garelly'>
-            <h2 className='title'>Garelly</h2>
-            <div className='garelly-images'>
+          <div className='gallery'>
+            <h2 className='title'>Gallery</h2>
+            <div className='gallery-images'>
               <div className='image'>
                 <img src={HERO_BANNER_IMG} alt='' />
               </div>{' '}
