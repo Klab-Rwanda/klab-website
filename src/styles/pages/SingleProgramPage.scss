@@ -93,16 +93,18 @@
         font-size: 20px;
         line-height: 24px;
         padding: 10px 20px;
+        cursor: pointer;
       }
     }
-    .garelly {
+    .gallery {
       margin: 3rem 0;
       h2 {
         margin: 1rem 0;
         font-weight: 500;
         font-size: 36px;
+        color: black;
       }
-      .garelly-images {
+      .gallery-images {
         display: flex;
         gap: 24px;
         @include mobile-l {
@@ -113,6 +115,7 @@
           height: 300px;
           border: 5px;
           overflow: hidden;
+          border-radius: 10px;
           @include mobile-l {
             width: 100%;
           }
