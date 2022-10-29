@@ -89,7 +89,7 @@ const SingleProgramPage = () => {
           </div>
           <div className='apply'>
             <h2 className='deadline'>Application Deadline: 4th November</h2>
-            <Link to='/apply/techupSkills'>
+            <Link to='/apply/tech-up-skills'>
               <button className='button'>Apply now</button>
             </Link>
           </div>
