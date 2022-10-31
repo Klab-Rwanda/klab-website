@@ -67,7 +67,8 @@
           font-weight: 500;
         }
         input,
-        select {
+        select,
+        textarea {
           border: none;
           width: 100%;
           border-bottom: 1px solid $brand-2;
@@ -75,10 +76,16 @@
           background: transparent;
           color: $brand-2;
         }
+        textarea {
+          border: 1px solid $brand-2;
+          border-radius: 5px;
+          padding: 10px;
+        }
       }
       .radio-input {
         margin: 1.4rem 0;
         .option {
+          display: flex;
           justify-content: left;
           align-items: center;
         }

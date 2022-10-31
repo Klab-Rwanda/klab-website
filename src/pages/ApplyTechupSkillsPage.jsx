@@ -1,10 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
 import Footer from '../components/websiteComponents/Footer';
 import HeadIntro from '../components/websiteComponents/HeadIntro';
 import NavBar from '../components/websiteComponents/Navbar';
 import HERO_BANNER_IMG from '/assets/website/images/event.png';
 
 const ApplyTechupSkillsPage = () => {
+  const [category, setCategory] = useState('');
   return (
     <div className='apply-techup-skills-page'>
       <NavBar />
@@ -16,7 +18,7 @@ const ApplyTechupSkillsPage = () => {
               <div className='content-container'>
                 <h1>Apply to techup skills program</h1>
                 <p>
-                  kLab provides an open space for IT entrepreneurs to
+                  kLab provides an open space htmlFor IT entrepreneurs to
                   collaborate and innovate in Kigali, Rwanda.
                 </p>
               </div>
@@ -118,7 +120,7 @@ const ApplyTechupSkillsPage = () => {
                       <input type='radio' name='work' value='graduate' />
                     </div>
                     <div>
-                      <label for='html'>Graduate</label>
+                      <label htmlFor='html'>Graduate</label>
                     </div>
                   </div>
 
@@ -127,7 +129,7 @@ const ApplyTechupSkillsPage = () => {
                       <input type='radio' name='work' value='student' />
                     </div>
                     <div>
-                      <label for='html'>Student</label>
+                      <label htmlFor='html'>Student</label>
                     </div>
                   </div>
 
@@ -136,7 +138,7 @@ const ApplyTechupSkillsPage = () => {
                       <input type='radio' name='work' value='other' />{' '}
                     </div>
                     <div>
-                      <label for='html'>Other</label>
+                      <label htmlFor='html'>Other</label>
                     </div>
                   </div>
                 </div>
@@ -153,7 +155,7 @@ const ApplyTechupSkillsPage = () => {
                       />
                     </div>
                     <div>
-                      <label for='html'>High School</label>
+                      <label htmlFor='html'>High School</label>
                     </div>
                   </div>
 
@@ -162,7 +164,7 @@ const ApplyTechupSkillsPage = () => {
                       <input type='radio' name='edu_level' value='student' />
                     </div>
                     <div>
-                      <label for='html'>Student(University)</label>
+                      <label htmlFor='html'>Student(University)</label>
                     </div>
                   </div>
 
@@ -171,7 +173,7 @@ const ApplyTechupSkillsPage = () => {
                       <input type='radio' name='edu_level' value='graduate' />{' '}
                     </div>
                     <div>
-                      <label for='html'>Graduate(From university)</label>
+                      <label htmlFor='html'>Graduate(From university)</label>
                     </div>
                   </div>
 
@@ -180,7 +182,7 @@ const ApplyTechupSkillsPage = () => {
                       <input type='radio' name='edu_level' value='master' />{' '}
                     </div>
                     <div>
-                      <label for='html'>Masters</label>
+                      <label htmlFor='html'>Masters</label>
                     </div>
                   </div>
                 </div>
@@ -211,6 +213,176 @@ const ApplyTechupSkillsPage = () => {
                   <input type='text' name='faculty' placeholder='Field' />
                 </div>
               </div>
+            </div>
+
+            <div className='category'>
+              <h4>Application Category</h4>
+              <p>During this call we have two category</p>
+
+              <div className='basicInfo'>
+                <div className='left'>
+                  <div className='radio-input'>
+                    <p>Which category do fit in?</p>
+                    <div
+                      className='option'
+                      onClick={() => {
+                        setCategory('entrepreneur');
+                      }}
+                    >
+                      <div>
+                        <input
+                          type='radio'
+                          name='category'
+                          value='entrepreneur'
+                          readOnly
+                          checked={category == 'entrepreneur'}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor='entrepreneur'>Tech entrepreneur</label>
+                      </div>
+                    </div>
+
+                    <div
+                      className='option'
+                      onClick={() => {
+                        setCategory('talent');
+                      }}
+                    >
+                      <div>
+                        <input
+                          type='radio'
+                          name='category'
+                          value='talent'
+                          readOnly
+                          checked={category == 'talent'}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor='talent'>
+                          Software Developer (Talent)
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* DEVELOPER */}
+              {category && category === 'talent' ? (
+                <div className='software'>
+                  <HeadIntro title='Software Developer' />
+                  <div className='basicInfo'>
+                    <div className='left'>
+                      <div className='radio-input'>
+                        <p>Which skills do you want to gain?</p>
+                        <div className='option'>
+                          <div>
+                            <input type='radio' name='stack' value='backend' />
+                          </div>
+                          <div>
+                            <label htmlFor='html'>
+                              Backend Development skills
+                            </label>
+                          </div>
+                        </div>
+
+                        <div className='option'>
+                          <div>
+                            <input type='radio' name='stack' value='frontend' />
+                          </div>
+                          <div>
+                            <label htmlFor='html'>
+                              Frontend Development skills
+                            </label>
+                          </div>
+                        </div>
+
+                        <div className='option'>
+                          <div>
+                            <input type='radio' name='stack' value='mobile' />{' '}
+                          </div>
+                          <div>
+                            <label htmlFor='html'>
+                              Mobile Development skills
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='input'>
+                        <label>Share your Github/lab Link</label>
+                        <input name='github' placeholder='Your answer here' />
+                      </div>
+                    </div>
+
+                    <div className='right'>
+                      <div className='input'>
+                        <label>
+                          Describe your skills , not more than 200 words.
+                        </label>
+                        <textarea
+                          name='skills'
+                          rows='3'
+                          placeholder='Your answer here'
+                        />
+                      </div>
+                      <div className='input'>
+                        <label>Upload your CV</label>
+                        <input
+                          type='file'
+                          name='file'
+                          placeholder='Your CV here'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                ''
+              )}
+
+              {/* TECH ENTREPRENUER */}
+              {category && category === 'entrepreneur' ? (
+                <div className='entrepreneur'>
+                  <HeadIntro title='Tech entrepreneur' />
+                  <div className='basicInfo'>
+                    <div className='left'>
+                      <div className='input'>
+                        <label>
+                          If you are an entrepreneur, Please describe your
+                          innovation description in not less than 200 words.
+                        </label>
+                        <textarea
+                          name='project'
+                          rows='3'
+                          placeholder='Your answer here'
+                        />
+                      </div>
+                      <div className='input'>
+                        <label>Share your innovation business model</label>
+                        <textarea
+                          name='project'
+                          rows='3'
+                          placeholder='Your answer here'
+                        />
+                      </div>
+                    </div>
+
+                    <div className='right'>
+                      <div className='input'>
+                        <label>Upload your CV</label>
+                        <input
+                          type='file'
+                          name='file'
+                          placeholder='Your CV here'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                ''
+              )}
             </div>
 
             <button className='button' type='submit'>
