@@ -386,7 +386,7 @@ const ApplyTechupSkillsPage = () => {
             </div>
 
             <button className='button' type='submit'>
-              Send
+              Submit
             </button>
           </form>
         </div>
