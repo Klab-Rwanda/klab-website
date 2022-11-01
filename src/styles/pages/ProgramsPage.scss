@@ -1,9 +1,9 @@
 @import '../variables';
 @import '../mixinis';
 
-.landingPage {
+.progrmasPage {
   .hero-banner {
-    height: 100vh;
+    height: 60vh;
     position: relative;
     margin-bottom: 50px;
     &::before {
@@ -66,47 +66,5 @@
       padding-top: 2rem;
     }
   }
-  .mission-container {
-    padding: 3rem 0;
-    @include mobile-l {
-      padding: 2rem 0;
-    }
-  }
-  .paartners-cmp-container {
-    padding-bottom: 6rem;
-    @include mobile-l {
-      padding-bottom: 4rem;
-    }
-  }
-  .testimonials-cmp-container {
-    padding: 3rem 0;
-    @include mobile-l {
-      padding: 2rem 0;
-    }
-  }
 
-  .team-cmp {
-    &::after {
-      content: '';
-      height: 240px;
-      width: 100%;
-      background: url('/assets/website/decorations/white.svg') no-repeat;
-      background-size: cover;
-      position: absolute;
-      bottom: -70px;
-    }
-    margin-bottom: 6rem;
-    @include tablet-mobile {
-      margin-bottom: 4rem;
-      .content {
-        padding-bottom: 0;
-      }
-    }
-  }
-  .contacts-cmp-container {
-    padding: 3rem 0;
-    @include mobile-l {
-      padding: 2rem 0;
-    }
-  }
 }

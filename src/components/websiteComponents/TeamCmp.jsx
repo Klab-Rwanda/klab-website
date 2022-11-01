@@ -4,7 +4,6 @@ import PLACE_HOLDER from '/assets/website/images/profilePlaceHolder.svg';
 import FB from '/assets/website/icons/fb.svg';
 import TWITTER from '/assets/website/icons/twitter.svg';
 import LINKEDIN from '/assets/website/icons/linkedin.svg';
-import YOUTUBE from '/assets/website/icons/youtube.svg';
 import IG from '/assets/website/icons/ig.svg';
 import { Link } from 'react-router-dom';
 
@@ -26,7 +25,7 @@ function TeamCmp() {
           <div className='tabs'>
             <div
               data-tab-item
-              className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
+              className={toggleState === 1 ? 'tab active-tabs' : 'tab'}
               onClick={() => toggleTab(1)}
             >
               <div className='image'>
@@ -40,7 +39,7 @@ function TeamCmp() {
 
             <div
               data-tab-item
-              className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
+              className={toggleState === 2 ? 'tab active-tabs' : 'tab'}
               onClick={() => toggleTab(2)}
             >
               <div className='image'>
@@ -54,7 +53,7 @@ function TeamCmp() {
 
             <div
               data-tab-item
-              className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'}
+              className={toggleState === 3 ? 'tab active-tabs' : 'tab'}
               onClick={() => toggleTab(3)}
             >
               <div className='image'>
@@ -67,7 +66,7 @@ function TeamCmp() {
             </div>
             <div
               data-tab-item
-              className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
+              className={toggleState === 1 ? 'tab active-tabs' : 'tab'}
               onClick={() => toggleTab(1)}
             >
               <div className='image'>
@@ -81,7 +80,7 @@ function TeamCmp() {
 
             <div
               data-tab-item
-              className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
+              className={toggleState === 2 ? 'tab active-tabs' : 'tab'}
               onClick={() => toggleTab(2)}
             >
               <div className='image'>
@@ -95,7 +94,7 @@ function TeamCmp() {
 
             <div
               data-tab-item
-              className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'}
+              className={toggleState === 3 ? 'tab active-tabs' : 'tab'}
               onClick={() => toggleTab(3)}
             >
               <div className='image'>
@@ -115,6 +114,9 @@ function TeamCmp() {
               toggleState === 1 ? 'content  active-content' : 'content'
             }
           >
+            <div className='image'>
+              <img src={PLACE_HOLDER} />
+            </div>
             <div className='intro'>
               <h3 className='name'>B.Consolatrice</h3>
               <p className='role'>Project manager</p>
@@ -158,6 +160,9 @@ function TeamCmp() {
               toggleState === 2 ? 'content  active-content' : 'content'
             }
           >
+            <div className='image'>
+              <img src={PLACE_HOLDER} />
+            </div>
             <div className='intro'>
               <h3 className='name'>U. Nicole</h3>
               <p className='role'>Project manager</p>
@@ -198,6 +203,9 @@ function TeamCmp() {
               toggleState === 3 ? 'content  active-content' : 'content'
             }
           >
+            <div className='image'>
+              <img src={PLACE_HOLDER} />
+            </div>
             <div className='intro'>
               <h3 className='name'>N. Issa</h3>
               <p className='role'>Engineer</p>

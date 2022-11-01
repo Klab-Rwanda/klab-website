@@ -12,7 +12,7 @@ const ProgramCard = ({ number, title, desc, linkTo }) => {
         <h3 className='title'>{title}</h3>
       </Link>
       <p className='desc'>{desc}</p>
-      <Link to='#'>
+      <Link to={`${linkTo}`}>
         <div className='link'>
           <div>
             <a href={linkTo}>Learn more</a>
