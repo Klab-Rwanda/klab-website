@@ -29,7 +29,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className='Program-cards-container'>
+        <div  className='Program-cards-container'>
           <ProgramsCards />
         </div>
         <div className='mission-container container-default'>

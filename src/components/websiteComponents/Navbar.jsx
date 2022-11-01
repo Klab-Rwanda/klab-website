@@ -6,9 +6,9 @@ import Logo from '../../../public/assets/website/images/logo.svg';
 const MENU_LIST = [
   { text: 'Home', href: '/' },
   { text: 'About', href: '/about' },
-  { text: 'Comunity', href: '/community' },
   { text: 'Programs', href: '/programs' },
   { text: 'Events', href: '/events' },
+  { text: 'Comunity', href: '/community' },
   { text: 'Sign in', href: '/signin', btn: true }
 ];
 const Navbar = () => {

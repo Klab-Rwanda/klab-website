@@ -18,19 +18,19 @@ const ProgramsCards = () => {
             linkTo='/program'
           />
           <ProgramCard
-            number='1'
+            number='2'
             title='Future kids'
             desc='A program dedicate for kids in their school vacancies and weekend programs'
             linkTo='/program'
           />
           <ProgramCard
-            number='1'
+            number='3'
             title='Future kids'
             desc='A program dedicate for kids in their school vacancies and weekend programs'
             linkTo='/program'
           />
           <ProgramCard
-            number='1'
+            number='4'
             title='Future kids'
             desc='A program dedicate for kids in their school vacancies and weekend programs'
             linkTo='/program'
