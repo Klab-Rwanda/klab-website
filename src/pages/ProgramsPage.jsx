@@ -18,17 +18,18 @@ const ProgramsPage = () => {
               <div className='content-container'>
                 <h1>We have several programs </h1>
                 <p>
-                  You can chose the best program that fits your needs and come gain these skills
+                  You can chose the best program that fits your needs and come
+                  gain these skills
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div  className='Program-cards-container'>
-<ProgramsCards/>
+        <div className='Program-cards-container'>
+          <ProgramsCards />
         </div>
-      <div className='contacts-cmp-container container-default'>
+        <div className='contacts-cmp-container container-default'>
           <Contacts />
         </div>
       </div>
