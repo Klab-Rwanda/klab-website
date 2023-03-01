@@ -27,6 +27,9 @@
       flex-direction: column;
       padding: 8rem 40px;
       position: relative;
+      @include mobile-l{
+            display: none;
+          }
       &::after {
         content: '';
         width: 100%;
@@ -50,6 +53,9 @@
     .right {
       width: 60%;
       padding: 30px;
+      @include mobile-l{
+        width: 100%;
+      }
       .intro {
         h2{
           font-size:28px;
@@ -81,10 +87,10 @@
         }
         .button {
           padding: 10px 30px;
-          background: #e9e9e9;
-          width: 200px;
+          background: $brand-dark;
+          width: 100%;
           border-radius: 5px;
-          color: black;
+          color: $brand-white;
           font-size: 20px;
         }
       }

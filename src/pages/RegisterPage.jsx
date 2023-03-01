@@ -46,7 +46,7 @@ const RegisterPage = () => {
               </div>
 
               <button className='button' type='submit'>
-                Login
+                Register
               </button>
             </form>
             <div className='form-footer'>

@@ -8,9 +8,9 @@ const LoginPage = () => {
   return (
     <div>
       <NavBar />
-      <div className='loginPage container-default'>
-        <div className='loginPage-container '>
-          <div className='left-part'>
+      <div className="loginPage container-default">
+        <div className="loginPage-container ">
+          <div className="left-part">
             <h2>Make a Dream.</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -19,36 +19,35 @@ const LoginPage = () => {
             </p>
           </div>
 
-          <div className='right'>
-            <div className='intro'>
+          <div className="right">
+            <div className="intro">
               <img src={PROFILE} />
               <p>Welcome back!</p>
             </div>
-            <form className='form'>
-              <div className='input'>
-                <input type='email' name='email' placeholder='Email' />
+            <form className="form">
+              <div className="input">
+                <input type="email" name="email" placeholder="Email" />
               </div>
-              <div className='input'>
-                <input type='password' name='password' placeholder='Password' />
+              <div className="input">
+                <input type="password" name="password" placeholder="Password" />
               </div>
-
-              <button className='button' type='submit'>
+              <p>
+                <Link className="link" to="/forgotPassword">
+                  Forgot password?
+                </Link>
+              </p>
+              <button className="button" type="submit">
                 Login
               </button>
             </form>
-            <div className='form-footer'>
+            <div className="form-footer">
               <p>
                 Don't have an account?
                 <span>
-                  <Link className='link' to='/register'>
+                  <Link className="link" to="/register">
                     Register
                   </Link>
                 </span>
-              </p>
-              <p>
-                <Link className='link' to='/forgotPassword'>
-                  Forgot password
-                </Link>
               </p>
             </div>
           </div>

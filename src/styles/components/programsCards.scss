@@ -18,26 +18,34 @@
     box-shadow: 3px 5px 31px 6px rgba(193, 193, 193, 0.25);
     border-radius: 15px;
     width: 100%;
-    padding: 20px;
-    max-width: 268px;
+    // padding: 20px;
+    max-width: 350px;
     @include mobile-l {
       margin: auto;
       margin-top: 3rem;
     }
+    .program-img{
+      img{
+        max-width: 350px;
+      }
+      
+    }
     .title {
-      margin-top: 32px;
+      margin-top: 10px;
+      padding: 0 10px;
+      margin-bottom: 0px;
     }
     .number {
-      width: 64px;
-      height: 64px;
+      width: 100px;
+      height: 30px;
       background: $brand-1;
-      border-radius: 200px;
+      border-top-left-radius: 8px;
       position: absolute;
-      left: 40%;
-      top: -30px;
+      left: 0%;
+      top: 0px;
       text-align: center;
-      font-weight: 700;
-      font-size: 25px;
+      font-weight: 600;
+      font-size: 16px;
       display: flex;
       margin: auto;
       justify-content: center;
@@ -47,16 +55,22 @@
       }
     }
     .desc {
-      padding: 12px 0;
+      padding: 0 10px;
+      margin-bottom: 10px;
     }
     .link {
       display: flex;
       gap: 8px;
       align-items: center;
       justify-content: flex-start;
+      a{
+        color: $brand-1;
+      }
+      
     }
     a {
-      color: $brand-1;
+      padding: 0 10px;
+      color: $brand-dark;
       font-weight: bold;
       cursor: pointer;
     }
