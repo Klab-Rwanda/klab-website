@@ -11,7 +11,7 @@
     grid-template-columns: repeat(4, 1fr);
     h2 {
       font-size: 1.1rem;
-      color: $brand-2;
+      color: $brand-white;
       margin-bottom: 1.4rem;
     }
     .footer-link {
@@ -40,12 +40,16 @@
     }
     .cta {
       font-size: 0.9rem;
+      color: $brand-white;
       margin-bottom: 8px;
+    }
+    .button{
+      background-color: #B9930B;
     }
     input {
       width: 100%;
       font-size: 1rem;
-      background: $brand-2;
+      background: $brand-white;
       border: none;
       color: black;
       padding: 5px;

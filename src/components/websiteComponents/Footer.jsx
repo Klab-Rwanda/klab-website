@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '/assets/website/images/logo.svg';
+import Logo from '/assets/website/images/logo-2.svg';
 import FB from '/assets/website/icons/fb.svg';
 import TWITTER from '/assets/website/icons/twitter.svg';
 import LINKEDIN from '/assets/website/icons/linkedin.svg';

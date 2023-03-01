@@ -8,43 +8,46 @@ import Partners from '../components/websiteComponents/Partners';
 import Testimonials from '../components/websiteComponents/Testimonials';
 import Contacts from '../components/websiteComponents/Contacts';
 import TeamCmp from '../components/websiteComponents/TeamCmp';
+import {Link} from 'react-router-dom';
 
 const LandingPage = () => {
   return (
-    <div className='landingPage'>
+    <div className="landingPage">
       <NavBar />
       <div>
-        <div className='hero-banner'>
-          <img src={HERO_BANNER_IMG} alt='herobaner-bg' />
-          <div className='content'>
+        <div className="hero-banner">
+          <img src={HERO_BANNER_IMG} alt="herobaner-bg" />
+          <div className="content">
             <div>
               <h1>Klab Rwanda</h1>
               <p>
                 kLab provides an open space for IT entrepreneurs to collaborate
                 and innovate in Kigali, Rwanda
               </p>
-              <button type='submit' className='button'>
-                Become a member
-              </button>
+              <Link clasName="link" to="/register">
+                <button type="submit" className="button">
+                  Become a member
+                </button>
+              </Link>
             </div>
           </div>
         </div>
-        <div className='Program-cards-container'>
+        <div className="Program-cards-container">
           <ProgramsCards />
         </div>
-        <div className='mission-container container-default'>
+        <div className="mission-container container-default">
           <Mission />
         </div>
-        <div className='paartners-cmp-container'>
+        <div className="paartners-cmp-container">
           <Partners />
         </div>
-        <div className='testimonials-cmp-container container-default'>
+        <div className="testimonials-cmp-container container-default">
           <Testimonials />
         </div>
-        <div className='team-container'>
+        <div className="team-container">
           <TeamCmp />
         </div>
-        <div className='contacts-cmp-container container-default'>
+        <div className="contacts-cmp-container container-default">
           <Contacts />
         </div>
       </div>
