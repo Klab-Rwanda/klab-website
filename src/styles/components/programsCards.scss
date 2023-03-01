@@ -39,7 +39,7 @@
       width: 100px;
       height: 30px;
       background: $brand-1;
-      border-radius: 0px;
+      border-top-left-radius: 8px;
       position: absolute;
       left: 0%;
       top: 0px;
@@ -63,6 +63,10 @@
       gap: 8px;
       align-items: center;
       justify-content: flex-start;
+      a{
+        color: $brand-1;
+      }
+      
     }
     a {
       padding: 0 10px;
