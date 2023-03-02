@@ -2,13 +2,13 @@
 @import '../mixinis';
 
 .navbar-cmp {
-  border-bottom: 1px solid $brand-2;
+  // border-bottom: 1px solid $brand-2;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9;
   width: 100%;
-  background: $brand-white;
+  background: ;
   @include mobile-l {
     padding: 5px;
   }
