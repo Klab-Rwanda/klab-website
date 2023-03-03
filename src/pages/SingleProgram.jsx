@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../components/websiteComponents/Footer';
 import NavBar from '../components/websiteComponents/Navbar';
-import HERO_BANNER_IMG from '/assets/website/images/event.png';
+import HERO_BANNER_IMG from '/assets/website/images/heroBanner.png';
 import { Link } from 'react-router-dom';
 
 const SingleProgramPage = () => {
