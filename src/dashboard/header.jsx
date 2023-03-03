@@ -1,5 +1,4 @@
 import React from 'react'
-import './styles/admin/header.css'
 import {FaSearch} from 'react-icons/fa'
 import { MdTextsms } from "react-icons/md";
 import { BsBellFill } from "react-icons/bs";

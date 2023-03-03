@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import './styles/admin/sidebar.css'
 import logo from '../asset/Logo.png'
 import {HiHome} from 'react-icons/hi'
 import { MdApartment } from "react-icons/md";
