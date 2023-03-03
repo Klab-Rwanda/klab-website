@@ -1,4 +1,3 @@
-import React from 'react'
 import DashboardHeader from '../header'
 import DashboardSidebar from '../sideBar'
 
