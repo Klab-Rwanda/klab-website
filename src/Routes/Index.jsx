@@ -11,6 +11,7 @@ import LoginPage from '../pages/LoginPage';
 import SingleProgramPage from '../pages/SingleProgram';
 import ApplyTechupSkillsPage from '../pages/ApplyTechupSkillsPage';
 import AdminDashboard from '../dashboard/admin';
+import AdminEvents from '../dashboard/admin/Events';
 
 const Index = () => {
   return (
@@ -25,6 +26,7 @@ const Index = () => {
       <Route path='/register' exact element={<RegisterPage />}></Route>
       <Route path='/signin' exact element={<LoginPage />}></Route>
       <Route path='/admin/dashboard' exact element={<AdminDashboard/>}></Route>
+      <Route path='/dashboard/events' exact element={<AdminEvents />}></Route>
       <Route
         path='/apply/tech-up-skills'
         element={<ApplyTechupSkillsPage />}

@@ -1,0 +1,192 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixinis";
+
+.events-content {
+  margin: 6rem 17.5rem;
+  width: 100%;
+}
+.event-cards {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.card-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $brand-white;
+  padding: 10px 20px;
+  margin: 0 20px;
+  width: 228px;
+  border-radius: 16px;
+  // box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.07);
+
+  .allevents {
+    background-color: #2f85e1;
+  }
+  .new-events {
+    background-color: #b72727;
+  }
+  .hackathons {
+    background-color: #096b3b;
+  }
+  .competitons {
+    background-color: #b9930b;
+  }
+  .card-details {
+    line-height: 0.3;
+    p {
+      color: $brand-2;
+    }
+    h1 {
+      color: #18385a;
+      font-weight: bold;
+      font-size: 45px;
+    }
+  }
+}
+.card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: white !important;
+  font-size: 20px;
+}
+
+.events-container {
+  margin: 0 20px;
+  width: 60%;
+  // display: flex;
+  // flex-direction: row;
+}
+.events-header {
+  position: relative;
+  color: #18385a;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.5;
+
+  p {
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .titles {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    top: 55px;
+    left: 30%;
+    p {
+      margin: 0 15px;
+      font-size: 13px;
+    }
+  }
+}
+.events-table {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    th{
+      padding: 10px;
+    }
+    td{
+      padding: 10px;
+    }
+    .table-headers{
+        color: #18385a;
+        font-weight: bold;
+    }
+    .event-item{
+      color: #18385a;
+    }
+   .scrolable-table{
+    background-color: #fff;
+    width: 100%;
+   }
+   .actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    #delete-icon{
+      background-color: red;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px 0;
+      border-radius: 15px;
+    }
+    #pen{
+      cursor: pointer;
+      color: #2F85E1;
+    }
+   } 
+}
+.events-section{
+    display: flex;
+    flex-direction: row;
+   }
+
+.add-event{
+  width: 35%;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin: 70px 0;
+
+  .add-event-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #18385a;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    input, select{
+      margin: 10px 0;
+      height: 40px;
+      background-color: #F2F2F2;
+      border: none;
+      border-radius: 10px;
+      padding: 0 10px;
+    }
+    .dates{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+    .start-date{
+      width: 50%;
+    }
+    .end-date{
+      width: 50%;
+    }
+    input[type="file"]{
+      padding: 10px 10px;
+    }
+    textarea{
+      padding: 5px 10px;
+      background-color: #f2f2f2;
+      margin-bottom: 5px;
+      border: none;
+      border-radius: 10px;
+      height: 80px;
+      
+    }
+    button{
+      background-color: #2F85E1;
+      border: none;
+      color: #fff;
+      font-size: 12px;
+      height: 44px;
+      border-radius: 10px;
+    }
+  }
+}
