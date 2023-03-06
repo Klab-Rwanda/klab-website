@@ -13,6 +13,7 @@ import ApplyTechupSkillsPage from '../pages/ApplyTechupSkillsPage';
 import AdminDashboard from '../dashboard/admin';
 import AdminEvents from '../dashboard/admin/Events';
 
+
 const Index = () => {
   return (
     <Routes>
