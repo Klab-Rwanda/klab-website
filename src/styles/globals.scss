@@ -15,7 +15,9 @@
 @import './components/contacts.scss';
 @import './components/eventsCards.scss';
 @import './components/team-cmp.scss';
-
+@import '../dashboard/styles/header.scss';
+@import '../dashboard/styles/index.scss';
+@import '../dashboard/styles/sidebar.scss';
 // PAGES CSS
 @import './pages/LandingPage.scss';
 @import './pages/EventsPage.scss';
@@ -27,6 +29,7 @@
 @import './pages/ApplyPage.scss';
 @import './pages/ProgramsPage.scss';
 @import './pages/CommunityPage.scss';
+@import '../dashboard/styles/EventsPage.scss';
 
 
 

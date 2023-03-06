@@ -107,7 +107,7 @@ const SingleEventPage = () => {
                   <input type='email' name='email' placeholder='Email' />
                 </div>
                 <div className='text-area'>
-                  <textarea name='name' placeholder='Full name' />
+                  <textarea name='name' placeholder='Comment' />
                 </div>
                 <button className='button' type='submit'>
                   Send

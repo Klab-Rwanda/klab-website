@@ -1,5 +1,5 @@
-import React from 'react'
-import '../styles/admin/index.css'
+
+
 import Outline from './outline';
 
 const AdminDashboard = () => {
