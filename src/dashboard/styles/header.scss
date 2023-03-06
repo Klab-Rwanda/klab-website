@@ -1,8 +1,8 @@
-*{
-    color: #373C36;
-}
+// *{
+//     color: #373C36;
+// }
 .header{
-    width: 100dvw;
+    width: 100vw;
     height: 100px;
     background-color: #F2F8FF;
     padding: 20px 50px 30px 300px;
@@ -10,6 +10,7 @@
     position: fixed;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
 .header .profile{
     display: flex;
