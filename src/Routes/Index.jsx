@@ -13,7 +13,7 @@ import ApplyTechupSkillsPage from '../pages/ApplyTechupSkillsPage';
 import AdminDashboard from '../dashboard/admin';
 import AdminEvents from '../dashboard/admin/Events';
 import Companies from '../dashboard/admin/company';
-
+import SingleCompany from '../dashboard/admin/SingleCompany';
 
 const Index = () => {
   return (
@@ -30,6 +30,7 @@ const Index = () => {
       <Route path='/admin/dashboard' exact element={<AdminDashboard/>}></Route>
       <Route path='/dashboard/events' exact element={<AdminEvents />}></Route>
       <Route path='/dashboard/companies' exact element={<Companies />}></Route>
+      <Route path='/single-company' exact element={<SingleCompany />}></Route>
       <Route
         path='/apply/tech-up-skills'
         element={<ApplyTechupSkillsPage />}

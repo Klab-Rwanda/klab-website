@@ -3,6 +3,7 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { FaUsers, FaBell } from "react-icons/fa";
 import { MdApartment } from "react-icons/md";
 import SecondSidebar from "../secondSidebar";
+import { Link } from 'react-router-dom';
 
 export default function company() {
   return (
@@ -50,12 +51,65 @@ export default function company() {
             </div>
           </div>
         </div>
-              <SecondSidebar />
-              <div className="companies-container">
-                  <h1>Companies</h1>
+        <SecondSidebar />
+        <div className="companies-container">
+          <h1>Companies</h1>
+          <div className="holder-info">
+            <div className="info-company">
+              <div className="logo-co">
+                <BsFillPeopleFill />
               </div>
+              <span>
+                <h2>
+                  <Link to="single-company">Aline</Link>
+                </h2>
+                <p>
+                  <Link to="/single-company">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Culpa beatae at, eius doloremque numquam voluptatibus ipsum
+                    dolor unde laboriosam vitae optio minus pariatur
+                    exercitationem quidem deserunt nobis sequi architecto
+                    laudantium!
+                  </Link>
+                </p>
+                <p>aline@gmail.com</p>
+              </span>
+            </div>
+            <div className="info-company">
+              <div className="logo-co">
+                <BsFillPeopleFill />
+              </div>
+              <span>
+                <h2>Aline</h2>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Culpa beatae at, eius doloremque numquam voluptatibus ipsum
+                  dolor unde laboriosam vitae optio minus pariatur
+                  exercitationem quidem deserunt nobis sequi architecto
+                  laudantium!
+                </p>
+                <p>aline@gmail.com</p>
+              </span>
+            </div>
+            <div className="info-company">
+              <div className="logo-co">
+                <BsFillPeopleFill />
+              </div>
+              <span>
+                <h2>Aline</h2>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Culpa beatae at, eius doloremque numquam voluptatibus ipsum
+                  dolor unde laboriosam vitae optio minus pariatur
+                  exercitationem quidem deserunt nobis sequi architecto
+                  laudantium!
+                </p>
+                <p>aline@gmail.com</p>
+              </span>
+            </div>
+          </div>
+        </div>
       </section>
-      <section className="company-content1"></section>
     </div>
   );
 }
