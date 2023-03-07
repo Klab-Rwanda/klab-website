@@ -7,13 +7,15 @@ import { RiParentFill } from "react-icons/ri";
 import { BsFillCalendarEventFill } from "react-icons/bs";
 import { MdPayments } from "react-icons/md";
 import {HiBars3BottomLeft } from "react-icons/hi2";
-import {Link} from  "react-router-dom";
+import {NavLink} from  "react-router-dom";
 
 const DashboardSidebar = () => {
     const [sidebar, setSidebar] = useState(true);
     const handleToggle = () => {
         setSidebar(!sidebar);
     };
+
+    
     return (
       <div className="container">
         <div className="logo">
@@ -34,32 +36,46 @@ const DashboardSidebar = () => {
                 </span> */}
         </div>
         <ul className={`nav ${sidebar ? "" : "collapsed"}`}>
-          <li className="active" >
-            <HiHome />
-            {sidebar && <span>Dashboard</span>}
-          </li>
-          <li>
-            <MdApartment />
-            {sidebar && <span>Companies</span>}
-          </li>
-          <li>
-            <FaUsers />
-            {sidebar && <span>Members</span>}
-          </li>
-          <li>
-            <RiParentFill />
-            {sidebar && <span>Parents</span>}
-          </li>
-          <Link to="/dashboard/events">
+          <NavLink
+            to="/admin/dashboard"
+            activeclassName="active"
+            className="sidebar-link"
+          >
+            <li>
+              <HiHome />
+              {sidebar && <span>Dashboard</span>}
+            </li>
+          </NavLink>
+          <NavLink to="/" className="sidebar-link">
+            <li>
+              <MdApartment />
+              {sidebar && <span>Companies</span>}
+            </li>
+          </NavLink>
+          <NavLink to="/" className="sidebar-link">
+            <li>
+              <FaUsers />
+              {sidebar && <span>Members</span>}
+            </li>
+          </NavLink>
+          <NavLink to="/" className="sidebar-link">
+            <li>
+              <RiParentFill />
+              {sidebar && <span>Parents</span>}
+            </li>
+          </NavLink>
+          <NavLink to="/dashboard/events" className="sidebar-link">
             <li>
               <BsFillCalendarEventFill />
               {sidebar && <span>Events</span>}
             </li>
-          </Link>
-          <li>
-            <MdPayments />
-            {sidebar && <span>Transactions</span>}
-          </li>
+          </NavLink>
+          <NavLink to="/" className="sidebar-link">
+            <li>
+              <MdPayments />
+              {sidebar && <span>Transactions</span>}
+            </li>
+          </NavLink>
         </ul>
       </div>
     );

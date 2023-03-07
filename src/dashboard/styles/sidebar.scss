@@ -15,6 +15,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    .sidebar-link{
+        margin-top: 20px;
+    }
     
     li{
         border-left: 4px solid transparent;
@@ -23,28 +26,28 @@
         justify-content: flex-start;
         align-items: center;
         gap: 10px;
-        margin-top: 20px;
+        // margin-top: 20px;
         cursor: pointer;
         /* background-color: antiquewhite; */
         padding: 15px 60px 15px 15px;
         color: #627DA0;
         transition: ease-in-out 0.5s;
+        
     }
+    
 }
 }
-
-
 .container ul .nav{
     transition: ease-in-out 0.5s;
 }
 .container ul .nav.collapse{
      width: 50px;
 }
-.container ul li.active{
+.active{
     background-color: #F2F8FF;
     border-left: 4px solid #373C36;
     border-radius: 10px 0 0 10px;
-    color: #373C36;
+    color: red;
     font-size: 16px;
 }
 .container ul li:hover{
