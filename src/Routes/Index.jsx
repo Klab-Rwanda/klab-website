@@ -15,7 +15,6 @@ import AdminEvents from '../dashboard/admin/Events';
 import Companies from '../dashboard/admin/company';
 import SingleCompany from '../dashboard/admin/SingleCompany';
 
-
 const Index = () => {
   return (
     <Routes>
