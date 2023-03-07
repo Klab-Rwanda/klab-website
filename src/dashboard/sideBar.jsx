@@ -34,14 +34,16 @@ const DashboardSidebar = () => {
                 </span> */}
         </div>
         <ul className={`nav ${sidebar ? "" : "collapsed"}`}>
-          <li className="active" >
+          <li className="active">
             <HiHome />
             {sidebar && <span>Dashboard</span>}
           </li>
-          <li>
-            <MdApartment />
-            {sidebar && <span>Companies</span>}
-          </li>
+          <Link to="/dashboard/companies">
+            <li>
+              <MdApartment />
+              {sidebar && <span>Companies</span>}
+            </li>
+          </Link>
           <li>
             <FaUsers />
             {sidebar && <span>Members</span>}
