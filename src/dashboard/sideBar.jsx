@@ -46,13 +46,13 @@ const DashboardSidebar = () => {
               {sidebar && <span>Dashboard</span>}
             </li>
           </NavLink>
-          <NavLink to="/" className="sidebar-link">
+          <NavLink to="/dashboard/companies" className="sidebar-link">
             <li>
               <MdApartment />
               {sidebar && <span>Companies</span>}
             </li>
           </NavLink>
-          <NavLink to="/" className="sidebar-link">
+          <NavLink to="/dashboard/members" className="sidebar-link">
             <li>
               <FaUsers />
               {sidebar && <span>Members</span>}
