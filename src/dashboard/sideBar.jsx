@@ -65,6 +65,8 @@ const DashboardSidebar = () => {
             </li>
           </NavLink>
           <NavLink to="/dashboard/events" className="sidebar-link">
+          <Link to="/dashboard/events">
+
             <li>
               <BsFillCalendarEventFill />
               {sidebar && <span>Events</span>}
