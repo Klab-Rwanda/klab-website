@@ -11,8 +11,11 @@ import LoginPage from '../pages/LoginPage';
 import SingleProgramPage from '../pages/SingleProgram';
 import ApplyTechupSkillsPage from '../pages/ApplyTechupSkillsPage';
 import AdminDashboard from '../dashboard/admin';
+import AdminEvents from '../dashboard/admin/Events';
+import Companies from '../dashboard/admin/company';
 import Projectpage from '../dashboard/admin/projectspage';
-
+import Transactionpage from '../dashboard/admin/transactionpage';
+import Members from '../dashboard/styles/members';
 
 const Index = () => {
   return (
@@ -27,8 +30,11 @@ const Index = () => {
       <Route path='/register' exact element={<RegisterPage />}></Route>
       <Route path='/signin' exact element={<LoginPage />}></Route>
       <Route path='/admin/dashboard' exact element={<AdminDashboard/>}></Route>
-      <Route path='/project'exact element={<Projectpage/>}></Route>
-      
+      <Route path='/dashboard/events' exact element={<AdminEvents />}></Route>
+      <Route path='/dashboard/companies' exact element={<Companies />}></Route>
+      <Route path="/project" exact element={<Projectpage />}></Route>
+      <Route path='/transaction' exact element={<Transactionpage/>}></Route>
+      <Route path='/members' exact element={<Members/>}></Route>
       <Route
         path='/apply/tech-up-skills'
         element={<ApplyTechupSkillsPage />}

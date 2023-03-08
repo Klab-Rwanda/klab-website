@@ -1,0 +1,68 @@
+.secondSider {
+  background-color: rgb(255, 255, 255);
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: flex-start;
+  position: fixed;
+  padding: 40px 0 10px 20px;
+  margin-left: 300px;
+  z-index: 1000;
+  margin-top: 20px;
+  
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    li {
+      border-left: 4px solid transparent;
+      width: 100%;
+      font-size: 14px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+      padding: 15px 60px 15px 15px;
+      color: #627da0;
+      transition: ease-in-out 0.5s;
+      width: 100%;
+     
+    }
+    .comp-active {
+      background-color: #f2f8ff;
+      border-left: 4px solid #373c36;
+      border-radius: 10px 0 0 10px;
+      color: #373c36;
+      font-size: 14px;
+      width: 100%;
+      
+    }
+  }
+}
+
+.secondSidebar ul .nav {
+  transition: ease-in-out 0.5s;
+}
+.secondSidebar ul .nav.collapse {
+  width: 50px;
+}
+
+.secondSidebar ul li:hover {
+  background-color: #f2f8ff;
+  /* border-left: 4px solid #373C36; */
+  border-radius: 10px 0 0 10px;
+  color: #373c36;
+}
+.secondSidebar ul li span.hide {
+  display: none;
+}
+.secondSidebar ul li span.show {
+  display: none;
+}
+

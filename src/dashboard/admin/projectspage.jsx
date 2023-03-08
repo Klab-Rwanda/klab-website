@@ -6,6 +6,7 @@ import Profile from '/src/asset/Profile.png';
 import {FaCalendar, FaUsers, FaBell} from "react-icons/fa";
 import {MdApartment} from "react-icons/md";
 import {FaPlus} from "react-icons/fa";
+import Sidebar from "../secondSidebar";
 
 
 const Projectpage=()=>{
@@ -57,27 +58,41 @@ const Projectpage=()=>{
           </div>
         </div>
 
+        <div className='projects-section'>
+
+        
+        <div clasName="projects-sidebar">
+        <Sidebar />
+        </div>
+
         
          <div className='card'>
-         <div className='card7 head'>
+          <div className='head'>  
+         <div className='card7' head>
             <h1>Open</h1>
             <div className='icon'><FaPlus/></div>
             </div>
-              
-            <div className='card8 head'> 
-            <h1>In Progress</h1>
+            </div>
+            
+             <div className='head'> 
+            <div className='card8'> 
+            <div className='tex'><h1>In Progress</h1></div>
             <div className='icon'><FaPlus/></div>
-            </div>   
-            <div className='card9 head'>
+            </div>
+            </div>
+            <div className='head'>   
+            <div className='card9' head>
             <h1>Done</h1>
             <div className='icon'></div>
-            </div>   
+            </div>
+            </div>
+              
          <div class="card1 cards">
          <div class="headera">
             <div className='one'>UI Design</div>
             <div class="calender">
                 <AiTwotoneCalendar/>
-                <p>Due March 24</p>
+                <p>DueMarch24</p>
             </div>
         </div>
         <div className='paragraph'>
@@ -100,7 +115,7 @@ const Projectpage=()=>{
             <div className='one'>UI Design</div>
             <div class="calender">
                 <AiTwotoneCalendar/>
-                <p>Due March 24</p>
+                <p>DueMarch24</p>
             </div>
         </div>
         <div className='paragraph'>
@@ -122,7 +137,7 @@ const Projectpage=()=>{
             <div className='one'>UI Design</div>
             <div class="calender">
                 <AiTwotoneCalendar/>
-                <p>Due March 24</p>
+                <p>DueMarch24</p>
             </div>
         </div>
         <div className='paragraph'>
@@ -147,7 +162,7 @@ const Projectpage=()=>{
             <div className='one'>UI Design</div>
             <div class="calender">
                 <AiTwotoneCalendar/>
-                <p>Due March 24</p>
+                <p>DueMarch24</p>
             </div>
         </div>
         <div className='paragraph'>
@@ -169,7 +184,7 @@ const Projectpage=()=>{
             <div className='one'>UI Design</div>
             <div class="calender">
                 <AiTwotoneCalendar/>
-                <p>Due March 24</p>
+                <p>DueMarch24</p>
             </div>
         </div>
         <div className='paragraph'>
@@ -191,7 +206,7 @@ const Projectpage=()=>{
             <div className='one'>UI Design</div>
             <div class="calender">
                 <AiTwotoneCalendar/>
-                <p>Due March 24</p>
+                <p>DueMarch24</p>
             </div>
         </div>
         <div className='paragraph'>
@@ -209,7 +224,7 @@ const Projectpage=()=>{
         </div>
         </div>
         </div>
-        
+        </div>
     </section>
 </div>
 )

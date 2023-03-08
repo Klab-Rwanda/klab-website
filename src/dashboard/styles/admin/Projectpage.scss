@@ -51,79 +51,121 @@
     margin: 6rem 17.5rem;
     width: 100%;
 }
-.head{
+
+.card7{
   display: flex;
-  // flex-direction: row;
-  gap: 12rem;
   align-items: center;
-  justify-content: center;
-  margin-bottom: -2rem;
-  font-size: x-small;
-  margin-left: 5px;
+  justify-content: space-between;
+  gap: 4rem;
+  font-size: small;
+  // margin-top: 3rem;
+  margin-bottom: -5rem;
 }
+.card8{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  font-size: small;
+  // margin-top: 3rem;
+  margin-bottom: -5rem;
+}
+.card9{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  font-size: small;
+  // margin-top: 3rem;
+  margin-bottom: -5rem;
+}
+
 
 .card{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 80%;
-  gap: 20px;
+  width: 100%;
+  gap: 2rem;
+  margin-left: 18rem;
+  margin-right: 2rem;
   .card1{
         .one{
-            background-color: rgb(70, 140, 19);
+            background-color:rgb(9,107,59);
         }
         .progress{
-            border: 1px solid rgb(72, 144, 21);
+            border: 1px solid rgb(9,107,59);
+        }
+        .progress-inside{
+          background-color: rgb(9,107,59);
         }
       }
       .card2{
         .one{
-            background-color: rgb(70, 140, 19);
+            background-color: rgb(46,133,224);
         }
         .progress{
-            border: 1px solid rgb(72, 144, 21);
+            border: 1px solid rgb(46,133,224);
+            
         }
+        .progress-inside{
+          background-color: rgb(46,133,224)}
+        
       }
       .card3{
         .one{
-            background-color: rgb(70, 140, 19);
+            background-color:rgb(183,39,39);
         }
         .progress{
-            border: 1px solid rgb(72, 144, 21);
+            border: 1px solid rgb(183,39,39);
+        }
+        .progress-inside{
+          background-color:rgb(183,39,39);
         }
       }
       .card4{
         .one{
-            background-color: rgb(70, 140, 19);
+            background-color: rgb(9,107,59);
         }
         .progress{
-            border: 1px solid rgb(72, 144, 21);
+            border: 1px solid rgb(9,107,59);
+        }
+        .progress-inside{
+          background-color: rgb(9,107,59);
         }
       }
       .card5{
         .one{
-            background-color: rgb(70, 140, 19);
+            background-color: rgb(46,133,224);
         }
         .progress{
-            border: 1px solid rgb(72, 144, 21);
+            border: 1px solid rgb(46,133,224);
+        }
+        .progress-inside{
+          background-color: rgb(46,133,224);
         }
       }
       .card6{
         .one{
-            background-color: rgb(70, 140, 19);
+            background-color: rgb(183,39,39);
         }
         .progress{
-            border: 1px solid rgb(72, 144, 21);
+            border: 1px solid rgb(183,39,39);
+        }
+        .progress-inside{
+          background-color:rgb(183,39,39);
         }
       }
       .cards{
     background-color: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
     width: 100%;
-    height: 100%;
+    // gap: -7rem;
+    height: 200px;
+    margin-top: 15px;
+    margin-bottom: -2rem;
       }
   
 .headera{
@@ -132,7 +174,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // gap: 2rem;
+    gap: 0.5rem;
     margin-top: -1rem;
 }
 .one{
@@ -142,7 +184,7 @@
     width: 40%;
     border: none;
     // background-color: rgb(70, 140, 19);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: $brand-white;
     display: flex;
@@ -155,11 +197,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin-left: 2rem;
+    margin-left: 0rem;
+    font-size: 12px;
+    font-weight: 700;
    
 }
 .paragraph{
-    margin-right: auto;
+    margin-right: 1rem;
+    font-size: small;
+    font-weight: 700;
 }
 .progress-container{
     /* background-color: rgb(223, 154, 154); */
@@ -169,14 +215,14 @@
     
 }
 .progress{
-    border: 1px solid rgb(72, 144, 21);
+    // border: 1px solid rgb(72, 144, 21);
     border-radius: 10px;
     width: 80%;
     height: 10px;
 }
 .progress-inside{
     border-radius: 10px;
-    background-color: rgb(72, 144, 21);
+    // background-color: rgb(72, 144, 21);
     height: 100%;
     width: 78%;
     
@@ -190,7 +236,13 @@
     border: 2px solid white;
 }
 }
-
+.projects-sidebar{
+  width: 20%;
+}
+.projects-section{
+  display: flex;
+  flex-direction: row;
+}
 
 
 

@@ -7,7 +7,9 @@ const AdminDashboard = () => {
     <div className="wrapper">
       <Outline />
       <section className="content">
-        djdjjdkddjd
+        
+
+
       </section>
     </div>
   );
