@@ -5,6 +5,7 @@ import { MdApartment } from "react-icons/md";
 import SecondSidebar from "../secondSidebar";
 import { Link } from 'react-router-dom';
 
+
 export default function company() {
   return (
     <div className="wrapper">
