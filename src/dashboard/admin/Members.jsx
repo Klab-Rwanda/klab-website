@@ -14,7 +14,7 @@ const Members = () => {
         <div className="members-container">
           <div className="members-sider">
             <ul>
-              <NavLink to="/dashboard/members" end activeClassName="members-active">
+              <NavLink to="/dashboard/members" end >
                 <li>
                   <img src={Admin} alt="" /> <span>Administration</span>
                 </li>
