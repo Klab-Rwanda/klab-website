@@ -7,7 +7,7 @@ export default function secondSidebar() {
   return (
     <div className="secondSider container">
       <ul>
-        <li className="comp-active">
+        <li className="active">
           <BiGridSmall />
           <span>All Companies</span>
         </li>

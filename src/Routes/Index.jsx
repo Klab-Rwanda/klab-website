@@ -13,32 +13,36 @@ import ApplyTechupSkillsPage from '../pages/ApplyTechupSkillsPage';
 import AdminDashboard from '../dashboard/admin';
 import AdminEvents from '../dashboard/admin/Events';
 import Companies from '../dashboard/admin/company';
-import Projectpage from '../dashboard/admin/projectspage';
-import Transactionpage from '../dashboard/admin/transactionpage';
-import Members from '../dashboard/styles/members';
+import SingleCompany from '../dashboard/admin/SingleCompany';
+import MembersPage from '../dashboard/admin/Members';
+import Administration from '../dashboard/admin/members/Administration';
+import Partners from '../dashboard/admin/members/Partners';
 
 const Index = () => {
   return (
     <Routes>
-      <Route path='/' element={<LandingPage />}></Route>
-      <Route path='/community' exact element={<CommunityPage />}></Route>
-      <Route path='/events' exact element={<EventsPage />}></Route>
-      <Route path='/singleEvent' element={<SingleEventPage />}></Route>
-      <Route path='/about' exact element={<AboutPage />}></Route>
-      <Route path='/programs' exact element={<ProgramsPage />}></Route>
-      <Route path='/program' element={<SingleProgramPage />}></Route>
-      <Route path='/register' exact element={<RegisterPage />}></Route>
-      <Route path='/signin' exact element={<LoginPage />}></Route>
-      <Route path='/admin/dashboard' exact element={<AdminDashboard/>}></Route>
-      <Route path='/dashboard/events' exact element={<AdminEvents />}></Route>
-      <Route path='/dashboard/companies' exact element={<Companies />}></Route>
-      <Route path="/project" exact element={<Projectpage />}></Route>
-      <Route path='/transaction' exact element={<Transactionpage/>}></Route>
-      <Route path='/members' exact element={<Members/>}></Route>
+      <Route path="/" element={<LandingPage />}></Route>
+      <Route path="/community" exact element={<CommunityPage />}></Route>
+      <Route path="/events" exact element={<EventsPage />}></Route>
+      <Route path="/singleEvent" element={<SingleEventPage />}></Route>
+      <Route path="/about" exact element={<AboutPage />}></Route>
+      <Route path="/programs" exact element={<ProgramsPage />}></Route>
+      <Route path="/program" element={<SingleProgramPage />}></Route>
+      <Route path="/register" exact element={<RegisterPage />}></Route>
+      <Route path="/signin" exact element={<LoginPage />}></Route>
+      <Route path="/admin/dashboard" exact element={<AdminDashboard />}></Route>
+      <Route path="/dashboard/events" exact element={<AdminEvents />}></Route>
+      <Route path="/dashboard/companies" exact element={<Companies />}></Route>
+      <Route path="/single-company" exact element={<SingleCompany />}></Route>
       <Route
-        path='/apply/tech-up-skills'
+        path="/apply/tech-up-skills"
         element={<ApplyTechupSkillsPage />}
       ></Route>
+
+      <Route path="/dashboard/members" exact element={<MembersPage />}>
+        <Route index element={<Administration />} />
+        <Route path='partners' element={<Partners />} />
+      </Route>
     </Routes>
   );
 };
