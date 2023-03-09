@@ -21,20 +21,6 @@ const DashboardSidebar = () => {
       <div className="container">
         <div className="logo">
           <img src={logo} alt="" />
-          {/* <span className="collapse">
-                    {
-                        sidebar ?
-                            <HiBars3BottomLeft
-                                className="icon show"
-                                onClick={handleToggle}
-                            />
-                            :
-                            <FaTimes
-                                className="icon hide"
-                                onClick={handleToggle}
-                            />
-                    }
-                </span> */}
         </div>
         <ul className={`nav ${sidebar ? "" : "collapsed"}`}>
           <NavLink
@@ -43,38 +29,38 @@ const DashboardSidebar = () => {
             className="sidebar-link"
           >
             <li>
-              <HiHome />
+              <HiHome className="side-icon" />
               {sidebar && <span>Dashboard</span>}
             </li>
           </NavLink>
           <NavLink to="/dashboard/companies" className="sidebar-link">
             <li>
-              <MdApartment />
+              <MdApartment className="side-icon" />
               {sidebar && <span>Companies</span>}
             </li>
           </NavLink>
           <NavLink to="/dashboard/members" className="sidebar-link">
             <li>
-              <FaUsers />
+              <FaUsers className="side-icon" />
               {sidebar && <span>Members</span>}
             </li>
           </NavLink>
           <NavLink to="/" className="sidebar-link">
             <li>
-              <RiParentFill />
+              <RiParentFill className="side-icon" />
               {sidebar && <span>Parents</span>}
             </li>
           </NavLink>
           <NavLink to="/dashboard/events" className="sidebar-link">
             <li>
-              <BsFillCalendarEventFill />
+              <BsFillCalendarEventFill className="side-icon" />
               {sidebar && <span>Events</span>}
             </li>
           </NavLink>
           <NavLink to="/" className="sidebar-link">
             <li>
-              <MdPayments />
-              {sidebar && <span>Transactions</span>}
+              <MdPayments className="side-icon" />
+              {sidebar && <span>Payments</span>}
             </li>
           </NavLink>
         </ul>

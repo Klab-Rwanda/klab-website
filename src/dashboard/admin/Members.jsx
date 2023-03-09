@@ -14,29 +14,29 @@ const Members = () => {
         <div className="members-container">
           <div className="members-sider">
             <ul>
-              <NavLink to="/dashboard/members" end >
+              <NavLink to="/dashboard/members" end className="members-link">
                 <li>
                   <img src={Admin} alt="" /> <span>Administration</span>
                 </li>
               </NavLink>
-              <NavLink to="partners" >
+              <NavLink to="partners" className="members-link">
                 <li>
                   <img src={Partners} alt="" /> <span>Partners</span>
                 </li>
               </NavLink>
-              <NavLink to="trainers" >
+              <NavLink to="trainers" className="members-link">
                 <li>
                   <img src={Trainers} alt="" />
                   <span>Trainers</span>
                 </li>
               </NavLink>
-              <NavLink to="alumni" >
+              <NavLink to="alumni" className="members-link">
                 <li>
                   {" "}
                   <img src={Alumni} alt="" /> <span>Alumni</span>
                 </li>
               </NavLink>
-              <NavLink to="trainees">
+              <NavLink to="trainees" className="members-link">
                 <li>
                   <img src={Trainees} alt="" />
                   <span>Trainees</span>

@@ -17,6 +17,7 @@ import SingleCompany from '../dashboard/admin/SingleCompany';
 import MembersPage from '../dashboard/admin/Members';
 import Administration from '../dashboard/admin/members/Administration';
 import Partners from '../dashboard/admin/members/Partners';
+import AllCompanies from '../dashboard/admin/companies/AllCompanies';
 import Alumni from '../dashboard/admin/members/alumni';
 import Trainees from '../dashboard/admin/members/Trainees';
 
@@ -34,7 +35,9 @@ const Index = () => {
       <Route path="/signin" exact element={<LoginPage />}></Route>
       <Route path="/admin/dashboard" exact element={<AdminDashboard />}></Route>
       <Route path="/dashboard/events" exact element={<AdminEvents />}></Route>
-      <Route path="/dashboard/companies" exact element={<Companies />}></Route>
+      <Route path="/dashboard/companies" exact element={<Companies />}>
+        <Route index element={<AllCompanies />} />
+      </Route>
       <Route path="/single-company" exact element={<SingleCompany />}></Route>
 
       <Route
