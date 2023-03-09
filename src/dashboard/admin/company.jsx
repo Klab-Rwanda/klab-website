@@ -4,6 +4,7 @@ import { FaUsers, FaBell } from "react-icons/fa";
 import { MdApartment } from "react-icons/md";
 import SecondSidebar from "../secondSidebar";
 import { Link } from 'react-router-dom';
+import {GiCompanionCube} from  'react-icons/gi'
 
 
 export default function company() {
@@ -58,7 +59,7 @@ export default function company() {
           <div className="holder-info">
             <div className="info-company">
               <div className="logo-co">
-                <BsFillPeopleFill />
+                <GiCompanionCube />
               </div>
               <span>
                 <h2>
@@ -78,10 +79,10 @@ export default function company() {
             </div>
             <div className="info-company">
               <div className="logo-co">
-                <BsFillPeopleFill />
+                <GiCompanionCube />
               </div>
               <span>
-                <h2>Aline</h2>
+                <h2>Jabo</h2>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa beatae at, eius doloremque numquam voluptatibus ipsum
@@ -94,10 +95,10 @@ export default function company() {
             </div>
             <div className="info-company">
               <div className="logo-co">
-                <BsFillPeopleFill />
+                <GiCompanionCube />
               </div>
               <span>
-                <h2>Aline</h2>
+                <h2>Blandine</h2>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa beatae at, eius doloremque numquam voluptatibus ipsum
