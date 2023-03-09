@@ -2,10 +2,11 @@ import Outline from "./outline";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { FaUsers, FaBell } from "react-icons/fa";
 import { MdApartment } from "react-icons/md";
-import SecondSidebar from "../secondSidebar";
-import { Link } from 'react-router-dom';
-import {GiCompanionCube} from  'react-icons/gi'
-
+import { BsFillCheckSquareFill } from "react-icons/bs";
+import { MdOutlinePayments } from "react-icons/md";
+import {Outlet} from "react-router-dom";
+import { HiSquares2X2 } from "react-icons/hi2";
+import {NavLink} from "react-router-dom";
 
 export default function company() {
   return (
@@ -53,62 +54,34 @@ export default function company() {
             </div>
           </div>
         </div>
-        <SecondSidebar />
-        <div className="companies-container">
-          <h1>Companies</h1>
-          <div className="holder-info">
-            <div className="info-company">
-              <div className="logo-co">
-                <GiCompanionCube />
-              </div>
-              <span>
-                <h2>
-                  <Link to="single-company">Aline</Link>
-                </h2>
-                <p>
-                  <Link to="/single-company">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Culpa beatae at, eius doloremque numquam voluptatibus ipsum
-                    dolor unde laboriosam vitae optio minus pariatur
-                    exercitationem quidem deserunt nobis sequi architecto
-                    laudantium!
-                  </Link>
-                </p>
-                <p>aline@gmail.com</p>
-              </span>
-            </div>
-            <div className="info-company">
-              <div className="logo-co">
-                <GiCompanionCube />
-              </div>
-              <span>
-                <h2>Jabo</h2>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Culpa beatae at, eius doloremque numquam voluptatibus ipsum
-                  dolor unde laboriosam vitae optio minus pariatur
-                  exercitationem quidem deserunt nobis sequi architecto
-                  laudantium!
-                </p>
-                <p>aline@gmail.com</p>
-              </span>
-            </div>
-            <div className="info-company">
-              <div className="logo-co">
-                <GiCompanionCube />
-              </div>
-              <span>
-                <h2>Blandine</h2>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Culpa beatae at, eius doloremque numquam voluptatibus ipsum
-                  dolor unde laboriosam vitae optio minus pariatur
-                  exercitationem quidem deserunt nobis sequi architecto
-                  laudantium!
-                </p>
-                <p>aline@gmail.com</p>
-              </span>
-            </div>
+        <div className="company-flex">
+          <div className="company-sider">
+            <ul>
+              <NavLink to="/dashboard/companies" end className="companies-link">
+                <li>
+                  {" "}
+                  <HiSquares2X2 className="side-icon" />
+                  <span>All Companies</span>
+                </li>
+              </NavLink>
+              <NavLink to="projects" className="companies-link">
+                <li>
+                  {" "}
+                  <BsFillCheckSquareFill className="side-icon" />
+                  <span>Projects</span>
+                </li>
+              </NavLink>
+              <NavLink to="transactions" className="companies-link">
+                <li>
+                  {" "}
+                  <MdOutlinePayments className="side-icon" />
+                  <span>Transactions</span>
+                </li>
+              </NavLink>
+            </ul>
+          </div>
+          <div className="outlet">
+            <Outlet />
           </div>
         </div>
       </section>

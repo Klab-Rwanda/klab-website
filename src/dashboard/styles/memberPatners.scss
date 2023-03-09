@@ -1,22 +1,15 @@
 
-// .patners-holder {
-//   margin-left: 350px;
-  
-// }
 .AllPatners
 {
     background-color: white;
     border-radius: 16px;
 }
 .partner{
-  
-  
   padding: 20px;
   display: flex;
   justify-content: space-between;
   width: 50vw;
   align-items: center;
-  margin-top: 20px;
   .image {
     border-right: 4px solid #627DA0;
     padding-right: 50px;
@@ -39,18 +32,17 @@
        
         }
     }
-  
-
   button{
-     background-color: white; 
-    padding: 5px;
+    background-color: transparent;
+    border: 1px solid #DDE8F4;
     border-radius: 11px;
-    border: 1px solid #92a0b3;
-     width: 30px;
-    height: 30px;
+    padding: 10px 10px;
+    height: 40px;
+    width: 40px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
     .icoo{
         color: #627DA0;;
        

@@ -11,66 +11,61 @@ const Administration = () => {
       <div className="admin-members">
         <div className="admin-item">
           <img src={Profile} alt="" />
-          <div className="admin-names">
-            <h4>UMURUNGI Nicole</h4>
-            <p>Admin</p>
-          </div>
-          <p>umurunginicole@gmail.com</p>
-          <p>0788746373</p>
-          <div className="eye-icon">
-            <BsFillEyeFill />
-          </div>
-        </div>
-
-        <div className="admin-item">
-          <img src={Profile} alt="" />
-          <div className="admin-names">
-            <h4>UMURUNGI Nicole</h4>
-            <p>Admin</p>
-          </div>
-          <p>umurunginicole@gmail.com</p>
-          <p>0788746373</p>
-          <div className="eye-icon">
-            <BsFillEyeFill />
+          <div className="admin-info-container">
+            <div className="admin-names">
+              <h4>UMURUNGI Nicole</h4>
+              <p>Admin</p>
+            </div>
+            <p>umurunginicole@gmail.com</p>
+            <p>0788746373</p>
+            <div className="eye-icon">
+              <BsFillEyeFill />
+            </div>
           </div>
         </div>
 
         <div className="admin-item">
           <img src={Profile} alt="" />
-          <div className="admin-names">
-            <h4>UMURUNGI Nicole</h4>
-            <p>Admin</p>
-          </div>
-          <p>umurunginicole@gmail.com</p>
-          <p>0788746373</p>
-          <div className="eye-icon">
-            <BsFillEyeFill />
-          </div>
-        </div>
-
-        <div className="admin-item">
-          <img src={Profile} alt="" />
-          <div className="admin-names">
-            <h4>UMURUNGI Nicole</h4>
-            <p>Admin</p>
-          </div>
-          <p>umurunginicole@gmail.com</p>
-          <p>0788746373</p>
-          <div className="eye-icon">
-            <BsFillEyeFill />
+          <div className="admin-info-container">
+            <div className="admin-names">
+              <h4>UMURUNGI Nicole</h4>
+              <p>Admin</p>
+            </div>
+            <p>umurunginicole@gmail.com</p>
+            <p>0788746373</p>
+            <div className="eye-icon">
+              <BsFillEyeFill />
+            </div>
           </div>
         </div>
 
         <div className="admin-item">
           <img src={Profile} alt="" />
-          <div className="admin-names">
-            <h4>UMURUNGI Nicole</h4>
-            <p>Admin</p>
+          <div className="admin-info-container">
+            <div className="admin-names">
+              <h4>UMURUNGI Nicole</h4>
+              <p>Admin</p>
+            </div>
+            <p>umurunginicole@gmail.com</p>
+            <p>0788746373</p>
+            <div className="eye-icon">
+              <BsFillEyeFill />
+            </div>
           </div>
-          <p>umurunginicole@gmail.com</p>
-          <p>0788746373</p>
-          <div className="eye-icon">
-            <BsFillEyeFill />
+        </div>
+
+        <div className="admin-item">
+          <img src={Profile} alt="" />
+          <div className="admin-info-container">
+            <div className="admin-names">
+              <h4>UMURUNGI Nicole</h4>
+              <p>Admin</p>
+            </div>
+            <p>umurunginicole@gmail.com</p>
+            <p>0788746373</p>
+            <div className="eye-icon">
+              <BsFillEyeFill />
+            </div>
           </div>
         </div>
       </div>

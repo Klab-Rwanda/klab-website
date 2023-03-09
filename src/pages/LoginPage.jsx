@@ -36,9 +36,11 @@ const LoginPage = () => {
                   Forgot password?
                 </Link>
               </p>
-              <button className="button" type="submit">
-                Login
-              </button>
+              <Link to="/admin/dashboard">
+                <button className="button" type="button">
+                  Login
+                </button>
+              </Link>
             </form>
             <div className="form-footer">
               <p>
