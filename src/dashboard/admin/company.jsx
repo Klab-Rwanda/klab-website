@@ -6,6 +6,7 @@ import SecondSidebar from "../secondSidebar";
 import { Link } from 'react-router-dom';
 import {GiCompanionCube} from  'react-icons/gi'
 
+
 export default function company() {
   return (
     <div className="wrapper">

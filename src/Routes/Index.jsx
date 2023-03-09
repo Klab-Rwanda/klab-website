@@ -15,6 +15,9 @@ import AdminEvents from '../dashboard/admin/Events';
 import Companies from '../dashboard/admin/company';
 import SingleCompany from '../dashboard/admin/SingleCompany';
 import MemberPatners from '../dashboard/admin/MemberPatners';
+import MembersPage from '../dashboard/admin/Members';
+import Administration from '../dashboard/admin/members/Administration';
+import Partners from '../dashboard/admin/members/Partners';
 
 const Index = () => {
   return (
@@ -33,10 +36,16 @@ const Index = () => {
       <Route path="/dashboard/companies" exact element={<Companies />}></Route>
       <Route path="/single-company" exact element={<SingleCompany />}></Route>
       <Route path="/member-patners" exact element={<MemberPatners />}></Route>
+
       <Route
         path="/apply/tech-up-skills"
         element={<ApplyTechupSkillsPage />}
       ></Route>
+
+      <Route path="/dashboard/members" exact element={<MembersPage />}>
+        <Route index element={<Administration />} />
+        <Route path='partners' element={<Partners />} />
+      </Route>
     </Routes>
   );
 };
