@@ -19,6 +19,8 @@
 @import '../dashboard/styles/index.scss';
 @import '../dashboard/styles/sidebar.scss';
 @import '../dashboard/styles/admin/Projectpage.scss';
+@import '../dashboard/styles/admin/Trainers.scss';
+
 
 
 // PAGES CSS
@@ -33,15 +35,16 @@
 @import './pages/ProgramsPage.scss';
 @import './pages/CommunityPage.scss';
 @import '../dashboard/styles/EventsPage.scss';
-@import '../dashboard/styles/companyPage.scss';
+// @import '../dashboard/styles/companyPage.scss';
 @import '../dashboard/styles/secondSidebar.scss';
 @import '../dashboard/styles/Members.scss';
 
 
 
-html {
-  scroll-behavior: smooth;
-}
+
+// html {
+  // scroll-behavior: smooth;
+// }
 ::-webkit-scrollbar {
   width: 4px;
 }
