@@ -18,6 +18,8 @@ import MembersPage from '../dashboard/admin/Members';
 import Administration from '../dashboard/admin/members/Administration';
 import Partners from '../dashboard/admin/members/Partners';
 import AllCompanies from '../dashboard/admin/companies/AllCompanies';
+import Alumni from '../dashboard/admin/members/alumni';
+import Trainees from '../dashboard/admin/members/Trainees';
 
 const Index = () => {
   return (
@@ -45,7 +47,9 @@ const Index = () => {
 
       <Route path="/dashboard/members" exact element={<MembersPage />}>
         <Route index element={<Administration />} />
-        <Route path='partners' element={<Partners />} />
+        <Route path="partners" element={<Partners />} />
+        <Route path="alumni" element={<Alumni />} />
+        <Route path="trainees" element={<Trainees />} />
       </Route>
     </Routes>
   );
