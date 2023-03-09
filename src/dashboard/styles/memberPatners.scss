@@ -1,0 +1,62 @@
+.Patners-content {
+  margin: 6rem 17.5rem;
+  width: 100%;
+}
+.patners-holder {
+  margin-left: 350px;
+  
+}
+.AllPatners
+{
+    background-color: white;
+    border-radius: 16px;
+}
+.partner{
+  
+  
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  align-items: center;
+  margin-top: 20px;
+  .image {
+    border-right: 4px solid #627DA0;
+    padding-right: 50px;
+    width: 100px;
+
+  }
+  span{
+    line-height: 8px;
+    h1{
+        color: #627DA0;
+        font-weight: 500;
+    }
+    p{
+        font-size: 14px;
+        label{
+            color: #132E52;
+            padding-left: 15px;
+        }
+        
+       
+        }
+    }
+  
+
+  button{
+     background-color: white; 
+    padding: 5px;
+    border-radius: 11px;
+    border: 1px solid #92a0b3;
+     width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icoo{
+        color: #627DA0;;
+       
+    }
+    
+}}

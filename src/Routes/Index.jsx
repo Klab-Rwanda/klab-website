@@ -14,25 +14,27 @@ import AdminDashboard from '../dashboard/admin';
 import AdminEvents from '../dashboard/admin/Events';
 import Companies from '../dashboard/admin/company';
 import SingleCompany from '../dashboard/admin/SingleCompany';
+import MemberPatners from '../dashboard/admin/MemberPatners';
 
 const Index = () => {
   return (
     <Routes>
-      <Route path='/' element={<LandingPage />}></Route>
-      <Route path='/community' exact element={<CommunityPage />}></Route>
-      <Route path='/events' exact element={<EventsPage />}></Route>
-      <Route path='/singleEvent' element={<SingleEventPage />}></Route>
-      <Route path='/about' exact element={<AboutPage />}></Route>
-      <Route path='/programs' exact element={<ProgramsPage />}></Route>
-      <Route path='/program' element={<SingleProgramPage />}></Route>
-      <Route path='/register' exact element={<RegisterPage />}></Route>
-      <Route path='/signin' exact element={<LoginPage />}></Route>
-      <Route path='/admin/dashboard' exact element={<AdminDashboard/>}></Route>
-      <Route path='/dashboard/events' exact element={<AdminEvents />}></Route>
-      <Route path='/dashboard/companies' exact element={<Companies />}></Route>
-      <Route path='/single-company' exact element={<SingleCompany />}></Route>
+      <Route path="/" element={<LandingPage />}></Route>
+      <Route path="/community" exact element={<CommunityPage />}></Route>
+      <Route path="/events" exact element={<EventsPage />}></Route>
+      <Route path="/singleEvent" element={<SingleEventPage />}></Route>
+      <Route path="/about" exact element={<AboutPage />}></Route>
+      <Route path="/programs" exact element={<ProgramsPage />}></Route>
+      <Route path="/program" element={<SingleProgramPage />}></Route>
+      <Route path="/register" exact element={<RegisterPage />}></Route>
+      <Route path="/signin" exact element={<LoginPage />}></Route>
+      <Route path="/admin/dashboard" exact element={<AdminDashboard />}></Route>
+      <Route path="/dashboard/events" exact element={<AdminEvents />}></Route>
+      <Route path="/dashboard/companies" exact element={<Companies />}></Route>
+      <Route path="/single-company" exact element={<SingleCompany />}></Route>
+      <Route path="/member-patners" exact element={<MemberPatners />}></Route>
       <Route
-        path='/apply/tech-up-skills'
+        path="/apply/tech-up-skills"
         element={<ApplyTechupSkillsPage />}
       ></Route>
     </Routes>

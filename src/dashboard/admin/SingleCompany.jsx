@@ -7,7 +7,10 @@ export default function SingleCompany() {
     <div className="wrapper">
       <Outline />
           <section className="single-content">
-        <SecondSidebar/>      
+              <SecondSidebar />  
+              <div className="single-holder">
+              
+              </div>     
       </section>
     </div>
   );
