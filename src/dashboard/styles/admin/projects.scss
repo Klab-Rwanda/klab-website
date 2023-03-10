@@ -1,53 +1,54 @@
-.event-cards {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-  .card-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: $brand-white;
-    padding: 10px 20px;
-    margin: 0 20px;
-    width: 228px;
-    border-radius: 16px;
-    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.07);
+// .event-cards {
+//     display: flex;
+//     flex-direction: row;
+//     width: 100%;
+// //   }
+//   .card-item {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     background-color: $brand-white;
+//     padding: 10px 20px;
+//     margin: 0 20px;
+//     width: 228px;
+//     border-radius: 16px;
+//     box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.07);
   
-    .allevents {
-      background-color: #2f85e1;
-    }
-    .new-events {
-      background-color: #b72727;
-    }
-    .hackathons {
-      background-color: #096b3b;
-    }
-    .competitons {
-      background-color: #b9930b;
-    }
-    .card-details {
-      line-height: 0.3;
-      p {
-        color: $brand-2;
-      }
-      h1 {
-        color: #18385a;
-        font-weight: bold;
-        font-size: 45px;
-      }
-    }
-  }
-  .card-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 12px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    color: white !important;
-    font-size: 20px;
-  }.projects-content{
+//     .allevents {
+//       background-color: #2f85e1;
+//     }
+//     .new-events {
+//       background-color: #b72727;
+//     }
+//     .hackathons {
+//       background-color: #096b3b;
+//     }
+//     .competitons {
+//       background-color: #b9930b;
+//     }
+//     .card-details {
+//       line-height: 0.3;
+//       p {
+//         color: $brand-2;
+//       }
+//       h1 {
+//         color: #18385a;
+//         font-weight: bold;
+//         font-size: 45px;
+//       }
+//     }
+//   }
+//   .card-icon {
+//     width: 64px;
+//     height: 64px;
+//     border-radius: 12px;
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
+//     color: white !important;
+//     font-size: 20px;
+//   }
+  .projects-content{
     margin: 6rem 17.5rem;
     width: 100%;
 }
@@ -60,6 +61,7 @@
   font-size: small;
   // margin-top: 3rem;
   margin-bottom: -5rem;
+//   margin-bottom: 0.5rem;
 }
 .card8{
   display: flex;
@@ -84,10 +86,12 @@
 .card{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 100%;
+  width: 90%;
   gap: 2rem;
-  margin-left: 18rem;
-  margin-right: 2rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+//   margin-left: 18rem;
+//   margin-right: 2rem;
   .card1{
         .one{
             background-color:rgb(9,107,59);
@@ -156,7 +160,7 @@
         }
       }
       .cards{
-    background-color: white;
+    background-color: #EDF3FA;
     padding: 20px;
     border-radius: 20px;
     display: flex;
