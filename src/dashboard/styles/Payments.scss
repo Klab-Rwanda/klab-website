@@ -1,0 +1,45 @@
+.payments-content{
+    margin-top: 5rem;
+    margin-left: 18.5rem;
+    width: 100%;
+    height: 100vh;
+    color: #18385A;
+    .payment-filters{
+       display: flex;
+       flex-direction: row;
+       gap: 15px;
+       align-items: center;
+       .parents-active{
+            background-color: #18385A;
+            color: white;
+        }
+       h4{
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 5px;
+       }
+    }
+    .payment-invoices{
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        width: 80%;
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            th{
+                padding: 10px;
+            }
+            td{
+                text-align: center;
+                padding: 10px;
+                color: #18385A;
+            }
+            
+        }
+    }
+    table tr:nth-child(odd){
+    background-color: #F2F8FF;
+    color: #18385A;
+}
+}
