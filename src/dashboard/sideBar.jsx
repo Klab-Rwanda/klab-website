@@ -57,7 +57,7 @@ const DashboardSidebar = () => {
               {sidebar && <span>Events</span>}
             </li>
           </NavLink>
-          <NavLink to="/" className="sidebar-link">
+          <NavLink to="/payments" className="sidebar-link">
             <li>
               <MdPayments className="side-icon" />
               {sidebar && <span>Payments</span>}
