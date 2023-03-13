@@ -19,7 +19,7 @@ const Administration = () => {
             </div>
             <p>umurunginicole@gmail.com</p>
             <p>0788746373</p>
-            <Link to="/dashboard/members/admin">
+            <Link to="admin">
               <div className="eye-icon">
                 <BsFillEyeFill />
               </div>
@@ -36,9 +36,11 @@ const Administration = () => {
             </div>
             <p>umurunginicole@gmail.com</p>
             <p>0788746373</p>
-            <div className="eye-icon">
-              <BsFillEyeFill />
-            </div>
+            <Link to="admin">
+              <div className="eye-icon">
+                <BsFillEyeFill />
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -51,9 +53,11 @@ const Administration = () => {
             </div>
             <p>umurunginicole@gmail.com</p>
             <p>0788746373</p>
-            <div className="eye-icon">
-              <BsFillEyeFill />
-            </div>
+            <Link to="admin">
+              <div className="eye-icon">
+                <BsFillEyeFill />
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -66,9 +70,11 @@ const Administration = () => {
             </div>
             <p>umurunginicole@gmail.com</p>
             <p>0788746373</p>
-            <div className="eye-icon">
-              <BsFillEyeFill />
-            </div>
+            <Link to="admin">
+              <div className="eye-icon">
+                <BsFillEyeFill />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
