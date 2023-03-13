@@ -4,10 +4,13 @@
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     align-items: center;
-    gap: 20px;
+    gap: 10px 30px;
 
     img{
         width: 400px;
+        height: 320px;
+        background-size: cover;
+        border-radius: 18px;
         
     }
     .partner-info{
@@ -17,6 +20,7 @@
         margin: 5px 0px;
         width: 100%;
         color: #18385a;
+        
         p{
             line-height: 1;
             width: 100%;
