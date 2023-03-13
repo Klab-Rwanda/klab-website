@@ -26,6 +26,8 @@ import Transactions from '../dashboard/admin/companies/Transactions';
 import Payments from '../dashboard/admin/Payments';
 import CompaniesPayment from '../dashboard/admin/payments/CompaniesPayment';
 import ParentsPayment from '../dashboard/admin/payments/ParentsPayment';
+import SinglePartner from '../dashboard/admin/SinglePartner';
+import SingleAdmin from '../dashboard/admin/members/SingleAdmin';
 
 const Index = () => {
   return (
@@ -41,16 +43,15 @@ const Index = () => {
       <Route path="/signin" exact element={<LoginPage />}></Route>
       <Route path="/admin/dashboard" exact element={<AdminDashboard />}></Route>
       <Route path="/dashboard/events" exact element={<AdminEvents />}></Route>
-      <Route path='/payments' exact element={<Payments />}>
+      <Route path="/payments" exact element={<Payments />}>
         <Route index element={<CompaniesPayment />} />
-        <Route path='parents' element={<ParentsPayment />} />
+        <Route path="parents" element={<ParentsPayment />} />
       </Route>
-      <Route path="/dashboard/companies" exact element={<Companies />} >
+      <Route path="/dashboard/companies" exact element={<Companies />}>
         <Route index element={<AllCompanies />} />
-        <Route path='projects'exact element={<Projects/>}/>
-        <Route path="transactions" exact element={<Transactions/>}/>
+        <Route path="projects" exact element={<Projects />} />
+        <Route path="transactions" exact element={<Transactions />} />
       </Route>
-
 
       <Route path="/single-company" exact element={<SingleCompany />}></Route>
 
@@ -65,6 +66,11 @@ const Index = () => {
         <Route path="alumni" element={<Alumni />} />
         <Route path="trainees" element={<Trainees />} />
         <Route path="trainers" element={<Trainers />} />
+        <Route path="/dashboard/members/admin" element={<SingleAdmin />} />
+        <Route
+          path="/dashboard/members/partners/single"
+          element={<SinglePartner />}
+        />
       </Route>
     </Routes>
   );
