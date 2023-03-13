@@ -3,6 +3,8 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import { BsPersonBoundingBox, BsEyeFill } from "react-icons/bs";
 import { GiTeacher } from "react-icons/gi";
 import alogo from "/assets/website/decorations/A-logo.svg";
+import { Link } from "react-router-dom";
+
 
 const Partners = () => {
   return (
@@ -21,9 +23,11 @@ const Partners = () => {
               <label>Kigali, Nyarugenge, kg 655 st</label>
             </p>{" "}
           </span>
-          <button>
-            <BsEyeFill className="icoo" />
-          </button>
+          <Link to="/dashboard/members/partners/single">
+            <button>
+              <BsEyeFill className="icoo" />
+            </button>
+          </Link>
         </div>
         <div className="partner">
           <img src={alogo} alt="" className="image" />
@@ -34,9 +38,11 @@ const Partners = () => {
               <label>Kigali, Nyarugenge, kg 655 st</label>
             </p>{" "}
           </span>
-          <button>
-            <BsEyeFill className="icoo" />
-          </button>
+          <Link to="/dashboard/members/partners/single">
+            <button>
+              <BsEyeFill className="icoo" />
+            </button>
+          </Link>
         </div>
         <div className="partner">
           <img src={alogo} alt="" className="image" />
@@ -47,9 +53,11 @@ const Partners = () => {
               <label>Kigali, Nyarugenge, kg 655 st</label>
             </p>{" "}
           </span>
-          <button>
-            <BsEyeFill className="icoo" />
-          </button>
+          <Link to="/dashboard/members/partners/single">
+            <button>
+              <BsEyeFill className="icoo" />
+            </button>
+          </Link>
         </div>
         <div className="partner">
           <img src={alogo} alt="" className="image" />
@@ -60,9 +68,11 @@ const Partners = () => {
               <label>Kigali, Nyarugenge, kg 655 st</label>
             </p>{" "}
           </span>
-          <button>
-            <BsEyeFill className="icoo" />
-          </button>
+          <Link to="/dashboard/members/partners/single">
+            <button>
+              <BsEyeFill className="icoo" />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

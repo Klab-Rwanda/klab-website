@@ -1,5 +1,6 @@
 import Profile from "/public/assets/website/images/girl.jpg";
 import { BsFillEyeFill } from "react-icons/bs";
+import {Link} from "react-router-dom";
 
 const Administration = () => {
   return (
@@ -18,9 +19,11 @@ const Administration = () => {
             </div>
             <p>umurunginicole@gmail.com</p>
             <p>0788746373</p>
-            <div className="eye-icon">
-              <BsFillEyeFill />
-            </div>
+            <Link to="/dashboard/members/admin">
+              <div className="eye-icon">
+                <BsFillEyeFill />
+              </div>
+            </Link>
           </div>
         </div>
 
