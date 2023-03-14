@@ -1,3 +1,6 @@
+@import "/src/styles/mixinis";
+@import "/src/styles/variables";
+
 .container{
     background-color: rgb(255, 255, 255);
     height: 100vh;
@@ -12,12 +15,19 @@
     // @include mobile-l{
     //     display: none;
     // }
+   
 
     ul{
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    .nav{
+    transition: ease-in-out 0.5s;
+    
+    
+    }
+
     .sidebar-link{
         margin-top: 20px;
 
@@ -43,9 +53,6 @@
 }
 
 
-.container ul .nav{
-    transition: ease-in-out 0.5s;
-}
 .container ul .nav.collapse{
      width: 50px;
 }
@@ -88,6 +95,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .menu-close{
+        display: none;
+        @include mobile-l{
+            display: block;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    }
 }
 .collapse{
     /* background-color: #373C36; */

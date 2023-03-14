@@ -13,9 +13,18 @@
     z-index: 100;
     @include mobile-l{
         width: 100%;
-        position: fixed;
-        right: 75%;
+        position: relative;
         padding: 20px 50px 30px 300px;
+    }
+    .menu-icon{
+        display: none;
+        @include mobile-l{
+            display: block;
+            position: absolute;
+            left: 5%;
+            font-size: 24px;
+            
+        }
     }
     
 }
@@ -24,27 +33,33 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
-    @include mobile-l{
-        display: none;
+    h4{
+        @include mobile-l{
+            display: none;
+        }
     }
+   
 }
 .header .profile span p{
     margin-top: -16px;
     @include mobile-l{
         display: none;
+
     }
 }
 .header .profile img{
     width: 60px;
     border-radius: 10px;
+    @include mobile-l{
+    position: absolute;
+    right: 5%;
+    }
 }
 .chat{
     /* background-color: azure; */
     display: flex;
     gap: 15px;
-    @include mobile-l{
-        margin-left: 120px;
-    }
+    
 }
 .chat .icons{
     border: 1px solid #373C36;
@@ -57,9 +72,7 @@
     width: 60px;
     height: 60px;
     @include mobile-l{
-        border: none;
-        width: 40px;
-        height: 40px;
+        display: none;
     }
 }
 .chat .icon{
@@ -82,12 +95,6 @@
     color: #F2F8FF;
     font-size: 10px;
     font-weight: 800;
-    @include mobile-l{
-        width: 20px;
-        height: 20px;
-        margin-top: 15px;
-        margin-left: 18px;
-    }
 }
 .chat .icons  p.sms{
     background-color: #096B3B;
@@ -103,6 +110,9 @@
 }
 .message h1{
     font-size: 1.6rem;
+    @include mobile-l{
+        display: none;
+    }
 }
 .message p{
     margin-top: -15px;
@@ -116,15 +126,10 @@
     margin-top: -15px;
 }
 .search{
-    /* background-color: antiquewhite; */
     width: 35%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    @include mobile-l{
-        display: none;
-    }
-    
+    align-items: center; 
 }
 .search input{
     /* position: absolute; */
@@ -134,6 +139,9 @@
     border-radius: 15px;
     border: none;
     outline: none;
+    @include mobile-l{
+        display: none;
+    }
 }
 .search .search_icon{
     position: absolute;
