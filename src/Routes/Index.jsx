@@ -28,6 +28,8 @@ import CompaniesPayment from '../dashboard/admin/payments/CompaniesPayment';
 import ParentsPayment from '../dashboard/admin/payments/ParentsPayment';
 import SinglePartner from '../dashboard/admin/SinglePartner';
 import SingleAdmin from '../dashboard/admin/members/SingleAdmin';
+import SingleAlum from '../dashboard/admin/members/SingleAlum';
+import SingleTrainee from '../dashboard/admin/members/SingleTrainee';
 
 const Index = () => {
   return (
@@ -67,6 +69,8 @@ const Index = () => {
         <Route path="trainees" element={<Trainees />} />
         <Route path="trainers" element={<Trainers />} />
         <Route path="admin" element={<SingleAdmin />} />
+        <Route path='/dashboard/members/alumni/singlealum' element={<SingleAlum />} />
+        <Route path='/dashboard/members/trainees/singletrainee' element={<SingleTrainee />} />
         <Route
           path="/dashboard/members/partners/single"
           element={<SinglePartner />}
