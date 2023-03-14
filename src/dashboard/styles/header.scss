@@ -1,9 +1,7 @@
-// *{
-//     color: #373C36;
-// }
+
 .header{
     width: 100vw;
-    height: 100px;
+    height: 90px;
     background-color: #F2F8FF;
     padding: 20px 50px 30px 300px;
     display: flex;
@@ -11,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    
 }
 .header .profile{
     display: flex;
@@ -106,3 +105,118 @@
     z-index: 100px;
     margin-right: 20px;
 }
+.notifications-dropdown{
+    height: 100%;
+    
+    
+    .notifications-list{
+        position: absolute;
+        top: 100%;
+        right: 20%;
+        z-index: 9999;
+        background-color: white;
+        height: 100%;
+        max-width: 350px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        height: 300px;
+        
+        
+        .notif-header{
+            width: 100%;
+            background-color: #B9930B;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 10px;
+            height: 50px;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            h4{
+                color: white;
+            }
+            button{
+                background-color: white;
+                color: #373C36;
+                border: none;
+                font-size: 15px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        }
+        .notification-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10px;
+            border-bottom: 1px solid #18385a;
+            span{
+                color: #18385a;
+                font-size: 16px;
+                
+            }
+            .notif-icon{
+                font-size: 24px;
+                cursor: pointer;
+                color: red;
+            }
+        }
+    }
+    .no-notifications{
+        color: #18385a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.off-screen{
+    display: none;
+}
+.profile-dropdown{
+    position: absolute;
+    top: 100%;
+    right: 30px;
+    z-index: 9999;
+    background-color: #fff;
+    height: 230px;
+    width: 230px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    
+
+        .profile-header{
+            background-color: #373C36;
+            color: white;
+            padding: 1px 10px;
+            width: 100%;
+            height: 50px;
+            border-top-right-radius: 12px;
+            border-top-left-radius: 12px;
+            h1{
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+        .profile-actions{
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+                p{
+                    cursor: pointer;
+                    // padding: 8px 0;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    justify-content: center;
+                    
+
+                }
+
+            }
+        }
+    

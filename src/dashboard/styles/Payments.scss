@@ -11,17 +11,22 @@
        gap: 15px;
        align-items: center;
        .payment-companies{
-            background-color: #096B3B;
+            background-color: #2F85E1;
             color: white;
         }
         .payment-parents{
-            background-color: #B9930B;
+            background-color: #2F85E1;
             color: white;
         }
-       h4{
+        
+       button{
         cursor: pointer;
         padding: 5px;
         border-radius: 5px;
+        border: none;
+        font-size: 18px;
+        width: 150px;
+        background-color: white;
        }
     }
     .payment-invoices{
@@ -29,6 +34,7 @@
         padding: 10px;
         border-radius: 8px;
         width: 80%;
+        margin: 15px 0;
         table{
             width: 100%;
             border-collapse: collapse;
