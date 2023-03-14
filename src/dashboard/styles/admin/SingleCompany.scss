@@ -1,0 +1,38 @@
+.company-image{
+    display: flex;
+    align-items: center;
+    img{
+        height: 200px;
+        width: 30%;
+        margin: 20px 20px;
+    }
+    .up-content{
+      align-items: flex-end;
+      width: 55%;
+      color: #778CA1;
+      h1{
+        color: #18385A;
+      }
+      
+    }
+}
+.middle{
+    margin: 20px 20px;
+    border-bottom: 1px solid #D9D9D9;
+}
+.company-image1{
+    display: flex;
+    
+    img{
+        height: 100px;
+        width: 15%;
+        margin: 20px 20px;
+    }
+   .down-content{
+        width: 60%;
+        p{
+            color: #778CA1;
+        }
+        
+   }
+}
