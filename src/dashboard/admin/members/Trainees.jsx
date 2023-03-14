@@ -2,6 +2,7 @@ import dann from "/assets/website/decorations/danny.jpg";
 import { BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
+
 export default function Trainees() {
   return (
     <div>
@@ -19,6 +20,7 @@ export default function Trainees() {
           <label>danny.reco@gmail.com</label>
           <label>0788266622</label>
           <Link to="/dashboard/members/alumni/singletrainee"><button><BsEyeFill className="icoo" /></button></Link>
+
         </div>
       </div>
       <div className="alumn-holder">
@@ -42,9 +44,11 @@ export default function Trainees() {
           </span>
           <label>danny.reco@gmail.com</label>
           <label>0788266622</label>
+    
           <button>
             <BsEyeFill className="icoo" />
           </button>
+        
         </div>
       </div>
       <div className="alumn-holder">
@@ -59,6 +63,7 @@ export default function Trainees() {
           <button>
             <BsEyeFill className="icoo" />
           </button>
+      
         </div>
       </div>
       <div className="alumn-holder">
@@ -70,6 +75,7 @@ export default function Trainees() {
           </span>
           <label>danny.reco@gmail.com</label>
           <label>0788266622</label>
+  
           <button>
             <BsEyeFill className="icoo" />
           </button>

@@ -1,12 +1,20 @@
 import Outline from "./outline";
 import {Outlet, Link} from "react-router-dom";
-// import {useState} from "react";
+import { useState } from "react";
 
 const Payments = () => {
-// const [activePayment, setActivePayment] = useState(false);
-// const handleFilter = () => {
-//   setActivePayment(!activePayment);
-// }
+  const [companiiesActive, setCompaniesActive] = useState(false);
+  const [parentsActive, setParentsActive] = useState(false);
+
+  const companiesState = () =>{
+    setCompaniesActive(!companiiesActive);
+    setParentsActive(false);
+  }
+  const parentsState = () => {
+    setParentsActive(!parentsActive);
+    setCompaniesActive(true);
+  }
+
 
   return (
     <div className="wrapper">
@@ -14,15 +22,16 @@ const Payments = () => {
       <section className="payments-content">
         <h1>Payments Invoice</h1>
         <div className="payment-filters">
-          <h4
-            className= "payment-companies"
-          >
+          <button className={ companiiesActive? "" : "payment-companies"} onClick={companiesState}>
             <Link to="/payments">Companies</Link>
-          </h4>
+          </button>
 
-          <h4 className="payment-parents">
+          <button
+            className={parentsActive ? "payment-parents" : ""}
+            onClick={parentsState}
+          >
             <Link to="parents">Parents</Link>
-          </h4>
+          </button>
         </div>
         <div className="payment-invoices">
           <Outlet />

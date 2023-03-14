@@ -11,6 +11,10 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  @include mobile-l{
+    display: flex;
+    flex-direction: column;
+  }
 }
 .card-item {
   display: flex;
