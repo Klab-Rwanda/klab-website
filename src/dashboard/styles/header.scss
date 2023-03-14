@@ -1,3 +1,5 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixinis';
 
 .header{
     width: 100vw;
@@ -9,6 +11,12 @@
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    @include mobile-l{
+        width: 100%;
+        position: fixed;
+        right: 75%;
+        padding: 20px 50px 30px 300px;
+    }
     
 }
 .header .profile{
@@ -16,9 +24,15 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
+    @include mobile-l{
+        display: none;
+    }
 }
 .header .profile span p{
     margin-top: -16px;
+    @include mobile-l{
+        display: none;
+    }
 }
 .header .profile img{
     width: 60px;
@@ -28,6 +42,9 @@
     /* background-color: azure; */
     display: flex;
     gap: 15px;
+    @include mobile-l{
+        margin-left: 120px;
+    }
 }
 .chat .icons{
     border: 1px solid #373C36;
@@ -39,6 +56,11 @@
     align-items: center;
     width: 60px;
     height: 60px;
+    @include mobile-l{
+        border: none;
+        width: 40px;
+        height: 40px;
+    }
 }
 .chat .icon{
     position: absolute;
@@ -60,6 +82,12 @@
     color: #F2F8FF;
     font-size: 10px;
     font-weight: 800;
+    @include mobile-l{
+        width: 20px;
+        height: 20px;
+        margin-top: 15px;
+        margin-left: 18px;
+    }
 }
 .chat .icons  p.sms{
     background-color: #096B3B;
@@ -80,6 +108,9 @@
     margin-top: -15px;
     font-size: 0.9rem;
     /* color: #096B3B; */
+    @include mobile-l{
+        display: none;
+    }
 }
 .message p{
     margin-top: -15px;
@@ -90,6 +121,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    @include mobile-l{
+        display: none;
+    }
+    
 }
 .search input{
     /* position: absolute; */

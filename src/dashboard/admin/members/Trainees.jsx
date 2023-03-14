@@ -1,6 +1,6 @@
 import dann from "/assets/website/decorations/danny.jpg";
 import { BsEyeFill } from "react-icons/bs";
-import {Link} from "react-router-dom";
+
 
 export default function Trainees() {
   return (
@@ -34,11 +34,9 @@ export default function Trainees() {
           </span>
           <label>danny.reco@gmail.com</label>
           <label>0788266622</label>
-          <Link to="singletrainee">
           <button>
             <BsEyeFill className="icoo" />
           </button>
-          </Link>
         </div>
       </div>
       <div className="alumn-holder">
@@ -50,11 +48,11 @@ export default function Trainees() {
           </span>
           <label>danny.reco@gmail.com</label>
           <label>0788266622</label>
-          <Link to="singletrainee">
+    
           <button>
             <BsEyeFill className="icoo" />
           </button>
-          </Link>
+        
         </div>
       </div>
       <div className="alumn-holder">
@@ -66,11 +64,10 @@ export default function Trainees() {
           </span>
           <label>danny.reco@gmail.com</label>
           <label>0788266622</label>
-          <Link to="singletrainee">
           <button>
             <BsEyeFill className="icoo" />
           </button>
-          </Link>
+      
         </div>
       </div>
       <div className="alumn-holder">
@@ -82,11 +79,10 @@ export default function Trainees() {
           </span>
           <label>danny.reco@gmail.com</label>
           <label>0788266622</label>
-          <Link to="singletrainee">
+  
           <button>
             <BsEyeFill className="icoo" />
           </button>
-          </Link>
         </div>
       </div>
     </div>

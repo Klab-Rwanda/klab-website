@@ -1,6 +1,6 @@
 import alumn from "/assets/website/decorations/alumni.jpg";
 import {BsEyeFill} from "react-icons/bs";
-import {Link } from "react-router-dom";
+
 
 export default function alumni() {
   return (
@@ -18,11 +18,11 @@ export default function alumni() {
           </span>
           <label>aline@gmail.com</label>
           <label>0788266622</label>
-          <Link to="/dashboard/members/alumni/singlealum">
+        
             <button>
               <BsEyeFill className="icoo" />
             </button>
-          </Link>
+       
         </div>
       </div>
       <div className="alumn-holder">
@@ -34,11 +34,9 @@ export default function alumni() {
           </span>
           <label>aline@gmail.com</label>
           <label>0788266622</label>
-          <Link to="/dashboard/members/alumni/singlealum">
             <button>
               <BsEyeFill className="icoo" />
             </button>
-          </Link>
         </div>
       </div>
       <div className="alumn-holder">
@@ -50,11 +48,9 @@ export default function alumni() {
           </span>
           <label>aline@gmail.com</label>
           <label>0788266622</label>
-          <Link to="/dashboard/members/alumni/singlealum">
             <button>
               <BsEyeFill className="icoo" />
             </button>
-          </Link>
         </div>
       </div>
       <div className="alumn-holder">
@@ -66,11 +62,11 @@ export default function alumni() {
           </span>
           <label>aline@gmail.com</label>
           <label>0788266622</label>
-          <Link to="/dashboard/members/alumni/singlealum">
+      
             <button>
               <BsEyeFill className="icoo" />
             </button>
-          </Link>
+   
         </div>
       </div>
     </div>
