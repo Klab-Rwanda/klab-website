@@ -8,19 +8,22 @@ import { BsFillCalendarEventFill } from "react-icons/bs";
 import { MdPayments } from "react-icons/md";
 import {HiBars3BottomLeft } from "react-icons/hi2";
 import {NavLink} from  "react-router-dom";
+import {IoClose} from "react-icons/io5";
 
 
-const DashboardSidebar = () => {
-    const [sidebar, setSidebar] = useState(true);
+
+
+const DashboardSidebar = ({sidebar, setSidebar}) => {
+
     const handleToggle = () => {
-        setSidebar(!sidebar);
+      setSidebar(!sidebar);
     };
-
     
     return (
-      <div className="container">
+      <div className={ sidebar?"container": "off-screen"}>
         <div className="logo">
           <img src={logo} alt="" />
+          <IoClose  className=" menu-close" onClick={handleToggle}/>
         </div>
         <ul className={`nav ${sidebar ? "" : "collapsed"}`}>
           <NavLink

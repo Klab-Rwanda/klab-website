@@ -7,10 +7,11 @@ import { useState } from 'react';
 import { AiFillDelete, AiFillHome } from "react-icons/ai";
 import {RxExit} from "react-icons/rx";
 import { TbUserCircle} from "react-icons/tb";
+import { CgMenuLeft} from "react-icons/cg";
 
 
 
-const DashboardHeader = () => {
+const DashboardHeader = ({sidebar, setSidebar}) => {
   const [notifications, setNotifications] = useState([
     {
       id: 1,
@@ -43,8 +44,13 @@ const DashboardHeader = () => {
     setProfileOpen(!profileOpen);
   }
 
+  const handleToggle = () => {
+    setSidebar(!sidebar);
+  };
+
   return (
     <div className="header">
+      <CgMenuLeft className='menu-icon' onClick={handleToggle}/>
       <div className="message">
         <h1>Dashboard</h1>
         <p>Hi, Aline welcome back to Klab Dashboard</p>
