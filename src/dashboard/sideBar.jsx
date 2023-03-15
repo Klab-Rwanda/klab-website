@@ -20,7 +20,7 @@ const DashboardSidebar = ({sidebar, setSidebar}) => {
     };
     
     return (
-      <div className={ sidebar?"container": "off-screen"}>
+      <div className={ sidebar?"container": "sidebar-off"}>
         <div className="logo">
           <img src={logo} alt="" />
           <IoClose  className=" menu-close" onClick={handleToggle}/>
@@ -33,37 +33,37 @@ const DashboardSidebar = ({sidebar, setSidebar}) => {
           >
             <li>
               <HiHome className="side-icon" />
-              {sidebar && <span>Dashboard</span>}
+              <span>Dashboard</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/companies" className="sidebar-link">
             <li>
               <MdApartment className="side-icon" />
-              {sidebar && <span>Companies</span>}
+               <span>Companies</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/members" className="sidebar-link">
             <li>
               <FaUsers className="side-icon" />
-              {sidebar && <span>Members</span>}
+            <span>Members</span>
             </li>
           </NavLink>
           <NavLink to="/" className="sidebar-link">
             <li>
               <RiParentFill className="side-icon" />
-              {sidebar && <span>Parents</span>}
+               <span>Parents</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/events" className="sidebar-link">
             <li>
               <BsFillCalendarEventFill className="side-icon" />
-              {sidebar && <span>Events</span>}
+               <span>Events</span>
             </li>
           </NavLink>
           <NavLink to="/payments" className="sidebar-link">
             <li>
               <MdPayments className="side-icon" />
-              {sidebar && <span>Payments</span>}
+              <span>Payments</span>
             </li>
           </NavLink>
         </ul>

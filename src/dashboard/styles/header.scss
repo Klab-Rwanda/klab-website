@@ -13,8 +13,15 @@
     z-index: 100;
     @include mobile-l{
         width: 100%;
-        position: relative;
+        position: fixed;
+        height: 80px;
         padding: 20px 50px 30px 300px;
+    }
+    @include tablet{
+        display: flex;
+        position: fixed;
+        justify-content: space-between;
+        align-items: center;
     }
     .menu-icon{
         display: none;
@@ -23,7 +30,12 @@
             position: absolute;
             left: 5%;
             font-size: 24px;
-            
+        }
+        @include tablet {
+            display: block;
+            position: absolute;
+            left: 3%;
+            font-size: 28px;
         }
     }
     
@@ -37,15 +49,22 @@
         @include mobile-l{
             display: none;
         }
+        @include tablet{
+        display: none;
+    }
     }
    
 }
 .header .profile span p{
     margin-top: -16px;
-    @include mobile-l{
+    @include mobile-l {
         display: none;
 
     }
+    @include tablet{
+        display: none;
+    }
+    
 }
 .header .profile img{
     width: 60px;
@@ -53,12 +72,21 @@
     @include mobile-l{
     position: absolute;
     right: 5%;
+    width: 50px;
+    }
+    @include tablet{
+        position: absolute;
+        right: 3%;
+        width: 50px;
     }
 }
 .chat{
-    /* background-color: azure; */
     display: flex;
     gap: 15px;
+    @include tablet{
+        position: absolute;
+        right: 13%;
+    }
     
 }
 .chat .icons{
@@ -73,6 +101,10 @@
     height: 60px;
     @include mobile-l{
         display: none;
+    }
+    @include tablet{
+        width: 50px;
+        height: 50px;
     }
 }
 .chat .icon{
@@ -95,6 +127,13 @@
     color: #F2F8FF;
     font-size: 10px;
     font-weight: 800;
+    @include tablet{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        margin-top: -8px;
+        margin-left: 45px;
+    }
 }
 .chat .icons  p.sms{
     background-color: #096B3B;
@@ -106,20 +145,30 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;    
+    align-items: flex-start; 
+    @include tablet{
+        width: 100%;
+        position: absolute;
+        left: 10%;
+    }  
 }
 .message h1{
     font-size: 1.6rem;
     @include mobile-l{
         display: none;
     }
+    @include tablet{
+        font-size: 1.2rem;
+    }
 }
 .message p{
     margin-top: -15px;
     font-size: 0.9rem;
-    /* color: #096B3B; */
     @include mobile-l{
         display: none;
+    }
+    @include tablet{
+        font-size: 0.7rem;
     }
 }
 .message p{
@@ -130,23 +179,34 @@
     display: flex;
     justify-content: flex-end;
     align-items: center; 
+    @include tablet{
+        width: 50%;
+        margin-left: 22px;
+
+    }
 }
 .search input{
     /* position: absolute; */
     background-color: #DDE8F4;
     width: 100%;
-    padding: 23px 30px;
+    padding: 20px 20px;
     border-radius: 15px;
     border: none;
     outline: none;
     @include mobile-l{
         display: none;
     }
+    @include tablet{
+        
+    }
 }
 .search .search_icon{
     position: absolute;
     z-index: 100px;
     margin-right: 20px;
+    @include mobile-l{
+        margin: 0 40px;
+    }
 }
 .notifications-dropdown{
     height: 100%;

@@ -175,7 +175,7 @@ const AdminDashboard = () => {
                   </p>
                 </div>
                 <div className="messages-list">
-                  <div className="message">
+                  <div className="message-dash">
                     <img src={UserImage} alt="" />
                     <div className="message-details">
                       <h4>Klab tech-upskill</h4>
@@ -184,12 +184,12 @@ const AdminDashboard = () => {
                         typesetting industry ...
                       </p>
                       <p>
-                        blandinemunezero@gmail.com <span>24 min ago</span>
+                        <span>24 min ago</span>
                       </p>
                     </div>
                   </div>
 
-                  <div className="message">
+                  <div className="message-dash">
                     <img src={UserImage} alt="" />
                     <div className="message-details">
                       <h4>Klab tech-upskill</h4>
@@ -198,12 +198,12 @@ const AdminDashboard = () => {
                         typesetting industry ...
                       </p>
                       <p>
-                        blandinemunezero@gmail.com <span>24 min ago</span>
+                        <span>24 min ago</span>
                       </p>
                     </div>
                   </div>
 
-                  <div className="message">
+                  <div className="message-dash">
                     <img src={UserImage} alt="" />
                     <div className="message-details">
                       <h4>Klab tech-upskill</h4>
@@ -212,7 +212,7 @@ const AdminDashboard = () => {
                         typesetting industry ...
                       </p>
                       <p>
-                        blandinemunezero@gmail.com <span>24 min ago</span>
+                        <span>24 min ago</span>
                       </p>
                     </div>
                   </div>
@@ -223,6 +223,7 @@ const AdminDashboard = () => {
           <div className="recent-activities">
             <h3>Recent activities</h3>
             <p>Latest activities on Klab website</p>
+            <div className='activities-list'>
             <div className="activity">
               <img src={Activity} alt="" />
               <div className="activity-details">
@@ -259,6 +260,7 @@ const AdminDashboard = () => {
                 <h4>January</h4>
                 <p>Lorem ipsum is a dummy text used by designers...</p>
               </div>
+            </div>
             </div>
           </div>
         </div>
