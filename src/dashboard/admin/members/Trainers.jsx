@@ -1,5 +1,6 @@
 import Profile from "/public/assets/website/images/girl.jpg";
 import {BsFillEyeFill} from 'react-icons/bs';
+import { Link } from "react-router-dom";
 
 
 const Trainers = () => {
@@ -20,7 +21,7 @@ const Trainers = () => {
         </div>
         <p>mansurissa@gmail.com</p>
         <p>0788460904</p>
-        <div className="eye-icon"><BsFillEyeFill/></div>
+        <Link to="/dashboard/members/trainers/singletrainer"><div className="eye-icon"><BsFillEyeFill/></div></Link>
         </div>
        </div>
        <div className="admin-item">

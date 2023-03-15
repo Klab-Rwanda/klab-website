@@ -3,6 +3,7 @@ import {Link } from "react-router-dom";
 import {GiCompanionCube} from "react-icons/gi";
 
 
+
 const AllCompanies = () => {
   return (
     <section>
@@ -14,17 +15,15 @@ const AllCompanies = () => {
               <GiCompanionCube />
             </div>
             <span>
-              <h2>
-                <Link to="single-company">Aline</Link>
-              </h2>
+              <Link to="/dashboard/companies/allcompanies/singlecompany"><h2>Aline</h2></Link>
               <p>
-                <Link to="/single-company">
+                
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa beatae at, eius doloremque numquam voluptatibus ipsum
                   dolor unde laboriosam vitae optio minus pariatur
                   exercitationem quidem deserunt nobis sequi architecto
                   laudantium!
-                </Link>
+               
               </p>
               <p>aline@gmail.com</p>
             </span>

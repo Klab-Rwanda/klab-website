@@ -28,6 +28,9 @@ import CompaniesPayment from '../dashboard/admin/payments/CompaniesPayment';
 import ParentsPayment from '../dashboard/admin/payments/ParentsPayment';
 import SinglePartner from '../dashboard/admin/SinglePartner';
 import SingleAdmin from '../dashboard/admin/members/SingleAdmin';
+import Singletrainer from'../dashboard/admin/Singletrainer';
+import Singlealumni from '../dashboard/admin/Singlealumni';
+import Singletrainee from '../dashboard/admin/Singletrainee';
 
 const Index = () => {
   return (
@@ -43,17 +46,20 @@ const Index = () => {
       <Route path="/signin" exact element={<LoginPage />}></Route>
       <Route path="/admin/dashboard" exact element={<AdminDashboard />}></Route>
       <Route path="/dashboard/events" exact element={<AdminEvents />}></Route>
-      <Route path="/payments" exact element={<Payments />}>
+
+        <Route path="/payments" exact element={<Payments />}>
         <Route index element={<CompaniesPayment />} />
         <Route path="parents" element={<ParentsPayment />} />
       </Route>
+
       <Route path="/dashboard/companies" exact element={<Companies />}>
         <Route index element={<AllCompanies />} />
-        <Route path="projects" exact element={<Projects />} />
-        <Route path="transactions" exact element={<Transactions />} />
+        <Route path="projects"  element={<Projects />} />
+        <Route path="transactions"  element={<Transactions />} />
+        <Route path="/dashboard/companies/allcompanies/singlecompany" element={<SingleCompany/>}/>
       </Route>
 
-      <Route path="/single-company" exact element={<SingleCompany />}></Route>
+      
 
       <Route
         path="/apply/tech-up-skills"
@@ -71,6 +77,9 @@ const Index = () => {
           path="/dashboard/members/partners/single"
           element={<SinglePartner />}
         />
+        <Route path='/dashboard/members/trainers/singletrainer' element={<Singletrainer/>}/>
+        <Route path='/dashboard/members/alumni/singlealumni' element={<Singlealumni/>}/>
+        <Route path='/dashboard/members/alumni/singletrainee'element={<Singletrainee/>}/>
       </Route>
     </Routes>
   );
