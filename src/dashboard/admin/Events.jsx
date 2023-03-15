@@ -18,7 +18,6 @@ const Events = () => {
               <FaCalendar />
             </div>
           </div>
-
           <div className="card-item">
             <div className="card-details">
               <p>New Events</p>
@@ -60,7 +59,6 @@ const Events = () => {
                 <p>Upcoming</p>
                 <p>Juniors</p>
                 <p>meetups</p>
-                <p>icon</p>
               </div>
             </div>
 

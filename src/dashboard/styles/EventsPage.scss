@@ -6,6 +6,14 @@
   margin-top: 6rem;
   margin-left: 17.5rem;
   width: 100vw;
+  @include mobile-l{
+    margin-top: 6rem;
+    margin-left: 0;
+  }
+  @include tablet{
+    margin-top: 6rem;
+    margin-left: 0;
+  }
 }
 .event-cards {
   display: flex;
@@ -96,6 +104,14 @@
 .events-container {
   margin: 0 20px;
   width: 60%;
+  @include mobile-l{
+    width: 90%;
+    margin: 0 auto;
+  }
+  @include tablet{
+    width: 90%;
+    margin: 0 auto;
+  }
  
 }
 .events-header {
@@ -107,6 +123,9 @@
 
   p {
     font-size: 14px;
+    @include mobile-l{
+      font-size: 12px;
+    }
   }
   h2 {
     font-size: 18px;
@@ -118,9 +137,21 @@
     justify-content: flex-end;
     top: 55px;
     left: 30%;
+    @include mobile-l{
+      width: 80%;
+      position: absolute;
+      display: flex;
+      justify-content: flex-end;
+      top: 50px;
+      left: 20%;
+    }
     p {
       margin: 0 15px;
       font-size: 13px;
+      @include mobile-l{
+        font-size: 11px;
+        margin: 0 10px;
+      }
     }
   }
 }
@@ -131,9 +162,15 @@
     border-radius: 15px;
     th{
       padding: 10px;
+      @include mobile-l{
+        font-size: 14px;
+      }
     }
     td{
       padding: 10px;
+      @include mobile-l{
+        font-size: 12px;
+      }
     }
     .table-headers{
         color: #18385a;
@@ -167,6 +204,12 @@
 .events-section{
     display: flex;
     flex-direction: row;
+    @include mobile-l{
+      flex-direction: column;
+    }
+    @include tablet{
+      flex-direction: column;
+    }
    }
 
 .add-event{
@@ -175,6 +218,14 @@
   padding: 10px 20px;
   border-radius: 15px;
   margin: 70px 0;
+  @include mobile-l{
+    width: 90%;
+    margin: 20px auto;
+  }
+  @include tablet{
+    width: 90%;
+    margin: 20px auto;
+  }
 
   .add-event-header{
     display: flex;
@@ -185,6 +236,9 @@
   form{
     display: flex;
     flex-direction: column;
+    @include mobile-l{
+      font-size: 14px;
+    }
     input, select{
       margin: 10px 0;
       height: 40px;
@@ -193,16 +247,22 @@
       border-radius: 10px;
       padding: 0 10px;
     }
+   
     .dates{
       display: flex;
       flex-direction: row;
       width: 100%;
+      gap: 10px;
     }
     .start-date{
       width: 50%;
+      display: flex;
+      flex-direction: column;
     }
     .end-date{
       width: 50%;
+      display: flex;
+      flex-direction: column;
     }
     input[type="file"]{
       padding: 10px 10px;
