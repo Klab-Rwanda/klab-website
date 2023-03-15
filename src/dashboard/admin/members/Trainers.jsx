@@ -1,4 +1,4 @@
-import Profile from "/public/assets/website/images/girl.jpg";
+import Profile from "/public/assets/website/images/guy.jpg";
 import {BsFillEyeFill} from 'react-icons/bs';
 import { Link } from "react-router-dom";
 
