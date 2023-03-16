@@ -53,7 +53,7 @@ const DashboardHeader = ({sidebar, setSidebar}) => {
       <CgMenuLeft className='menu-icon' onClick={handleToggle}/>
       <div className="message">
         <h1>Dashboard</h1>
-        <p>Hi, Aline welcome back to Klab Dashboard</p>
+        <p>Hi, Aline welcome back</p>
       </div>
       <div className="search">
         <input type="text" placeholder="Serach here ..." />

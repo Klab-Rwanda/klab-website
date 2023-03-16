@@ -90,6 +90,9 @@
     font-size: 16px;
     width: 100%;
     color: #373C36;
+    @include mobile-l{
+        border: none;
+    }
     span{
     color: #373C36;
     }
@@ -171,11 +174,8 @@
     
     
     }
-    
-
     .sidebar-link{
         margin-top: 20px;
-
     }
     
     li{
@@ -185,15 +185,17 @@
         justify-content: flex-start;
         align-items: center;
         gap: 10px;
-        // margin-top: 20px;
         cursor: pointer;
-        /* background-color: antiquewhite; */
         padding: 15px 60px 15px 15px;
         color: #627DA0;
         transition: ease-in-out 0.5s;
-        
+        @include mobile-l{
+            font-size: 12px;
+        }
+        @include tablet{
+            font-size: 14px;
+        }
     }
-    
 }
 .logo{
     width: 100%;
