@@ -1,252 +1,95 @@
-// .event-cards {
-//     display: flex;
-//     flex-direction: row;
-//     width: 100%;
-// //   }
-//   .card-item {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     background-color: $brand-white;
-//     padding: 10px 20px;
-//     margin: 0 20px;
-//     width: 228px;
-//     border-radius: 16px;
-//     box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.07);
-  
-//     .allevents {
-//       background-color: #2f85e1;
-//     }
-//     .new-events {
-//       background-color: #b72727;
-//     }
-//     .hackathons {
-//       background-color: #096b3b;
-//     }
-//     .competitons {
-//       background-color: #b9930b;
-//     }
-//     .card-details {
-//       line-height: 0.3;
-//       p {
-//         color: $brand-2;
-//       }
-//       h1 {
-//         color: #18385a;
-//         font-weight: bold;
-//         font-size: 45px;
-//       }
-//     }
-//   }
-//   .card-icon {
-//     width: 64px;
-//     height: 64px;
-//     border-radius: 12px;
-//     align-items: center;
-//     display: flex;
-//     justify-content: center;
-//     color: white !important;
-//     font-size: 20px;
-//   }
-  .projects-content{
-    margin: 6rem 17.5rem;
-    width: 100%;
-}
-
-.card7{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  font-size: small;
-  // margin-top: 3rem;
-  margin-bottom: -5rem;
-//   margin-bottom: 0.5rem;
-}
-.card8{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  font-size: small;
-  // margin-top: 3rem;
-  margin-bottom: -5rem;
-}
-.card9{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  font-size: small;
-  // margin-top: 3rem;
-  margin-bottom: -5rem;
-}
-
-
-.card{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 90%;
-  gap: 2rem;
-  margin-top: 1rem;
-  margin-left: 2rem;
-//   margin-left: 18rem;
-//   margin-right: 2rem;
-  .card1{
-        .one{
-            background-color:rgb(9,107,59);
-        }
-        .progress{
-            border: 1px solid rgb(9,107,59);
-        }
-        .progress-inside{
-          background-color: rgb(9,107,59);
-        }
-      }
-      .card2{
-        .one{
-            background-color: rgb(46,133,224);
-        }
-        .progress{
-            border: 1px solid rgb(46,133,224);
-            
-        }
-        .progress-inside{
-          background-color: rgb(46,133,224)}
-        
-      }
-      .card3{
-        .one{
-            background-color:rgb(183,39,39);
-        }
-        .progress{
-            border: 1px solid rgb(183,39,39);
-        }
-        .progress-inside{
-          background-color:rgb(183,39,39);
-        }
-      }
-      .card4{
-        .one{
-            background-color: rgb(9,107,59);
-        }
-        .progress{
-            border: 1px solid rgb(9,107,59);
-        }
-        .progress-inside{
-          background-color: rgb(9,107,59);
-        }
-      }
-      .card5{
-        .one{
-            background-color: rgb(46,133,224);
-        }
-        .progress{
-            border: 1px solid rgb(46,133,224);
-        }
-        .progress-inside{
-          background-color: rgb(46,133,224);
-        }
-      }
-      .card6{
-        .one{
-            background-color: rgb(183,39,39);
-        }
-        .progress{
-            border: 1px solid rgb(183,39,39);
-        }
-        .progress-inside{
-          background-color:rgb(183,39,39);
-        }
-      }
-      .cards{
-    background-color: #EDF3FA;
-    padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    // gap: -7rem;
-    height: 200px;
-    margin-top: 15px;
-    margin-bottom: -2rem;
-      }
-  
-.headera{
-    /* background-color: rgb(171, 171, 242); */
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: -1rem;
-}
-.one{
-    padding: 0rem;
-    border-radius: 10px;
-    height: 30px;
-    width: 40%;
-    border: none;
-    // background-color: rgb(70, 140, 19);
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: $brand-white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    
-}
-.calender{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0rem;
-    font-size: 12px;
-    font-weight: 700;
-   
-}
-.paragraph{
-    margin-right: 1rem;
-    font-size: small;
-    font-weight: 700;
-}
-.progress-container{
-    /* background-color: rgb(223, 154, 154); */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-.progress{
-    // border: 1px solid rgb(72, 144, 21);
-    border-radius: 10px;
-    width: 80%;
-    height: 10px;
-}
-.progress-inside{
-    border-radius: 10px;
-    // background-color: rgb(72, 144, 21);
-    height: 100%;
-    width: 78%;
-    
-}
-
-.profi img{
-    width: 35px;
-    height: 35px;
-    border-radius: 100px;
-    margin-right: -10px;
-    border: 2px solid white;
-}
-}
-.projects-sidebar{
-  width: 20%;
-}
-.projects-section{
+.projects-container{
+  padding: 15px 15px;
   display: flex;
   flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  @include mobile-l{
+    flex-direction: column;
+  }
+  .open-projects{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 10px;
+    width: 100%;
+    h3{
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      font-size: 18px;
+      span{
+        font-size: 16px;
+      }
+    }
+  }
+
+  .project-card{
+  background-color: #EDF3FA;
+  width: 100%;
+  border-radius: 16px;
+  padding: 10px;
+  .card-header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .one{
+      background-color: #096B3B;
+      border-radius: 10px;
+      color: white;
+      height: 25px;
+      font-size: 14px;
+      padding: 2px 5px;
+    }
+    .calender{
+      display: flex;
+      align-items: center;
+      p{
+        font-size: 12px;
+      }
+    }
+  }
+  .paragraph{
+    p{
+      font-size: 14px;
+    }
+  }
+  .progress{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+    p{
+      font-size: 12px;
+    }
+    .progress-bar{
+      background-color: white;
+      width: 75%;
+      height: 7px;
+      border-radius: 5px;
+      .progress-counter{
+        width: 70%;
+        height: 7px;
+        border-radius: 5px;
+        background-color: #096B3B;
+      }
+
+    }
+  }
+  .project-profiles{
+    img{
+      width: 35px;
+      height: 35px;
+      border-radius: 100px;
+      margin-right: -10px;
+      border: 2px solid white;
+    }
+  }
+  }
 }
+
+
 
 
 

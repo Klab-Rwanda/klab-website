@@ -7,8 +7,12 @@ import { MdOutlinePayments } from "react-icons/md";
 import {Outlet} from "react-router-dom";
 import { HiSquares2X2 } from "react-icons/hi2";
 import {NavLink} from "react-router-dom";
+import {CgMenuRight} from "react-icons/cg";
+import { useState } from "react";
 
 export default function company() {
+  const [sider, setSider] = useState(false);
+
   return (
     <div className="wrapper">
       <Outline />
@@ -55,7 +59,7 @@ export default function company() {
           </div>
         </div>
         <div className="company-flex">
-          <div className="company-sider">
+          <div className={sider ? "comp-modal" : "company-sider"}>
             <ul>
               <NavLink to="/dashboard/companies" end className="companies-link">
                 <li>
@@ -81,6 +85,13 @@ export default function company() {
             </ul>
           </div>
           <div className="outlet">
+            <div className="companies-menu-icon">
+              <CgMenuRight className="comp-icon"
+                onClick={() => {
+                  setSider(!sider);
+                }}
+              />
+            </div>
             <Outlet />
           </div>
         </div>
