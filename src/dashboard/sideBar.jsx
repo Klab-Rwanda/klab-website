@@ -48,7 +48,7 @@ const DashboardSidebar = ({sidebar, setSidebar}) => {
             <span>Members</span>
             </li>
           </NavLink>
-          <NavLink to="/" className="sidebar-link">
+          <NavLink to="/dashboard/parentpage" className="sidebar-link">
             <li>
               <RiParentFill className="side-icon" />
                <span>Parents</span>
