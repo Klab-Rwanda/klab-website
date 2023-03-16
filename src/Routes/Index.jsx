@@ -23,6 +23,9 @@ import Trainees from '../dashboard/admin/members/Trainees';
 import Trainers from '../dashboard/admin/members/Trainers';
 import Projects from '../dashboard/admin/companies/projects';
 import Transactions from '../dashboard/admin/companies/Transactions';
+
+import ParentPage from '../dashboard/admin/ParentPage';
+
 import Payments from '../dashboard/admin/Payments';
 import CompaniesPayment from '../dashboard/admin/payments/CompaniesPayment';
 import ParentsPayment from '../dashboard/admin/payments/ParentsPayment';
@@ -31,6 +34,7 @@ import SingleAdmin from '../dashboard/admin/members/SingleAdmin';
 import Singletrainer from'../dashboard/admin/Singletrainer';
 import Singlealumni from '../dashboard/admin/Singlealumni';
 import Singletrainee from '../dashboard/admin/Singletrainee';
+
 
 const Index = () => {
   return (
@@ -46,6 +50,7 @@ const Index = () => {
       <Route path="/signin" exact element={<LoginPage />}></Route>
       <Route path="/admin/dashboard" exact element={<AdminDashboard />}></Route>
       <Route path="/dashboard/events" exact element={<AdminEvents />}></Route>
+      <Route path="/dashboard/parentpage" exact element={<ParentPage />} ></Route>
 
         <Route path="/payments" exact element={<Payments />}>
         <Route index element={<CompaniesPayment />} />
@@ -60,7 +65,6 @@ const Index = () => {
       </Route>
 
       
-
       <Route
         path="/apply/tech-up-skills"
         element={<ApplyTechupSkillsPage />}
