@@ -1,3 +1,6 @@
+@import "/src/styles/mixinis";
+@import "/src/styles/variables";
+
 .container{
     background-color: rgb(255, 255, 255);
     height: 100vh;
@@ -9,12 +12,28 @@
     padding: 30px 0 20px 30px;
     left: 0;
     z-index: 1000;
+    @include mobile-l{
+        display: none;
+    }
+    @include tablet{
+        display: none;
+    }
+    
 
     ul{
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    .nav{
+    transition: ease-in-out 0.5s;
+    
+    
+    }
+    .menu-close{
+        display: none;
+    }
+
     .sidebar-link{
         margin-top: 20px;
 
@@ -37,12 +56,30 @@
     }
     
 }
+
+.logo{
+    width: 100%;
+    height:60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .menu-close{
+        display: none;
+        @include mobile-l{
+            display: block;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        @include tablet{
+            display: block;
+            
+        }
+    }
+    
+}
 }
 
 
-.container ul .nav{
-    transition: ease-in-out 0.5s;
-}
 .container ul .nav.collapse{
      width: 50px;
 }
@@ -56,6 +93,8 @@
     span{
     color: #373C36;
     }
+    
+
     .side-icon{
         filter: invert(1);
         filter: grayscale(100%) brightness(36%);
@@ -85,9 +124,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 .collapse{
-    /* background-color: #373C36; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,4 +148,73 @@
 .collapse .hide{
     display: hidden;
     /* background-color: blue; */
+}
+
+.sidebar-off{
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: flex-start;
+    position: fixed;
+    padding: 30px 0 20px 30px;
+    left: 0;
+    z-index: 1000;
+    ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .nav{
+    transition: ease-in-out 0.5s;
+    
+    
+    }
+    
+
+    .sidebar-link{
+        margin-top: 20px;
+
+    }
+    
+    li{
+        border-left: 4px solid transparent;
+        font-size: 16px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        // margin-top: 20px;
+        cursor: pointer;
+        /* background-color: antiquewhite; */
+        padding: 15px 60px 15px 15px;
+        color: #627DA0;
+        transition: ease-in-out 0.5s;
+        
+    }
+    
+}
+.logo{
+    width: 100%;
+    height:60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .menu-close{
+        display: none;
+        @include mobile-l{
+            display: block;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        @include tablet{
+            display: block;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+    }
+    
+}
+
 }

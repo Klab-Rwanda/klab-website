@@ -8,19 +8,22 @@ import { BsFillCalendarEventFill } from "react-icons/bs";
 import { MdPayments } from "react-icons/md";
 import {HiBars3BottomLeft } from "react-icons/hi2";
 import {NavLink} from  "react-router-dom";
+import {IoClose} from "react-icons/io5";
 
 
-const DashboardSidebar = () => {
-    const [sidebar, setSidebar] = useState(true);
+
+
+const DashboardSidebar = ({sidebar, setSidebar}) => {
+
     const handleToggle = () => {
-        setSidebar(!sidebar);
+      setSidebar(!sidebar);
     };
-
     
     return (
-      <div className="container">
+      <div className={ sidebar?"container": "sidebar-off"}>
         <div className="logo">
           <img src={logo} alt="" />
+          <IoClose  className=" menu-close" onClick={handleToggle}/>
         </div>
         <ul className={`nav ${sidebar ? "" : "collapsed"}`}>
           <NavLink
@@ -30,37 +33,37 @@ const DashboardSidebar = () => {
           >
             <li>
               <HiHome className="side-icon" />
-              {sidebar && <span>Dashboard</span>}
+              <span>Dashboard</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/companies" className="sidebar-link">
             <li>
               <MdApartment className="side-icon" />
-              {sidebar && <span>Companies</span>}
+               <span>Companies</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/members" className="sidebar-link">
             <li>
               <FaUsers className="side-icon" />
-              {sidebar && <span>Members</span>}
+            <span>Members</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/parentpage" className="sidebar-link">
             <li>
               <RiParentFill className="side-icon" />
-              {sidebar && <span>Parents</span>}
+               <span>Parents</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/events" className="sidebar-link">
             <li>
               <BsFillCalendarEventFill className="side-icon" />
-              {sidebar && <span>Events</span>}
+               <span>Events</span>
             </li>
           </NavLink>
-          <NavLink to="/" className="sidebar-link">
+          <NavLink to="/payments" className="sidebar-link">
             <li>
               <MdPayments className="side-icon" />
-              {sidebar && <span>Payments</span>}
+              <span>Payments</span>
             </li>
           </NavLink>
         </ul>

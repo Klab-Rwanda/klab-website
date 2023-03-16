@@ -3,30 +3,29 @@ import {Link } from "react-router-dom";
 import {GiCompanionCube} from "react-icons/gi";
 
 
+
 const AllCompanies = () => {
   return (
     <section>
       <div className="companies-container">
-        <h1>Companies</h1>
+        <h2>All Companies</h2>
         <div className="holder-info">
           <div className="info-company">
             <div className="logo-co">
               <GiCompanionCube />
             </div>
             <span>
-              <h2>
-                <Link to="single-company">Aline</Link>
-              </h2>
+              <Link to="/dashboard/companies/allcompanies/singlecompany"><h1>HEAVEN STUDIO</h1></Link>
               <p>
-                <Link to="/single-company">
+                
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa beatae at, eius doloremque numquam voluptatibus ipsum
                   dolor unde laboriosam vitae optio minus pariatur
                   exercitationem quidem deserunt nobis sequi architecto
                   laudantium!
-                </Link>
+               
               </p>
-              <p>aline@gmail.com</p>
+              <h4>heavenstudio@gmail.com</h4>
             </span>
           </div>
           <div className="info-company">
@@ -34,14 +33,14 @@ const AllCompanies = () => {
               <GiCompanionCube />
             </div>
             <span>
-              <h2>Jabo</h2>
+              <h1>Y-LABS</h1>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa
                 beatae at, eius doloremque numquam voluptatibus ipsum dolor unde
                 laboriosam vitae optio minus pariatur exercitationem quidem
                 deserunt nobis sequi architecto laudantium!
               </p>
-              <p>aline@gmail.com</p>
+              <h4>y-labs@gmail.com</h4>
             </span>
           </div>
           <div className="info-company">
@@ -49,14 +48,14 @@ const AllCompanies = () => {
               <GiCompanionCube />
             </div>
             <span>
-              <h2>Blandine</h2>
+              <h1>Blandine</h1>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa
                 beatae at, eius doloremque numquam voluptatibus ipsum dolor unde
                 laboriosam vitae optio minus pariatur exercitationem quidem
                 deserunt nobis sequi architecto laudantium!
               </p>
-              <p>aline@gmail.com</p>
+              <h4>aline@gmail.com</h4>
             </span>
           </div>
         </div>

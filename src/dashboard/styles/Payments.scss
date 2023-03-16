@@ -1,0 +1,68 @@
+.payments-content{
+    margin-top: 5rem;
+    margin-left: 18.5rem;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 85px;
+    color: #18385A;
+    .payment-filters{
+       display: flex;
+       flex-direction: row;
+       gap: 15px;
+       align-items: center;
+       .payment-companies{
+            background-color: #2F85E1;
+            color: white;
+        }
+        .payment-parents{
+            background-color: #2F85E1;
+            color: white;
+        }
+        
+       button{
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        font-size: 18px;
+        width: 150px;
+        background-color: white;
+       }
+    }
+    .payment-invoices{
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        width: 80%;
+        margin: 15px 0;
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            th{
+                padding: 10px;
+            }
+            .pymnt-amount{
+                color: #096B3B;
+                font-weight: 500;
+                
+            }
+            td{
+                text-align: center;
+                padding: 10px;
+                color: #18385A;
+
+               
+            }
+            
+        }
+    }
+    table tr:nth-child(odd){
+    background-color: #f2f8ff;
+    color: #18385A;
+    
+    
+    
+}
+
+
+}

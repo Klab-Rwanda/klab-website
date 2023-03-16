@@ -1,0 +1,29 @@
+.single-partner-container{
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    align-items: center;
+    gap: 10px 30px;
+
+    img{
+        width: 400px;
+        height: 320px;
+        background-size: cover;
+        border-radius: 18px;
+        
+    }
+    .partner-info{
+        color: #18385A;
+    }
+    .partner-about{
+        margin: 5px 0px;
+        width: 100%;
+        color: #18385a;
+        
+        p{
+            line-height: 1;
+            width: 100%;
+        }
+    }
+}

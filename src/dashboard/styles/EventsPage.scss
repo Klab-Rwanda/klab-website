@@ -6,11 +6,36 @@
   margin-top: 6rem;
   margin-left: 17.5rem;
   width: 100vw;
+  @include mobile-l{
+    margin-top: 6rem;
+    margin-left: 0;
+  }
+  @include tablet{
+    margin-top: 6rem;
+    margin-left: 0;
+  }
 }
 .event-cards {
   display: flex;
   flex-direction: row;
   width: 100%;
+  @include mobile-l{
+    display: grid;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include tablet{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+  }
+  
 }
 .card-item {
   display: flex;
@@ -21,7 +46,14 @@
   margin: 0 20px;
   width: 228px;
   border-radius: 16px;
-  // box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.07);
+  @include mobile-l{
+    width: 100%;
+    margin: 5px auto;
+  }
+  @include tablet{
+    margin: 0 auto;
+  }
+ 
 
   .allevents {
     background-color: #2f85e1;
@@ -39,11 +71,18 @@
     line-height: 0.3;
     p {
       color: $brand-2;
+      @include mobile-l{
+        font-size: 14px;
+      }
+
     }
     h1 {
       color: #18385a;
       font-weight: bold;
       font-size: 45px;
+      @include mobile-l{
+        font-size: 30px;
+      }
     }
   }
 }
@@ -56,13 +95,24 @@
   justify-content: center;
   color: white !important;
   font-size: 20px;
+  @include mobile-l{
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .events-container {
   margin: 0 20px;
   width: 60%;
-  // display: flex;
-  // flex-direction: row;
+  @include mobile-l{
+    width: 90%;
+    margin: 0 auto;
+  }
+  @include tablet{
+    width: 90%;
+    margin: 0 auto;
+  }
+ 
 }
 .events-header {
   position: relative;
@@ -73,6 +123,9 @@
 
   p {
     font-size: 14px;
+    @include mobile-l{
+      font-size: 12px;
+    }
   }
   h2 {
     font-size: 18px;
@@ -84,9 +137,21 @@
     justify-content: flex-end;
     top: 55px;
     left: 30%;
+    @include mobile-l{
+      width: 80%;
+      position: absolute;
+      display: flex;
+      justify-content: flex-end;
+      top: 50px;
+      left: 20%;
+    }
     p {
       margin: 0 15px;
       font-size: 13px;
+      @include mobile-l{
+        font-size: 11px;
+        margin: 0 10px;
+      }
     }
   }
 }
@@ -97,9 +162,15 @@
     border-radius: 15px;
     th{
       padding: 10px;
+      @include mobile-l{
+        font-size: 14px;
+      }
     }
     td{
       padding: 10px;
+      @include mobile-l{
+        font-size: 12px;
+      }
     }
     .table-headers{
         color: #18385a;
@@ -133,6 +204,12 @@
 .events-section{
     display: flex;
     flex-direction: row;
+    @include mobile-l{
+      flex-direction: column;
+    }
+    @include tablet{
+      flex-direction: column;
+    }
    }
 
 .add-event{
@@ -141,6 +218,14 @@
   padding: 10px 20px;
   border-radius: 15px;
   margin: 70px 0;
+  @include mobile-l{
+    width: 90%;
+    margin: 20px auto;
+  }
+  @include tablet{
+    width: 90%;
+    margin: 20px auto;
+  }
 
   .add-event-header{
     display: flex;
@@ -151,6 +236,9 @@
   form{
     display: flex;
     flex-direction: column;
+    @include mobile-l{
+      font-size: 14px;
+    }
     input, select{
       margin: 10px 0;
       height: 40px;
@@ -159,16 +247,22 @@
       border-radius: 10px;
       padding: 0 10px;
     }
+   
     .dates{
       display: flex;
       flex-direction: row;
       width: 100%;
+      gap: 10px;
     }
     .start-date{
       width: 50%;
+      display: flex;
+      flex-direction: column;
     }
     .end-date{
       width: 50%;
+      display: flex;
+      flex-direction: column;
     }
     input[type="file"]{
       padding: 10px 10px;
