@@ -77,6 +77,8 @@ export default function Trainees() {
             <BsEyeFill className="icoo" />
           </button>
         </div>
+        
+        
       </div>
     </div>
   );

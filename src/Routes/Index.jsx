@@ -23,6 +23,7 @@ import Trainees from '../dashboard/admin/members/Trainees';
 import Trainers from '../dashboard/admin/members/Trainers';
 import Projects from '../dashboard/admin/companies/projects';
 import Transactions from '../dashboard/admin/companies/Transactions';
+import ParentPage from '../dashboard/admin/ParentPage';
 
 const Index = () => {
   return (
@@ -38,14 +39,13 @@ const Index = () => {
       <Route path="/signin" exact element={<LoginPage />}></Route>
       <Route path="/admin/dashboard" exact element={<AdminDashboard />}></Route>
       <Route path="/dashboard/events" exact element={<AdminEvents />}></Route>
-      <Route path="/dashboard/companies" exact element={<Companies />} >
+      <Route path="/dashboard/parentpage" exact element={<ParentPage />} ></Route>
+      <Route path="/dashboard/companies" exact element={<Companies />}>
         <Route index element={<AllCompanies />} />
-        <Route path='projects'exact element={<Projects/>}/>
-        <Route path="transactions" exact element={<Transactions/>}/>
+        {/* <Route path="/single-company" element={<SingleCompany />} /> */}
+        <Route path="projects"  element={<Projects />} />
+        <Route path="transactions" element={<Transactions />} />
       </Route>
-
-
-      <Route path="/single-company" exact element={<SingleCompany />}></Route>
 
       <Route
         path="/apply/tech-up-skills"
