@@ -2,6 +2,9 @@ import { useState, createContext, useEffect } from "react"
 import axios from "axios"
 import { useJwt } from "react-jwt"
 import Loader from "./Loader";
+import { TbTargetArrow } from "react-icons/tb";
+import { BsFillBinocularsFill } from "react-icons/bs";
+import { FaAccusoft } from "react-icons/fa";
 
 export const AuthContext = createContext({});
 
@@ -95,19 +98,23 @@ const AppProvider = ({ children }) => {
   const objectives = [
     {
       id: 1,
+      icon: "BsFillBinocularsFill",
       title: "Our Mission",
+      icon: <TbTargetArrow className=" text-5xl -rotate-45" />,
       description:
         "Facilitate, promote & support young entrepreneurs to develop ICT-enabled solutions to solve social & business challenges",
     },
     {
       id: 2,
       title: "Vision",
+      icon: <BsFillBinocularsFill className=" text-5xl -rotate-45" />,
       description:
         "Make Rwanda the most innovative country in Africa to create jobs and expand the economy",
     },
     {
       id: 3,
       title: "Objectives",
+      icon: <FaAccusoft className=" text-5xl -rotate-45" />,
       description: `Naturing Startups from ideation stage to marketable prototypes, 
                     Offering adequate primary and advanced technology skills
                     Training and supporting tech innovators and entrepreneurs`,

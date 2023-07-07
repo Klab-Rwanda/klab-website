@@ -17,9 +17,9 @@ const HomeWelcome = () => {
             innovate in Kigali, Rwanda.
           </h1>
           <span className="flex gap-4 mt-4 flex-col xl:flex-row lg:flex-row md:flex-row sm:flex-row">
-            <Link to="/community">
+            <Link to="/apply">
               <button className="border border-slate-50 px-8 text-sm font-medium py-4 rounded-3xl">
-                Hire talent
+                Apply Now
               </button>
             </Link>
             <Link to="/signUp">

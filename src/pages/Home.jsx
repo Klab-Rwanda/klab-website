@@ -18,7 +18,7 @@ const Home = () => {
           <ProgramSection />
           <MVO />
           <Partners />
-          <Testimonials />
+          {/* <Testimonials /> */}
           <Team />
           <Contact />
           <Footer />

@@ -63,9 +63,11 @@ const App = () => {
           <Route
             path="/admin/dashboard"
             exact
-            element={<ProtectDashboard>
-                  <AdminDashboard />
-                </ProtectDashboard>}
+            element={
+              <ProtectDashboard>
+                <AdminDashboard />
+              </ProtectDashboard>
+            }
           ></Route>
           <Route path="/dashboard/events" element={<EventsPage />}></Route>
           {/* dashboard companies */}
@@ -87,14 +89,29 @@ const App = () => {
             path="/dashboard/programs"
             element={<DashboardPrograms />}
           ></Route>
-          <Route path="/dashboard/members" exact element={<MembersPage />}>
+          <Route
+            path="/dashboard/members"
+            exact
+            element={
+              <ProtectDashboard>
+                <MembersPage />
+              </ProtectDashboard>
+            }
+          >
             <Route index element={<Administration />} />
             <Route path="partners" element={<Partners />} />
             <Route path="alumni" element={<Alumni />} />
             <Route path="trainees" element={<Trainees />} />
             <Route path="trainers" element={<Trainers />} />
             <Route path="admin" element={<SingleAdmin />} />
-            <Route path="applicants" element={<Applicants />} />
+            <Route
+              path="applicants"
+              element={
+                <ProtectDashboard>
+                  <Applicants />
+                </ProtectDashboard>
+              }
+            />
             <Route
               path="/dashboard/members/partners/single"
               element={<SinglePartner />}

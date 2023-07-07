@@ -43,12 +43,12 @@ const Navbar = () => {
         >
           <li>Programs</li>
         </Link>
-        <Link
+        {/* <Link
           to="/community"
           className={`${isActive("/community") ? "active-link" : ""}`}
         >
           <li>Community</li>
-        </Link>
+        </Link> */}
         <Link to="/events" className={`${isActive("/events") ? "active-link" : ""}`}>
           <li>Events</li>
         </Link>

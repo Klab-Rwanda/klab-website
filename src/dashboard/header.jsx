@@ -3,21 +3,22 @@ import { FaSearch, FaUserCircle } from "react-icons/fa";
 import { MdTextsms } from "react-icons/md";
 import { BsBellFill } from "react-icons/bs";
 import Profile from './assets/website/images/girl.jpg';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { AiFillDelete, AiFillHome } from "react-icons/ai";
 import {RxExit} from "react-icons/rx";
 import { TbUserCircle} from "react-icons/tb";
 import { CgMenuLeft} from "react-icons/cg";
 import {Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from "../context/AppProvider";
 
 
 
 const DashboardHeader = ({sidebar, setSidebar}) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-
-  const username = localStorage.getItem("username");
+  const { loggedUser } = useContext(AuthContext);
+  console.log(loggedUser);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -45,7 +46,7 @@ const DashboardHeader = ({sidebar, setSidebar}) => {
       <CgMenuLeft className="menu-icon" onClick={handleToggle} />
       <div className="message">
         <h1>Dashboard</h1>
-        <p>Hi, {username} welcome back</p>
+        <p>Hi, {loggedUser?.username} welcome back</p>
       </div>
       <div className="search">
         <input type="text" placeholder="Serach here ..." />
@@ -65,8 +66,8 @@ const DashboardHeader = ({sidebar, setSidebar}) => {
       <div className="profile">
         <FaUserCircle className="img" onClick={handleClick} />
         <span>
-          <h4>{username}</h4>
-          <p>aline@gmail.com</p>
+          <h4>{loggedUser?.username}</h4>
+          <p>{loggedUser?.email}</p>
         </span>
       </div>
       {isOpen && (

@@ -188,7 +188,7 @@ const RegisterForm = () => {
         />
         <span className="w-full flex justify-between">
           <p>
-            Already member{" "}
+            Already member?{" "}
             <Link to="/account">
               <b className="text-blue-500 mt-4">Sign in</b>
             </Link>

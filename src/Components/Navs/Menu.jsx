@@ -37,9 +37,9 @@ const Menu = () => {
           <Link to="/programs">
             <li className="py-4 px-3 rounded-xl">Programs</li>
           </Link>
-          <Link to="/community">
+          {/* <Link to="/community">
             <li className="py-4 px-3 rounded-xl">Community</li>
-          </Link>
+          </Link> */}
           <Link to="/events">
             <li className="py-4 px-3 rounded-xl">Events</li>
           </Link>
