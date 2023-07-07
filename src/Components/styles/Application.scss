@@ -1,0 +1,470 @@
+@import "../../dashboard/styles/variables";
+@import "../../dashboard/styles/mixinis";
+
+.form-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  color: #070937;
+  @include mobile {
+    margin: 20px auto;
+    width: 90%;
+  }
+  @include mobile-l {
+    margin: 20px auto;
+    width: 90%;
+  }
+  button {
+    border-radius: 10px;
+    padding: 20px, 70px, 20px, 70px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid black;
+    width: 150px;
+    height: 40px;
+    @include mobile {
+      width: 100px;
+      height: 35px;
+      border-radius: 14px;
+    }
+    @include mobile-l {
+      width: 100px;
+      height: 35px;
+      border-radius: 14px;
+      font-size: 14px;
+    }
+    &[type="submit"] {
+      background-color: #18385A;
+      border: none;
+      // margin-left: 20px;
+      color: white;
+    }
+    &[type="submit"]:disabled {
+      opacity: 0.5;
+    }
+  }
+  h1 {
+    color: #070937;
+  }
+}
+.first-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  align-items: flex-start;
+  margin: 20px 0;
+  @include mobile {
+    column-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    
+  }
+  @include mobile-l {
+    column-gap: 20px;
+  }
+  .input {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    font-size: 14px;
+    .error {
+      border-bottom: 1px solid red;
+    }
+    @include mobile-l {
+      font-size: 12px;
+    }
+
+    label {
+      color: #070937;
+      font-weight: 600;
+      font-size: 16px;
+      @include mobile {
+        font-size: 12px;
+      }
+      @include mobile-l {
+        font-size: 12px;
+      }
+    }
+
+    input {
+      margin-top: 5px;
+      height: 40px;
+      background-color: #e2e8f0;
+      outline: none;
+      padding: 0 20px;
+      &[type="date"] {
+        @include mobile-l {
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          width: 100%;
+        }
+      }
+      @include mobile {
+        width: 100%;
+        align-items: flex-start;
+        padding: 0 10px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+.second-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px;
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 20px 25px;
+  }
+  @include mobile-l {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 20px 25px;
+  }
+  .radios{
+    margin-top: 8px;
+    input{
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 5px;
+    }
+    label {
+    display: inline-block;
+    vertical-align: middle;
+    }
+    @include mobile-l{
+      font-size: 14px;
+    }
+  }
+  .form-label {
+    color: #070937;
+    font-weight: 600;
+    @include mobile-l{
+      font-size: 15px;
+    }
+  }
+}
+.address-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin: 10px 0;
+    @include mobile{
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        gap: 20px 30px;
+    }
+    @include mobile-l{
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 20px 30px;
+    }
+    @include tablet{
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      gap: 20px 30px;
+    }
+    .input{
+        display: flex;
+        flex-direction: column;
+        // border-bottom: 1px solid #CBCDFF;
+        margin-top: 8px;
+        width: 100%;
+        input{
+            height: 35px;
+            background-color: #e2e8f0;
+            outline: none;
+            padding: 0 8px;
+            margin-top: 5px;
+            @include mobile {
+            width: 100%;
+            margin-top: 5px;
+            font-size: 14px;
+            
+            }
+        }
+        @include mobile{
+            width: 100%;
+            margin-top: 8px;
+        }
+        @include mobile-l{
+            width: 100%;
+            margin-top: 8px;
+            font-size: 13px;
+        }
+        .input-err{
+            border-bottom: 1px solid red;
+           }
+    }
+    
+    label{
+        color: #070937;
+        font-weight: 600;
+        @include mobile-l{
+            width: 100%;
+        }
+    }
+}
+.education-background {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  margin: 20px 0;
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 20px 25px;
+    .field{
+      .radios{
+    font-size: 14px;
+  }
+  }
+  }
+  @include mobile-l {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 20px 25px;
+    .field{
+      .radios{
+    font-size: 14px;
+  }
+  }
+  }
+  @include mobile{
+    .field{
+      .radios{
+    font-size: 13px;
+  }
+  }
+  }
+  .radios{
+    margin-top: 8px;
+    input{
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 5px;
+      
+    }
+    label {
+    display: inline-block;
+    vertical-align: middle;
+    }
+    @include mobile-l{
+      font-size: 14px;
+    }
+    
+  }
+  .form-label {
+    color: #070937;
+    font-weight: 600;
+  }
+  
+  
+}
+.school {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  @include mobile {
+    flex-direction: column;
+    gap: 20px;
+  }
+  @include mobile-l {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  @include tablet{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 25px;
+   
+  }
+  .input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .erorr {
+      border-bottom: 1px solid red;
+    }
+    input {
+      // border-bottom: 1px solid #2F85E1;
+      margin-top: 5px;
+      height: 30px;
+      background-color: #e2e8f0;
+      outline: none;
+      padding: 0 8px;
+    }
+    input[type="file"] {
+      padding: 0;
+      border: none;
+    }
+    label {
+      color: #070937;
+      font-weight: 600;
+    }
+  }
+}
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+  @include mobile {
+    flex-direction: column;
+    gap: 15px;
+  }
+  @include mobile-l {
+    flex-direction: column;
+    gap: 15px;
+  }
+  @include tablet{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-label {
+    color: #070937;
+    font-weight: 600;
+  }
+  .radios {
+    label {
+      margin-left: 8px;
+    }
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    textarea {
+      background-color: #e2e8f0;
+      resize: none;
+      outline: none;
+      margin-top: 10px;
+      padding: 8px;
+    }
+    .erorr {
+      border: 1px solid red;
+      
+    }
+  }
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include mobile {
+    flex-direction: column;
+    gap: 15px;
+  }
+  @include mobile-l {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 90%;
+    .erorr {
+      border-bottom: 1px solid red;
+    }
+    @include mobile {
+      width: 100%;
+    }
+    @include mobile-l {
+      width: 100%;
+    }
+
+    input {
+      // border-bottom: 1px solid #2F85E1;
+      background-color: #e2e8f0;
+      width: 80%;
+      height: 35px;
+      padding: 0 8px;
+      outline: none;
+      @include mobile {
+        width: 100%;
+      }
+      @include mobile-l {
+        width: 100%;
+      }
+    }
+    label {
+      color: #070937;
+      font-weight: 600;
+    }
+  }
+}
+.ent-desc {
+  display: flex;
+  flex-direction: column;
+  textarea {
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    height: 80px;
+    padding: 5px;
+    width: 70%;
+    resize: none;
+    background-color: #e2e8f0;
+    @include mobile-l{
+        width: 100%;
+    }
+  }
+  .erorr {
+    border: 1px solid red;
+  }
+}
+.innov-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include mobile {
+    flex-direction: column;
+    gap: 15px;
+  }
+  @include mobile-l {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .erorr {
+      border-bottom: 1px solid red;
+    }
+    input[type="file"] {
+      background-color: transparent;
+      border: none;
+    }
+    input {
+      // border-bottom: 1px solid #2F85E1;
+      background-color: #e2e8f0;
+      height: 30px;
+      outline: none;
+      padding: 0 8px;
+    }
+    label {
+      color: #070937;
+      font-weight: 600;
+    }
+  }
+}
+
+.erorr {
+  border-bottom: red;
+}
+.submit-info {
+  h4 {
+    font-weight: bold;
+    color: #070937;
+  }
+  p {
+    @include mobile-l {
+      font-size: 14px;
+    }
+  }
+}

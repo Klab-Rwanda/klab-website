@@ -10,8 +10,16 @@ import {NavLink} from "react-router-dom";
 import {CgMenuRight} from "react-icons/cg";
 import { useState } from "react";
 
-export default function company() {
+export default function Company() {
+
   const [sider, setSider] = useState(false);
+
+  const handleSidebar = () => {
+    setSider(!sider);
+  }
+  const hideSider = () => {
+    setSider(false);
+  }
 
   return (
     <div className="wrapper">
@@ -59,25 +67,32 @@ export default function company() {
           </div>
         </div>
         <div className="company-flex">
-          <div className={sider ? "comp-modal" : "company-sider"}>
+          <div className="company-sider">
             <ul>
-              <NavLink to="/dashboard/companies" end className="companies-link">
+              <NavLink
+                to="/dashboard/companies"
+                end
+                className="companies-link"
+              >
                 <li>
-                  {" "}
                   <HiSquares2X2 className="side-icon" />
                   <span>All Companies</span>
                 </li>
               </NavLink>
-              <NavLink to="projects" className="companies-link">
+              <NavLink
+                to="projects"
+                className="companies-link"
+              >
                 <li>
-                  {" "}
                   <BsFillCheckSquareFill className="side-icon" />
                   <span>Projects</span>
                 </li>
               </NavLink>
-              <NavLink to="transactions" className="companies-link">
+              <NavLink
+                to="transactions"
+                className="companies-link"
+              >
                 <li>
-                  {" "}
                   <MdOutlinePayments className="side-icon" />
                   <span>Transactions</span>
                 </li>
@@ -86,11 +101,42 @@ export default function company() {
           </div>
           <div className="outlet">
             <div className="companies-menu-icon">
-              <CgMenuRight className="comp-icon"
-                onClick={() => {
-                  setSider(!sider);
-                }}
-              />
+              <CgMenuRight className="comp-icon" onClick={handleSidebar} />
+            </div>
+            <div className={sider ? "comp-modal" : "hidden"}>
+              <ul>
+                <NavLink
+                  to="/dashboard/companies"
+                  end
+                  className="companies-link"
+                  onClick={hideSider}
+                >
+                  <li>
+                    <HiSquares2X2 className="side-icon" />
+                    <span>All Companies</span>
+                  </li>
+                </NavLink>
+                <NavLink
+                  to="projects"
+                  className="companies-link"
+                  onClick={hideSider}
+                >
+                  <li>
+                    <BsFillCheckSquareFill className="side-icon" />
+                    <span>Projects</span>
+                  </li>
+                </NavLink>
+                <NavLink
+                  to="transactions"
+                  className="companies-link"
+                  onClick={hideSider}
+                >
+                  <li>
+                    <MdOutlinePayments className="side-icon" />
+                    <span>Transactions</span>
+                  </li>
+                </NavLink>
+              </ul>
             </div>
             <Outlet />
           </div>

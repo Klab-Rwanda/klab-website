@@ -1,7 +1,7 @@
-@import "/src/styles/mixinis";
-@import "/src/styles/variables";
+@import "./mixinis";
+@import "./variables";
 
-.container{
+.custom-side-container{
     background-color: rgb(255, 255, 255);
     height: 100vh;
     display: flex;
@@ -12,14 +12,13 @@
     padding: 30px 0 20px 30px;
     left: 0;
     z-index: 1000;
+    
     @include mobile-l{
         display: none;
     }
     @include tablet{
         display: none;
-    }
-    
-
+    }  
     ul{
     list-style: none;
     display: flex;
@@ -28,14 +27,13 @@
     .nav{
     transition: ease-in-out 0.5s;
     
-    
     }
     .menu-close{
         display: none;
     }
 
     .sidebar-link{
-        margin-top: 20px;
+        margin-top: 10px;
 
     }
     
@@ -164,6 +162,7 @@
     padding: 30px 0 20px 30px;
     left: 0;
     z-index: 1000;
+    width: 100%;
     ul{
     list-style: none;
     display: flex;
@@ -172,10 +171,9 @@
     .nav{
     transition: ease-in-out 0.5s;
     
-    
     }
     .sidebar-link{
-        margin-top: 20px;
+        margin-top: 10px;
     }
     
     li{

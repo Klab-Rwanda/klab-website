@@ -1,0 +1,36 @@
+.text-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
+  h1 {
+    color: white;
+    font-size: 25px;
+  }
+  span {
+    color: white;
+  }
+  button {
+    background-color: #2f85e1;
+    width: 130px;
+    padding: 10px;
+    height: 50px;
+    border-radius: 11px;
+    color: white;
+    font-weight: 500;
+  }
+}
+.dashboardCompany-holder{
+    // background-color: #2f85e1;
+   
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+   
+   
+
+    img{
+        width: 400px;
+        height: 300px;
+    }
+}

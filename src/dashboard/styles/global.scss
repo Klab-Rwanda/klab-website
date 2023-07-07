@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+@import './variables';
+@import './mixinis';
+
+// components 
+@import './header.scss';
+@import './index.scss';
+@import './sidebar.scss';
+@import './admin/projects.scss';
+@import './admin/transactions.scss';
+
+// pages
+
+@import './companyPage.scss';
+@import './EventsPage.scss';
+@import './memberPatners.scss';
+@import './members.scss';
+@import './parent.scss';
+@import './Payments.scss';
+@import './SinglePartner.scss';
+
+@import "../../Components/styles/company.scss";
+
+
+
+@import './admin/singletrainer.scss';
+@import './admin/SingleCompany.scss';
+@import './admin/Singlealumni.scss';
+@import './admin/Singletrainee.scss';
+@import './applicants.scss';
+@import './singleApplicants.scss';
+@import './admin/addTeam.scss';
+@import '../../Components/styles/Application.scss'; 
+@import '../../Components/styles/companyForm.scss';
+@import '../../dashboard/styles/Programs.scss';
+@import '../../Components/styles/Parentdashboard.scss';
+@import '../../Components/styles/parentform.scss';
+@import '../../Components/styles/testimonials.scss';
+@import '../../Components/styles/trainers.scss';

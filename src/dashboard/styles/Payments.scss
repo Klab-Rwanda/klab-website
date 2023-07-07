@@ -1,68 +1,122 @@
 .payments-content{
     margin-top: 5rem;
-    margin-left: 18.5rem;
+    margin-left: 16rem;
     width: 100%;
-    height: 100%;
-    padding-bottom: 85px;
-    color: #18385A;
-    .payment-filters{
-       display: flex;
-       flex-direction: row;
-       gap: 15px;
-       align-items: center;
-       .payment-companies{
-            background-color: #2F85E1;
-            color: white;
-        }
-        .payment-parents{
-            background-color: #2F85E1;
-            color: white;
-        }
-        
-       button{
-        cursor: pointer;
-        padding: 5px;
-        border-radius: 5px;
-        border: none;
-        font-size: 18px;
-        width: 150px;
-        background-color: white;
-       }
+    @include mobile-l{
+        margin-top: 5rem ;
+        margin-left: 1rem;
+        width: 90%;
+
     }
-    .payment-invoices{
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 8px;
-        width: 80%;
-        margin: 15px 0;
+    @include tablet{
+        margin-left: 3rem;
+    }
+
+    .pymnt-cards{
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+        width: 95%;
+        @include mobile-l{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .pymnt-card{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: white;
+            border-radius: 12px;
+            padding: 10px 15px;
+            color: #18385A;
+            // width: 250px;
+            width: 100%;
+            @include mobile-l{
+                width: 100%;
+            }
+            .dollar-icon{
+                font-size: 24px;
+            }
+
+            h1{
+              color: #18385A;
+              font-weight: bold;
+              font-size: 24px;
+            }
+        }
+    }
+
+
+    .invoices{
+        background-color: white;
+        margin-top: 15px;
+        border-radius: 12px;
+        padding: 15px;
+        width: 95%;
+        .inv-headers{
+            display: flex;
+            justify-content: space-between;
+            .inv-filters{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: #F2F8FF;
+                border-radius: 20px;
+                color: #899DB8;
+                height: 30px;
+                .active-inv{
+                    background-color: #2F85E1;
+                    color: white;
+                    border-radius: 15px;
+                    padding: 5px 15px;
+                }
+                li{
+                    cursor: pointer;
+                    margin: 0 10px;
+                    font-size: 14px;
+                    padding: 5px 5px;
+                }
+            }
+
+        }
         table{
             width: 100%;
-            border-collapse: collapse;
             th{
-                padding: 10px;
+                color: #899DB8;
+                text-align: left;
+                font-size: 14px;
             }
-            .pymnt-amount{
-                color: #096B3B;
-                font-weight: 500;
-                
+            .inv-header-row{
+                border-bottom: 0.5px solid #899DB8;
+            }
+            .inv-profile{
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+            }
+            .td{
+                display: flex;
+                padding: 5px 0;
+                align-items: center;
+                span{
+                    margin-left: 15px;
+                }
+                font-size: 13px;
             }
             td{
-                text-align: center;
-                padding: 10px;
+                font-size: 13px;
                 color: #18385A;
-
-               
             }
-            
+            .status{
+                color: #096B3B;
+                border: 1px solid #096B3B;
+                border-radius: 5px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                width: 60%;
+            }
         }
     }
-    table tr:nth-child(odd){
-    background-color: #f2f8ff;
-    color: #18385A;
-    
-    
-    
-}
-
-
+   
 }

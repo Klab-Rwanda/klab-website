@@ -1,4 +1,4 @@
-import profile from "/public/assets/website/images/girl.jpg";
+import profile from "../assets/website/images/girl.jpg";
 const Singletrainer= () =>{
     return(
     

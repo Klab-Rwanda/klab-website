@@ -4,8 +4,6 @@ import { useState } from 'react';
 
 const Outline = () => {
   const [sidebar, setSidebar] = useState(true);
-  
-
   return (
     <div>
       <DashboardSidebar sidebar={sidebar} setSidebar={setSidebar} />

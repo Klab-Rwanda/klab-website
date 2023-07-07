@@ -1,0 +1,375 @@
+// @import "../../dashboard/styles/variables";
+// @import "../../dashboard/styles/mixinis";
+
+// .formu-container{
+//     width: 80%;
+//     display: flex;
+//     flex-direction: column;
+//     margin: 20px auto;
+//     color: #070937;
+//     @include mobile{
+//         margin: 20px auto;
+//         width: 90%;
+//     }
+//     @include mobile-l{
+//         margin: 20px auto;
+//         width: 90%;
+//     }
+//     button{
+//         border-radius: 16px;
+//         padding: 20px, 70px, 20px, 70px;
+//         font-weight: 500;
+//         background-color: transparent;
+//         border: 1px solid black;
+//         width: 100px;
+//         height: 40px;
+//         @include mobile{
+//             width: 80px;
+//             height: 35px;
+//             border-radius: 14px;
+
+//         }
+//         &[type="submit"]{
+//             background-color: #2F85E1;
+//             border: none;
+//             // margin-left: 20px;
+//             color: white;
+//         }
+//     }
+//     h1{
+//         color: #070937;
+//     }
+    
+// }
+// .first-grid{
+//     width: 100%;
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     column-gap: 30px;
+//     align-items: flex-start;
+//     margin: 20px 0;
+//     @include mobile{
+//         column-gap: 20px;
+//     }
+//     @include mobile-l{
+//         column-gap: 20px;
+//     }
+    
+//     .input{
+//         display: flex;
+//         flex-direction: column;
+//         margin: 5px 0;
+//         font-size: 14px;
+//         @include mobile-l{
+//             font-size: 12px;
+//         }
+//         .input-err{
+//          border-bottom: 1px solid red;
+//         }
+        
+//         label{
+//             color: #020235;
+//             font-weight: 600;
+//             @include mobile{
+//                 font-size: 12px;
+//             }
+//             @include mobile-l{
+//                 font-size: 12px;
+//             }
+//         }
+        
+//         input{
+//             border-bottom: 1px solid #d2d2ff;
+//             margin-top: 5px;
+//             @include mobile{
+//             width: 100%;
+//             align-items: flex-start;
+//         }
+//         }
+        
+        
+//     }
+    
+// }
+// .second-grid{
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 70px;
+//     @include mobile{
+//         grid-template-columns: repeat(2, 1fr);
+//         width: 100%;
+//         gap: 20px 25px;
+//     }
+//     @include mobile-l{
+//         grid-template-columns: repeat(2, 1fr);
+//         width: 100%;
+//         gap: 20px 25px;
+//     }
+    
+//         // .radios{
+//         //     margin-top: 8px;
+//         //     @include mobile-l{
+//         //         font-size: 16px;
+//         //     }
+            
+//         //     label{
+//         //         margin-left: 5px;
+//         //         color: #070937;
+//         //         font-weight: 400;
+//         //     }
+//         // }
+//         .form-label{
+//             color: #070937;
+//             font-weight: 600;
+//         }
+// }
+// .address-container{
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 60px;
+//     margin: 10px 0;
+//     @include mobile{
+//         grid-template-columns: repeat(2, 1fr);
+//         width: 100%;
+//         gap: 20px 30px;
+//     }
+//     @include mobile-l{
+//         grid-template-columns: repeat(2, 1fr);
+//         width: 100%;
+//         gap: 20px 30px;
+//     }
+//     .input{
+//         display: flex;
+//         flex-direction: column;
+//         // border-bottom: 1px solid #CBCDFF;
+//         margin-top: 8px;
+//         width: 50%;
+//         input{
+//             @include mobile {
+//             width: 100%;
+//             margin-top: 5px;
+//             font-size: 14px;
+//             }
+//         }
+//         @include mobile{
+//             width: 100%;
+//             margin-top: 8px;
+//         }
+//         @include mobile-l{
+//             width: 100%;
+//             margin-top: 8px;
+//             font-size: 13px;
+//         }
+//         .input-err{
+//             border-bottom: 1px solid red;
+//            }
+//     }
+    
+//     label{
+//         color: #070937;
+//         font-weight: 600;
+//         @include mobile-l{
+//             width: 100%;
+//         }
+//     }
+// }
+// .education-background{
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 60px;
+//     margin: 20px 0;
+//     @include mobile{
+//         grid-template-columns: repeat(2, 1fr);
+//         width: 100%;
+//         gap: 20px 25px;
+//     }
+//     @include mobile-l{
+//         grid-template-columns: repeat(2, 1fr);
+//         width: 100%;
+//         gap: 20px 25px;
+//     }
+//     .radios{
+//         label{
+//             // margin: 0 10px;
+//             color: #070937;
+//             font-weight: 400;
+//             @include mobile{
+//                 width: 100%;
+//                 font-size: 16px;
+//             }
+//             @include mobile-l{
+//                 width: 100%;
+//                 font-size: 14px;
+//             }
+//         }
+//     }
+//     .form-label{
+//         color: #070937;
+//         font-weight: 600;
+//     }
+
+// }
+// .school{
+//     display: flex;
+//     flex-direction: row;
+//     gap: 11rem;
+//     @include mobile{
+//         flex-direction: column;
+//         gap: 20px;
+//     }
+//     @include mobile-l{
+//         flex-direction: column;
+//         gap: 20px;
+//     }
+//     .input{
+//         display: flex;
+//         flex-direction: column;
+//         input{
+//             border-bottom: 1px solid #CBCDFF;
+//             margin-top: 5px;
+//         }
+//         label{
+//             color: #070937;
+//             font-weight: 600;
+//         }
+//         .input-err{
+//             border-bottom: 1px solid red;
+//            }
+//     }
+// }
+// .skills{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     margin: 10px 0;
+//     @include mobile{
+//         flex-direction: column;
+//         gap: 15px;
+//     }
+//     @include mobile-l{
+//         flex-direction: column;
+//         gap: 15px;
+//     }
+//     .form-label{
+//         color: #070937;
+//         font-weight: 600;
+//     }
+//     .radios{
+//         label{
+//             margin-left: 8px;
+//         }
+//     }
+//     .description{
+//         display: flex;
+//         flex-direction: column;
+//         textarea{
+//             border: 1px solid #CBCDFF;
+//             margin-top: 10px;
+//             padding: 5px;
+            
+//         }
+//     }
+// }
+// .links{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     @include mobile{
+//         flex-direction: column;
+//         gap: 15px;
+//     }
+//     @include mobile-l{
+//         flex-direction: column;
+//         gap: 15px;
+//     }
+//     .input{
+//         display: flex;
+//         flex-direction: column;
+//         gap: 8px;
+//         width: 90%;
+//         @include mobile{
+//             width: 100%;
+//         }
+//         @include mobile-l{
+//             width: 100%;
+//         }
+//         .input-err{
+//             border-bottom: 1px solid red;
+//            }
+//         input{
+//             border-bottom: 1px solid #cbcdff;
+//             width: 80%;
+           
+//             @include mobile{
+//                 width: 100%;
+//             }
+//             @include mobile-l{
+//                 width: 100%;
+//             }
+//             .input-err{
+//                 border-bottom: 1px solid red;
+//                }
+//         }
+//         label{
+            
+//             color: #070937;
+//             font-weight: 600;
+//         }
+//     }
+// }
+// .ent-desc{
+//     display: flex;
+//     flex-direction: column;
+//     textarea{
+//         margin-top: 10px;
+//         border: 1px solid #cbcdff;
+//         padding: 5px;
+//         .input-err{
+//             border-bottom: 1px solid red;
+//            }
+//     }
+
+// }
+// .innov-modal{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     @include mobile{
+//         flex-direction: column;
+//         gap: 15px;
+//     }
+//     @include mobile-l{
+//         flex-direction: column;
+//         gap: 15px;
+//     }
+//     .input{
+//         display: flex;
+//         flex-direction: column;
+//         gap: 8px;
+//         input{
+//             border-bottom: 1px solid #CBCDFF;
+//         }
+//         label{
+//             color: #070937;
+//             font-weight: 600;
+//         }
+//     }
+// }
+// .submit-info{
+//     h4{
+//         font-weight: bold;
+//         color: #070937;
+//     }
+// }
+
+// .input-error{
+//     border-bottom: 1px solid red;
+// }
+
+// button:disabled{
+//     opacity:0.35;
+// }
+// .red{
+//     color: red;
+// }
+

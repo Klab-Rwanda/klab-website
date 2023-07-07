@@ -1,10 +1,15 @@
 
 
 .company-headers{ 
-    h2{
-    line-height: 0.5;
+    h1{
+       margin-top: 1rem;
+        font-weight: 700;
+        font-size: x-large;
+    // line-height: 0.5;
     color: #29496c;
     margin-left: 2rem;
+    // font-size: 16px;
+
     @include mobile-l{
         font-size: 16px;
         margin-left: 1rem;
@@ -47,7 +52,7 @@
             .company-names{
                 display: flex;
                 flex-direction: column;
-                line-height: 0.1;
+                // line-height: 0.1;
                 margin-top: -1.5rem;
                 @include mobile-l{
                     margin-top: 0;

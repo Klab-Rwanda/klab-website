@@ -4,6 +4,7 @@
   flex-direction: row;
   width: 100%;
   gap: 20px;
+
   @include mobile-l{
     flex-direction: column;
   }
@@ -13,11 +14,12 @@
     position: relative;
     gap: 10px;
     width: 100%;
-    h3{
+    h1{
       display: flex;
       width: 90%;
       justify-content: space-between;
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: 700;
       span{
         font-size: 16px;
       }
@@ -29,18 +31,32 @@
   width: 100%;
   border-radius: 16px;
   padding: 10px;
+
+  
   .card-header{
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    .red{
+      background-color: red !important;
+    }
+    .blue{
+      background-color: blue !important;
+    }
     .one{
       background-color: #096B3B;
       border-radius: 10px;
       color: white;
       height: 25px;
       font-size: 14px;
-      padding: 2px 5px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      p{
+        font-size: 12px;
+      }
     }
     .calender{
       display: flex;
@@ -51,8 +67,15 @@
     }
   }
   .paragraph{
+    margin: 15px 0;
+    h1{
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
     p{
       font-size: 14px;
+      cursor:pointer ;
     }
   }
   .progress{
@@ -60,6 +83,12 @@
     align-items: center;
     width: 90%;
     justify-content: space-between;
+    .red{
+      background-color: red !important;
+    }
+    .blue{
+      background-color: blue !important;
+    }
     p{
       font-size: 12px;
     }
@@ -78,14 +107,64 @@
     }
   }
   .project-profiles{
-    img{
+    display: flex;
+  
+    justify-content: space-between;
+  .IMG{
+    display: flex;
+  
+    flex-direction: row;
+ img{
       width: 35px;
       height: 35px;
       border-radius: 100px;
       margin-right: -10px;
       border: 2px solid white;
     }
+    }
+   
+   
   }
+  }
+}
+.close-icoo{
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+  
+}
+.model-holder{
+     position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+ overflow: auto;
+ 
+  background-color: rgba(52, 49, 49, 0.5); /* RGBA color with 50% opacity */
+  backdrop-filter: blur(1px); /* CSS filter to apply a 10px blur effect */
+}
+.modal{
+
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  background-color: #fff; /* background color for the modal */
+  padding: 20px; 
+  overflow: auto;   
+  line-height: 20px;
+  h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    
+  }
+  p{
+    line-height: 30px;
   }
 }
 

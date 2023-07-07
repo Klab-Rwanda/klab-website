@@ -1,10 +1,9 @@
-@import "/src/styles/variables";
-@import "/src/styles/mixinis";
+@import "./variables";
+@import "./mixinis";
 
 .events-content {
-  // margin: 6rem 17.5rem;
   margin-top: 6rem;
-  margin-left: 17.5rem;
+  margin-left: 14rem;
   width: 100vw;
   @include mobile-l{
     margin-top: 6rem;
@@ -18,7 +17,7 @@
 .event-cards {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 98%;
   @include mobile-l{
     display: grid;
     align-items: center;
@@ -42,10 +41,12 @@
   align-items: center;
   justify-content: space-between;
   background-color: $brand-white;
-  padding: 10px 20px;
+  padding: 20px 20px;
   margin: 0 20px;
-  width: 228px;
+  // width: 228px;
+  width: 100%;
   border-radius: 16px;
+  height: 100%;
   @include mobile-l{
     width: 100%;
     margin: 5px auto;
@@ -69,6 +70,9 @@
   }
   .card-details {
     line-height: 0.3;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     p {
       color: $brand-2;
       @include mobile-l{
@@ -79,7 +83,7 @@
     h1 {
       color: #18385a;
       font-weight: bold;
-      font-size: 45px;
+      font-size: 40px;
       @include mobile-l{
         font-size: 30px;
       }
@@ -103,7 +107,7 @@
 
 .events-container {
   margin: 0 20px;
-  width: 60%;
+  width: 55%;
   @include mobile-l{
     width: 90%;
     margin: 0 auto;
@@ -119,7 +123,8 @@
   color: #18385a;
   display: flex;
   flex-direction: column;
-  line-height: 0.5;
+  margin-top: 20px;
+  margin-bottom: 5px;
 
   p {
     font-size: 14px;
@@ -135,15 +140,16 @@
     position: absolute;
     display: flex;
     justify-content: flex-end;
-    top: 55px;
+    top: 20px;
     left: 30%;
     @include mobile-l{
-      width: 80%;
-      position: absolute;
-      display: flex;
-      justify-content: flex-end;
-      top: 50px;
-      left: 20%;
+      display: none;
+      // width: 80%;
+      // position: absolute;
+      // display: flex;
+      // justify-content: flex-end;
+      // top: 20px;
+      // left: 15%;
     }
     p {
       margin: 0 15px;
@@ -162,6 +168,7 @@
     border-radius: 15px;
     th{
       padding: 10px;
+      text-align: left;
       @include mobile-l{
         font-size: 14px;
       }
@@ -246,6 +253,12 @@
       border: none;
       border-radius: 10px;
       padding: 0 10px;
+    }
+    .add-event-error{
+      border: 1px solid red;
+      select{
+        border: 1px solid red;
+      }
     }
    
     .dates{

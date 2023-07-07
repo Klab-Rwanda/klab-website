@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import logo from '../asset/Logo.png'
+import logo from './assets/website/images/logo.svg'
 import {HiHome} from 'react-icons/hi'
 import { MdApartment } from "react-icons/md";
 import { FaUsers, FaTimes } from "react-icons/fa";
@@ -9,8 +9,7 @@ import { MdPayments } from "react-icons/md";
 import {HiBars3BottomLeft } from "react-icons/hi2";
 import {NavLink} from  "react-router-dom";
 import {IoClose} from "react-icons/io5";
-
-
+import {GiProgression} from "react-icons/gi"; 
 
 
 const DashboardSidebar = ({sidebar, setSidebar}) => {
@@ -20,15 +19,15 @@ const DashboardSidebar = ({sidebar, setSidebar}) => {
     };
     
     return (
-      <div className={ sidebar?"container": "sidebar-off"}>
+      <div className={sidebar ? "custom-side-container" : "sidebar-off"}>
         <div className="logo">
           <img src={logo} alt="" />
-          <IoClose  className=" menu-close" onClick={handleToggle}/>
+          <IoClose className=" menu-close" onClick={handleToggle} />
         </div>
         <ul className={`nav ${sidebar ? "" : "collapsed"}`}>
           <NavLink
             to="/admin/dashboard"
-            activeclassName="active"
+            activeClassName="active"
             className="sidebar-link"
           >
             <li>
@@ -39,25 +38,31 @@ const DashboardSidebar = ({sidebar, setSidebar}) => {
           <NavLink to="/dashboard/companies" className="sidebar-link">
             <li>
               <MdApartment className="side-icon" />
-               <span>Companies</span>
+              <span>Companies</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/members" className="sidebar-link">
             <li>
               <FaUsers className="side-icon" />
-            <span>Members</span>
+              <span>Members</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/parentpage" className="sidebar-link">
             <li>
               <RiParentFill className="side-icon" />
-               <span>Parents</span>
+              <span>Parents</span>
             </li>
           </NavLink>
           <NavLink to="/dashboard/events" className="sidebar-link">
             <li>
               <BsFillCalendarEventFill className="side-icon" />
-               <span>Events</span>
+              <span>Events</span>
+            </li>
+          </NavLink>
+          <NavLink to="/dashboard/programs" className="sidebar-link">
+            <li>
+              <GiProgression className="side-icon" />
+              <span>Programs</span>
             </li>
           </NavLink>
           <NavLink to="/payments" className="sidebar-link">

@@ -1,12 +1,11 @@
-@import "/src/styles/mixinis";
-@import "/src/styles/variables";
+@import "./mixinis";
+@import "./variables";
 
 .wrapper{
     background-color: #F2F8FF;
     width: 100%;
     height: 100%;
     display: flex;
-    
     @include mobile-l{
         width: 100%;
         flex-direction: column;
@@ -14,8 +13,9 @@
 }
 .dashboard-home{
     margin-top: 6rem;
-    margin-left: 17.5rem;
+    margin-left: 15rem;
     width: 100%;
+    overflow-x: hidden;
     @include mobile-l{
         margin-top: 5rem;
         margin-left: 0rem;
@@ -28,7 +28,7 @@
     }
 }
 .chard-container{
-    width: 85%;
+    width: 90%;
     height: 228px;
     border-radius: 15px;
     padding: 10px 20px;
@@ -45,7 +45,7 @@
 }
 .flex-container{
     display: flex;
-    width: 100vw;
+    width: 98%;
     align-items: flex-start;
     @include mobile-l{
         flex-direction: column;
@@ -56,7 +56,8 @@
         width: 100%;
     }
     aside{
-        width: 63vw;
+        // width: 63vw;
+        width: 80%;
         @include mobile-l{
             width: 100%;
         }
@@ -84,7 +85,7 @@
     .users-container{
         background-color: #fff;
         color: #18385A;
-        width: 30%;
+        width: 40%;
         border-radius: 15px;
         padding: 5px 10px;
         @include mobile-l{
@@ -117,12 +118,10 @@
                 right: 0;
             }
             h4{
-                font-size: 12px;
+                font-size: 14px;
             }
             p{
-                margin-top: -15px;
-                font-size: 11px;
-                
+                font-size: 14px;
             }
         }
         .user{
@@ -137,6 +136,10 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 10px;
+            h4,p{
+                font-size: 14px;
+            }
         }
         button{
             width: 100%;
@@ -161,10 +164,16 @@
     }
     .messages-container{
         background-color: #fff;
-        width: 55%;
+        width: 50%;
         border-radius: 15px;
         padding: 10px 20px;
         height: 100%;
+      
+        .messages-list{
+            height: 300px;
+            overflow-y:scroll ;
+           
+        }
         @include mobile-l{
             width: 90%;
             margin: 0 auto;
@@ -201,7 +210,6 @@
             flex-direction: row;
             align-items: center;
             border-bottom: 1px solid #A3C0E2;
-            
             img{
                 width: 50px;
                 height: 50px;
@@ -212,17 +220,24 @@
                 }
             }
             .message-details{
-                margin: 0 25px;
+                margin: 10px 25px;
                 width: 70%;
+             .icoo{
+                margin-left: 320px;
+              
+             }
                 
                 h4{
                     color: #18385A;
+                    font-weight: 800;
+                    cursor: pointer;
                     @include mobile-l{
                         font-size: 14px;
                     }
                 }
                 p{
                     color: #778CA1;
+                    cursor: pointer;
                     @include mobile-l{
                         font-size: 12px;
                     }
@@ -232,14 +247,15 @@
     }
 }
 .recent-activities{
-    width: 20vw;
-    margin: 0 -70px;
-    position: relative;
+    width: 21%;
+    margin-top: 20px;
+    margin-left: -30px;
     color: #18385A;
     @include mobile-l{
         width: 90%;
         margin: 0 auto;
         font-size: 15px;
+        margin-top: 10px;
     }
     @include tablet{
         width: 90%;
@@ -263,4 +279,39 @@
             margin: 0 15px;
         }
     }
+}
+.name-icoo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.close-icoo{
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+  
+}
+.model-holder{
+     position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+ overflow: auto;
+ 
+  background-color: rgba(0, 0, 0, 0.5); /* RGBA color with 50% opacity */
+  backdrop-filter: blur(2px); /* CSS filter to apply a 10px blur effect */
+}
+.modal{
+
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  background-color: #fff; /* background color for the modal */
+  padding: 20px; 
+  overflow: auto;   
 }

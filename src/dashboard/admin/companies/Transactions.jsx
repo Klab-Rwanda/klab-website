@@ -1,11 +1,13 @@
 import {GrMore} from 'react-icons/gr';
-import profile from '/public/assets/website/images/girl.jpg';
-const Transactions=()=>{
+// import profile from '../assets/website/images/girl.jpg';
+import profile from '../../assets/website/images/girl.jpg';
+
+const Transactions = () =>{
     return(
     
         <div className='company-container'>
             <div className="company-headers">
-                <h2>Latest Transactions</h2>
+                <h1>Latest Transactions</h1>
             </div>
 
             <div className="company-members">

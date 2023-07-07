@@ -1,7 +1,13 @@
 .members-content{
-    margin-left: 17.5rem;
+    margin-left: 16rem;
     margin-top: 6rem;
     width: 100%;
+    @include mobile-l{
+        margin-left: 0;
+    }
+    @include tablet{
+        margin-left: 0;
+    }
     .members-sider{
         background-color: #fff;
         height: 100vh;
@@ -10,6 +16,12 @@
         display: flex;
         justify-content: center;
         width: 20%;
+        @include mobile-l{
+            display: none;
+        }
+        @include tablet{
+            display: none;
+        }
         .members-active{
                 border-left: 4px solid #373C36;
                 background-color: #F2F8FF;
@@ -21,7 +33,8 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            margin: 30px 0;
+            margin: 30px 0px;
+            margin-left: 25px;
             align-items: flex-start;
             position: relative;
             .members-link{
@@ -43,8 +56,6 @@
                     color: #627DA0;
                 }
                 &:hover{
-                    background-color: #F2F8FF;
-                    width: 177px;
                     border-radius: 10px 0 0 10px;
                     color: #373C36;;
                     
@@ -58,17 +69,56 @@
         flex-direction: row;
         gap: 20px;
         width: 100%;
-        
     }
     .outlet{
             background-color: #fff;
             width: 75%;
             border-radius: 17px;
+            @include mobile-l{
+                width: 90%;
+                margin: 0 auto;
+            }
+            @include tablet{
+                width: 90%;
+                margin: 0 auto;
+            }
+            .members-menu-icon{
+                display: none;
+                @include mobile-l{
+                    display: block;
+                    font-size: 24px;
+                    margin-left: 90%;
+                    margin-top: 20px;
+                    color: #18385A;
+                    z-index: 1000;
+                }
+                @include tablet{
+                    display: block;
+                    font-size: 24px;
+                    margin-left: 19rem;
+                    margin-top: 20px;
+                    color: #18385A;
+                    z-index: 1000;
+                }
+            }
         }
         .admin-headers{
-            margin: 30px 15px;
-            line-height: 0.5;
+            margin: 20px 15px;
+            line-height: 30px;
             color: #18385A;
+            h2{
+                font-weight: 700;
+                font-size: 20px;
+                @include mobile-l{
+                    font-size: 22px;
+                    
+                }
+            }
+            p{
+                @include mobile-l{
+                    font-size: 13px;
+                }
+            }
         }
 
         .admin-members{
@@ -78,6 +128,27 @@
                 width: 70px;
                 height: 70px;
                 border-radius: 20px;
+                @include mobile-l{
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 10px;
+                }
+            }
+            .member-email{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 69%;
+                @include mobile-l{
+                    font-size: 13px;
+                    width: 100%;
+                    margin-top: -15px;
+                }
+                p:nth-child(even){
+                    @include mobile-l{
+                        display: none;
+                    }
+                }
             }
             .admin-item{
                 display: flex;
@@ -89,9 +160,15 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    width: 80%;
+                    width: 100%;
                     align-items: center;
                     margin-left: 20px;
+                    @include mobile-l{
+                        flex-direction: row;
+                        width: 80%;
+                        align-items: center;
+                        
+                    }
                 }
                 span{
                     margin-top: 15px;
@@ -100,7 +177,16 @@
                 .admin-names{
                     display: flex;
                     flex-direction: column;
-                    line-height: 0.1;
+                    line-height: 30px;
+                    @include mobile-l{
+                        width: 100%;
+                    }
+                    h4{
+                        @include mobile-l{
+                            font-size: 14px;
+                            width: 100%;
+                        }
+                    }
                     p{
                         margin-top: -1px;
                     }
@@ -109,16 +195,107 @@
                 .eye-icon{
                     color: #2F85E1;
                     border: 1px solid #DDE8F4;
-                    border-radius: 11px;
-                    padding: 10px 10px;
-                    height: 40px;
-                    width: 40px;
+                    border-radius: 5px;
+                    padding: 5px;
+                    height: 30px;
+                    width: 30px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     cursor: pointer;
+                    @include mobile-l{
+                        height: 30px;
+                        width: 30px;
+                    }
                     
                 }
             }
         }
+
+        .members-modal{
+            position: absolute;
+            z-index: 1000;
+            background-color: white;
+            border-radius: 8px;
+            right: 5%;
+            top: 24%;
+            display: flex;
+            width: 50%;
+            padding: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
+            ul{
+                list-style-type: none;
+                .companies-link{
+                margin: 10px 0;
+                }
+                li{
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    cursor: pointer;
+                    color: #627DA0;
+                    font-size: 16px;
+                    padding: 15px  15px;
+                    span{
+                        margin: 0px 10px;
+                        }
+                        @include mobile-l{
+                        font-size: 12px;
+                        }
+                        &:hover{
+                        color: #373C36;
+                        }
+                } 
+                }
+        }
+}
+.admin-add{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .add{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+}
+
+
+.model-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+}
+
+.modals {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    background-color: #fff;
+    /* background color for the modal */
+    padding: 20px;
+    overflow: auto;
+    line-height: 20px;
+
+    h3 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 18px;
+
+    }
+
+    p {
+        line-height: 30px;
+    }
 }

@@ -1,0 +1,568 @@
+
+import Navbar from "../Components/Navs/Navbar";
+import Footer from "../Components/sections/Footer";
+import LineImg from "../assets/Vector.svg";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import axios from "axios";
+import {useState} from "react";
+import { Report } from "notiflix/build/notiflix-report-aio";
+
+Report.init({
+  width: "320px",
+  backgroundColor: "#f8f8f8",
+  borderRadius: "8px",
+  backOverlayColor: "rgba(0,0,0,0.5)",
+  svgSize: "100px",
+  
+  success: {
+    svgColor: "#18385A",
+    titleColor: "#1e1e1e",
+    messageColor: "#242424",
+    buttonBackground: "#18385A",
+    backOverlayColor: "rgba( 0, 0, 0, 0.5)",
+  },
+  failure: {
+    svgColor: "#ff5549",
+    buttonBackground: "#ff5549",
+    buttonColor: "#fff",
+    backOverlayColor: "rgba( 0, 0, 0, 0.5)",
+  },
+});
+
+const APPLY_URL = "https://klabbackend-sbhs.onrender.com/api/v1/application";
+
+const applicationSchema = yup.object().shape({
+  email: yup.string().email("Please enter a valid email").required("Required"),
+  fullname: yup.string().required("Required"),
+  phone: yup.number().typeError("Required").required("Required"),
+  gender: yup.string().required("Required"),
+  dob: yup
+    .date("this is a required field")
+    .typeError("Required")
+    .required("Required"),
+  agerange: yup.string().required("Required"),
+  country: yup.string().required("Required"),
+  province: yup.string().required("Required"),
+  district: yup.string().required("Required"),
+  areyougraduate: yup.string().required("Required"),
+  educationlevel: yup.string().required("Required"),
+  schoolfrom: yup.string().required("Required"),
+  yearstudy: yup.string().required("Required"),
+  fieldofstudy: yup.string().required("Required"),
+  categoryfitin: yup.string().required("Required"),
+  skilldesc: yup.string(),
+  gitlink: yup.string().url("please enter a valid url"),
+  linkedinlink: yup
+    .string().url("please enter a valid url"),
+  entInnovationdesc: yup.string(),
+  shareInnovationModel: yup.string(),
+  profile: yup.mixed().test("required", "cv/resume is required", (value) => {
+    return value && value.length;
+  }),
+});
+
+
+const TechupskillApp = () => {
+ const [loading, setLoading] = useState(false);
+ const [developer, setDeveloper] = useState(false);
+ const [enterpreneur, setEnterpreneur] = useState(false);
+
+ const handleDev = () => {
+  setDeveloper(true);
+  setEnterpreneur(false);
+ }
+
+ const handleEnt = () => {
+  setEnterpreneur(true);
+  setDeveloper(false);
+ }
+
+const {
+  register,
+  handleSubmit,
+  formState: { errors },
+  reset,
+  watch,
+} = useForm({
+  resolver: yupResolver(applicationSchema),
+});
+
+const selectedOption = watch("categoryfitin");
+
+const onSubmit = async (data) => {
+  const formData = new FormData();
+  formData.append("email", data.email);
+  formData.append("fullname", data.fullname);
+  formData.append("phone", data.phone);
+  formData.append("gender", data.gender);
+  formData.append("dob", data.dob);
+  formData.append("agerange", data.agerange);
+  formData.append("country", data.country);
+  formData.append("province", data.province);
+  formData.append("district", data.district);
+  formData.append("educationlevel", data.educationlevel);
+  formData.append("fieldofstudy", data.fieldofstudy);
+  formData.append("categoryfitin", data.categoryfitin);
+  formData.append("schoolfrom", data.schoolfrom);
+  formData.append("yearstudy", data.yearstudy);
+  formData.append("entInnovationdesc", data.entInnovationdesc);
+  formData.append("shareInnovationModel", data.shareInnovationModel);
+  if(developer){
+  formData.append("areyoudev", data.areyoudev);
+  formData.append("skilldesc", data.skilldesc);
+  formData.append("gitlink", data.gitlink);
+  formData.append("linkedinlink", data.linkedinlink);
+  formData.append("skillyouwantjoin", data.skillyouwantjoin);
+  }
+  formData.append("areyougraduate", data.areyougraduate);
+  formData.append("profile", data.profile[0]);
+  console.log(data);
+
+  try{
+    setLoading(true);
+    const response = await axios.post(APPLY_URL, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      },
+    });
+    setLoading(false);
+
+    Report.success(
+      "Success",
+      "You have successfully sent your application! we have sent you a confirmation message to the email you provided.",
+      "Okay"
+    );
+    reset();
+  } catch(err){
+    console.log(err);
+  }
+    
+  setLoading(false);
+}
+console.log(errors);
+
+  return (
+    <div>
+      <div className="w-screen welcomeBg flex justify-center items-center relative  xl:pt-48 lg:pt-36 md:pt-28 sm:pt-16 py-32">
+        <Navbar />
+        <div className="w-3/4 flex flex-col gap-2 md:-ml-24">
+          <h1 className="font-semibold text-3xl text-white">Techupskill</h1>
+          <p className="font-light mt-5 text-white">
+            Build your team with developers, engineers and pro remote experts.
+          </p>
+        </div>
+      </div>
+      <div className="form-container">
+        <div className="xl:w-1/2 lg:w-1/2 md:w-3/4 sm:w-4/5 w-full flex flex-col items-start gap-2">
+          <h1 className="font-bold text-base md:text-xl">Application Details</h1>
+          <img src={LineImg} alt="VectorImage" className="w-1/3" />
+          <p className="w-full font-normal text-slate-800 text-sm xl:text-base lg:text-base md:text-base sm:text-sm">
+            The project will be conducted during 5 months from October to
+            February, in three phases: Talent detection across the country,
+            training, and organising a hackathon.
+          </p>
+        </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="first-grid">
+            <div className="email-input input">
+              <label htmlFor="email" >Email</label>
+              <input
+                className={errors.email ? "error" : ""}
+                type="text"
+                placeholder="example@gmail.com"
+                {...register("email")}
+              />
+              <span className="text-red-400">{errors.email?.message}</span>
+            </div>
+            <div className="name-input input">
+              <label htmlFor="name">Fullname</label>
+              <input
+                type="text"
+                {...register("fullname")}
+                className={errors.fullname ? "error" : ""}
+              />
+              <span className="text-red-400">{errors.fullname?.message}</span>
+            </div>
+            <div className="phone-input input">
+              <label htmlFor="phone">Phone number</label>
+              <input
+                type="number"
+                {...register("phone")}
+                className={errors.phone ? "error" : ""}
+              />
+              <span className="text-red-400">{errors.phone?.message}</span>
+            </div>
+            <div className="birthday-input input">
+              <label htmlFor="birthdate">Date of Birth</label>
+              <input
+                type="date"
+                {...register("dob")}
+                className={errors.dob ? "error" : ""}
+              />
+              <span className="text-red-400">{errors.dob?.message}</span>
+            </div>
+          </div>
+          <div className="second-grid">
+            <div className="gender-input input">
+              <label htmlFor="gender" className="form-label">
+                Gender
+              </label>
+              <div className="radios">
+                <div className="flex items-center ">
+                  <input type="radio" value="Male" {...register("gender")} />
+                  <label htmlFor="Male" >
+                    Male
+                  </label>
+                </div>
+                <input type="radio" value="Female" {...register("gender")} />
+                <label htmlFor="Female" >
+                  Female
+                </label>
+              </div>
+              <span className="text-red-400">{errors.gender?.message}</span>
+            </div>
+            <div className="gender-input input">
+              <label htmlFor="age-range" className="form-label">
+                Age range
+              </label>
+              <div className="radios">
+                <input
+                  type="radio"
+                  name="agerange"
+                  value="15-35"
+                  {...register("agerange")}
+                />
+                <label>15 - 35</label>
+                <br />
+                <input
+                  type="radio"
+                  name="agerange"
+                  value="35-Above"
+                  {...register("agerange")}
+                />
+                <label>35 - Above</label>
+              </div>
+              <span className="text-red-400">{errors.agerange?.message}</span>
+            </div>
+            <div className="input">
+              <label className="form-label">
+                Which category do you fit in?
+              </label>
+              <div className="radios">
+                <input
+                  type="radio"
+                  name="categoryfitin"
+                  {...register("categoryfitin")}
+                  value="entrepreneur"
+                  onInput={handleEnt}
+                />
+                <label>Tech Entrepreneur</label>
+                <br />
+                <input
+                  type="radio"
+                  name="categoryfitin"
+                  {...register("categoryfitin")}
+                  value="developer"
+                  onInput={handleDev}
+                />
+                <label>Software developer</label>
+              </div>
+              <span className="text-red-400">
+                {errors.categoryfitin?.message}
+              </span>
+            </div>
+          </div>
+          <div className="address-container">
+            <div className="country-select input">
+              <label>Country</label>
+              <input
+                type="text"
+                className={errors.country ? "erorr " : "form-control"}
+                id="country"
+                {...register("country")}
+              />
+              <span className="text-red-400 ">{errors.country?.message}</span>
+            </div>
+            <div className="province input">
+              <label>Province</label>
+              <input
+                type="text"
+                {...register("province")}
+                className={errors.province ? "erorr " : ""}
+              />
+              <span className="text-red-400">{errors.province?.message}</span>
+            </div>
+            <div className="district-input input">
+              <label>District</label>
+              <input
+                type="text"
+                {...register("district")}
+                className={errors.district ? "erorr " : ""}
+              />
+              <span className="text-red-400">{errors.district?.message}</span>
+            </div>
+          </div>
+
+          <div className="education-background">
+            <div className="occupation input">
+              <label className="form-label">Are you a student/graduate?</label>
+              <div className="radios">
+                <input
+                  type="radio"
+                  value="student"
+                  name="areyougraduate"
+                  {...register("areyougraduate")}
+                />
+                <label htmlFor="student">Student</label>
+                <br />
+                <input
+                  type="radio"
+                  value="graduate"
+                  name="areyougraduate"
+                  {...register("areyougraduate")}
+                />
+                <label htmlFor="graduate">Graduate</label>
+                <br />
+                <input
+                  type="radio"
+                  value="other"
+                  name="areyougraduate"
+                  {...register("areyougraduate")}
+                />
+                <label htmlFor="other">Other</label>
+              </div>
+              <span className="text-red-400">
+                {errors.areyougraduate?.message}
+              </span>
+            </div>
+            <div className="level input">
+              <label className="form-label">Education level</label>
+              <div className="radios">
+                <input
+                  type="radio"
+                  value="highschool"
+                  name="educationlevel"
+                  {...register("educationlevel")}
+                />
+                <label htmlFor="highschool">Highschool</label>
+                <br />
+                <input
+                  type="radio"
+                  value="university"
+                  name="educationlevel"
+                  {...register("educationlevel")}
+                />
+                <label htmlFor="university">Student(university)</label>
+                <br />
+                <input
+                  type="radio"
+                  value="graduate"
+                  name="educationlevel"
+                  {...register("educationlevel")}
+                />
+                <label htmlFor="graduate">Graduate</label>
+                <br />
+                <input
+                  type="radio"
+                  value="masters"
+                  name="educationlevel"
+                  {...register("educationlevel")}
+                />
+                <label htmlFor="masters">Masters</label>
+              </div>
+              <span className="text-red-400">
+                {errors.educationlevel?.message}
+              </span>
+            </div>
+            <div className="field input">
+              <label className="form-label">Field of study</label>
+              <div className="radios">
+                <input
+                  type="radio"
+                  value="entrepreneur"
+                  name="fieldofstudy"
+                  {...register("fieldofstudy")}
+                />
+                <label>Tech Entrepreneur</label>
+                <br />
+                <input
+                  type="radio"
+                  value="developer"
+                  name="fieldofstudy"
+                  {...register("fieldofstudy")}
+                />
+                <label>Software development</label>
+                <br />
+              </div>
+              <span className="text-red-400">
+                {errors.fieldofstudy?.message}
+              </span>
+            </div>
+          </div>
+
+          <div className="school">
+            <div className="input">
+              <label>From which school/university</label>
+              <input
+                type="text"
+                {...register("schoolfrom")}
+                className={errors?.schoolfrom ? "erorr" : ""}
+              />
+              <span className="text-red-400">{errors.schoolfrom?.message}</span>
+            </div>
+            <div className="input">
+              <label>Year of study</label>
+              <input
+                type="text"
+                {...register("yearstudy")}
+                className={errors?.yearstudy ? "erorr" : ""}
+              />
+              <span className="text-red-400">{errors.yearstudy?.message}</span>
+            </div>
+            <div className="input">
+              <label>cv or Resume</label>
+              <input type="file" {...register("profile")} />
+              <span className="text-red-400">{errors?.profile?.message}</span>
+            </div>
+          </div>
+          <div className={developer ? "mt-5" : "hidden"}>
+            <h1 className="font-bold text-base">Software Developer</h1>
+            <img src={LineImg} alt="VectorImage" className="w-40" />
+            <div className="skills">
+              <div>
+                <label className="form-label">Are you a developer</label>
+                <div className="radios">
+                  <input type="radio" value="yes" {...register("areyoudev")} />
+                  <label>Yes</label>
+                  <br />
+                  <input type="radio" value="no" {...register("areyoudev")} />
+                  <label>No</label>
+                </div>
+                <span className="text-red-400">
+                  {errors.areyoudev?.message}
+                </span>
+              </div>
+              <div>
+                <label className="form-label">
+                  Which skills do you want to gain
+                </label>
+                <div className="radios">
+                  <input
+                    type="radio"
+                    value="frontend"
+                    {...register("skillyouwantjoin")}
+                  />
+                  <label>Frondend development</label>
+                  <br />
+                  <input
+                    type="radio"
+                    value="backend"
+                    {...register("skillyouwantjoin")}
+                  />
+                  <label>Backend development</label>
+                  <br />
+                  <input
+                    type="radio"
+                    value="mobile"
+                    {...register("skillyouwantjoin")}
+                  />
+                  <label>Mobile development</label>
+                </div>
+                <span className="text-red-400">
+                  {errors.skillyouwantjoin?.message}
+                </span>
+              </div>
+              <div className="description">
+                <label className="form-label">
+                  Describe your skills, not more than 200 words
+                </label>
+                <textarea
+                  placeholder="Your answer"
+                  {...register("skilldesc")}
+                  className={errors?.skilldesc ? "erorr" : ""}
+                ></textarea>
+                <span className="text-red-400">
+                  {errors.skilldesc?.message}
+                </span>
+              </div>
+            </div>
+            <div className="links">
+              <div className="input">
+                <label>Share github profile</label>
+                <input
+                  type="text"
+                  placeholder="http://github.com/username"
+                  {...register("gitlink")}
+                  className={errors?.gitlink ? "erorr" : ""}
+                />
+                <span className="text-red-400">{errors.gitlink?.message}</span>
+              </div>
+              <div className="input">
+                <label>Linkedin profile</label>
+                <input
+                  type="text"
+                  placeholder="http://linkedin.com/username"
+                  {...register("linkedinlink")}
+                  className={errors?.linkedinlink ? "erorr" : ""}
+                />
+                <span className="text-red-400">
+                  {errors.linkedinlink?.message}
+                </span>
+              </div>
+              <span className="text-red-400">{errors.devcv?.message}</span>
+            </div>
+          </div>
+          <div className={enterpreneur ? "mt-5" : "hidden"}>
+            <h1 className="font-bold text-base">Tech Entrepreneur</h1>
+            <img src={LineImg} alt="VectorImage" className="w-40" />
+            <div className="ent-desc mt-5">
+              <label>
+                If you are an entrepreneur, Please describe your innovation
+                description in not less than 200 words.
+              </label>
+              <textarea
+                placeholder="Your answer"
+                {...register("entInnovationdesc")}
+                className={errors.entInnovationdesc ? "input-err" : ""}
+              ></textarea>
+              <span className="text-red-400">
+                {errors.entInnovationdesc?.message}
+              </span>
+            </div>
+            <div className="innov-modal mt-5">
+              <div className="input">
+                <label>Share your innovation business modal</label>
+                <input
+                  type="text"
+                  {...register("shareInnovationModel")}
+                  className={errors.shareInnovationModel ? "erorr" : ""}
+                />
+                <span className="text-red-400">
+                  {errors.shareInnovationModel?.message}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="submit-info mt-4">
+            <h4>Application Deadline: 4th November</h4>
+            <p className="mt-5 mb-5">
+              By submitting your application you hereby declare that the
+              information provided is true and correct, you also understand any
+              willful dishonesty will lead to disqualification.
+            </p>
+          </div>
+          {/* <button>Cancel</button> */}
+          <button type="submit" disabled={loading}>
+            {loading ? "Submiting..." : "Submit"}
+          </button>
+        </form>
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+export default TechupskillApp

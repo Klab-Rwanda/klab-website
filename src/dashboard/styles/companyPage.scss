@@ -1,6 +1,6 @@
 .company-content {
   margin-top: 6rem;
-  margin-left: 17.5rem;
+  margin-left: 15rem;
   width: 100%;
 @include mobile-l{
       margin-top: 6rem;
@@ -12,15 +12,7 @@
       
     }
 }
-// .company-content1 {
-//     background-color: blue;
-//     margin-top: 6rem;
-//     margin-left: 17.5rem;
-//     width: 100%;
-    
-// }
 .companies-container{
-    // margin-left: 350px;
     background-color:white;
     border-radius: 16px;
     padding-right: 40px;
@@ -34,6 +26,7 @@
   .holder-info{
        overflow-y: hidden;
        height: 100%;
+       margin-top: 10px;
        @include mobile-l{
         height: 100%;
         overflow-y: hidden;
@@ -47,8 +40,9 @@
       // color: #18385A;
       padding-top: 20px;
       padding-left: 20px;
+      font-size: 20px;
       @include mobile-l{
-        font-size: 20px;
+        font-size: 18px;
       }
     }
     .info-company{
@@ -58,18 +52,28 @@
       gap: 1rem;
       color: #0b2137;
       font-size: 14px;
+      h4{
+        @include mobile-l{
+          font-size: 12px;
+        }
+      }
      
       h1{
         color: #010c18;
         line-height: 0;
+        font-size: 16px;
         @include mobile-l{
-          font-size: 18px;
+          font-size: 14px;
         }
+
       }
       p{
         line-height: 1;
+        margin-top: 10px;
         @include mobile-l{
           font-size: 12px;
+          line-height: 1.2;
+          
         }
       }
       
@@ -77,13 +81,18 @@
       background-color:#010f1f;
       padding: 0 10px;
       border-radius: 100%;
-      width: 120px;
-      height:80px;
+      width: 140px;
+      height: 70px;
       color:white;
       font-size: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
+      @include mobile-l{
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+      }
     
       }
     }
@@ -91,12 +100,13 @@
 .company-sider{
   background-color: #fff;
         height: 100vh;
-        padding: 5px 0px;
+        // padding: 5px 30px;
+        margin: 15px 17px;
         border-radius: 15px;
         display: flex;
         justify-content: center;
-        width: 21%;
-        margin: 15px 20px;
+        width: 20%;
+        position: relative;
         @include mobile-l{
           display: none;
         }
@@ -109,10 +119,12 @@
             display: flex;
             flex-direction: column;
             width: 100%;
+            margin: 30px 0px;
+            margin-left: 25px;
             align-items: flex-start;
             position: relative;
             .companies-link{
-              margin: 10px 0;
+              margin: 10px 0px;
             }
             li{
                 display: flex;
@@ -121,15 +133,18 @@
                 cursor: pointer;
                 color: #627DA0;
                 font-size: 16px;
-                padding: 15px  15px;
+                padding: 7px  10px;
                 span{
-                    margin: 0px 10px;
+                    margin: 10px;
+                    font-size: 14px;
+                    width: 100%;
+                }
+                img{
+                    color: #627DA0;
                 }
                 &:hover{
-                    background-color: #F2F8FF;
-                    width: 177px;
                     border-radius: 10px 0 0 10px;
-                    color: #373C36;
+                    color: #373C36;;
                     
                 }
             } 
@@ -144,32 +159,32 @@
     flex-direction: column;
   }
   
-  
   .outlet{
     background-color: #fff;
-    width: 73%;
+    width: 70%;
     color: #000;
     border-radius: 16px;
     margin: 15px 20px;
     position: relative;
+  
     .companies-menu-icon{
       display: none;
       @include mobile-l{
         display: block;
-        position: absolute;
         font-size: 24px;
-        right: 5%;
-        top: 5%;
+        margin-left: 90%;
+        margin-top: 20px;
         color: #18385A;
         z-index: 1000;
       }
       @include tablet{
         display: block;
-        position: absolute;
         font-size: 24px;
-        right: 5%;
-        top: 5%;
         color: #18385A;
+        // margin-left: 19rem;
+        // margin-top: 20px;
+        margin-left: 90%;
+        margin-top: 20px;
       }
       
     }
@@ -187,34 +202,35 @@
     z-index: 1000;
     background-color: white;
     border-radius: 8px;
-    right: 9%;
-    top: 62%;
+    right: 0;
+    top: 0;
     display: flex;
     width: 50%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
+    
     ul{
       list-style-type: none;
       .companies-link{
        margin: 10px 0;
       }
       li{
-                display: flex;
-                align-items: center;
-                width: 100%;
-                cursor: pointer;
-                color: #627DA0;
-                font-size: 16px;
-                padding: 15px  15px;
-                span{
-                    margin: 0px 10px;
-                }
-                @include mobile-l{
-                  font-size: 12px;
-                }
-                &:hover{
-                    color: #373C36;
-                }
-            } 
+          display: flex;
+          align-items: center;
+          width: 100%;
+          cursor: pointer;
+          color: #627DA0;
+          font-size: 16px;
+          padding: 15px  15px;
+          span{
+                margin: 0px 10px;
+            }
+            @include mobile-l{
+            font-size: 12px;
+            }
+            &:hover{
+            color: #373C36;
+            }
+        } 
     }
   }
 

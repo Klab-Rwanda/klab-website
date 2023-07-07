@@ -1,4 +1,5 @@
-import dann from "/assets/website/decorations/danny.jpg";
+
+import dann from "../../assets/website/decorations/danny.jpg";
 import { BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -7,10 +8,10 @@ export default function Trainees() {
   return (
     <div>
       <div className="admin-headers">
-        <h1>All Alumni</h1>
+        <h2>All Trainees</h2>
         <p>Dashboard &gt; Members &gt; Alumni</p>
       </div>
-      <div className="alumn-holder">
+      {/* <div className="alumn-holder">
         <img src={dann} alt="" />
         <div className="infoo">
           <span>
@@ -82,7 +83,7 @@ export default function Trainees() {
         </div>
         
         
-      </div>
+      </div> */}
     </div>
   );
 }

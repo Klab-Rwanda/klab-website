@@ -1,22 +1,31 @@
 import Outline from "./outline";
-import Admin from "/public/assets/website/icons/administration.svg";
-import Partners from "/public/assets/website/icons/partners-icon.svg";
-import Trainers from "/public/assets/website/icons/trainers.svg";
-import Alumni from "/public/assets/website/icons/alumni.svg";
-import Trainees from "/public/assets/website/icons/trainee.svg";
+import Admin from "../assets/website/icons/administration.svg";
+import Partners from "../assets/website/icons/partners-icon.svg";
+import Trainers from "../assets/website/icons/trainers.svg";
+import Alumni from "../assets/website/icons/alumni.svg";
+import Trainees from "../assets/website/icons/trainee.svg";
 import { Outlet, NavLink } from "react-router-dom";
+import {CgMenuRight} from "react-icons/cg";
+import {useState} from "react";
 
 const Members = () => {
+  const [sider, setSider] = useState(false);
+
+  const handleSider = () => {
+    setSider(!sider);
+  }
+  
+
   return (
     <div className="wrapper">
       <Outline />
       <section className="members-content">
         <div className="members-container">
-          <div className="members-sider">
+          <div className={sider ? "members-modal" : "members-sider"}>
             <ul>
               <NavLink to="/dashboard/members" end className="members-link">
                 <li>
-                  <img src={Admin} alt="" /> <span>Administration</span>
+                  <img src={Admin} alt="" /> <span>Team</span>
                 </li>
               </NavLink>
               <NavLink to="partners" className="members-link">
@@ -42,9 +51,16 @@ const Members = () => {
                   <span>Trainees</span>
                 </li>
               </NavLink>
+              <NavLink to="applicants" className="members-link">
+                <li>
+                  <img src={Trainees} alt="" />
+                  <span>Applicants</span>
+                </li>
+              </NavLink>
             </ul>
           </div>
           <div className="outlet">
+            <CgMenuRight className="members-menu-icon" onClick={handleSider} />
             <Outlet />
           </div>
         </div>

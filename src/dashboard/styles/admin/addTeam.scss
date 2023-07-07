@@ -1,0 +1,26 @@
+.formDiv{
+    margin: 30px;
+    // background-color: rgba(6, 32, 39, 0.267);
+    padding: 20px;
+
+    label{
+        font-size: 18px; 
+    }
+    input{
+        padding: 10px;
+        width: 100%;
+        border-radius: 11px;
+        border: 1px solid rgba(3, 51, 64, 0.267);
+        margin: 5px;
+     outline: none;
+    }
+    button{
+        background-color: rgb(0, 8, 255);
+        padding: 10px;
+        border-radius: 11px;
+        color: white;
+        margin-top: 16px;
+        width: 30%;
+       
+    }
+}

@@ -5,6 +5,10 @@
         height: 200px;
         width: 30%;
         margin: 20px 20px;
+        @include mobile-l{
+            width: 30%;
+            height: 150px;
+        }
     }
     .up-content{
       align-items: flex-end;
@@ -12,6 +16,9 @@
       color: #778CA1;
       h1{
         color: #18385A;
+        @include mobile-l{
+            font-size: 16px;
+        }
       }
       
     }

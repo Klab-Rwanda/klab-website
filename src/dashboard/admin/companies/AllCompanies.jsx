@@ -15,7 +15,7 @@ const AllCompanies = () => {
               <GiCompanionCube />
             </div>
             <span>
-              <Link to="/dashboard/companies/allcompanies/singlecompany"><h1>HEAVEN STUDIO</h1></Link>
+              <Link to="singlecompany"><h1>HEAVEN STUDIO</h1></Link>
               <p>
                 
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.

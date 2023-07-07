@@ -1,0 +1,45 @@
+.trainers{
+    .swiper-container {
+  position: relative;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  color: #070937;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.swiper-button-next {
+  right: -8px;
+}
+
+.swiper-button-prev {
+  left: -8px; 
+}
+
+.trainer-list{
+  list-style: none;
+  li {
+  text-indent: -.7em;
+  }
+
+  li::before {
+    content: "• ";
+    color: #070937; 
+  }
+  li:first-child::before{
+    content: "";
+  }
+}
+
+
+}
+
+
