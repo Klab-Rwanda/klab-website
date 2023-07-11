@@ -12,37 +12,88 @@ import { FaArrowRight, FaCheckCircle, FaFilter } from "react-icons/fa";
 import ProgramFilterCardType from "../Components/Card/ProgramFilterCardType";
 import ProgramFilterCard from "../Components/Card/ProgramFilterCard";
 import { GrFormClose } from "react-icons/gr";
+import {
+  FaHtml5,
+  FaLink,
+  FaCode,
+  FaListUl,
+  FaKeyboard,
+  FaFileAlt,
+  FaBoxes,
+  FaMousePointer,
+  FaHeading,
+  FaCheck,
+  FaLaptopCode,
+  FaCommentDots,
+} from "react-icons/fa";
 
 const SingleProgram = () => {
   const { programs } = useContext(AuthContext);
   const { programId } = useParams();
+  const topics = [
+    {
+      title: "HTML Basics:",
+      items: [
+        { icon: FaHtml5, text: "Introduction to HTML" },
+        { icon: FaLink, text: "Creating Links" },
+        { icon: FaCode, text: "Building Web Pages" },
+        { icon: FaListUl, text: "Working with Lists" },
+        { icon: FaKeyboard, text: "Creating Interactive Forms" },
+      ],
+    },
+    {
+      title: "Styling and Layout:",
+      items: [
+        { icon: FaFileAlt, text: "Adding Colors and Backgrounds" },
+        { icon: FaBoxes, text: "Styling Text and Headings" },
+        { icon: FaLaptopCode, text: "Layout with Flexbox" },
+        { icon: FaCode, text: "Using Tailwind CSS" },
+      ],
+    },
+    {
+      title: "Form Handling:",
+      items: [
+        { icon: FaCheck, text: "Form Validation and Error Handling" },
+        { icon: FaMousePointer, text: "Submitting Forms" },
+        { icon: FaFileAlt, text: "Enhancing Form Design" },
+      ],
+    },
+    {
+      title: "Additional Topics:",
+      items: [
+        { icon: FaLaptopCode, text: "Creating Responsive Websites" },
+        { icon: FaCommentDots, text: "Introduction to Accessibility" },
+        { icon: FaCode, text: "Introduction to Version Control (Git)" },
+      ],
+    },
+  ];
+  const [imageInModel, setImageInModel] = useState("");
+
   const [skill, setSkill] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  // console.log(programId);
   const single = programs?.find((item) => item._id === programId);
-  console.log(single?.tags);
+  console.log(single?.title);
 
-  const otherPrograms = programs.filter((item) => item._id !== programId);
+  const otherPrograms = programs?.filter((item) => item._id !== programId);
 
   const handleFilter = (title) => {
     setSkill(title);
-  }
-
-  
+  };
 
   useEffect(() => {
     console.log(skill);
   }, [skill]);
 
-
   return (
     <div>
-      <div className="w-screen welcomeBg flex justify-center items-center relative p-4 pt-20 xl:pt-48 lg:pt-36 md:pt-28 sm:pt-16 py-32">
+      <div className="w-screen welcomeBg  flex justify-center items-center relative p-4 pt-20 xl:pt-48 lg:pt-36 md:pt-28 sm:pt-16 py-32">
         <Navbar />
         <div className="homewelcome-w text-slate-50 ">
-          <div className="w-3/4 flex flex-col gap-4">
+          <div className="overlay"></div>
+          <div className="w-3/4 flex relative  flex-col gap-4">
             <p className="font-light mt-14">
-              Build your team with developers, engineers and pro remote experts.
+              We are looking for Tech Innovators and Talents in hardware and
+              Software who are fresh graduates from university or college.
             </p>
             <h1 className="font-semibold text-3xl text-slate-100">
               {single?.title}
@@ -66,75 +117,124 @@ const SingleProgram = () => {
               {/* <ProgramFilterCard title="Klab Programs" /> */}
               <div className="w-full bg-slate-200 rounded-2xl p-4 flex flex-col gap-5">
                 <h1>kLab Programs</h1>
-                <ul className="flex flex-col gap-2 overflow-y-visible overflow-x-hidden overflow-scroll scroll-m-4 rounded-xl">
-                  <li
-                    onClick={() => handleFilter("Android developer")}
-                    className={`${
-                      skill === "Android developer" ? "bg-slate-300" : ""
-                    } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
-                  >
-                    <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
-                    <p className="text-sm w-10/12">Android developer</p>
-                  </li>
-                  <li
-                    onClick={() => handleFilter("Frontend developer")}
-                    className={`${
-                      skill === "Frontend developer" ? "bg-slate-300" : ""
-                    } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
-                  >
-                    <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
-                    <p className="text-sm w-10/12">Frontend developer</p>
-                  </li>
-                  <li
-                    onClick={() => handleFilter("Backend developer")}
-                    className={`${
-                      skill === "Backend developer" ? "bg-slate-300" : ""
-                    } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
-                  >
-                    <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
-                    <p className="text-sm w-10/12">Backend developer</p>
-                  </li>
-                  <li
-                    onClick={() => handleFilter("Full-stack developer")}
-                    className={`${
-                      skill === "Full-stack developer" ? "bg-slate-300" : ""
-                    } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
-                  >
-                    <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
-                    <p className="text-sm w-10/12">Full-stack developer</p>
-                  </li>
+                {single?.title === "Future Koders" ? (
+                  <div>
+                    {topics.map((topic, index) => (
+                      <div key={index}>
+                        <h5 className="text-md  text-blue-500 font-bold mb-4">
+                          {topic.title}
+                        </h5>
+                        <ul className="pl-6">
+                          {topic.items.map((item, idx) => (
+                            <li key={idx}>
+                              {React.createElement(item.icon, {
+                                className: "inline text-sm mr-2",
+                              })}
+                              <span className="text-md">
+                              {item.text}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <ul className="flex flex-col gap-2 overflow-y-visible overflow-x-hidden overflow-scroll scroll-m-4 rounded-xl">
+                    <li
+                      onClick={() => handleFilter("Android developer")}
+                      className={`${
+                        skill === "Android developer" ? "bg-slate-300" : ""
+                      } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
+                    >
+                      <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
+                      <p className="text-sm w-10/12">Android developer</p>
+                    </li>
+                    <li
+                      onClick={() => handleFilter("Frontend developer")}
+                      className={`${
+                        skill === "Frontend developer" ? "bg-slate-300" : ""
+                      } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
+                    >
+                      <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
+                      <p className="text-sm w-10/12">Frontend developer</p>
+                    </li>
+                    <li
+                      onClick={() => handleFilter("Backend developer")}
+                      className={`${
+                        skill === "Backend developer" ? "bg-slate-300" : ""
+                      } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
+                    >
+                      <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
+                      <p className="text-sm w-10/12">Backend developer</p>
+                    </li>
+                    <li
+                      onClick={() => handleFilter("Full-stack developer")}
+                      className={`${
+                        skill === "Full-stack developer" ? "bg-slate-300" : ""
+                      } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
+                    >
+                      <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
+                      <p className="text-sm w-10/12">Full-stack developer</p>
+                    </li>
 
-                  <li
-                    onClick={() => handleFilter("Entrepreneur & Innovators")}
-                    className={`${
-                      skill === "Entrepreneur & Innovators"
-                        ? "bg-slate-300"
-                        : ""
-                    } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
-                  >
-                    <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
-                    <p className="text-sm w-10/12">Entrepreneur & Innovators</p>
-                  </li>
-                  <li
-                    onClick={() => handleFilter("UI/UX Designer")}
-                    className={`${
-                      skill === "UI/UX Designer" ? "bg-slate-300" : ""
-                    } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
-                  >
-                    <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
-                    <p className="text-sm w-10/12">UI/UX Designer</p>
-                  </li>
-                </ul>
+                    <li
+                      onClick={() => handleFilter("Entrepreneur & Innovators")}
+                      className={`${
+                        skill === "Entrepreneur & Innovators"
+                          ? "bg-slate-300"
+                          : ""
+                      } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
+                    >
+                      <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
+                      <p className="text-sm w-10/12">
+                        Entrepreneur & Innovators
+                      </p>
+                    </li>
+                    <li
+                      onClick={() => handleFilter("UI/UX Designer")}
+                      className={`${
+                        skill === "UI/UX Designer" ? "bg-slate-300" : ""
+                      } w-full hover:bg-slate-300 flex justify-between items-center flex-grow gap-2 py-2 rounded-2xl cursor-pointer`}
+                    >
+                      <FaCheckCircle className="text-blue-500 text-xl w-2/12" />
+                      <p className="text-sm w-10/12">UI/UX Designer</p>
+                    </li>
+                  </ul>
+                )}
               </div>
               {/* <ProgramFilterCardType title="Select Type" />
               <ProgramFilterCard title="Recent Programs" /> */}
             </div>
           </>
           <div className="w-full rounded-3xl px-6 py-4 flex flex-col gap-6 justify-start items-start">
-            <div className="">
-              {single?.details}
-              <br />
-            </div>
+            {single?.title === "Future Koders" ? (
+              <div>
+                <p>
+                  kLab is organizing a session for children aged 5 - 17years
+                  old. They will be introduced to a program called Future
+                  Koders. The aim is to introduce to children web development
+                  and intro to the basics of computer science.
+                </p>
+                <br />
+                <p>
+                  This program happens every Monday up to Friday, from 8:00 am
+                  to 11:30am for one month.
+                </p>
+              </div>
+            ) : (
+              <div className="">
+                {/* {single?.details} */}
+                We are looking for
+                <strong> Tech Innovators </strong>
+                and
+                <strong> Talents </strong>
+                in hardware and Software who are fresh graduates from university
+                or college.
+                <br />
+              </div>
+            )}
+
             {skill === "Android developer" && (
               <div className="flex flex-col">
                 <h1 className="font-[500] text-blue-500">Android developer</h1>
@@ -259,33 +359,85 @@ const SingleProgram = () => {
             {single?.tags === "Open now" ? (
               <>
                 <div className="grid grid-cols-1 w-full xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                  <div className="flex flex-col gap-3">
-                    <h1 className="font-[500] text-blue-500">Why Apply?</h1>
-                    <ul className=" ml-4">
-                      <li>Access to incubation programs</li>
-                      <li>Membership at klab</li>
-                      <li>Mentorship</li>
-                    </ul>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <h1 className="font-[500] text-blue-500">Requirements</h1>
-                    <ul className=" ml-4">
-                      <li>Access to incubation programs</li>
-                      <li>Membership at klab</li>
-                      <li>Mentorship</li>
-                    </ul>
-                  </div>
+                  {single?.title === "Tech Upskill" ? (
+                    <>
+                      <div className="flex flex-col gap-3">
+                        <h1 className="font-[500] text-blue-500">Innovators</h1>
+                        <ul className="list-disc ml-6 space-y-2">
+                          <li>
+                            Having a business project in hardware or software is
+                            a must.
+                          </li>
+                          <li>
+                            Having a design for a hardware project and mockup
+                            for a software project (e.g., web platform mockup,
+                            hardware design in any engineering software)
+                          </li>
+                          <li>
+                            Being a fresh graduate from a university or college.
+                          </li>
+                          <li>Having a working laptop.</li>
+                          <li>
+                            Being committed to finishing online and physical
+                            training.
+                          </li>
+                          <li>Currently resident in Rwanda.</li>
+                        </ul>
+                      </div>
+                      <div className="flex flex-col gap-3">
+                        <h1 className="font-[500] text-blue-500">Talents</h1>
+                        <ul className="list-disc ml-6 space-y-2">
+                          <li>
+                            Having worked on I or more projects in software or
+                            hardware which can be shown via design picture or
+                            URL link
+                          </li>
+                          <li>
+                            Being a fresh graduate from a university or college.
+                          </li>
+                          <li>Having a working laptop.</li>
+                          <li>
+                            Being committed to finishing online and physical
+                            training.
+                          </li>
+                          <li>Currently resident in Rwanda.</li>
+                          <li>
+                            Having relevant supporting documents (ie,
+                            certificate) is an added value
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="">
+                        Application deadline :{" "}
+                        <b className="font-bold">
+                          {single?.deadline.slice(0, 10)}
+                        </b>
+                      </p>
+                      <Link to="/apply">
+                        <button className="bg-slate-800 text-slate-50 px-4 py-2 rounded-[8px]">
+                          Apply now
+                        </button>
+                      </Link>
+                    </>
+                  ) : (
+                    <div className="flex flex-col gap-4">
+                      <p className="">
+                        Application deadline :{" "}
+                        <b className="font-bold">
+                          {single?.deadline.slice(0, 10)}
+                        </b>
+                      </p>
+                      <a
+                        target="_blank"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSf-mNkwTZDXjtvdp8MQIMubnCvi5ZAIDLzP_t7OjxeBnu-qRg/viewform"
+                      >
+                        <button className="bg-slate-800 text-slate-50 px-4 py-2 rounded-[8px]">
+                          Apply now
+                        </button>
+                      </a>
+                    </div>
+                  )}
                 </div>
-
-                <p className="">
-                  Application deadline :{" "}
-                  <b className="font-bold">{single.deadline.slice(0, 10)}</b>
-                </p>
-                <Link to="/apply">
-                  <button className="bg-slate-800 text-slate-50 px-4 py-2 rounded-[8px]">
-                    Apply now
-                  </button>
-                </Link>
               </>
             ) : (
               <>
@@ -303,7 +455,7 @@ const SingleProgram = () => {
         </div>
         <div className="w-[90%] px-8">
           <div className="py-5">
-            <h2 className="font-bold text-lg">{single.title} | Gallery</h2>
+            <h2 className="font-bold text-lg">{single?.title} | Gallery</h2>
             <p>
               In Rwanda, most of the innovations in technology, start-ups, or
               even ideas, supporting projects and initiatives are concentrated
@@ -313,50 +465,62 @@ const SingleProgram = () => {
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-4 p-2 xl:h-90 lg:h-80 md:h-80 h-96 overflow-x-hidden overflow-y-visible overflow-scroll scroll-m-4 rounded-[5px]">
             <img
-              src={Image}
+              src="./gallery1.jpeg"
               alt="ImageOne"
               className="w-full cursor-pointer rounded-[5px] h-full object-cover"
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setImageInModel("./gallery1.jpeg");
+                setIsOpen(true);
+              }}
             />
             <img
-              src={Image}
+              src="./gallery2.jpeg"
               alt="ImageOne"
               className="w-full cursor-pointer rounded-[5px] h-full object-cover"
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setImageInModel("./gallery2.jpeg");
+                setIsOpen(true);
+              }}
             />
             <img
-              src={Image}
+              src="./gallery3.jpeg"
               alt="ImageOne"
               className="w-full cursor-pointer rounded-[5px] h-full object-cover"
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setImageInModel("./gallery3.jpeg");
+                setIsOpen(true);
+              }}
             />
             <img
-              src={Image}
+              src="./gallery4.jpeg"
               alt="ImageOne"
               className="w-full cursor-pointer rounded-[5px] h-full object-cover"
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setImageInModel("./gallery4.jpeg");
+                setIsOpen(true);
+              }}
             />
           </div>
         </div>
       </div>
       {/* image modal */}
       <div
-        className={`fixed flex inset-0 items-center bg-[#00000090] justify-center z-50 ${
+        className={`fixed flex inset-0  h-full  md:h-screen items-center bg-[#00000090] justify-center z-50 ${
           isOpen ? "" : "hidden"
         }`}
       >
-        <div className="bg-white w-3/4 sm:max-w-md rounded-lg shadow-lg overflow-hidden">
-          <div className="relative">
+        <div className="bg-white w-4/5 h-4/5 rounded-lg shadow-lg overflow-hidden">
+          <div className="relative w-full h-full">
             <img
-              src={Image}
+              src={imageInModel}
               alt="Image"
-              className="w-full h-full object-cover"
+              className="w-full h-full  object-cover"
             />
             <button
               className="absolute top-0 right-0 m-2 rounded-[2px] bg-white"
               onClick={() => setIsOpen(false)}
             >
-              <GrFormClose className="fill-white text-xl" />
+              <GrFormClose className="fill-white text-2xl" />
             </button>
           </div>
         </div>
@@ -374,27 +538,27 @@ const SingleProgram = () => {
         <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-2 gap-10 xl:mx-32 lg:mx-12 md:mx-10 sm:mx-10 mx-6">
           {otherPrograms?.map((program) => {
             return (
-              <Link to={`/${program._id}`} key={program._id}>
+              <Link to={`/${program?._id}`} key={program?._id}>
                 <div className="bg-slate-50 relative rounded-3xl flex xl:flex-col lg:flex-col md:flex-row sm:flex-col flex-col">
                   <img
-                    src={program.profile}
+                    src={program?.profile}
                     alt="CardImage"
                     className="rounded-3xl h-64 object-cover xl:w-full lg:w-full md:w-1/3"
                   />
                   <span
                     className={` ${
-                      program.tags === "Closed" ? "bg-red-800" : "bg-slate-800"
+                      program?.tags === "Closed" ? "bg-red-800" : "bg-slate-800"
                     } text-white absolute top-2 left-2 rounded-[18px] font-semibold px-[10px] py-[5px] text-[14px]`}
                   >
-                    {program.tags}
+                    {program?.tags}
                   </span>
                   <div className="px-6 py-4 pb-4 flex flex-col justify-between">
                     <div className="flex flex-col gap-2">
                       <h1 className="font-semibold text-base">
-                        {program.title}
+                        {program?.title}
                       </h1>
                       <p className="text-sm font-light">
-                        {program.details}
+                        {program?.details}
                         {/* <span className="hidden md:block lg:hidden xl:hidden">
                           Lorem ipsum dolor sit amet consectetur adipisicing
                           elit. Suscipit quo eaque labore deleniti tempora

@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 
 const HomeWelcome = () => {
   return (
-    <div className="w-screen h-screen welcomeBg flex justify-center items-center relative p-4 py-12">
+    <div className="w-screen h-screen welcomeBg  flex justify-center items-center relative p-4 py-12">
       <Navbar />
-      <div className="homewelcome-w text-slate-50 ">
-        <div className="w-3/4 flex flex-col gap-4">
-          <p className="font-light mt-14">
+      <div className="homewelcome-w text-slate-50  ">
+        <div className="overlay "></div>
+        <div className="w-3/4 flex  relative z-10  flex-col gap-4">
+          <p className="font-light relative z-20 mt-14">
             Build your team with developers, engineers, and pro remote experts.
           </p>
           <h1 className="font-semibold text-3xl text-white">
@@ -17,11 +18,11 @@ const HomeWelcome = () => {
             collaborate and innovate in Kigali, Rwanda.
           </h1>
           <span className="flex gap-4 mt-4 flex-col xl:flex-row lg:flex-row md:flex-row sm:flex-row">
-            <Link to="/apply">
+            {/* <Link to="/apply">
               <button className="border bg-white text-slate-900 border-slate-50 px-8 text-sm font-medium py-4 rounded-3xl">
                 Apply Now
               </button>
-            </Link>
+            </Link> */}
             <Link to="/signUp">
               <button className="border border-slate-900 bg-slate-900 px-8 text-sm font-medium py-4 rounded-3xl">
                 Became member

@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="flex flex-col gap-6">
           <h1 className="text-xl font-bold text-white">Programs</h1>
           <ul className="flex flex-col gap-3 text-sm">
-            <li>KLab startpus academy</li>
+            <li>St </li>
             <li>Future Koders</li>
             <li>Another program</li>
           </ul>

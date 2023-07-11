@@ -118,6 +118,7 @@ const TechupskillApp = () => {
     formData.append("district", data.district);
     formData.append("cell", data.cell);
     formData.append("sector", data.sector);
+    formData.append("village", data.village);
     formData.append("skillyouwantgain", data.skillyouwantgain);
     formData.append("educationlevel", data.educationlevel);
     formData.append("fieldofstudy", data.fieldofstudy);
@@ -164,11 +165,14 @@ const TechupskillApp = () => {
     <div>
       <div className="w-screen welcomeBg flex justify-center items-center relative  xl:pt-48 lg:pt-36 md:pt-28 sm:pt-16 py-32">
         <Navbar />
-        <div className="w-3/4 flex flex-col gap-2 md:-ml-24">
-          <h1 className="font-semibold text-3xl text-white">Techupskill</h1>
-          <p className="font-light mt-5 text-white">
-            Build your team with developers, engineers and pro remote experts.
-          </p>
+        <div className="w-3/4  flex flex-col gap-2 md:-ml-24">
+          <div className="overlay"></div>
+          <div className="relative z-20">
+            <h1 className="font-semibold  text-3xl text-white">Techupskill</h1>
+            <p className="font-light mt-5 text-white">
+              Build your team with developers, engineers and pro remote experts.
+            </p>
+          </div>
         </div>
       </div>
       <div className="form-container">
@@ -185,8 +189,7 @@ const TechupskillApp = () => {
           <p>
             By submitting your application you hereby declare that the
             information provided is true and correct, you also understand any
-            willful dishonesty will lead to disqualification.( ibi byaguma kuri
-            page ya nyuma gusa) ubyingere no kuri title hejuru
+            willful dishonesty will lead to disqualification.
           </p>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -352,13 +355,13 @@ const TechupskillApp = () => {
               <span className="text-red-400">{errors.cell?.message}</span>
             </div>
             <div className="district-input input">
-              <label>Other Country</label>
+              <label>Village</label>
               <input
                 type="text"
-                {...register("otherCountry")}
-                className={errors.country ? "erorr " : ""}
+                {...register("village")}
+                className={errors?.village ? "erorr " : ""}
               />
-              <span className="text-red-400">{errors.country?.message}</span>
+              <span className="text-red-400">{errors?.village?.message}</span>
             </div>
           </div>
 
@@ -380,7 +383,7 @@ const TechupskillApp = () => {
                   name="educationlevel"
                   {...register("educationlevel")}
                 />
-                <label htmlFor="university">Student(university)</label>
+                <label htmlFor="university">University/College</label>
                 <br />
                 <input
                   type="radio"
@@ -388,7 +391,7 @@ const TechupskillApp = () => {
                   name="educationlevel"
                   {...register("educationlevel")}
                 />
-                <label htmlFor="graduate">Graduate</label>
+                <label htmlFor="graduate">Other</label>
                 <br />
                 <input
                   type="radio"
@@ -441,7 +444,7 @@ const TechupskillApp = () => {
               <span className="text-red-400">{errors.yearstudy?.message}</span>
             </div>
             <div className="input">
-              <label>CV/Resume</label>
+              <label>CV/Resume {hardware && "/Certificate"}</label>
               <input type="file" {...register("profile")} />
               <span className="text-red-400">{errors?.profile?.message}</span>
             </div>
@@ -547,7 +550,7 @@ const TechupskillApp = () => {
                     value="additive-manufacturing-iot"
                     {...register("skillyouwantgain")}
                   />
-                  <label>Additive Manufacturing IoT </label>
+                  <label>Additive Manufacturing </label>
                   <br />
                   <input
                     type="radio"
@@ -568,10 +571,26 @@ const TechupskillApp = () => {
                     value="embedded-system"
                     {...register("skillyouwantgain")}
                   />
-                  <label>Embedded system</label>
+                  <label>IOT and Embedded system</label>
                 </div>
                 <span className="text-red-400">
                   {errors.skillyouwantjoin?.message}
+                </span>
+              </div>
+              <div className="input w-80 gap-2 flex-col flex">
+                <label className="font-bold">Share portfolio</label>
+                <input
+                  type="text"
+                  placeholder="http://example.com/"
+                  {...register("portfolio")}
+                  className={
+                    errors?.portfolio
+                      ? "erorr"
+                      : "py-2 px-4 bg-slate-200 outline-none  w-full rounded-md"
+                  }
+                />
+                <span className="text-red-400">
+                  {errors.portfolio?.message}
                 </span>
               </div>
               <div className="description">
@@ -622,7 +641,9 @@ const TechupskillApp = () => {
           </div>
 
           <div className="submit-info mt-4">
-            <h4>Application Deadline: {currentProgram?.deadline.slice(0,10)}</h4>
+            <h4>
+              Application Deadline: {currentProgram?.deadline.slice(0, 10)}
+            </h4>
             <p className="mt-5 mb-5">
               By submitting your application you hereby declare that the
               information provided is true and correct, you also understand any
