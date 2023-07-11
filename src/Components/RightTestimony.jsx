@@ -25,7 +25,7 @@ const RightTestimony = () => {
                 <h1 className="font-bold text-lg">Isaa NSABIMANA</h1>
                 <p className=" font-extralight text-base">Frontend Developer</p>
                 <p className=" font-normal text-blue-500 text-sm">
-                  Klab trainer
+                  KLab trainer
                 </p>
               </div>
             </div>
@@ -45,7 +45,7 @@ const RightTestimony = () => {
                 <h1 className="font-bold text-lg">Isaa NSABIMANA</h1>
                 <p className=" font-extralight text-base">Frontend Developer</p>
                 <p className=" font-normal text-blue-500 text-sm">
-                  Klab trainer
+                  KLab trainer
                 </p>
               </div>
             </div>
@@ -65,7 +65,7 @@ const RightTestimony = () => {
                 <h1 className="font-bold text-lg">Isaa NSABIMANA</h1>
                 <p className=" font-extralight text-base">Frontend Developer</p>
                 <p className=" font-normal text-blue-500 text-sm">
-                  Klab trainer
+                  KLab trainer
                 </p>
               </div>
             </div>

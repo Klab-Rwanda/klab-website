@@ -134,7 +134,7 @@ const SingleEvents = () => {
                 Kigali Teckup skills
               </button>
               <button className="bg-slate-200 py-3 rounded-2xl">
-                Future coders
+                Future Koders
               </button>
               <button className="bg-slate-200 py-3 rounded-2xl">
                 Entrepreures

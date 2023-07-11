@@ -1,4 +1,3 @@
-
 import Navbar from "../Components/Navs/Navbar";
 import Footer from "../Components/sections/Footer";
 import LineImg from "../assets/Vector.svg";
@@ -6,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
-import {useState} from "react";
+import { useState } from "react";
 import { Report } from "notiflix/build/notiflix-report-aio";
 
 Report.init({
@@ -15,7 +14,7 @@ Report.init({
   borderRadius: "8px",
   backOverlayColor: "rgba(0,0,0,0.5)",
   svgSize: "100px",
-  
+
   success: {
     svgColor: "#18385A",
     titleColor: "#1e1e1e",
@@ -46,7 +45,8 @@ const applicationSchema = yup.object().shape({
   country: yup.string().required("Required"),
   province: yup.string().required("Required"),
   district: yup.string().required("Required"),
-  areyougraduate: yup.string().required("Required"),
+  sector: yup.string().required("Required"),
+  cell: yup.string().required("Required"),
   educationlevel: yup.string().required("Required"),
   schoolfrom: yup.string().required("Required"),
   yearstudy: yup.string().required("Required"),
@@ -54,94 +54,105 @@ const applicationSchema = yup.object().shape({
   categoryfitin: yup.string().required("Required"),
   skilldesc: yup.string(),
   gitlink: yup.string().url("please enter a valid url"),
-  linkedinlink: yup
-    .string().url("please enter a valid url"),
+  linkedinlink: yup.string().url("please enter a valid url"),
   entInnovationdesc: yup.string(),
   shareInnovationModel: yup.string(),
-  profile: yup.mixed().test("required", "cv/resume is required", (value) => {
+  profile: yup.mixed().test("required", "CV/Resume is required", (value) => {
     return value && value.length;
   }),
 });
 
-
 const TechupskillApp = () => {
- const [loading, setLoading] = useState(false);
- const [developer, setDeveloper] = useState(false);
- const [enterpreneur, setEnterpreneur] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [developer, setDeveloper] = useState(false);
+  const [hardware, setHardware] = useState(false);
 
- const handleDev = () => {
-  setDeveloper(true);
-  setEnterpreneur(false);
- }
+  const [enterpreneur, setEnterpreneur] = useState(false);
 
- const handleEnt = () => {
-  setEnterpreneur(true);
-  setDeveloper(false);
- }
+  const handleDev = () => {
+    setDeveloper(true);
+    setEnterpreneur(false);
+    setHardware(false);
+  };
 
-const {
-  register,
-  handleSubmit,
-  formState: { errors },
-  reset,
-  watch,
-} = useForm({
-  resolver: yupResolver(applicationSchema),
-});
+  const handleEnt = () => {
+    setEnterpreneur(true);
+    setHardware(false);
+    setDeveloper(false);
+  };
 
-const selectedOption = watch("categoryfitin");
+  const handleHard = () => {
+    setEnterpreneur(false);
+    setHardware(true);
+    setDeveloper(false);
+  };
 
-const onSubmit = async (data) => {
-  const formData = new FormData();
-  formData.append("email", data.email);
-  formData.append("fullname", data.fullname);
-  formData.append("phone", data.phone);
-  formData.append("gender", data.gender);
-  formData.append("dob", data.dob);
-  formData.append("agerange", data.agerange);
-  formData.append("country", data.country);
-  formData.append("province", data.province);
-  formData.append("district", data.district);
-  formData.append("educationlevel", data.educationlevel);
-  formData.append("fieldofstudy", data.fieldofstudy);
-  formData.append("categoryfitin", data.categoryfitin);
-  formData.append("schoolfrom", data.schoolfrom);
-  formData.append("yearstudy", data.yearstudy);
-  formData.append("entInnovationdesc", data.entInnovationdesc);
-  formData.append("shareInnovationModel", data.shareInnovationModel);
-  if(developer){
-  formData.append("areyoudev", data.areyoudev);
-  formData.append("skilldesc", data.skilldesc);
-  formData.append("gitlink", data.gitlink);
-  formData.append("linkedinlink", data.linkedinlink);
-  formData.append("skillyouwantjoin", data.skillyouwantjoin);
-  }
-  formData.append("areyougraduate", data.areyougraduate);
-  formData.append("profile", data.profile[0]);
-  console.log(data);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    watch,
+  } = useForm({
+    resolver: yupResolver(applicationSchema),
+  });
 
-  try{
-    setLoading(true);
-    const response = await axios.post(APPLY_URL, formData, {
-      headers: {
-        "Content-Type": "multipart/form-data"
-      },
-    });
+  const selectedOption = watch("categoryfitin");
+
+  const onSubmit = async (data) => {
+    const formData = new FormData();
+    formData.append("email", data.email);
+    formData.append("fullname", data.fullname);
+    formData.append("phone", data.phone);
+    formData.append("gender", data.gender);
+    formData.append("dob", data.dob);
+    formData.append("agerange", data.agerange);
+    formData.append("country", data.country);
+    formData.append("province", data.province);
+    formData.append("district", data.district);
+    formData.append("cell", data.cell);
+    formData.append("sector", data.sector);
+    formData.append("skillyouwantgain", data.skillyouwantgain);
+    formData.append("educationlevel", data.educationlevel);
+    formData.append("fieldofstudy", data.fieldofstudy);
+    formData.append("categoryfitin", data.categoryfitin);
+    formData.append("schoolfrom", data.schoolfrom);
+    formData.append("yearstudy", data.yearstudy);
+    formData.append("entInnovationdesc", data.entInnovationdesc);
+    formData.append("shareInnovationModel", data.shareInnovationModel);
+    if (developer) {
+      formData.append("areyoudev", data.areyoudev);
+      formData.append("skilldesc", data.skilldesc);
+      formData.append("gitlink", data.gitlink);
+      formData.append("linkedinlink", data.linkedinlink);
+      formData.append("skillyouwantjoin", data.skillyouwantjoin);
+    }
+    formData.append("areyougraduate", data.areyougraduate);
+    formData.append("profile", data.profile[0]);
+    console.log(data);
+
+    try {
+      setLoading(true);
+      const response = await axios.post(APPLY_URL, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      setLoading(false);
+
+      Report.success(
+        "Success",
+        "You have successfully sent your application! we have sent you a confirmation message to the email you provided.",
+        "Okay"
+      );
+      reset();
+    } catch (err) {
+      console.log(err);
+    }
+
     setLoading(false);
-
-    Report.success(
-      "Success",
-      "You have successfully sent your application! we have sent you a confirmation message to the email you provided.",
-      "Okay"
-    );
-    reset();
-  } catch(err){
-    console.log(err);
-  }
-    
-  setLoading(false);
-}
-console.log(errors);
+  };
+  console.log(errors);
 
   return (
     <div>
@@ -155,19 +166,27 @@ console.log(errors);
         </div>
       </div>
       <div className="form-container">
-        <div className="xl:w-1/2 lg:w-1/2 md:w-3/4 sm:w-4/5 w-full flex flex-col items-start gap-2">
-          <h1 className="font-bold text-base md:text-xl">Application Details</h1>
+        <div className="md:w-4/5 sm:w-11/12 w-full flex flex-col items-start gap-2">
+          <h1 className="font-bold text-base md:text-xl">
+            Application Details
+          </h1>
           <img src={LineImg} alt="VectorImage" className="w-1/3" />
           <p className="w-full font-normal text-slate-800 text-sm xl:text-base lg:text-base md:text-base sm:text-sm">
             The project will be conducted during 5 months from October to
             February, in three phases: Talent detection across the country,
             training, and organising a hackathon.
           </p>
+          <p>
+            By submitting your application you hereby declare that the
+            information provided is true and correct, you also understand any
+            willful dishonesty will lead to disqualification.( ibi byaguma kuri
+            page ya nyuma gusa) ubyingere no kuri title hejuru
+          </p>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="first-grid">
             <div className="email-input input">
-              <label htmlFor="email" >Email</label>
+              <label htmlFor="email">Email</label>
               <input
                 className={errors.email ? "error" : ""}
                 type="text"
@@ -212,14 +231,10 @@ console.log(errors);
               <div className="radios">
                 <div className="flex items-center ">
                   <input type="radio" value="Male" {...register("gender")} />
-                  <label htmlFor="Male" >
-                    Male
-                  </label>
+                  <label htmlFor="Male">Male</label>
                 </div>
                 <input type="radio" value="Female" {...register("gender")} />
-                <label htmlFor="Female" >
-                  Female
-                </label>
+                <label htmlFor="Female">Female</label>
               </div>
               <span className="text-red-400">{errors.gender?.message}</span>
             </div>
@@ -231,18 +246,18 @@ console.log(errors);
                 <input
                   type="radio"
                   name="agerange"
-                  value="15-35"
+                  value="15-25"
                   {...register("agerange")}
                 />
-                <label>15 - 35</label>
+                <label>15 - 25</label>
                 <br />
                 <input
                   type="radio"
                   name="agerange"
-                  value="35-Above"
+                  value="25-Above"
                   {...register("agerange")}
                 />
-                <label>35 - Above</label>
+                <label>25 - Above</label>
               </div>
               <span className="text-red-400">{errors.agerange?.message}</span>
             </div>
@@ -267,7 +282,16 @@ console.log(errors);
                   value="developer"
                   onInput={handleDev}
                 />
-                <label>Software developer</label>
+                <label>Software Talent</label>
+                <br />
+                <input
+                  type="radio"
+                  name="categoryfitin"
+                  {...register("categoryfitin")}
+                  value="hardware"
+                  onInput={handleHard}
+                />
+                <label>Hardware Talent</label>
               </div>
               <span className="text-red-400">
                 {errors.categoryfitin?.message}
@@ -303,40 +327,36 @@ console.log(errors);
               />
               <span className="text-red-400">{errors.district?.message}</span>
             </div>
+            <div className="district-input input">
+              <label>Sector</label>
+              <input
+                type="text"
+                {...register("sector")}
+                className={errors.sector ? "erorr " : ""}
+              />
+              <span className="text-red-400">{errors.sector?.message}</span>
+            </div>
+            <div className="district-input input">
+              <label>Cell</label>
+              <input
+                type="text"
+                {...register("cell")}
+                className={errors.cell ? "erorr " : ""}
+              />
+              <span className="text-red-400">{errors.cell?.message}</span>
+            </div>
+            <div className="district-input input">
+              <label>Other Country</label>
+              <input
+                type="text"
+                {...register("otherCountry")}
+                className={errors.country ? "erorr " : ""}
+              />
+              <span className="text-red-400">{errors.country?.message}</span>
+            </div>
           </div>
 
-          <div className="education-background">
-            <div className="occupation input">
-              <label className="form-label">Are you a student/graduate?</label>
-              <div className="radios">
-                <input
-                  type="radio"
-                  value="student"
-                  name="areyougraduate"
-                  {...register("areyougraduate")}
-                />
-                <label htmlFor="student">Student</label>
-                <br />
-                <input
-                  type="radio"
-                  value="graduate"
-                  name="areyougraduate"
-                  {...register("areyougraduate")}
-                />
-                <label htmlFor="graduate">Graduate</label>
-                <br />
-                <input
-                  type="radio"
-                  value="other"
-                  name="areyougraduate"
-                  {...register("areyougraduate")}
-                />
-                <label htmlFor="other">Other</label>
-              </div>
-              <span className="text-red-400">
-                {errors.areyougraduate?.message}
-              </span>
-            </div>
+          <div className="education-background pt-4">
             <div className="level input">
               <label className="form-label">Education level</label>
               <div className="radios">
@@ -378,23 +398,16 @@ console.log(errors);
             </div>
             <div className="field input">
               <label className="form-label">Field of study</label>
-              <div className="radios">
+              <div className="radios flex flex-col">
                 <input
-                  type="radio"
-                  value="entrepreneur"
-                  name="fieldofstudy"
+                  type="text"
                   {...register("fieldofstudy")}
+                  className={
+                    errors.fieldofstudy
+                      ? "erorr bg-slate-200 py-2 outline-none border-none px-4 border-b-2 border-red-400"
+                      : " bg-slate-200 py-2 outline-none border-none px-4"
+                  }
                 />
-                <label>Tech Entrepreneur</label>
-                <br />
-                <input
-                  type="radio"
-                  value="developer"
-                  name="fieldofstudy"
-                  {...register("fieldofstudy")}
-                />
-                <label>Software development</label>
-                <br />
               </div>
               <span className="text-red-400">
                 {errors.fieldofstudy?.message}
@@ -415,21 +428,21 @@ console.log(errors);
             <div className="input">
               <label>Year of study</label>
               <input
-                type="text"
+                type="number"
                 {...register("yearstudy")}
                 className={errors?.yearstudy ? "erorr" : ""}
               />
               <span className="text-red-400">{errors.yearstudy?.message}</span>
             </div>
             <div className="input">
-              <label>cv or Resume</label>
+              <label>CV/Resume</label>
               <input type="file" {...register("profile")} />
               <span className="text-red-400">{errors?.profile?.message}</span>
             </div>
           </div>
-          <div className={developer ? "mt-5" : "hidden"}>
-            <h1 className="font-bold text-base">Software Developer</h1>
-            <img src={LineImg} alt="VectorImage" className="w-40" />
+          <div className={developer ? "my-8" : "hidden"}>
+            <h1 className="font-bold my-4 text-base">Software Talent</h1>
+            <img src={LineImg} alt="VectorImage" className="w-40 mb-8" />
             <div className="skills">
               <div>
                 <label className="form-label">Are you a developer</label>
@@ -514,6 +527,62 @@ console.log(errors);
               <span className="text-red-400">{errors.devcv?.message}</span>
             </div>
           </div>
+          <div className={hardware ? "my-8" : "hidden"}>
+            <h1 className="font-bold my-4 text-base">Hardware Talent</h1>
+            <img src={LineImg} alt="VectorImage" className="w-40 mb-8" />
+            <div className="skills">
+              <div>
+                <label className="form-label">
+                  Which skills do you want to gain
+                </label>
+                <div className="radios">
+                  <input
+                    type="radio"
+                    value="additive-manufacturing-iot"
+                    {...register("skillyouwantgain")}
+                  />
+                  <label>Additive Manufacturing IoT </label>
+                  <br />
+                  <input
+                    type="radio"
+                    value="backend"
+                    {...register("skillyouwantgain")}
+                  />
+                  <label>3D design & Printing </label>
+                  <br />
+                  <input
+                    type="radio"
+                    value="3D-design-printing"
+                    {...register("skillyouwantgain")}
+                  />
+                  <label>PCB designing</label>
+                  <br />
+                  <input
+                    type="radio"
+                    value="embedded-system"
+                    {...register("skillyouwantgain")}
+                  />
+                  <label>Embedded system</label>
+                </div>
+                <span className="text-red-400">
+                  {errors.skillyouwantjoin?.message}
+                </span>
+              </div>
+              <div className="description">
+                <label className="form-label">
+                  Describe your skills, not more than 200 words
+                </label>
+                <textarea
+                  placeholder="Your answer"
+                  {...register("skilldesc")}
+                  className={errors?.skilldesc ? "erorr" : ""}
+                ></textarea>
+                <span className="text-red-400">
+                  {errors.skilldesc?.message}
+                </span>
+              </div>
+            </div>
+          </div>
           <div className={enterpreneur ? "mt-5" : "hidden"}>
             <h1 className="font-bold text-base">Tech Entrepreneur</h1>
             <img src={LineImg} alt="VectorImage" className="w-40" />
@@ -563,6 +632,6 @@ console.log(errors);
       <Footer />
     </div>
   );
-}
+};
 
-export default TechupskillApp
+export default TechupskillApp;

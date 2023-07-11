@@ -24,7 +24,7 @@ export default function Parentdashboard() {
         <ParentNav />
         <div className="homewelcome-w text-slate-50 ">
           <div className="text-holder">
-            <h1>Welcome To Future Coders. </h1>
+            <h1>Welcome To Future Koders. </h1>
             <span>
               kLab is an open source for parents to enroll their kids in the space of IT in Rwanda and abroad.
             </span>

@@ -50,7 +50,7 @@ const SingleAdmin = () =>{
         </div>
         
         <div className="trainer-paragraph">
-            <h3>Klab TechUp Skills</h3>
+            <h3>kLab TechUp Skills</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, excepturi harum odio reprehenderit sint modi vel hic odit soluta quas blanditiis. Ullam quasi quaerat, cumque doloremque molestiae omnis doloribus quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore explicabo exercitationem incidunt cupiditate praesentium a debitis porro tempora asperiores. Modi quasi a fuga deleniti velit aperiam inventore cum nobis animi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, earum consequuntur! Quibusdam quidem eveniet fuga enim, fugiat ratione minima saepe, itaque veritatis eaque sed error. Accusantium sapiente aut sunt voluptas.
         
             </p>

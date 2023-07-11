@@ -27,8 +27,8 @@ const Footer = () => {
         <div className="flex flex-col gap-6">
           <h1 className="text-xl font-bold text-white">Programs</h1>
           <ul className="flex flex-col gap-3 text-sm">
-            <li>Klab startpus academy</li>
-            <li>Future coders</li>
+            <li>KLab startpus academy</li>
+            <li>Future Koders</li>
             <li>Another program</li>
           </ul>
         </div>
@@ -57,7 +57,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 footerW xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 text-left gap-4 px-6 py-6">
-        <p>Klab</p>
+        <p>KLab</p>
         <div className="flex flex-row gap-2 justify-around">
           <Link to="https://www.linkedin.com/company/klab-rw/" target="_blank">
             <FaLinkedin />
@@ -70,7 +70,7 @@ const Footer = () => {
           </Link>
         </div>
         <p className=" text-xs">
-          @{new Date().getFullYear()} Klab Rwanda. All rights reserved.
+          @{new Date().getFullYear()} KLab Rwanda. All rights reserved.
         </p>
       </div>
     </div>

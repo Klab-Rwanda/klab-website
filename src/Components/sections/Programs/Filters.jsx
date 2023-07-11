@@ -16,7 +16,7 @@ const Filters = (props) => {
         <h1 className="font-semibold">{props.title}</h1>
         {/* <ProgramFilterCard title="Klab Programs" /> */}
         <div className="w-full bg-slate-200 rounded-2xl p-4 flex flex-col gap-5">
-          <h1>Klab Programs</h1>
+          <h1>KLab Programs</h1>
           <ul className="flex flex-col gap-2 h-60 overflow-y-visible overflow-x-hidden overflow-scroll scroll-m-4 rounded-xl">
             <ProgramsFilterList title="Android developer" />
             <ProgramsFilterList title="Frontend Developer" />

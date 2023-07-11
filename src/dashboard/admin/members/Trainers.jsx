@@ -323,7 +323,7 @@ const Trainers = () => {
                     {...register("program")}
                   >
                     <option value=""></option>
-                    <option>Future Coders</option>
+                    <option>Future Koders</option>
                     <option>Klab Startups Academy</option>
                   </select>
                 </div>

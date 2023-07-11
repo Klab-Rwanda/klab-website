@@ -32,7 +32,7 @@ const Info = () => {
               <h1 className=" text-blue-500">Why Apply?</h1>
               <ul className=" ml-4">
                 <li>Access to incubation programs</li>
-                <li>Membership at klab</li>
+                <li>Membership at kLab</li>
                 <li>Mentorship</li>
               </ul>
             </div>
@@ -41,7 +41,7 @@ const Info = () => {
               <p>Requirements</p>
               <ul className=" ml-4">
                 <li>Access to incubation programs</li>
-                <li>Membership at klab</li>
+                <li>Membership at kLab</li>
                 <li>Mentorship</li>
               </ul>
             </div>

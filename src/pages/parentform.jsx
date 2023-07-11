@@ -49,7 +49,7 @@ const Parentform = () => {
           <h1 className="font-bold text-base">Application Form</h1>
           <img src={LineImg} alt="VectorImage" className="w-1/3" />
           <p className="w-full font-normal text-slate-800 text-sm xl:text-base lg:text-base md:text-base sm:text-sm">
-            Klab is an open source for all parents to Enroll their kids in any programs available.
+            kLab is an open source for all parents to Enroll their kids in any programs available.
           </p>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>

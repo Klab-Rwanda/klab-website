@@ -63,7 +63,7 @@ const AppProvider = ({ children }) => {
 
   const fetchApplicants = async () => {
     const response = await axios.get(
-      "https://klabbackend-sbhs.onrender.com/api/v1/application"
+      "http://localhost:8080/api/v1/application/"
     );
     const data = await response.data;
     setApplicants(data.data);

@@ -56,10 +56,10 @@ const WhatWeDO2 = () => {
             <FaRobot className=" text-6xl" />
           </div>
           <h1 className="font-semibold text-blue-500">
-            kLab Future Coders program
+            kLab Future Koders program
           </h1>
           <p className="font-light text-center">
-            Future Coders is a coding program in partnership with Childtech a
+            Future Koders is a coding program in partnership with Childtech a
             kLab Alumni, that creates and empowers technology young talents aged
             between 5-17 years oldwith coding and web-designing skills
             including, Scratch, Figma, HTML & CSS, Javascript, PHP, Python and

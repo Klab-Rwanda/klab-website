@@ -65,7 +65,7 @@ const SingleProgram = () => {
               <h1 className="font-semibold">Filter by Attribute</h1>
               {/* <ProgramFilterCard title="Klab Programs" /> */}
               <div className="w-full bg-slate-200 rounded-2xl p-4 flex flex-col gap-5">
-                <h1>Klab Programs</h1>
+                <h1>kLab Programs</h1>
                 <ul className="flex flex-col gap-2 overflow-y-visible overflow-x-hidden overflow-scroll scroll-m-4 rounded-xl">
                   <li
                     onClick={() => handleFilter("Android developer")}

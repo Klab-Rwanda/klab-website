@@ -1,28 +1,27 @@
-import React ,{useContext, useState, useRef}from 'react'
-import '../styles/Navbar.css'
-import Logo from "../../assets/logo.svg"
-import { FaBars } from 'react-icons/fa'
-import { Link, useLocation} from 'react-router-dom'
-import Menu from './Menu'
-import { AuthContext } from '../../context/AppProvider'
-
+import React, { useContext, useState, useRef } from "react";
+import "../styles/Navbar.css";
+import Logo from "../../assets/logo.svg";
+import { FaBars } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+import Menu from "./Menu";
+import { AuthContext } from "../../context/AppProvider";
 
 const Navbar = () => {
   const [openProfile, setOpenProfile] = useState(false);
   const name = localStorage.getItem("username");
-  const {isLoged, setIsLoged} = useContext(AuthContext);
+  const { isLoged, setIsLoged } = useContext(AuthContext);
 
   const handleLogout = () => {
     setIsLoged(false);
     localStorage.removeItem("username");
     window.location.reload(true);
-  }
+  };
 
   const location = useLocation();
 
   const isActive = (path) => {
     return location.pathname === path;
-  }
+  };
 
   return (
     <div className="bg-white navbar-Header shadow-md rounded-3xl p-4 m-4 fixed flex justify-between items-center top-0 flex-grow z-50">
@@ -49,9 +48,12 @@ const Navbar = () => {
         >
           <li>Community</li>
         </Link> */}
-        <Link to="/events" className={`${isActive("/events") ? "active-link" : ""}`}>
+        {/* <Link
+          to="/events"
+          className={`${isActive("/events") ? "active-link" : ""}`}
+        >
           <li>Events</li>
-        </Link>
+        </Link> */}
       </ul>
       {isLoged ? (
         <>
@@ -74,16 +76,22 @@ const Navbar = () => {
           )}
         </>
       ) : (
-        <Link to="/account">
-          <button className="bg-slate-800 px-5 text-sm font-semibold py-2 text-slate-50 rounded-[8px] hidden xl:flex lg:flex md:flex sm:hidden">
-            Signin
-          </button>
-        </Link>
+        <div className="flex gap-8">
+          <Link to="/apply">
+            <button className="bg-slate-800 px-5 text-sm font-semibold py-2 text-slate-50 rounded-[8px] hidden xl:flex lg:flex md:flex sm:hidden">
+              Apply Now
+            </button>
+          </Link>
+          <Link to="/account">
+            <button className="bg-slate-800 px-5 text-sm font-semibold py-2 text-slate-50 rounded-[8px] hidden xl:flex lg:flex md:flex sm:hidden">
+              Signin
+            </button>
+          </Link>
+        </div>
       )}
       <Menu />
     </div>
   );
-}
+};
 
-
-export default Navbar
+export default Navbar;
