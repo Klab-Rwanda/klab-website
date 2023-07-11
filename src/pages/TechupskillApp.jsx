@@ -182,7 +182,7 @@ const TechupskillApp = () => {
           </h1>
           <img src={LineImg} alt="VectorImage" className="w-1/3" />
           <p className="w-full font-normal text-slate-800 text-sm xl:text-base lg:text-base md:text-base sm:text-sm">
-            The project will be conducted during 5 months from October to
+            The project will be conducted during 4 months from October to
             February, in three phases: Talent detection across the country,
             training, and organising a hackathon.
           </p>
@@ -547,10 +547,10 @@ const TechupskillApp = () => {
                 <div className="radios">
                   <input
                     type="radio"
-                    value="additive-manufacturing-iot"
+                    value="additive-manufacturing"
                     {...register("skillyouwantgain")}
                   />
-                  <label>Additive Manufacturing </label>
+                  <label>Additive Manufacturing</label>
                   <br />
                   <input
                     type="radio"
@@ -568,7 +568,7 @@ const TechupskillApp = () => {
                   <br />
                   <input
                     type="radio"
-                    value="embedded-system"
+                    value="embedded-system-IoT"
                     {...register("skillyouwantgain")}
                   />
                   <label>IOT and Embedded system</label>
