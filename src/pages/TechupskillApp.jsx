@@ -185,8 +185,7 @@ const TechupskillApp = () => {
           <p>
             By submitting your application you hereby declare that the
             information provided is true and correct, you also understand any
-            willful dishonesty will lead to disqualification.( ibi byaguma kuri
-            page ya nyuma gusa) ubyingere no kuri title hejuru
+            willful dishonesty will lead to disqualification.
           </p>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>

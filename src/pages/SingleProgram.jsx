@@ -16,24 +16,23 @@ import { GrFormClose } from "react-icons/gr";
 const SingleProgram = () => {
   const { programs } = useContext(AuthContext);
   const { programId } = useParams();
+
+  const [imageInModel, setImageInModel] = useState("");
+
   const [skill, setSkill] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  // console.log(programId);
   const single = programs?.find((item) => item._id === programId);
   console.log(single?.tags);
 
-  const otherPrograms = programs.filter((item) => item._id !== programId);
+  const otherPrograms = programs?.filter((item) => item._id !== programId);
 
   const handleFilter = (title) => {
     setSkill(title);
-  }
-
-  
+  };
 
   useEffect(() => {
     console.log(skill);
   }, [skill]);
-
 
   return (
     <div>
@@ -42,7 +41,8 @@ const SingleProgram = () => {
         <div className="homewelcome-w text-slate-50 ">
           <div className="w-3/4 flex flex-col gap-4">
             <p className="font-light mt-14">
-              Build your team with developers, engineers and pro remote experts.
+              We are looking for Tech Innovators and Talents in hardware and
+              Software who are fresh graduates from university or college.
             </p>
             <h1 className="font-semibold text-3xl text-slate-100">
               {single?.title}
@@ -132,7 +132,13 @@ const SingleProgram = () => {
           </>
           <div className="w-full rounded-3xl px-6 py-4 flex flex-col gap-6 justify-start items-start">
             <div className="">
-              {single?.details}
+              {/* {single?.details} */}
+              We are looking for
+              <strong> Tech Innovators </strong>
+              and
+              <strong> Talents </strong>
+              in hardware and Software who are fresh graduates from university
+              or college.
               <br />
             </div>
             {skill === "Android developer" && (
@@ -260,26 +266,56 @@ const SingleProgram = () => {
               <>
                 <div className="grid grid-cols-1 w-full xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
                   <div className="flex flex-col gap-3">
-                    <h1 className="font-[500] text-blue-500">Why Apply?</h1>
-                    <ul className=" ml-4">
-                      <li>Access to incubation programs</li>
-                      <li>Membership at klab</li>
-                      <li>Mentorship</li>
+                    <h1 className="font-[500] text-blue-500">Innovators</h1>
+                    <ul className="list-disc ml-6 space-y-2">
+                      <li>
+                        Having a business project in hardware or software is a
+                        must.
+                      </li>
+                      <li>
+                        Having a design for a hardware project and mockup for a
+                        software project (e.g., web platform mockup, hardware
+                        design in any engineering software)
+                      </li>
+                      <li>
+                        Being a fresh graduate from a university or college.
+                      </li>
+                      <li>Having a working laptop.</li>
+                      <li>
+                        Being committed to finishing online and physical
+                        training.
+                      </li>
+                      <li>Currently resident in Rwanda.</li>
                     </ul>
                   </div>
                   <div className="flex flex-col gap-3">
-                    <h1 className="font-[500] text-blue-500">Requirements</h1>
-                    <ul className=" ml-4">
-                      <li>Access to incubation programs</li>
-                      <li>Membership at klab</li>
-                      <li>Mentorship</li>
+                    <h1 className="font-[500] text-blue-500">Talents</h1>
+                    <ul className="list-disc ml-6 space-y-2">
+                      <li>
+                        Having worked on I or more projects in software or
+                        hardware which can be shown via design picture or URL
+                        link
+                      </li>
+                      <li>
+                        Being a fresh graduate from a university or college.
+                      </li>
+                      <li>Having a working laptop.</li>
+                      <li>
+                        Being committed to finishing online and physical
+                        training.
+                      </li>
+                      <li>Currently resident in Rwanda.</li>
+                      <li>
+                        Having relevant supporting documents (ie, certificate)
+                        is an added value
+                      </li>
                     </ul>
                   </div>
                 </div>
 
                 <p className="">
                   Application deadline :{" "}
-                  <b className="font-bold">{single.deadline.slice(0, 10)}</b>
+                  <b className="font-bold">{single?.deadline.slice(0, 10)}</b>
                 </p>
                 <Link to="/apply">
                   <button className="bg-slate-800 text-slate-50 px-4 py-2 rounded-[8px]">
@@ -303,7 +339,7 @@ const SingleProgram = () => {
         </div>
         <div className="w-[90%] px-8">
           <div className="py-5">
-            <h2 className="font-bold text-lg">{single.title} | Gallery</h2>
+            <h2 className="font-bold text-lg">{single?.title} | Gallery</h2>
             <p>
               In Rwanda, most of the innovations in technology, start-ups, or
               even ideas, supporting projects and initiatives are concentrated
@@ -313,50 +349,62 @@ const SingleProgram = () => {
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-4 p-2 xl:h-90 lg:h-80 md:h-80 h-96 overflow-x-hidden overflow-y-visible overflow-scroll scroll-m-4 rounded-[5px]">
             <img
-              src={Image}
+              src="./gallery1.jpeg"
               alt="ImageOne"
               className="w-full cursor-pointer rounded-[5px] h-full object-cover"
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setImageInModel("./gallery1.jpeg");
+                setIsOpen(true);
+              }}
             />
             <img
-              src={Image}
+              src="./gallery2.jpeg"
               alt="ImageOne"
               className="w-full cursor-pointer rounded-[5px] h-full object-cover"
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setImageInModel("./gallery2.jpeg");
+                setIsOpen(true);
+              }}
             />
             <img
-              src={Image}
+              src="./gallery3.jpeg"
               alt="ImageOne"
               className="w-full cursor-pointer rounded-[5px] h-full object-cover"
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setImageInModel("./gallery3.jpeg");
+                setIsOpen(true);
+              }}
             />
             <img
-              src={Image}
+              src="./gallery4.jpeg"
               alt="ImageOne"
               className="w-full cursor-pointer rounded-[5px] h-full object-cover"
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setImageInModel("./gallery4.jpeg");
+                setIsOpen(true);
+              }}
             />
           </div>
         </div>
       </div>
       {/* image modal */}
       <div
-        className={`fixed flex inset-0 items-center bg-[#00000090] justify-center z-50 ${
+        className={`fixed flex inset-0  h-full  md:h-screen items-center bg-[#00000090] justify-center z-50 ${
           isOpen ? "" : "hidden"
         }`}
       >
-        <div className="bg-white w-3/4 sm:max-w-md rounded-lg shadow-lg overflow-hidden">
-          <div className="relative">
+        <div className="bg-white w-4/5 h-4/5 rounded-lg shadow-lg overflow-hidden">
+          <div className="relative w-full h-full">
             <img
-              src={Image}
+              src={imageInModel}
               alt="Image"
-              className="w-full h-full object-cover"
+              className="w-full h-full  object-cover"
             />
             <button
               className="absolute top-0 right-0 m-2 rounded-[2px] bg-white"
               onClick={() => setIsOpen(false)}
             >
-              <GrFormClose className="fill-white text-xl" />
+              <GrFormClose className="fill-white text-2xl" />
             </button>
           </div>
         </div>
@@ -374,27 +422,27 @@ const SingleProgram = () => {
         <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-2 gap-10 xl:mx-32 lg:mx-12 md:mx-10 sm:mx-10 mx-6">
           {otherPrograms?.map((program) => {
             return (
-              <Link to={`/${program._id}`} key={program._id}>
+              <Link to={`/${program?._id}`} key={program?._id}>
                 <div className="bg-slate-50 relative rounded-3xl flex xl:flex-col lg:flex-col md:flex-row sm:flex-col flex-col">
                   <img
-                    src={program.profile}
+                    src={program?.profile}
                     alt="CardImage"
                     className="rounded-3xl h-64 object-cover xl:w-full lg:w-full md:w-1/3"
                   />
                   <span
                     className={` ${
-                      program.tags === "Closed" ? "bg-red-800" : "bg-slate-800"
+                      program?.tags === "Closed" ? "bg-red-800" : "bg-slate-800"
                     } text-white absolute top-2 left-2 rounded-[18px] font-semibold px-[10px] py-[5px] text-[14px]`}
                   >
-                    {program.tags}
+                    {program?.tags}
                   </span>
                   <div className="px-6 py-4 pb-4 flex flex-col justify-between">
                     <div className="flex flex-col gap-2">
                       <h1 className="font-semibold text-base">
-                        {program.title}
+                        {program?.title}
                       </h1>
                       <p className="text-sm font-light">
-                        {program.details}
+                        {program?.details}
                         {/* <span className="hidden md:block lg:hidden xl:hidden">
                           Lorem ipsum dolor sit amet consectetur adipisicing
                           elit. Suscipit quo eaque labore deleniti tempora
