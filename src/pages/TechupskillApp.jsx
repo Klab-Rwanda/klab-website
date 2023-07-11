@@ -5,8 +5,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Report } from "notiflix/build/notiflix-report-aio";
+import { AuthContext } from "../context/AppProvider";
 
 Report.init({
   width: "320px",
@@ -30,7 +31,7 @@ Report.init({
   },
 });
 
-const APPLY_URL = "https://klabbackend-sbhs.onrender.com/api/v1/application";
+const APPLY_URL = "http://localhost:8080/api/v1/application";
 
 const applicationSchema = yup.object().shape({
   email: yup.string().email("Please enter a valid email").required("Required"),
@@ -63,6 +64,11 @@ const applicationSchema = yup.object().shape({
 });
 
 const TechupskillApp = () => {
+  const { programs } = useContext(AuthContext);
+  const currentProgram = programs?.find(
+    (program) => program?._id === "6426afb02afa3a9515f56028"
+  );
+
   const [loading, setLoading] = useState(false);
   const [developer, setDeveloper] = useState(false);
   const [hardware, setHardware] = useState(false);
@@ -616,7 +622,7 @@ const TechupskillApp = () => {
           </div>
 
           <div className="submit-info mt-4">
-            <h4>Application Deadline: 4th November</h4>
+            <h4>Application Deadline: {currentProgram?.deadline.slice(0,10)}</h4>
             <p className="mt-5 mb-5">
               By submitting your application you hereby declare that the
               information provided is true and correct, you also understand any

@@ -9,7 +9,10 @@ import { AuthContext } from "../../context/AppProvider";
 const Navbar = () => {
   const [openProfile, setOpenProfile] = useState(false);
   const name = localStorage.getItem("username");
-  const { isLoged, setIsLoged } = useContext(AuthContext);
+  const { isLoged, setIsLoged, programs } = useContext(AuthContext);
+  const currentProgram = programs?.find(
+    (program) => program?._id === "6426afb02afa3a9515f56028"
+  );
 
   const handleLogout = () => {
     setIsLoged(false);
@@ -77,11 +80,14 @@ const Navbar = () => {
         </>
       ) : (
         <div className="flex gap-8">
-          <Link to="/apply">
-            <button className="bg-slate-800 px-5 text-sm font-semibold py-2 text-slate-50 rounded-[8px] hidden xl:flex lg:flex md:flex sm:hidden">
-              Apply Now
-            </button>
-          </Link>
+          {currentProgram?.tags === "Open now" && (
+            <Link to="/apply">
+              <button className="bg-slate-800 px-5 text-sm font-semibold py-2 text-slate-50 rounded-[8px] hidden xl:flex lg:flex md:flex sm:hidden">
+                Apply Now
+              </button>
+            </Link>
+          )}
+
           <Link to="/account">
             <button className="bg-slate-800 px-5 text-sm font-semibold py-2 text-slate-50 rounded-[8px] hidden xl:flex lg:flex md:flex sm:hidden">
               Signin
