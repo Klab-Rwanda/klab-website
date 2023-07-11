@@ -1,11 +1,10 @@
-import { AiOutlineClose } from "react-icons/ai"
-import { Link } from "react-router-dom"
-import { useState } from 'react'
-import{useForm} from 'react-hook-form'
-import axios from "axios"
+import { AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 import { FaTrashAlt, FaPen } from "react-icons/fa";
-import { Confirm } from "notiflix"
-
+import { Confirm } from "notiflix";
 
 Confirm.init({
   width: "320px",
@@ -19,26 +18,25 @@ Confirm.init({
 });
 
 const Administration = () => {
-const [selectedTeamData ,setSelectedTeamData]  = useState(null)
+  const [selectedTeamData, setSelectedTeamData] = useState(null);
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
-    defaultValues: {
-    }});
+    defaultValues: {},
+  });
 
   const [team, setTeam] = useState([]);
   const fetchTeam = async () => {
     try {
-    const response = await axios.get(
-      "https://klabbackend-sbhs.onrender.com/api/v1/teams"
-      );  
+      const response = await axios.get(
+        "https://klab-academy.onrender.com/api/v1/teams"
+      );
       console.log(response);
       setTeam(response.data);
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
   };
@@ -53,7 +51,7 @@ const [selectedTeamData ,setSelectedTeamData]  = useState(null)
         "No",
         async () => {
           await axios.delete(
-            `https://klabbackend-sbhs.onrender.com/api/v1/team/${id}`
+            `https://klab-academy.onrender.com/api/v1/team/${id}`
           );
           window.location.reload(true);
         },
@@ -67,7 +65,7 @@ const [selectedTeamData ,setSelectedTeamData]  = useState(null)
 
   const [selectedTeam, setSelectedTeam] = useState([]);
   const [model, setModal] = useState(false);
-  
+
   return (
     <section>
       <div className="admin-headers">
@@ -75,9 +73,7 @@ const [selectedTeamData ,setSelectedTeamData]  = useState(null)
         <div className="admin-add">
           <p>Dashboard &gt; Members &gt; Team </p>{" "}
           <Link to="/dashboard/members/Administration/addTeam">
-            <button
-              className="flex items-center bg-transparent border border-slate-800 px-4 hover:bg-slate-800 hover:text-slate-100 duration-500 h-10 py-2 text-slate-800 rounded-xl"
-            >
+            <button className="flex items-center bg-transparent border border-slate-800 px-4 hover:bg-slate-800 hover:text-slate-100 duration-500 h-10 py-2 text-slate-800 rounded-xl">
               Add New
             </button>
           </Link>
@@ -152,6 +148,6 @@ const [selectedTeamData ,setSelectedTeamData]  = useState(null)
       </div>
     </section>
   );
-}
+};
 
-export default Administration
+export default Administration;

@@ -31,7 +31,7 @@ Report.init({
   },
 });
 
-const APPLY_URL = "https://klabbackend-sbhs.onrender.com/api/v1/application";
+const APPLY_URL = "https://klab-academy.onrender.com/api/v1/application";
 
 const applicationSchema = yup.object().shape({
   email: yup.string().email("Please enter a valid email").required("Required"),
@@ -176,7 +176,7 @@ const TechupskillApp = () => {
         </div>
       </div>
       <div className="form-container">
-        <div className="md:w-4/5 sm:w-11/12 w-full flex flex-col items-start gap-2">
+        <div className="xl:w-1/2 lg:w-1/2 md:w-3/4 sm:w-4/5 w-full flex flex-col items-start gap-2">
           <h1 className="font-bold text-base md:text-xl">
             Application Details
           </h1>

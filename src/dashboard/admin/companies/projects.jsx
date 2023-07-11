@@ -10,7 +10,7 @@ const Projectpage = () => {
   const fetchProject = async () => {
     try {
       const response = await axios.get(
-        "https://klabbackend-sbhs.onrender.com/api/v1/projects"
+        "https://klab-academy.onrender.com/api/v1/projects"
       );
       const data = await response.data.data;
       // console.log(data);
@@ -27,7 +27,7 @@ const Projectpage = () => {
     try {
       await axios({
         method: "DELETE",
-        url: `https://klabbackend-sbhs.onrender.com/api/v1/project/${id}`,
+        url: `https://klab-academy.onrender.com/api/v1/project/${id}`,
         headers: {
           "Content-Type": "multipart/form-data",
           companyauth: `${localStorage.getItem("token")}`,
@@ -89,7 +89,12 @@ const Projectpage = () => {
                   >
                     {item.desc.slice(0, 200)}
                   </p>
-                  <button href="https://res.cloudinary.com/shopitrw/image/upload/v1680278024/muthuegsfmngxxjivrei.jpg" type="download">resume</button>
+                  <button
+                    href="https://res.cloudinary.com/shopitrw/image/upload/v1680278024/muthuegsfmngxxjivrei.jpg"
+                    type="download"
+                  >
+                    resume
+                  </button>
                 </div>
 
                 <div className="project-profiles">
@@ -118,13 +123,15 @@ const Projectpage = () => {
                       />
                     </span>
 
-
                     <h1> {selectedProject?.companyName}</h1>
                     <hr />
                     <h3>{selectedProject?.ProjectName}</h3>
-                   
+
                     <p>{selectedProject?.desc}</p>
-                    <h4 className="mb-1 mt-1 font-semibold text-slate-700"> This project is { selectedProject.category}</h4>
+                    <h4 className="mb-1 mt-1 font-semibold text-slate-700">
+                      {" "}
+                      This project is {selectedProject.category}
+                    </h4>
                     <p className="font-semibold mt-4">
                       {selectedProject?.email}
                     </p>

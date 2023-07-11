@@ -14,16 +14,16 @@ import testPdf from "./test.pdf";
 import { set } from "immutable";
 
 const APPROVE_LINK =
-  "https://klabbackend-sbhs.onrender.com/api/v1/application/online/approval";
+  "https://klab-academy.onrender.com/api/v1/application/online/approval";
 
 const REJECT_LINK =
-  "https://klabbackend-sbhs.onrender.com/api/v1/application/physical/reject/";
+  "https://klab-academy.onrender.com/api/v1/application/physical/reject/";
 
 const ACCEPT_LINK =
-  "https://klabbackend-sbhs.onrender.com/api/v1/application/physical/approval/";
+  "https://klab-academy.onrender.com/api/v1/application/physical/approval/";
 
 const WAITING_LINK =
-  "https://klabbackend-sbhs.onrender.com/api/v1/application/physical/waiting/";
+  "https://klab-academy.onrender.com/api/v1/application/physical/waiting/";
 
 const filesPerPage = 10;
 
@@ -322,7 +322,7 @@ const Applicants = () => {
                 className="h-[40px] w-[40px] bg-[#24292F] flex items-center
                 justify-center text-white rounded-full"
               >
-              {selected?.fullname[0]?.toUpperCase()}
+                {selected?.fullname[0]?.toUpperCase()}
               </div>
               <div className="flex flex-col items-start">
                 <h1 className="font-[600] text-[18px] text-[#24292F]">
@@ -345,7 +345,9 @@ const Applicants = () => {
                   <label className="text-[16px] font-[500]">
                     Date of Birth:
                   </label>
-                  <p className="text-[#57606A]">{selected?.dob?.slice(0, 10)}</p>
+                  <p className="text-[#57606A]">
+                    {selected?.dob?.slice(0, 10)}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-[#24292F]">
                   <label className="text-[16px] font-[500]">Country:</label>
@@ -401,9 +403,7 @@ const Applicants = () => {
                   <label className="text-[16px] font-[500]">
                     Skill description:
                   </label>
-                  <p className="text-[#57606A]">
-                    {selected?.skilldesc}
-                  </p>
+                  <p className="text-[#57606A]">{selected?.skilldesc}</p>
                 </div>
                 <div className="flex flex-col items-start gap-1 text-[#24292F]">
                   <label className="text-[16px] font-[500]">
@@ -476,11 +476,7 @@ const Applicants = () => {
               {viewer && (
                 <>
                   <div className="div">
-                    <iframe
-                      src={resume}
-                      width="100%"
-                      height="600px"
-                    />
+                    <iframe src={resume} width="100%" height="600px" />
                   </div>
                 </>
               )}

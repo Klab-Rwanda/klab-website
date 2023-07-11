@@ -1,13 +1,13 @@
-import { IoCloseSharp } from "react-icons/io5"
-import { useState, useEffect, useContext, useRef } from "react"
-import { yupResolver } from "@hookform/resolvers/yup"
-import axios from "axios"
-import { useForm } from "react-hook-form"
-import * as yup from "yup"
-import { AuthContext } from "../../../context/AppProvider"
-import { FaPen, FaTrashAlt } from "react-icons/fa"
-import { Confirm } from "notiflix/build/notiflix-confirm-aio"
-import { Notify } from "notiflix"
+import { IoCloseSharp } from "react-icons/io5";
+import { useState, useEffect, useContext, useRef } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { AuthContext } from "../../../context/AppProvider";
+import { FaPen, FaTrashAlt } from "react-icons/fa";
+import { Confirm } from "notiflix/build/notiflix-confirm-aio";
+import { Notify } from "notiflix";
 
 Confirm.init({
   width: "320px",
@@ -30,81 +30,78 @@ const trainerSchema = yup.object().shape({
   stack: yup.string().required("Required"),
 });
 
-const CREATE_TRAINER = "https://klabbackend-sbhs.onrender.com/api/v1/trainers"
-const DELETE_TRAINER = "https://klabbackend-sbhs.onrender.com/api/v1/trainers/"
+const CREATE_TRAINER = "https://klab-academy.onrender.com/api/v1/trainers";
+const DELETE_TRAINER = "https://klab-academy.onrender.com/api/v1/trainers/";
 
 const Trainers = () => {
-
   // add skill section
 
-    const [inputValue, setInputValue] = useState("");
-    const [skillsList, setSkillsList] = useState([]);
-    const [suggestedSkills, setSuggestedSkills] = useState([
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "Problem Solving",
-      "Python",
-      "Java",
-      "C++",
-      "Entrepreneurship",
-      "Project Management",
-    ]);
-    const [error, setError] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [skillsList, setSkillsList] = useState([]);
+  const [suggestedSkills, setSuggestedSkills] = useState([
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Problem Solving",
+    "Python",
+    "Java",
+    "C++",
+    "Entrepreneurship",
+    "Project Management",
+  ]);
+  const [error, setError] = useState("");
 
-    const handleInputChange = (event) => {
-      setInputValue(event.target.value);
-    };
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
-    const handleKeyDown = (event) => {
-      if (event.key === "Enter" && inputValue.trim() !== "") {
-        const newSkill = inputValue.trim();
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" && inputValue.trim() !== "") {
+      const newSkill = inputValue.trim();
 
-        if (skillsList.includes(newSkill)) {
-          setError("Skill already exists.");
-          setInputValue("");
-          return;
-        }
-
-        if (skillsList.length >= 5) {
-          setError("Maximum limit of 5 skills reached.");
-          setInputValue("");
-          return;
-        }
-
-        setSkillsList((prevList) => [...prevList, newSkill]);
+      if (skillsList.includes(newSkill)) {
+        setError("Skill already exists.");
         setInputValue("");
-        setError("");
-      }
-    };
-
-    const handleSkillClick = (skill) => {
-      if (skillsList.includes(skill) || skillsList.length >= 5) {
-        setError(
-          "Skill already exists or maximum limit of 5 skills reached."
-        );
         return;
       }
 
-      setSkillsList((prevList) => [...prevList, skill]);
+      if (skillsList.length >= 5) {
+        setError("Maximum limit of 5 skills reached.");
+        setInputValue("");
+        return;
+      }
+
+      setSkillsList((prevList) => [...prevList, newSkill]);
       setInputValue("");
       setError("");
-    };
+    }
+  };
 
-    const handleRemoveSkill = (skill) => {
-      setSkillsList((prevList) => prevList.filter((item) => item !== skill));
-    };
+  const handleSkillClick = (skill) => {
+    if (skillsList.includes(skill) || skillsList.length >= 5) {
+      setError("Skill already exists or maximum limit of 5 skills reached.");
+      return;
+    }
+
+    setSkillsList((prevList) => [...prevList, skill]);
+    setInputValue("");
+    setError("");
+  };
+
+  const handleRemoveSkill = (skill) => {
+    setSkillsList((prevList) => prevList.filter((item) => item !== skill));
+  };
 
   // add skill end
 
-  const [modal, setModal] = useState(false)
-  const [details, setDetails] = useState(false)
-  const [selected, setSelected] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const { trainers } = useContext(AuthContext)
-  console.log(trainers)
+  const [modal, setModal] = useState(false);
+  const [details, setDetails] = useState(false);
+  const [selected, setSelected] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const { trainers } = useContext(AuthContext);
+  console.log(trainers);
   const {
     register,
     handleSubmit,
@@ -122,24 +119,24 @@ const Trainers = () => {
       profile: selected ? selected.profile[0] : "",
     },
   });
-  
+
   const onSubmit = async (data) => {
-    const formData = new FormData()
-    formData.append("name", data.name)
-    formData.append("email", data.email)
-    formData.append("phone", data.phone)
-    formData.append("program", data.program)
-    formData.append("location", data.location)
-    formData.append("cohort", data.cohort)
-    formData.append("profile", data.profile[0])
-    formData.append("stack", data.stack)
-    formData.append("skills", JSON.stringify(skillsList))
-    
-    try{
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("phone", data.phone);
+    formData.append("program", data.program);
+    formData.append("location", data.location);
+    formData.append("cohort", data.cohort);
+    formData.append("profile", data.profile[0]);
+    formData.append("stack", data.stack);
+    formData.append("skills", JSON.stringify(skillsList));
+
+    try {
       if (selected) {
         setLoading(true);
         const response = await axios.put(
-          `https://klabbackend-sbhs.onrender.com/api/v1/trainers/${selected._id}`,
+          `https://klab-academy.onrender.com/api/v1/trainers/${selected._id}`,
           formData,
           {
             headers: {
@@ -151,21 +148,21 @@ const Trainers = () => {
         Notify.success("Trainer was updated successfully!");
         window.location.reload(true);
       } else {
-          setLoading(true);
-          const response = await axios.post(CREATE_TRAINER, formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          });
-          setLoading(false);
-          Notify.success("Trainer was added successfully!");
-          window.location.reload(true);
-        }
-    } catch(err){
+        setLoading(true);
+        const response = await axios.post(CREATE_TRAINER, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        setLoading(false);
+        Notify.success("Trainer was added successfully!");
+        window.location.reload(true);
+      }
+    } catch (err) {
       setLoading(false);
       console.log(err);
     }
-  }
+  };
 
   const handleDelete = async (id) => {
     try {
@@ -176,7 +173,7 @@ const Trainers = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klabbackend-sbhs.onrender.com/api/v1/trainers/${id}`
+            `https://klab-academy.onrender.com/api/v1/trainers/${id}`
           );
           window.location.reload(true);
         },
@@ -191,7 +188,6 @@ const Trainers = () => {
   useEffect(() => {
     reset(selected);
   }, [selected]);
-
 
   return (
     <>
@@ -505,5 +501,5 @@ const Trainers = () => {
       </div>
     </>
   );
-}
+};
 export default Trainers;

@@ -11,7 +11,7 @@ const TeamCard = () => {
   const fetchTeam = async () => {
     try {
       const response = await axios.get(
-        "https://klabbackend-sbhs.onrender.com/api/v1/teams"
+        "https://klab-academy.onrender.com/api/v1/teams"
       );
       setTeam(response.data);
     } catch (error) {
@@ -46,9 +46,9 @@ const TeamCard = () => {
               <p className="text-blue-500 font-medium text-sm">
                 {item.details}
               </p>
-                <Link to={`${item.linkedinLink}`} target="_blank">
-                  <FaLinkedin />
-                </Link>
+              <Link to={`${item.linkedinLink}`} target="_blank">
+                <FaLinkedin />
+              </Link>
             </div>
           </div>
         );

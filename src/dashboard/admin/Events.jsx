@@ -11,14 +11,12 @@ import { AuthContext } from "../../context/AppProvider";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 
-
-
-const CREATE_EVENT_URL = "https://klabbackend-sbhs.onrender.com/api/v1/event";
+const CREATE_EVENT_URL = "https://klab-academy.onrender.com/api/v1/event";
 
 const Events = () => {
   const { events } = useContext(AuthContext);
   const [selected, setSelected] = useState(null);
-  const[loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -52,14 +50,13 @@ const Events = () => {
       if (selected) {
         setLoading(true);
         const response = await axios.put(
-          `https://klabbackend-sbhs.onrender.com/api/v1/event/${selected._id}`,
+          `https://klab-academy.onrender.com/api/v1/event/${selected._id}`,
           data
         );
         setLoading(false);
         Notify.success("Event updated successfully!");
         console.log(response);
         window.location.reload(true);
-        
       } else {
         setLoading(true);
         const response = await axios.post(CREATE_EVENT_URL, formData, {
@@ -77,8 +74,6 @@ const Events = () => {
   };
 
   const handleDelete = async (id) => {
-
-
     try {
       Confirm.show(
         "Confirm",
@@ -87,13 +82,11 @@ const Events = () => {
         "No",
         async () => {
           await axios.delete(
-        `https://klabbackend-sbhs.onrender.com/api/v1/event/${id}`
-        );
-        window.location.reload(true);
+            `https://klab-academy.onrender.com/api/v1/event/${id}`
+          );
+          window.location.reload(true);
         },
-        () => {
-          
-        },
+        () => {},
         {}
       );
     } catch (error) {
@@ -277,7 +270,9 @@ const Events = () => {
               {errors.details && (
                 <p className="text-red-400">{errors.details?.message}</p>
               )}
-              <button className="text-[18px]" type="submit">{loading ? "Loading" : "Add Event"}</button>
+              <button className="text-[18px]" type="submit">
+                {loading ? "Loading" : "Add Event"}
+              </button>
             </form>
           </div>
         </div>

@@ -37,11 +37,10 @@ const Partners = () => {
     formData.append("link", data.link);
     formData.append("profile", data.profile[0]);
     console.log(data);
-    if(selected){
-
+    if (selected) {
     } else {
       const response = await axios.post(
-        "https://klabbackend-sbhs.onrender.com/api/v1/partner",
+        "https://klab-academy.onrender.com/api/v1/partner",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -52,7 +51,6 @@ const Partners = () => {
       window.location.reload(true);
     }
     try {
-      
     } catch (err) {
       console.log(err);
     }
@@ -67,7 +65,7 @@ const Partners = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klabbackend-sbhs.onrender.com/api/v1/partner/${id}`
+            `https://klab-academy.onrender.com/api/v1/partner/${id}`
           );
           window.location.reload(true);
         },
@@ -178,10 +176,12 @@ const Partners = () => {
               </span>
               <div className="flex items-center gap-[10px]">
                 <div className="cursor-pointer text-[#2F85E1] border border-[#DDE8F4] rounded-[5px] p-[5px]">
-                  <FaPen onClick={() => {
-                    setSelected(item);
-                    setModal(true);
-                  }}/>
+                  <FaPen
+                    onClick={() => {
+                      setSelected(item);
+                      setModal(true);
+                    }}
+                  />
                 </div>
                 <button>
                   <FaTrashAlt
