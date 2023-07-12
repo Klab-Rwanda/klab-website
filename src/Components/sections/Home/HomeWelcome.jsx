@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 
 const HomeWelcome = () => {
   return (
-    <div className="w-screen h-screen welcomeBg flex justify-center items-center relative p-4 py-12">
+    <div className="w-screen h-screen welcomeBg  flex justify-center items-center relative p-4 py-12">
       <Navbar />
-      <div className="homewelcome-w text-slate-50 ">
-        <div className="w-3/4 flex flex-col gap-4">
-          <p className="font-light mt-14">
+      <div className="homewelcome-w text-slate-50  ">
+        <div className="overlay "></div>
+        <div className="w-3/4 flex  relative z-10  flex-col gap-4">
+          <p className="font-light relative z-20 mt-14">
             Build your team with developers, engineers, and pro remote experts.
           </p>
           <h1 className="font-semibold text-3xl text-white">
