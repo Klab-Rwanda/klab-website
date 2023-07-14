@@ -15,16 +15,11 @@ const RegisterForm = () => {
 
   const navigate = useNavigate();
   const onSubmit = async (values, actions) => {
-    console.log(values);
-    console.log(actions);
-
     try {
       setLoading(true);
       const response = await axios.post(REGISTER_URL, JSON.stringify(values), {
         headers: { "Content-Type": "application/json" },
       });
-      console.log(response.data);
-      console.log(JSON.stringify(response));
       actions.resetForm();
       alert("Account created successfully!");
       navigate("/account");

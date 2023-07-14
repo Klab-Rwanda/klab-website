@@ -18,7 +18,6 @@ const DashboardHeader = ({sidebar, setSidebar}) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { loggedUser } = useContext(AuthContext);
-  console.log(loggedUser);
 
   const handleClick = () => {
     setIsOpen(!isOpen);

@@ -6,13 +6,62 @@ import { CiNoWaitingSign } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { Link } from "react-router-dom";
-import { IoCloseSharp } from "react-icons/io5";
+import { IoCloseSharp, IoHardwareChipOutline } from "react-icons/io5";
 import { BiLinkExternal } from "react-icons/bi";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import DocViewer, { PDFRenderer } from "react-doc-viewer";
-import testPdf from "./test.pdf";
-import { set } from "immutable";
 
+import { BiUser, BiCodeAlt, BiBriefcase } from "react-icons/bi";
+
+const ApplicantCount = ({
+  filteredFiles,
+  hardwareApplicant,
+  developer,
+  entrepreneurApplicant,
+}) => {
+  const categories = [
+    {
+      name: "applicants",
+      count: filteredFiles.length,
+      icon: BiUser,
+      color: "#657786",
+    },
+    {
+      name: "Hardware",
+      count: hardwareApplicant?.length,
+      icon: IoHardwareChipOutline,
+      color: "#657786",
+    },
+    {
+      name: "Developer",
+      count: developer?.length,
+      icon: BiCodeAlt,
+      color: "#657786",
+    },
+    {
+      name: "Entrepreneur",
+      count: entrepreneurApplicant?.length,
+      icon: BiBriefcase,
+      color: "#657786",
+    },
+  ];
+
+  return (
+    <div className="flex gap-4 flex-row">
+      {categories.map((category) => (
+        <div
+          className="text-[#24292F] flex items-center gap-1"
+          key={category.name}
+        >
+          {React.createElement(category.icon, {
+            className: `text-${category.color} text-xl`,
+          })}
+          <span className="font-bold">{category.count}</span>
+          <span className="text-sm">{category.name}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
 const APPROVE_LINK =
   "https://klab-academy.onrender.com/api/v1/application/online/approval";
 
@@ -28,16 +77,43 @@ const WAITING_LINK =
 const filesPerPage = 10;
 
 const Applicants = () => {
-  const { applicants } = useContext(AuthContext);
+  const { applicants, programs } = useContext(AuthContext);
   const [filteredFiles, setFilteredFiles] = useState([]);
   const [selected, setSelected] = useState(null);
-  console.log(applicants);
-
   const [currentPage, setCurrentPage] = useState(0);
   const lastFileIndex = (currentPage + 1) * filesPerPage;
   const firstFileIndex = lastFileIndex - filesPerPage;
   const currentFiles = filteredFiles?.slice(firstFileIndex, lastFileIndex);
   const totalPages = Math.ceil(filteredFiles.length / filesPerPage);
+
+  console.log(selected);
+
+  const currentCohort = programs?.find(
+    (program) => program?.tags === "Open now"
+  )?.cohort;
+
+  const hardwareApplicant = applicants?.filter(
+    (applicant) =>
+      applicant?.cohort === currentCohort &&
+      applicant?.categoryfitin === "hardware"
+  );
+  const developer = applicants?.filter(
+    (applicant) =>
+      applicant?.cohort === currentCohort &&
+      applicant?.categoryfitin === "developer"
+  );
+  const entrepreneurApplicant = applicants?.filter(
+    (applicant) =>
+      applicant?.cohort === currentCohort &&
+      applicant?.categoryfitin === "entrepreneur"
+  );
+
+  console.log(
+    currentCohort,
+    hardwareApplicant,
+    developer,
+    entrepreneurApplicant
+  );
 
   const handlePageChange = (selectedPage) => {
     setCurrentPage(selectedPage.selected);
@@ -51,6 +127,25 @@ const Applicants = () => {
       setFilteredFiles(filtered);
     }
   };
+
+  const handleFilter = (category) => {
+    if (category) {
+      const filteredApplicants = applicants?.filter(
+        (applicant) => applicant.categoryfitin === category
+      );
+      setFilteredFiles(filteredApplicants);
+    } else {
+      // If no category selected, reset the applicants to the original list
+      // Or you can fetch the applicants again from an API or other source
+      setFilteredFiles([
+        { categoryfitin: "hardware" },
+        { categoryfitin: "developer" },
+        { categoryfitin: "entrepreneur" },
+        // ... more applicant objects
+      ]);
+    }
+  };
+  const categoryFilter = (category) => {};
 
   useEffect(() => {
     setFilteredFiles(applicants);
@@ -120,7 +215,41 @@ const Applicants = () => {
 
   const [resume, setResume] = useState(null);
   const [viewer, setViewer] = useState(false);
+  const FilterComponent = ({ onFilter }) => {
+    const [selectedCategory, setSelectedCategory] = useState("");
 
+    const handleCategoryChange = (e) => {
+      setSelectedCategory(e.target.value);
+      onFilter(e.target.value);
+    };
+
+    return (
+      <div className="flex items-start flex-col  bg-white ">
+        <select
+          id="categorySelect"
+          className="p-2 border bg-white border-gray-300 rounded"
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+        >
+          <option value="">Category</option>
+          <option value="hardware">Hardware</option>
+          <option value="developer">Developer</option>
+          <option value="entrepreneur">Entrepreneur</option>
+        </select>
+      </div>
+    );
+  };
+
+  const filterApplicants = (category) => {
+    if (category === "") {
+      setFilteredFiles(applicants);
+    } else {
+      const filtered = applicants.filter(
+        (applicant) => applicant.categoryfitin === category
+      );
+      setFilteredFiles(filtered);
+    }
+  };
   return (
     <div className="flex flex-col ">
       <div className="flex flex-col px-6 py-4 gap-3">
@@ -169,10 +298,16 @@ const Applicants = () => {
                 </div>
               )}
             </div>
-            <div className="text-[#24292F] flex items-center gap-1">
-              <span className="font-bold">{filteredFiles.length}</span>{" "}
-              applicants
-            </div>
+            <FilterComponent
+              applicants={applicants}
+              onFilter={filterApplicants}
+            />
+            <ApplicantCount
+              filteredFiles={filteredFiles}
+              hardwareApplicant={hardwareApplicant}
+              developer={developer}
+              entrepreneurApplicant={entrepreneurApplicant}
+            />
           </div>
           <button
             className="bg-[#18385A] text-white rounded-[12px] px-[10px] py-[5px] text-[18px] 
@@ -331,7 +466,7 @@ const Applicants = () => {
                 <span className="text-[#57606A]">{selected?.email}</span>
               </div>
             </div>
-            <div className="flex justify-between   w-full mt-5">
+            <div className="flex justify-between  capitalize   w-full mt-5">
               <div className="flex basis-2/4 items-start flex-col gap-4">
                 <div className="flex items-center gap-1 text-[#24292F]">
                   <label className="text-[16px] font-[500]">Phone:</label>
@@ -362,9 +497,25 @@ const Applicants = () => {
                   <p className="text-[#57606A]">{selected?.district}</p>
                 </div>
                 <div className="flex items-center gap-1 text-[#24292F]">
-                  <label className="text-[16px] font-[500]">Occupation:</label>
-                  <p className="text-[#57606A]">{selected?.areyougraduate}</p>
+                  <label className="text-[16px] font-[500]">Sector:</label>
+                  <p className="text-[#57606A]">{selected?.sector}</p>
                 </div>
+                <div className="flex items-center gap-1 text-[#24292F]">
+                  <label className="text-[16px] font-[500]">Cell:</label>
+                  <p className="text-[#57606A]">{selected?.cell}</p>
+                </div>
+                <div className="flex items-center gap-1 text-[#24292F]">
+                  <label className="text-[16px] font-[500]">Village:</label>
+                  <p className="text-[#57606A]">{selected?.village}</p>
+                </div>
+                {selected?.areyougraduate && (
+                  <div className="flex items-center gap-1 text-[#24292F]">
+                    <label className="text-[16px] font-[500]">
+                      Occupation:
+                    </label>
+                    <p className="text-[#57606A]">{selected?.areyougraduate}</p>
+                  </div>
+                )}
                 <div className="flex items-center gap-1 text-[#24292F]">
                   <label className="text-[16px] font-[500]">
                     Education Level:
@@ -391,28 +542,42 @@ const Applicants = () => {
               <div className="flex basis-2/4 flex-col gap-1 items-start">
                 <div className="flex items-center gap-4 text-[#24292F]">
                   <label className="text-[16px] font-[500]">Category:</label>
-                  <p className="text-[#57606A]">{selected?.categoryfitin}</p>
-                </div>
-                <div className="flex items-center gap-1 text-[#24292F]">
-                  <label className="text-[16px] font-[500]">
-                    Skills to join:
-                  </label>
-                  <p className="text-[#57606A]">{selected?.skillyouwantjoin}</p>
-                </div>
-                <div className="flex flex-col items-start gap-1 text-[#24292F]">
-                  <label className="text-[16px] font-[500]">
-                    Skill description:
-                  </label>
-                  <p className="text-[#57606A]">{selected?.skilldesc}</p>
-                </div>
-                <div className="flex flex-col items-start gap-1 text-[#24292F]">
-                  <label className="text-[16px] font-[500]">
-                    Innovation Model:
-                  </label>
-                  <p className="text-[#57606A]">
-                    {selected?.shareInnovationModel}
+                  <p className="text-[#57606A] capitalize">
+                    {selected?.categoryfitin}
                   </p>
                 </div>
+                {selected?.skillyouwantjoin && (
+                  <div className="flex items-center gap-1 text-[#24292F]">
+                    <label className="text-[16px] font-[500]">
+                      Skills to join:
+                    </label>
+                    <p className="text-[#57606A] capitalize">
+                      {selected?.skillyouwantjoin}
+                    </p>
+                  </div>
+                )}
+
+                {selected?.shareInnovationModel && (
+                  <div className="flex flex-col items-start gap-1 text-[#24292F]">
+                    <label className="text-[16px] font-[500]">
+                      Skill description:
+                    </label>
+                    <p className="text-[#57606A]">
+                      {selected?.entInnovationdesc}
+                    </p>
+                  </div>
+                )}
+
+                {selected?.shareInnovationModel && (
+                  <div className="flex flex-col items-start gap-1 text-[#24292F]">
+                    <label className="text-[16px] font-[500]">
+                      Innovation Model:
+                    </label>
+                    <p className="text-[#57606A]">
+                      {selected?.shareInnovationModel}
+                    </p>
+                  </div>
+                )}
 
                 <div
                   onClick={() => {

@@ -182,8 +182,7 @@ const TechupskillApp = () => {
           </h1>
           <img src={LineImg} alt="VectorImage" className="w-1/3" />
           <p className="w-full font-normal text-slate-800 text-sm xl:text-base lg:text-base md:text-base sm:text-sm">
-            The project will be conducted during 4 months from October to
-            February, in three phases: Talent detection across the country,
+            The project will be conducted during 4 months in three phases: Talent detection across the country,
             training, and organising a hackathon.
           </p>
           <p>
