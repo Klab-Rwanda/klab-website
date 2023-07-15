@@ -168,7 +168,7 @@ const TechupskillApp = () => {
         <div className="w-3/4  flex flex-col gap-2 md:-ml-24">
           <div className="overlay"></div>
           <div className="relative z-20">
-            <h1 className="font-semibold  text-3xl text-white">Techupskill</h1>
+            <h1 className="font-semibold  text-3xl text-white">Tech Upskill</h1>
             <p className="font-light mt-5 text-white">
               Build your team with developers, engineers and pro remote experts.
             </p>

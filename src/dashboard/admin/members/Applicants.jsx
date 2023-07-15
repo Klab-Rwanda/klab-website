@@ -8,7 +8,12 @@ import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { Link } from "react-router-dom";
 import { IoCloseSharp, IoHardwareChipOutline } from "react-icons/io5";
 import { BiLinkExternal } from "react-icons/bi";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiOutlineArrowDown,
+  AiOutlineArrowRight,
+} from "react-icons/ai";
 
 import { BiUser, BiCodeAlt, BiBriefcase } from "react-icons/bi";
 
@@ -46,7 +51,7 @@ const ApplicantCount = ({
   ];
 
   return (
-    <div className="flex gap-4 flex-row">
+    <div className="flex  flex-wrap gap-4 flex-row">
       {categories.map((category) => (
         <div
           className="text-[#24292F] flex items-center gap-1"
@@ -74,19 +79,11 @@ const ACCEPT_LINK =
 const WAITING_LINK =
   "https://klab-academy.onrender.com/api/v1/application/physical/waiting/";
 
-const filesPerPage = 10;
-
 const Applicants = () => {
   const { applicants, programs } = useContext(AuthContext);
   const [filteredFiles, setFilteredFiles] = useState([]);
   const [selected, setSelected] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const lastFileIndex = (currentPage + 1) * filesPerPage;
-  const firstFileIndex = lastFileIndex - filesPerPage;
-  const currentFiles = filteredFiles?.slice(firstFileIndex, lastFileIndex);
-  const totalPages = Math.ceil(filteredFiles.length / filesPerPage);
-
-  console.log(selected);
 
   const currentCohort = programs?.find(
     (program) => program?.tags === "Open now"
@@ -107,45 +104,6 @@ const Applicants = () => {
       applicant?.cohort === currentCohort &&
       applicant?.categoryfitin === "entrepreneur"
   );
-
-  console.log(
-    currentCohort,
-    hardwareApplicant,
-    developer,
-    entrepreneurApplicant
-  );
-
-  const handlePageChange = (selectedPage) => {
-    setCurrentPage(selectedPage.selected);
-  };
-
-  const filterFiles = (status) => {
-    if (status === "all") {
-      setFilteredFiles(applicants);
-    } else {
-      const filtered = applicants.filter((file) => file.status === status);
-      setFilteredFiles(filtered);
-    }
-  };
-
-  const handleFilter = (category) => {
-    if (category) {
-      const filteredApplicants = applicants?.filter(
-        (applicant) => applicant.categoryfitin === category
-      );
-      setFilteredFiles(filteredApplicants);
-    } else {
-      // If no category selected, reset the applicants to the original list
-      // Or you can fetch the applicants again from an API or other source
-      setFilteredFiles([
-        { categoryfitin: "hardware" },
-        { categoryfitin: "developer" },
-        { categoryfitin: "entrepreneur" },
-        // ... more applicant objects
-      ]);
-    }
-  };
-  const categoryFilter = (category) => {};
 
   useEffect(() => {
     setFilteredFiles(applicants);
@@ -215,49 +173,68 @@ const Applicants = () => {
 
   const [resume, setResume] = useState(null);
   const [viewer, setViewer] = useState(false);
-  const FilterComponent = ({ onFilter }) => {
-    const [selectedCategory, setSelectedCategory] = useState("");
 
-    const handleCategoryChange = (e) => {
-      setSelectedCategory(e.target.value);
-      onFilter(e.target.value);
-    };
+  const [selectedStatus, setSelectedStatus] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
-    return (
-      <div className="flex items-start flex-col  bg-white ">
-        <select
-          id="categorySelect"
-          className="p-2 border bg-white border-gray-300 rounded"
-          value={selectedCategory}
-          onChange={handleCategoryChange}
-        >
-          <option value="">Category</option>
-          <option value="hardware">Hardware</option>
-          <option value="developer">Developer</option>
-          <option value="entrepreneur">Entrepreneur</option>
-        </select>
-      </div>
-    );
-  };
-
-  const filterApplicants = (category) => {
-    if (category === "") {
-      setFilteredFiles(applicants);
-    } else {
-      const filtered = applicants.filter(
-        (applicant) => applicant.categoryfitin === category
-      );
-      setFilteredFiles(filtered);
+  const filteredApplicants = applicants.filter((applicant) => {
+    if (selectedStatus && applicant.status !== selectedStatus) {
+      return false; // Skip if status doesn't match
     }
+
+    if (selectedCategory && applicant.categoryfitin !== selectedCategory) {
+      return false; // Skip if category doesn't match
+    }
+
+    return true; // Include if both filters match or if no filters are selected
+  });
+  const handlePageChange = (selectedPage) => {
+    setCurrentPage(selectedPage.selected);
   };
+  const filesPerPage = 10;
+
+  const lastFileIndex = (currentPage + 1) * filesPerPage;
+  const firstFileIndex = lastFileIndex - filesPerPage;
+  const currentFiles = filteredApplicants?.slice(firstFileIndex, lastFileIndex);
+  const totalPages = Math.ceil(filteredApplicants?.length / filesPerPage);
+
   return (
     <div className="flex flex-col ">
       <div className="flex flex-col px-6 py-4 gap-3">
         <h1 className="text-[18px] font-[600] text-[#24292F]">Applicants</h1>
         <div className="flex items-center w-full justify-between">
-          <div className="flex items-center gap-5">
-            <div className="relative flex items-center gap-2 bg-[#F2F8FF] border border-[#D0D7DE] rounded-[8px]">
-              <div className="w-[100%] rounded-l-md px-4 " onClick={toggle}>
+          <div className="flex  gap-5">
+            <div className="relative  flex flex-wrap items-center gap-2  ">
+              <span className=" px-4 p-2 flex flex-row items-center text-sm gap-2">
+                Filter
+                <AiOutlineArrowRight />
+              </span>
+              <div className="flex flex-wrap gap-2">
+                <select
+                  name=""
+                  className="outline-none rounded-sm text-sm border-none px-4 py-2 bg-[#F2F8FF]"
+                  value={selectedStatus}
+                  onChange={(e) => setSelectedStatus(e.target.value)}
+                >
+                  <option value="">By Status</option>
+                  <option value="online">Online</option>
+                  <option value="physical">Physical</option>
+                  <option value="waiting">Waiting</option>
+                </select>
+
+                <select
+                  name=""
+                  className="outline-none rounded-sm text-sm border-none px-4 py-2 bg-[#F2F8FF]"
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                >
+                  <option value="">By Category</option>
+                  <option value="hardware">Hardware</option>
+                  <option value="developer">Developer</option>
+                  <option value="entrepreneur">Entrepreneur</option>
+                </select>
+              </div>
+              {/* <div className="w-[100%] rounded-l-md px-4 " onClick={toggle}>
                 {selectedOption || "Filter"}
               </div>
               <div className="relative">
@@ -268,8 +245,8 @@ const Applicants = () => {
                 >
                   <RiArrowDropDownLine className="text-2xl" />
                 </button>
-              </div>
-              {isOpen && (
+              </div> */}
+              {/* {isOpen && (
                 <div
                   className="absolute top-6 right-0 z-10 mt-4 min-w-[100%] origin-top-right rounded-md border border-[#D0D7DE] bg-white 
                   shadow-md"
@@ -296,12 +273,8 @@ const Applicants = () => {
                     Waiting
                   </button>
                 </div>
-              )}
+              )} */}
             </div>
-            <FilterComponent
-              applicants={applicants}
-              onFilter={filterApplicants}
-            />
             <ApplicantCount
               filteredFiles={filteredFiles}
               hardwareApplicant={hardwareApplicant}
@@ -318,7 +291,7 @@ const Applicants = () => {
           </button>
         </div>
       </div>
-      {currentFiles.length || filteredFiles.length > 0 ? (
+      {currentFiles.length || filteredApplicants.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-1 border-t border-[#D0D7DE] lg:grid-cols-1">
           {currentFiles.map((file) => (
             <div
@@ -641,7 +614,7 @@ const Applicants = () => {
               {viewer && (
                 <>
                   <div className="div">
-                    <iframe src={resume} width="100%" height="600px" />
+                    <iframe src={resume} width="100%" height="900px" />
                   </div>
                 </>
               )}

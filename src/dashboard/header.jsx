@@ -1,40 +1,37 @@
-
 import { FaSearch, FaUserCircle } from "react-icons/fa";
 import { MdTextsms } from "react-icons/md";
 import { BsBellFill } from "react-icons/bs";
-import Profile from './assets/website/images/girl.jpg';
-import { useState, useContext } from 'react';
+import Profile from "./assets/website/images/girl.jpg";
+import { useState, useContext } from "react";
 import { AiFillDelete, AiFillHome } from "react-icons/ai";
-import {RxExit} from "react-icons/rx";
-import { TbUserCircle} from "react-icons/tb";
-import { CgMenuLeft} from "react-icons/cg";
-import {Link} from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { RxExit } from "react-icons/rx";
+import { TbUserCircle } from "react-icons/tb";
+import { CgMenuLeft } from "react-icons/cg";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AppProvider";
 
-
-
-const DashboardHeader = ({sidebar, setSidebar}) => {
+const DashboardHeader = ({ sidebar, setSidebar }) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const { loggedUser } = useContext(AuthContext);
+
+  const { loggedUser, setLoggedUser, programs } = useContext(AuthContext);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-  
+
   const logOut = () => {
+    setLoggedUser(null);
     localStorage.removeItem("username");
     localStorage.removeItem("token");
     window.location.reload(true);
-    // navigate('/account');
-  } 
-
+  };
 
   const [profileOpen, setProfileOpen] = useState(false);
   const handleProfileClick = () => {
     setProfileOpen(!profileOpen);
-  }
+  };
 
   const handleToggle = () => {
     setSidebar(!sidebar);
@@ -72,14 +69,21 @@ const DashboardHeader = ({sidebar, setSidebar}) => {
       {isOpen && (
         <div className="flex flex-col dashboard-profile">
           <ul className="flex flex-col gap-4">
-            <li>Profile</li>
-            <li>Settings</li>
-            <li onClick={logOut}>Logout</li>
+            <Link to="/">
+              <li className="flex items-center gap-2">
+                <AiFillHome className="text-xl" />
+                Home
+              </li>
+            </Link>
+            <li className="flex items-center gap-2" onClick={logOut}>
+              <RxExit className="text-xl" />
+              Logout
+            </li>
           </ul>
         </div>
       )}
     </div>
   );
-}
+};
 
-export default DashboardHeader
+export default DashboardHeader;

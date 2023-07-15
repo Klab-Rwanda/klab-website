@@ -6,14 +6,16 @@ import { BiLogOut } from "react-icons/bi";
 
 const Menu = () => {
   const [menu, setMenu] = useState(false);
-  const { isLoged, setIsLoged } = useContext(AuthContext);
+  const { loggedUser, setLoggedUser } = useContext(AuthContext);
 
   const handleMenu = () => {
     setMenu(!menu);
   };
 
   const handleLogout = () => {
+    setLoggedUser(null);
     localStorage.removeItem("username");
+    localStorage.removeItem("token");
     window.location.reload(true);
   };
 
@@ -43,8 +45,13 @@ const Menu = () => {
           <Link to="/events">
             <li className="py-4 px-3 rounded-xl">Events</li>
           </Link>
-          {isLoged ? (
-            <li onClick={() => handleLogout()} className="py-4 px-3 cursor-pointer mt-2 rounded-xl flex items-center gap-2 text-slate-800 font-[500]"><BiLogOut />  Log out</li>
+          {loggedUser ? (
+            <li
+              onClick={() => handleLogout()}
+              className="py-4 px-3 cursor-pointer mt-2 rounded-xl flex items-center gap-2 text-slate-800 font-[500]"
+            >
+              <BiLogOut /> Log out
+            </li>
           ) : (
             <div className="grid grid-cols-2">
               <Link to="/account">

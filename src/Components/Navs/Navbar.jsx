@@ -5,18 +5,20 @@ import { FaBars } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import Menu from "./Menu";
 import { AuthContext } from "../../context/AppProvider";
+import { set } from "react-hook-form";
 
 const Navbar = () => {
   const [openProfile, setOpenProfile] = useState(false);
-  const name = localStorage.getItem("username");
-  const { isLoged, setIsLoged, programs } = useContext(AuthContext);
+  const { loggedUser, setLoggedUser, programs } = useContext(AuthContext);
+
   const currentProgram = programs?.find(
     (program) => program?._id === "6426afb02afa3a9515f56028"
   );
-
+  console.log(setLoggedUser);
   const handleLogout = () => {
-    setIsLoged(false);
+    setLoggedUser(null);
     localStorage.removeItem("username");
+    localStorage.removeItem("token");
     window.location.reload(true);
   };
 
@@ -58,21 +60,25 @@ const Navbar = () => {
           <li>Events</li>
         </Link> */}
       </ul>
-      {isLoged ? (
+      {loggedUser ? (
         <>
           <div
             class=" hidden relative profile-avatar md:inline-flex items-center cursor-pointer justify-center w-10 h-10 overflow-hidden bg-slate-800 rounded-full dark:bg-gray-600 "
             onClick={() => setOpenProfile(!openProfile)}
           >
             <span class="font-medium text-slate-50 ">
-              {name[0].toUpperCase()}
+              {loggedUser?.username[0]?.toUpperCase()}
             </span>
           </div>
           {openProfile && (
             <div className="flex flex-col drop-down-profile">
               <ul className="flex flex-col gap-4">
-                <li>Profile</li>
-                <li>Settings</li>
+                {loggedUser?.role === "admin" && (
+                  <Link to={`/dashboard/members`}>
+                    <li>Dashboard</li>
+                  </Link>
+                )}
+                {/* <li>Settings</li> */}
                 <li onClick={handleLogout}>Logout</li>
               </ul>
             </div>

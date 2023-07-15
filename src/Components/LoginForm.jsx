@@ -14,15 +14,11 @@ const LOGIN_URL = "https://klab-academy.onrender.com/api/v1/users/login";
 
 const LoginForm = () => {
   const { loggedUser, isLoged, setIsLoged } = useContext(AuthContext);
-
-  console.log(loggedUser);
-
   const navigate = useNavigate();
   const [ErrMsg, setErrMsg] = useState("");
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (values, actions) => {
-    console.log(values);
     try {
       setLoading(true);
       const response = await axios.post(LOGIN_URL, JSON.stringify(values), {
@@ -50,7 +46,6 @@ const LoginForm = () => {
         navigate("/parentdashboard");
       }
     } catch (err) {
-      console.log(err);
       setLoading(false);
       if (err?.response.status === 401) {
         Notify.failure("Incorrect email or password");
@@ -60,7 +55,6 @@ const LoginForm = () => {
       setLoading(false);
     }
   };
-  console.log(ErrMsg);
 
   const { values, errors, touched, isSubmitting, handleChange, handleSubmit } =
     useFormik({
@@ -71,7 +65,6 @@ const LoginForm = () => {
       validationSchema: loginSchema,
       onSubmit,
     });
-  console.log(errors);
 
   return (
     <div className="bg-white rounded-3xl w-11/12 xl:w-10/12 lg:w-10/12 md:w-11/12 sm:w-11/12 flex duration-500 mt-16">
