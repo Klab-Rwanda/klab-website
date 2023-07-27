@@ -1,9 +1,9 @@
 import { FaPen, FaTrash, FaTrashAlt } from "react-icons/fa";
 import { useContext, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { AuthContext } from "../../../context/AppProvider";
 import { Confirm } from "notiflix/build/notiflix-confirm-aio";
+import axios from "../../../axios/axios";
 
 Confirm.init({
   width: "320px",
@@ -40,7 +40,7 @@ const Partners = () => {
     if (selected) {
     } else {
       const response = await axios.post(
-        "https://klab-academy.onrender.com/api/v1/partner",
+        "/partner",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -65,7 +65,7 @@ const Partners = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klab-academy.onrender.com/api/v1/partner/${id}`
+            `/partner/${id}`
           );
           window.location.reload(true);
         },

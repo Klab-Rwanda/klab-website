@@ -19,8 +19,8 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
-import axios from "axios";
 import { AuthContext } from "../../context/AppProvider";
+import axios from "../../axios/axios";
 
 ChartJS.register(
   CategoryScale,
@@ -77,7 +77,7 @@ const AdminDashboard = () => {
   const fetchMessage = async () => {
     try {
       const response = await axios.get(
-        "https://klab-academy.onrender.com/api/v1/contacts/"
+        "/contacts/"
       );
       const data = await response.data.data;
       // console.log(data);
@@ -96,10 +96,8 @@ const AdminDashboard = () => {
     console.log(id);
     window.confirm("are you sure you want to delete this message");
     try {
-      await axios({
-        method: "DELETE",
-        url: `https://klab-academy.onrender.com/api/v1/contact/${id}`,
-      });
+      await axios.delete(`/contact/${id}`,
+      );
     } catch (error) {
       console.log(error);
     }

@@ -1,10 +1,10 @@
 import { useState, createContext, useEffect } from "react";
-import axios from "axios";
 import { useJwt } from "react-jwt";
 import Loader from "./Loader";
 import { TbTargetArrow } from "react-icons/tb";
 import { BsFillBinocularsFill } from "react-icons/bs";
 import { FaAccusoft } from "react-icons/fa";
+import axios from "../axios/axios";
 
 export const AuthContext = createContext({});
 
@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
   const { decodedToken, isExpired } = useJwt(localStorage.getItem("token"));
   const fetchEvents = async () => {
     const response = await axios.get(
-      "https://klab-academy.onrender.com/api/v1/events"
+      "/events"
     );
     const data = await response.data;
     setEvents(data);
@@ -29,7 +29,7 @@ const AppProvider = ({ children }) => {
 
   const fetchUsers = async () => {
     const response = await axios.get(
-      "https://klab-academy.onrender.com/api/v1/users"
+      "/users"
     );
     const data = response.data;
     setUsers(data);
@@ -42,7 +42,7 @@ const AppProvider = ({ children }) => {
 
   const fetchPrograms = async () => {
     const response = await axios.get(
-      "https://klab-academy.onrender.com/api/v1/programs"
+      "/programs"
     );
     const data = await response.data;
     setPrograms(data);
@@ -52,8 +52,8 @@ const AppProvider = ({ children }) => {
   const fetchUser = async () => {
     try {
       if (decodedToken) {
-        const response = await axios.get(
-          `https://klab-academy.onrender.com/api/v1/users/${decodedToken?.id}`
+        const response = await axios(
+          `/users/${decodedToken?.id}`
         );
         setLoggedUser(response?.data);
       }
@@ -63,8 +63,8 @@ const AppProvider = ({ children }) => {
   };
 
   const fetchApplicants = async () => {
-    const response = await axios.get(
-      "https://klab-academy.onrender.com/api/v1/application"
+    const response = await  axios(
+      "/application"
     );
     const data = await response.data;
     setApplicants(data.data);
@@ -72,7 +72,7 @@ const AppProvider = ({ children }) => {
 
   async function fetchPartners() {
     const response = await axios.get(
-      "https://klab-academy.onrender.com/api/v1/partners"
+      "/partners"
     );
     setPartners(response.data);
   }
@@ -80,7 +80,7 @@ const AppProvider = ({ children }) => {
   const fetchTrainers = async () => {
     try {
       const response = await axios.get(
-        "https://klab-academy.onrender.com/api/v1/trainers"
+        "/trainers"
       );
       setTrainers(response?.data.trainers);
     } catch (err) {

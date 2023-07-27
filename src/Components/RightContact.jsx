@@ -1,14 +1,13 @@
 import React from "react";
 import { useFormik } from "formik";
 import { contactSchema } from "../validations/ContactValidation";
-import axios from "axios";
+import axios from "../axios/axios";
 
-const CONTACT_URL = "https://klab-academy.onrender.com/api/v1/contact/";
 const RightContact = () => {
   const onSubmit = async (values, actions) => {
     // console.log(values);
     try {
-      const response = await axios.post(CONTACT_URL, JSON.stringify(values), {
+      const response = await axios.post("/contact", JSON.stringify(values), {
         headers: { "Content-Type": "application/json" },
       });
       console.log(response.data);

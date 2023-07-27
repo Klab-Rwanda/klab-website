@@ -40,10 +40,12 @@ import AddTeam from "./dashboard/admin/members/AddTeam";
 import Loader from "./context/Loader";
 import SmoothScroll from "./helpers/SmoothScroll";
 import ProtectDashboard from "./context/ProtectDashboard";
+import MatomoTracker from "./helpers/MatomoTracker";
 
 const App = () => {
   return (
     <div className="w-screen">
+      <MatomoTracker />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

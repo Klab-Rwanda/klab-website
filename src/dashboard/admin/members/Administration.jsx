@@ -2,9 +2,9 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { FaTrashAlt, FaPen } from "react-icons/fa";
 import { Confirm } from "notiflix";
+import axios from "../../../axios/axios";
 
 Confirm.init({
   width: "320px",
@@ -32,7 +32,7 @@ const Administration = () => {
   const fetchTeam = async () => {
     try {
       const response = await axios.get(
-        "https://klab-academy.onrender.com/api/v1/teams"
+        "/teams"
       );
       console.log(response);
       setTeam(response.data);
@@ -51,7 +51,7 @@ const Administration = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klab-academy.onrender.com/api/v1/team/${id}`
+            `/team/${id}`
           );
           window.location.reload(true);
         },

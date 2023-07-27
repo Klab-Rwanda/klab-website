@@ -5,6 +5,24 @@
     <link rel="icon" type="image" href="/src/assets/icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kLab Rwanda</title>
+    <!-- Matomo -->
+    <script>
+      var _paq = (window._paq = window._paq || []);
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function () {
+        var u = "//data.ihuzo.rw/matomo/"; // Replace with your Matomo server URL
+        _paq.push(["setTrackerUrl", u + "matomo.php"]);
+        _paq.push(["setSiteId", "8"]); // Replace with your site ID
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.async = true;
+        g.src = u + "matomo.js";
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
   </head>
   <body>
     <div id="root"></div>

@@ -1,9 +1,8 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Report } from "notiflix/build/notiflix-report-aio";
+import axios from "../../../axios/axios";
 // import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
-// const TEAM_URL = "https://klab-academy.onrender.com/api/v1/team";
 
 export default function AddTeam() {
   const {
@@ -27,7 +26,7 @@ export default function AddTeam() {
     console.log(formData.get("profile"));
     try {
       const result = await axios.post(
-        "https://klab-academy.onrender.com/api/v1/team",
+        "/team",
         formData,
         {
           headers: {

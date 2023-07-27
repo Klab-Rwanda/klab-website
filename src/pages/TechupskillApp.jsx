@@ -4,10 +4,10 @@ import LineImg from "../assets/Vector.svg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import axios from "axios";
 import { useContext, useState } from "react";
 import { Report } from "notiflix/build/notiflix-report-aio";
 import { AuthContext } from "../context/AppProvider";
+import axios from "../axios/axios";
 
 Report.init({
   width: "320px",
@@ -30,8 +30,6 @@ Report.init({
     backOverlayColor: "rgba( 0, 0, 0, 0.5)",
   },
 });
-
-const APPLY_URL = "https://klab-academy.onrender.com/api/v1/application";
 
 const applicationSchema = yup.object().shape({
   email: yup.string().email("Please enter a valid email").required("Required"),
@@ -58,9 +56,13 @@ const applicationSchema = yup.object().shape({
   linkedinlink: yup.string().url("please enter a valid url"),
   entInnovationdesc: yup.string(),
   shareInnovationModel: yup.string(),
-  profile: yup.mixed().test("required", "CV/Resume is required", (value) => {
-    return value && value.length;
-  }),
+  profile: yup
+    .mixed()
+    .test("required", "CV/ resume is required", (file) => {
+      // return file && file.size <-- u can use this if you don't want to allow empty files to be uploaded;
+      if (file) return true;
+      return false;
+    })
 });
 
 const TechupskillApp = () => {
@@ -103,8 +105,6 @@ const TechupskillApp = () => {
     resolver: yupResolver(applicationSchema),
   });
 
-  const selectedOption = watch("categoryfitin");
-
   const onSubmit = async (data) => {
     const formData = new FormData();
     formData.append("email", data.email);
@@ -136,11 +136,10 @@ const TechupskillApp = () => {
     }
     formData.append("areyougraduate", data.areyougraduate);
     formData.append("profile", data.profile[0]);
-    console.log(data);
 
     try {
       setLoading(true);
-      const response = await axios.post(APPLY_URL, formData, {
+      const response = await axios.post("/application", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -159,7 +158,6 @@ const TechupskillApp = () => {
 
     setLoading(false);
   };
-  console.log(errors);
 
   return (
     <div>
@@ -182,8 +180,9 @@ const TechupskillApp = () => {
           </h1>
           <img src={LineImg} alt="VectorImage" className="w-1/3" />
           <p className="w-full font-normal text-slate-800 text-sm xl:text-base lg:text-base md:text-base sm:text-sm">
-            The project will be conducted during 4 months in three phases: Talent detection across the country,
-            training, and organising a hackathon.
+            The project will be conducted during 4 months in three phases:
+            Talent detection across the country, training, and organising a
+            hackathon.
           </p>
           <p>
             By submitting your application you hereby declare that the

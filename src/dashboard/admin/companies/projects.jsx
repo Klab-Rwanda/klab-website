@@ -3,14 +3,14 @@ import { AiOutlineClose, AiOutlineDownload } from "react-icons/ai";
 import Profile from "../../assets/website/images/girl.jpg";
 import { FaPlus, FaTrashAlt, FaProjectDiagram } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../../../axios/axios";
 
 const Projectpage = () => {
   const [project, setProject] = useState([]);
   const fetchProject = async () => {
     try {
       const response = await axios.get(
-        "https://klab-academy.onrender.com/api/v1/projects"
+        "/projects"
       );
       const data = await response.data.data;
       // console.log(data);
@@ -22,12 +22,11 @@ const Projectpage = () => {
   };
   fetchProject();
   const handleDelete = async (id) => {
-    console.log(id);
     window.confirm("are you sure you want to delete this project?");
     try {
       await axios({
         method: "DELETE",
-        url: `https://klab-academy.onrender.com/api/v1/project/${id}`,
+        url: `/project/${id}`,
         headers: {
           "Content-Type": "multipart/form-data",
           companyauth: `${localStorage.getItem("token")}`,

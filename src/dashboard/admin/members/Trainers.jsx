@@ -1,13 +1,13 @@
 import { IoCloseSharp } from "react-icons/io5";
 import { useState, useEffect, useContext, useRef } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { AuthContext } from "../../../context/AppProvider";
 import { FaPen, FaTrashAlt } from "react-icons/fa";
 import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 import { Notify } from "notiflix";
+import axios from "../../../axios/axios";
 
 Confirm.init({
   width: "320px",
@@ -30,8 +30,6 @@ const trainerSchema = yup.object().shape({
   stack: yup.string().required("Required"),
 });
 
-const CREATE_TRAINER = "https://klab-academy.onrender.com/api/v1/trainers";
-const DELETE_TRAINER = "https://klab-academy.onrender.com/api/v1/trainers/";
 
 const Trainers = () => {
   // add skill section
@@ -136,7 +134,7 @@ const Trainers = () => {
       if (selected) {
         setLoading(true);
         const response = await axios.put(
-          `https://klab-academy.onrender.com/api/v1/trainers/${selected._id}`,
+          `/trainers/${selected._id}`,
           formData,
           {
             headers: {
@@ -173,7 +171,7 @@ const Trainers = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klab-academy.onrender.com/api/v1/trainers/${id}`
+            `/trainers/${id}`
           );
           window.location.reload(true);
         },

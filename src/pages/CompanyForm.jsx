@@ -4,9 +4,8 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import LineImg from "../assets/Vector.svg";
 import Footer from "../Components/sections/Footer";
-import axios from "axios";
+import axios from "../axios/axios";
 
-const PROJECT_URL = "https://klab-academy.onrender.com/api/v1/project/";
 export default function () {
   const {
     register,
@@ -25,7 +24,7 @@ export default function () {
     formData.append("desc", data.desc);
     formData.append("profile", data.profile[0]);
     try {
-      const response = await axios.post(PROJECT_URL, formData, {
+      const response = await axios.post("/project", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           companyauth: `${localStorage.getItem("token")}`,

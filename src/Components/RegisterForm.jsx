@@ -4,11 +4,9 @@ import FormImage from "../assets/CardImage.jpg";
 import { Link } from "react-router-dom";
 import { userSchema } from "../validations/UserValidation";
 import { useFormik } from "formik";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Notify } from "notiflix";
-
-const REGISTER_URL = "https://klab-academy.onrender.com/api/v1/users";
+import axios from "../axios/axios";
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
@@ -17,7 +15,7 @@ const RegisterForm = () => {
   const onSubmit = async (values, actions) => {
     try {
       setLoading(true);
-      const response = await axios.post(REGISTER_URL, JSON.stringify(values), {
+      const response = await axios.post("/users", JSON.stringify(values), {
         headers: { "Content-Type": "application/json" },
       });
       actions.resetForm();

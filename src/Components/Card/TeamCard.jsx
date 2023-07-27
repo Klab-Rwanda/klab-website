@@ -1,17 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Image from "../../assets/TeamImg.jpg";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import "../styles/teamCard.css";
 import { Link } from "react-router-dom";
+import axios from "../../axios/axios";
 
 const TeamCard = () => {
   const [team, setTeam] = useState([]);
   const fetchTeam = async () => {
     try {
       const response = await axios.get(
-        "https://klab-academy.onrender.com/api/v1/teams"
+        "/teams"
       );
       setTeam(response.data);
     } catch (error) {

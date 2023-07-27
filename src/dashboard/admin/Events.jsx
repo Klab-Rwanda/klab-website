@@ -6,12 +6,10 @@ import { useState, useEffect, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { eventSchema } from "../../validations/EventValidation";
-import axios from "axios";
 import { AuthContext } from "../../context/AppProvider";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { Confirm } from "notiflix/build/notiflix-confirm-aio";
-
-const CREATE_EVENT_URL = "https://klab-academy.onrender.com/api/v1/event";
+import axios from "../../axios/axios";
 
 const Events = () => {
   const { events } = useContext(AuthContext);
@@ -49,10 +47,7 @@ const Events = () => {
     try {
       if (selected) {
         setLoading(true);
-        const response = await axios.put(
-          `https://klab-academy.onrender.com/api/v1/event/${selected._id}`,
-          data
-        );
+        const response = await axios.put(`/event/${selected._id}`, data);
         setLoading(false);
         Notify.success("Event updated successfully!");
         console.log(response);
@@ -82,7 +77,7 @@ const Events = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klab-academy.onrender.com/api/v1/event/${id}`
+            `/event/${id}`
           );
           window.location.reload(true);
         },

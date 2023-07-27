@@ -4,13 +4,12 @@ import FormImage from "../assets/CardImage.jpg";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { loginSchema } from "../validations/LoginValidation";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/AppProvider";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
+import axios from "../axios/axios";
 
-const LOGIN_URL = "https://klab-academy.onrender.com/api/v1/users/login";
 
 const LoginForm = () => {
   const { loggedUser, isLoged, setIsLoged } = useContext(AuthContext);
@@ -21,9 +20,13 @@ const LoginForm = () => {
   const onSubmit = async (values, actions) => {
     try {
       setLoading(true);
-      const response = await axios.post(LOGIN_URL, JSON.stringify(values), {
-        headers: { "Content-Type": "application/json" },
-      });
+      const response = await axios.post(
+        "/users/login",
+        JSON.stringify(values),
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       setLoading(false);
       actions.resetForm();
       console.log(JSON.stringify(response?.data));
