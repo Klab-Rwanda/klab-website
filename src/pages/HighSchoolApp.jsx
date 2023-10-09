@@ -280,21 +280,21 @@ const HighSchoolApp = () => {
           </div> */}
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
-              Report
+              School Report
             </label>
             <input
               type="file"
-              {...register("report", {
-                required: "Report is required",
+              {...register("profile", {
+                required: "profile is required",
               })}
               className={`py-2 px-4  pl-0 ${
-                errors.report ? "border-red-500" : ""
+                errors.profile ? "border-red-500" : ""
               }`}
               placeholder="Your report Level"
             />
-            {errors.report && (
+            {errors.profile && (
               <p className="text-red-500 text-sm mt-1">
-                {errors.report.message}
+                {errors.profile.message}
               </p>
             )}
           </div>

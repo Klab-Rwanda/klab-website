@@ -57,10 +57,7 @@ const App = () => {
           <Route path="/company" element={<CompanyDashboard />} />
           <Route path="/companyForm" element={<CompanyForm />} />
           <Route path="/apply" element={<TechupskillApp />} />
-          <Route
-            path="/apply/high-school-leaver-program"
-            element={<HighSchoolApp />}
-          />
+          <Route path="/apply/high-school-leaver" element={<HighSchoolApp />} />
           <Route path="/account" element={<Login />} />
           <Route path="/SignUp" element={<Register />} />
           <Route path="/parentdashboard" element={<Parentdashboard />} />
