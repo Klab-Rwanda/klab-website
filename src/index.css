@@ -1,6 +1,11 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.input {
+  @apply appearance-none  bg-slate-200 outline-none  rounded w-full py-3 px-4 text-gray-700 leading-tight;
+}
 
+.btn {
+  @apply bg-slate-900 hover:bg-slate-800 text-white font-bold  px-4 rounded text-center;
+}

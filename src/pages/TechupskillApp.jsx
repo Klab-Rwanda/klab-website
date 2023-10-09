@@ -194,40 +194,40 @@ const TechupskillApp = () => {
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="first-grid">
-            <div className="email-input input">
+            <div className="email-input ">
               <label htmlFor="email">Email</label>
               <input
-                className={errors.email ? "error" : ""}
+                className={`input ${errors.email ? "error" : ""}`}
                 type="text"
                 placeholder="example@gmail.com"
                 {...register("email")}
               />
               <span className="text-red-400">{errors.email?.message}</span>
             </div>
-            <div className="name-input input">
+            <div className="name-input ">
               <label htmlFor="name">Fullname</label>
               <input
                 type="text"
                 {...register("fullname")}
-                className={errors.fullname ? "error" : ""}
+                className={`input ${errors.fullname ? "error" : ""}`}
               />
               <span className="text-red-400">{errors.fullname?.message}</span>
             </div>
-            <div className="phone-input input">
+            <div className="phone-input ">
               <label htmlFor="phone">Phone number</label>
               <input
                 type="number"
                 {...register("phone")}
-                className={errors.phone ? "error" : ""}
+                className={`input ${errors.phone ? "error" : ""} `}
               />
               <span className="text-red-400">{errors.phone?.message}</span>
             </div>
-            <div className="birthday-input input">
+            <div className="birthday-input ">
               <label htmlFor="birthdate">Date of Birth</label>
               <input
                 type="date"
                 {...register("dob")}
-                className={errors.dob ? "error" : ""}
+                className={`input flex ${errors.dob ? "error" : ""}`}
               />
               <span className="text-red-400">{errors.dob?.message}</span>
             </div>
@@ -308,49 +308,51 @@ const TechupskillApp = () => {
             </div>
           </div>
           <div className="address-container">
-            <div className="country-select input">
+            <div className="country-select ">
               <label>Country</label>
               <input
                 type="text"
-                className={errors.country ? "erorr " : "form-control"}
+                className={`input ${
+                  errors.country ? "erorr " : "form-control"
+                }`}
                 id="country"
                 {...register("country")}
               />
               <span className="text-red-400 ">{errors.country?.message}</span>
             </div>
-            <div className="province input">
+            <div className="province ">
               <label>Province</label>
               <input
                 type="text"
                 {...register("province")}
-                className={errors.province ? "erorr " : ""}
+                className={`input ${errors.province ? "erorr " : ""} `}
               />
               <span className="text-red-400">{errors.province?.message}</span>
             </div>
-            <div className="district-input input">
+            <div className="district-input ">
               <label>District</label>
               <input
                 type="text"
                 {...register("district")}
-                className={errors.district ? "erorr " : ""}
+                className={`input ${errors.district ? "erorr " : ""}`}
               />
               <span className="text-red-400">{errors.district?.message}</span>
             </div>
-            <div className="district-input input">
+            <div className="district-input ">
               <label>Sector</label>
               <input
                 type="text"
                 {...register("sector")}
-                className={errors.sector ? "erorr " : ""}
+                className={`input ${errors.sector ? "erorr " : ""}`}
               />
               <span className="text-red-400">{errors.sector?.message}</span>
             </div>
-            <div className="district-input input">
+            <div className="district-input ">
               <label>Cell</label>
               <input
                 type="text"
                 {...register("cell")}
-                className={errors.cell ? "erorr " : ""}
+                className={`input ${errors.cell ? "erorr " : ""}`}
               />
               <span className="text-red-400">{errors.cell?.message}</span>
             </div>
@@ -381,6 +383,7 @@ const TechupskillApp = () => {
                   type="radio"
                   value="university"
                   name="educationlevel"
+                  className="input"
                   {...register("educationlevel")}
                 />
                 <label htmlFor="university">University/College</label>
@@ -389,6 +392,7 @@ const TechupskillApp = () => {
                   type="radio"
                   value="graduate"
                   name="educationlevel"
+                  className="input"
                   {...register("educationlevel")}
                 />
                 <label htmlFor="graduate">Other</label>
@@ -405,7 +409,7 @@ const TechupskillApp = () => {
                 {errors.educationlevel?.message}
               </span>
             </div>
-            <div className="field input">
+            <div className="field ">
               <label className="form-label">Field of study</label>
               <div className="radios flex flex-col">
                 <input
@@ -425,27 +429,27 @@ const TechupskillApp = () => {
           </div>
 
           <div className="school">
-            <div className="input">
+            <div className="">
               <label>From which school/university</label>
               <input
                 type="text"
                 {...register("schoolfrom")}
-                className={errors?.schoolfrom ? "erorr" : ""}
+                className={`input ${errors?.schoolfrom ? "erorr" : ""}`}
               />
               <span className="text-red-400">{errors.schoolfrom?.message}</span>
             </div>
-            <div className="input">
+            <div className="">
               <label>Year of study</label>
               <input
                 type="number"
                 {...register("yearstudy")}
-                className={errors?.yearstudy ? "erorr" : ""}
+                className={`input ${errors?.yearstudy ? "erorr" : ""}`}
               />
               <span className="text-red-400">{errors.yearstudy?.message}</span>
             </div>
-            <div className="input">
+            <div className="">
               <label>CV/Resume {hardware && "/Certificate"}</label>
-              <input type="file" {...register("profile")} />
+              <input type="file" className="input" {...register("profile")} />
               <span className="text-red-400">{errors?.profile?.message}</span>
             </div>
           </div>
@@ -474,6 +478,7 @@ const TechupskillApp = () => {
                   <input
                     type="radio"
                     value="frontend"
+                    className="input"
                     {...register("skillyouwantjoin")}
                   />
                   <label>Frondend development</label>
@@ -481,6 +486,7 @@ const TechupskillApp = () => {
                   <input
                     type="radio"
                     value="backend"
+                    className="input"
                     {...register("skillyouwantjoin")}
                   />
                   <label>Backend development</label>
@@ -488,6 +494,7 @@ const TechupskillApp = () => {
                   <input
                     type="radio"
                     value="mobile"
+                    className="input"
                     {...register("skillyouwantjoin")}
                   />
                   <label>Mobile development</label>
@@ -503,7 +510,7 @@ const TechupskillApp = () => {
                 <textarea
                   placeholder="Your answer"
                   {...register("skilldesc")}
-                  className={errors?.skilldesc ? "erorr" : ""}
+                  className={`input {${errors?.skilldesc ? "erorr" : ""}`}
                 ></textarea>
                 <span className="text-red-400">
                   {errors.skilldesc?.message}
@@ -511,23 +518,23 @@ const TechupskillApp = () => {
               </div>
             </div>
             <div className="links">
-              <div className="input">
+              <div className="">
                 <label>Share github profile</label>
                 <input
                   type="text"
                   placeholder="http://github.com/username"
                   {...register("gitlink")}
-                  className={errors?.gitlink ? "erorr" : ""}
+                  className={` input ${errors?.gitlink ? "erorr" : ""}`}
                 />
                 <span className="text-red-400">{errors.gitlink?.message}</span>
               </div>
-              <div className="input">
+              <div className="">
                 <label>Linkedin profile</label>
                 <input
                   type="text"
                   placeholder="http://linkedin.com/username"
                   {...register("linkedinlink")}
-                  className={errors?.linkedinlink ? "erorr" : ""}
+                  className={`input${errors?.linkedinlink ? "erorr" : ""}`}
                 />
                 <span className="text-red-400">
                   {errors.linkedinlink?.message}
@@ -549,6 +556,7 @@ const TechupskillApp = () => {
                     type="radio"
                     value="additive-manufacturing-iot"
                     {...register("skillyouwantgain")}
+                    className="input"
                   />
                   <label>Additive Manufacturing </label>
                   <br />
@@ -556,6 +564,7 @@ const TechupskillApp = () => {
                     type="radio"
                     value="backend"
                     {...register("skillyouwantgain")}
+                    className="input"
                   />
                   <label>3D design & Printing </label>
                   <br />
@@ -563,6 +572,7 @@ const TechupskillApp = () => {
                     type="radio"
                     value="3D-design-printing"
                     {...register("skillyouwantgain")}
+                    className="input"
                   />
                   <label>PCB designing</label>
                   <br />
@@ -570,6 +580,7 @@ const TechupskillApp = () => {
                     type="radio"
                     value="embedded-system"
                     {...register("skillyouwantgain")}
+                    className="input"
                   />
                   <label>IOT and Embedded system</label>
                 </div>
@@ -577,17 +588,19 @@ const TechupskillApp = () => {
                   {errors.skillyouwantjoin?.message}
                 </span>
               </div>
-              <div className="input w-80 gap-2 flex-col flex">
+              <div className="w-80 gap-2 flex-col flex">
                 <label className="font-bold">Share portfolio</label>
                 <input
                   type="text"
                   placeholder="http://example.com/"
                   {...register("portfolio")}
-                  className={
-                    errors?.portfolio
-                      ? "erorr"
-                      : "py-2 px-4 bg-slate-200 outline-none  w-full rounded-md"
-                  }
+                  className={`input
+                    ${
+                      errors?.portfolio
+                        ? "erorr"
+                        : "py-2 px-4 bg-slate-200 outline-none  w-full rounded-md"
+                    }
+                  `}
                 />
                 <span className="text-red-400">
                   {errors.portfolio?.message}
@@ -600,7 +613,7 @@ const TechupskillApp = () => {
                 <textarea
                   placeholder="Your answer"
                   {...register("skilldesc")}
-                  className={errors?.skilldesc ? "erorr" : ""}
+                  className={`input ${errors?.skilldesc ? "erorr" : ""}`}
                 ></textarea>
                 <span className="text-red-400">
                   {errors.skilldesc?.message}
@@ -626,7 +639,7 @@ const TechupskillApp = () => {
               </span>
             </div>
             <div className="innov-modal mt-5">
-              <div className="input">
+              <div className="">
                 <label>Share your innovation business modal</label>
                 <input
                   type="text"

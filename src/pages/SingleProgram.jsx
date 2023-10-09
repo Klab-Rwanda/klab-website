@@ -68,11 +68,9 @@ const SingleProgram = () => {
     },
   ];
   const [imageInModel, setImageInModel] = useState("");
-
   const [skill, setSkill] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const single = programs?.find((item) => item._id === programId);
-  console.log(single?.title);
 
   const otherPrograms = programs?.filter((item) => item._id !== programId);
 
@@ -117,6 +115,7 @@ const SingleProgram = () => {
               {/* <ProgramFilterCard title="Klab Programs" /> */}
               <div className="w-full bg-slate-200 rounded-2xl p-4 flex flex-col gap-5">
                 <h1>kLab Programs</h1>
+
                 {single?.title === "Future Koders" ? (
                   <div>
                     {topics.map((topic, index) => (
@@ -130,9 +129,7 @@ const SingleProgram = () => {
                               {React.createElement(item.icon, {
                                 className: "inline text-sm mr-2",
                               })}
-                              <span className="text-md">
-                              {item.text}
-                              </span>
+                              <span className="text-md">{item.text}</span>
                             </li>
                           ))}
                         </ul>
@@ -359,7 +356,7 @@ const SingleProgram = () => {
             {single?.tags === "Open now" ? (
               <>
                 <div className="grid grid-cols-1 w-full xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                  {single?.title === "Tech Upskill" ? (
+                  {single?.title === "Tech Upskill" && (
                     <>
                       <div className="flex flex-col gap-3">
                         <h1 className="font-[500] text-blue-500">Innovators</h1>
@@ -419,22 +416,34 @@ const SingleProgram = () => {
                         </button>
                       </Link>
                     </>
-                  ) : (
-                    <div className="flex flex-col gap-4">
-                      <p className="">
-                        Application deadline :{" "}
-                        <b className="font-bold">
-                          {single?.deadline.slice(0, 10)}
-                        </b>
+                  )}
+                  {single?.title === "CodeCraft High School Intensive" && (
+                    <div className="p-4 border  rounded-md  mb-4">
+                      <h2 className="text-2xl font-bold mb-2">
+                        CodeCraft High School Intensive
+                      </h2>
+                      <p className="text-gray-700 mb-4">
+                        Dive into an intensive high school program focused on
+                        mobile, frontend, and backend development. Learn to
+                        create engaging mobile apps and responsive websites
+                        using HTML, CSS, JavaScript, and backend technologies.
                       </p>
-                      <a
-                        target="_blank"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSf-mNkwTZDXjtvdp8MQIMubnCvi5ZAIDLzP_t7OjxeBnu-qRg/viewform"
-                      >
+                      <p className="text-gray-700 mb-4">Skills you'll learn:</p>
+                      <ul className="list-disc pl-5 mb-4">
+                        <li>Mobile app development</li>
+                        <li>Frontend web development</li>
+                        <li>Backend development</li>
+                        <li>HTML, CSS, JavaScript</li>
+                      </ul>
+                      <p className="text-gray-700 mb-4">Eligibility:</p>
+                      <p className="text-gray-700 mb-4">
+                        High school graduates or equivalent.
+                      </p>
+                      <Link to="/apply/high-school-app">
                         <button className="bg-slate-800 text-slate-50 px-4 py-2 rounded-[8px]">
                           Apply now
                         </button>
-                      </a>
+                      </Link>
                     </div>
                   )}
                 </div>
