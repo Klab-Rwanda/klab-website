@@ -95,6 +95,44 @@ const HighSchoolApp = () => {
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
+              Gender
+            </label>
+            <select
+              {...register("gender", { required: "Gender is required" })}
+              className={`input ${errors.gender ? "border-red-500" : ""}`}
+            >
+              <option value="">Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            {errors.gender && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.gender.message}
+              </p>
+            )}
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Year of Birth
+            </label>
+            <input
+              {...register("yearOfBirth", {
+                required: "Year of Birth is required",
+                pattern: /^[0-9]{4}$/,
+                type: "number",
+              })}
+              className={`input ${errors.yearOfBirth ? "border-red-500" : ""}`}
+              placeholder="Your Year of Birth (e.g., 2000)"
+            />
+            {errors.yearOfBirth && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.yearOfBirth.message}
+              </p>
+            )}
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
               Province
             </label>
             <input
@@ -166,44 +204,7 @@ const HighSchoolApp = () => {
               </p>
             )}
           </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Gender
-            </label>
-            <select
-              {...register("gender", { required: "Gender is required" })}
-              className={`input ${errors.gender ? "border-red-500" : ""}`}
-            >
-              <option value="">Select your gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-            {errors.gender && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.gender.message}
-              </p>
-            )}
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Year of Birth
-            </label>
-            <input
-              {...register("yearOfBirth", {
-                required: "Year of Birth is required",
-                pattern: /^[0-9]{4}$/,
-                type: "number",
-              })}
-              className={`input ${errors.yearOfBirth ? "border-red-500" : ""}`}
-              placeholder="Your Year of Birth (e.g., 2000)"
-            />
-            {errors.yearOfBirth && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.yearOfBirth.message}
-              </p>
-            )}
-          </div>
+
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Education Level
@@ -294,7 +295,7 @@ const HighSchoolApp = () => {
             />
             {errors.profile && (
               <p className="text-red-500 text-sm mt-1">
-                {errors.profile.message}
+                {"School report is required"}
               </p>
             )}
           </div>
