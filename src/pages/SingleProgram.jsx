@@ -417,10 +417,10 @@ const SingleProgram = () => {
                       </Link>
                     </>
                   )}
-                  {single?.title === "CodeCraft High School Intensive" && (
+                  {single?.title === "High School Leaver Program" && (
                     <div className="p-4 border  rounded-md  mb-4">
                       <h2 className="text-2xl font-bold mb-2">
-                        CodeCraft High School Intensive
+                        High School Leaver Program
                       </h2>
                       <p className="text-gray-700 mb-4">
                         Dive into an intensive high school program focused on

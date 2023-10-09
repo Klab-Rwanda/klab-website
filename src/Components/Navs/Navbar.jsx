@@ -81,7 +81,7 @@ const Navbar = () => {
       ) : (
         <div className="flex gap-8">
           {currentProgram?.tags === "Open now" && (
-            <Link to={`/${currentProgram?._id}`}>
+            <Link to={`/apply/high-school-leaver`}>
               <button className="bg-slate-800 px-5 text-sm font-semibold py-2 text-slate-50 rounded-[8px] hidden xl:flex lg:flex md:flex sm:hidden">
                 Apply Now
               </button>
