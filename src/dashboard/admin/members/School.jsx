@@ -36,14 +36,15 @@ const School = () => {
     const fetchApplications = async () => {
       try {
         const res = await axios("/school");
-        setApplications(res.data);
-        console.log(res.data);
+        setApplications(res.data.data.applications);
       } catch (error) {
         console.log(error);
       }
     };
     fetchApplications();
   }, []);
+
+  console.log(applications);
 
   const [filesPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(0);

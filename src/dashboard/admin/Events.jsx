@@ -13,7 +13,7 @@ import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 
 
 
-const CREATE_EVENT_URL = "https://klabbackend-sbhs.onrender.com/api/v1/event";
+const CREATE_EVENT_URL = "https://klab-academy-vqy2.onrender.com/api/v1/event";
 
 const Events = () => {
   const { events } = useContext(AuthContext);
@@ -52,7 +52,7 @@ const Events = () => {
       if (selected) {
         setLoading(true);
         const response = await axios.put(
-          `https://klabbackend-sbhs.onrender.com/api/v1/event/${selected._id}`,
+          `https://klab-academy-vqy2.onrender.com/api/v1/event/${selected._id}`,
           data
         );
         setLoading(false);
@@ -87,8 +87,8 @@ const Events = () => {
         "No",
         async () => {
           await axios.delete(
-        `https://klabbackend-sbhs.onrender.com/api/v1/event/${id}`
-        );
+            `https://klab-academy-vqy2.onrender.com/api/v1/event/${id}`
+          );
         window.location.reload(true);
         },
         () => {

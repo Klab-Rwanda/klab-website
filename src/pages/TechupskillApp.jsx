@@ -31,7 +31,7 @@ Report.init({
   },
 });
 
-const APPLY_URL = "https://klabbackend-sbhs.onrender.com/api/v1/application";
+const APPLY_URL = "https://klab-academy-vqy2.onrender.com/api/v1/application";
 
 const applicationSchema = yup.object().shape({
   email: yup.string().email("Please enter a valid email").required("Required"),

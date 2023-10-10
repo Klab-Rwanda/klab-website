@@ -14,16 +14,16 @@ import testPdf from "./test.pdf";
 import { set } from "immutable";
 
 const APPROVE_LINK =
-  "https://klabbackend-sbhs.onrender.com/api/v1/application/online/approval";
+  "https://klab-academy-vqy2.onrender.com/api/v1/application/online/approval";
 
 const REJECT_LINK =
-  "https://klabbackend-sbhs.onrender.com/api/v1/application/physical/reject/";
+  "https://klab-academy-vqy2.onrender.com/api/v1/application/physical/reject/";
 
 const ACCEPT_LINK =
-  "https://klabbackend-sbhs.onrender.com/api/v1/application/physical/approval/";
+  "https://klab-academy-vqy2.onrender.com/api/v1/application/physical/approval/";
 
 const WAITING_LINK =
-  "https://klabbackend-sbhs.onrender.com/api/v1/application/physical/waiting/";
+  "https://klab-academy-vqy2.onrender.com/api/v1/application/physical/waiting/";
 
 const filesPerPage = 10;
 

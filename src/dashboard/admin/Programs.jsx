@@ -56,7 +56,7 @@ const Programs = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klabbackend-sbhs.onrender.com/api/v1/program/${id}`
+            `https://klab-academy-vqy2.onrender.com/api/v1/program/${id}`
           );
           window.location.reload(true);
         },
@@ -85,7 +85,7 @@ const Programs = () => {
         setLoading(true);
         console.log(data);
         const response = await axios.put(
-          `https://klabbackend-sbhs.onrender.com/api/v1/program/${selected._id}`,
+          `https://klab-academy-vqy2.onrender.com/api/v1/program/${selected._id}`,
           formData,
           {
             headers: {
@@ -100,7 +100,7 @@ const Programs = () => {
       } else {
         setLoading(true);
         const response = await axios.post(
-          "https://klabbackend-sbhs.onrender.com/api/v1/program",
+          "https://klab-academy-vqy2.onrender.com/api/v1/program",
           formData,
           {
             headers: {

@@ -11,7 +11,7 @@ import { AuthContext} from "../context/AppProvider";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 
-const LOGIN_URL = "https://klabbackend-sbhs.onrender.com/api/v1/users/login";
+const LOGIN_URL = "https://klab-academy-vqy2.onrender.com/api/v1/users/login";
 
 const LoginForm = () => {
 

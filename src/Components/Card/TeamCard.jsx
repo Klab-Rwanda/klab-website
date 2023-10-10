@@ -11,7 +11,7 @@ const TeamCard = () => {
   const fetchTeam = async () => {
     try {
       const response = await axios.get(
-        "https://klabbackend-sbhs.onrender.com/api/v1/teams"
+        "https://klab-academy-vqy2.onrender.com/api/v1/teams"
       );
       setTeam(response.data);
     } catch (error) {
@@ -25,7 +25,7 @@ const TeamCard = () => {
 
   return (
     <>
-      {team.map((item) => {
+      {team?.map((item) => {
         return (
           <div
             className="bg-slate-100 m-4 p-2 rounded-3xl duration-1000 group hover:scale-105"

@@ -8,7 +8,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 import {Notify} from "notiflix"
 
-const REGISTER_URL = "https://klabbackend-sbhs.onrender.com/api/v1/users";
+const REGISTER_URL = "https://klab-academy-vqy2.onrender.com/api/v1/users";
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);

@@ -4,7 +4,7 @@ import { contactSchema } from '../validations/ContactValidation';
 import axios from 'axios';
 
 
-const CONTACT_URL = "https://klabbackend-sbhs.onrender.com/api/v1/contact/";
+const CONTACT_URL = "https://klab-academy-vqy2.onrender.com/api/v1/contact/";
 const RightContact = () => {
 
   const onSubmit = async (values, actions) => {

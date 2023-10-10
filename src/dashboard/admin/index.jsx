@@ -79,7 +79,7 @@ const AdminDashboard = () => {
   const fetchMessage = async () => {
     try {
       const response = await axios.get(
-        "https://klabbackend-sbhs.onrender.com/api/v1/contacts/"
+        "https://klab-academy-vqy2.onrender.com/api/v1/contacts/"
       );
       const data = await response.data.data;
       // console.log(data);
@@ -102,7 +102,7 @@ const AdminDashboard = () => {
     try {
       await axios({
         method: "DELETE",
-        url: `https://klabbackend-sbhs.onrender.com/api/v1/contact/${id}`,
+        url: `https://klab-academy-vqy2.onrender.com/api/v1/contact/${id}`,
       });
     }
     catch(error) {

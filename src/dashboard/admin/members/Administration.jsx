@@ -33,8 +33,8 @@ const [selectedTeamData ,setSelectedTeamData]  = useState(null)
   const fetchTeam = async () => {
     try {
     const response = await axios.get(
-      "https://klabbackend-sbhs.onrender.com/api/v1/teams"
-      );  
+      "https://klab-academy-vqy2.onrender.com/api/v1/teams"
+    );  
       console.log(response);
       setTeam(response.data);
     }
@@ -53,7 +53,7 @@ const [selectedTeamData ,setSelectedTeamData]  = useState(null)
         "No",
         async () => {
           await axios.delete(
-            `https://klabbackend-sbhs.onrender.com/api/v1/team/${id}`
+            `https://klab-academy-vqy2.onrender.com/api/v1/team/${id}`
           );
           window.location.reload(true);
         },

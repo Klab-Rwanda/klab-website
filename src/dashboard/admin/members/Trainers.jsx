@@ -30,8 +30,8 @@ const trainerSchema = yup.object().shape({
   stack: yup.string().required("Required"),
 });
 
-const CREATE_TRAINER = "https://klabbackend-sbhs.onrender.com/api/v1/trainers"
-const DELETE_TRAINER = "https://klabbackend-sbhs.onrender.com/api/v1/trainers/"
+const CREATE_TRAINER = "https://klab-academy-vqy2.onrender.com/api/v1/trainers"
+const DELETE_TRAINER = "https://klab-academy-vqy2.onrender.com/api/v1/trainers/"
 
 const Trainers = () => {
 
@@ -139,7 +139,7 @@ const Trainers = () => {
       if (selected) {
         setLoading(true);
         const response = await axios.put(
-          `https://klabbackend-sbhs.onrender.com/api/v1/trainers/${selected._id}`,
+          `https://klab-academy-vqy2.onrender.com/api/v1/trainers/${selected._id}`,
           formData,
           {
             headers: {
@@ -176,7 +176,7 @@ const Trainers = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klabbackend-sbhs.onrender.com/api/v1/trainers/${id}`
+            `https://klab-academy-vqy2.onrender.com/api/v1/trainers/${id}`
           );
           window.location.reload(true);
         },

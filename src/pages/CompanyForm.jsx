@@ -6,7 +6,7 @@ import LineImg from "../assets/Vector.svg";
 import Footer from "../Components/sections/Footer";
 import axios from "axios";
  
-const PROJECT_URL = "https://klabbackend-sbhs.onrender.com/api/v1/project/";
+const PROJECT_URL = "https://klab-academy-vqy2.onrender.com/api/v1/project/";
 export default function () {
   const {
     register,

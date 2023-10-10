@@ -10,7 +10,7 @@ const Projectpage = () => {
   const fetchProject = async () => {
     try {
       const response = await axios.get(
-        "https://klabbackend-sbhs.onrender.com/api/v1/projects"
+        "https://klab-academy-vqy2.onrender.com/api/v1/projects"
       );
       const data = await response.data.data;
       // console.log(data);
@@ -27,7 +27,7 @@ const Projectpage = () => {
     try {
       await axios({
         method: "DELETE",
-        url: `https://klabbackend-sbhs.onrender.com/api/v1/project/${id}`,
+        url: `https://klab-academy-vqy2.onrender.com/api/v1/project/${id}`,
         headers: {
           "Content-Type": "multipart/form-data",
           companyauth: `${localStorage.getItem("token")}`,

@@ -41,7 +41,7 @@ const Partners = () => {
 
     } else {
       const response = await axios.post(
-        "https://klabbackend-sbhs.onrender.com/api/v1/partner",
+        "https://klab-academy-vqy2.onrender.com/api/v1/partner",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -67,7 +67,7 @@ const Partners = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klabbackend-sbhs.onrender.com/api/v1/partner/${id}`
+            `https://klab-academy-vqy2.onrender.com/api/v1/partner/${id}`
           );
           window.location.reload(true);
         },

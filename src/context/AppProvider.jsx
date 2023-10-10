@@ -21,14 +21,14 @@ const AppProvider = ({ children }) => {
   const { decodedToken, isExpired } = useJwt(localStorage.getItem("token"));
   const fetchEvents = async () => {
     const response = await axios.get(
-      "https://klabbackend-sbhs.onrender.com/api/v1/events"
+      "https://klab-academy-vqy2.onrender.com/api/v1/events"
     );
     const data = await response.data;
     setEvents(data);
   };
 
   const fetchUsers = async () => {
-    const response = await axios.get("https://klabbackend-sbhs.onrender.com/api/v1/users");
+    const response = await axios.get("https://klab-academy-vqy2.onrender.com/api/v1/users");
     const data = response.data;
     setUsers(data);
   }
@@ -41,7 +41,7 @@ const AppProvider = ({ children }) => {
 
   const fetchPrograms = async () => {
     const response = await axios.get(
-      "https://klabbackend-sbhs.onrender.com/api/v1/programs"
+      "https://klab-academy-vqy2.onrender.com/api/v1/programs"
     );
     const data = await response.data;
     setPrograms(data);
@@ -52,7 +52,7 @@ const AppProvider = ({ children }) => {
     try {
       if (decodedToken) {
         const response = await axios.get(
-          `https://klabbackend-sbhs.onrender.com/api/v1/users/${decodedToken?.id}`
+          `https://klab-academy-vqy2.onrender.com/api/v1/users/${decodedToken?.id}`
         );
         setLoggedUser(response?.data);
       }
@@ -70,14 +70,14 @@ const AppProvider = ({ children }) => {
   };
 
   async function fetchPartners() {
-    const response = await axios.get("https://klabbackend-sbhs.onrender.com/api/v1/partners");
+    const response = await axios.get("https://klab-academy-vqy2.onrender.com/api/v1/partners");
     setPartners(response.data);
   };
 
   const fetchTrainers = async () => {
     try{
       const response = await axios.get(
-        "https://klabbackend-sbhs.onrender.com/api/v1/trainers"
+        "https://klab-academy-vqy2.onrender.com/api/v1/trainers"
       );
       setTrainers(response?.data.trainers)
     } catch(err){
