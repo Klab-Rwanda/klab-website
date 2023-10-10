@@ -41,6 +41,7 @@ import Loader from "./context/Loader";
 import SmoothScroll from "./helpers/SmoothScroll";
 import ProtectDashboard from "./context/ProtectDashboard";
 import HighSchoolApp from "./pages/HighSchoolApp";
+import School from "./dashboard/admin/members/School";
 
 const App = () => {
   return (
@@ -111,6 +112,14 @@ const App = () => {
               element={
                 <ProtectDashboard>
                   <Applicants />
+                </ProtectDashboard>
+              }
+            />
+            <Route
+              path="school"
+              element={
+                <ProtectDashboard>
+                  <School />
                 </ProtectDashboard>
               }
             />

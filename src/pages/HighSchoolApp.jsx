@@ -54,7 +54,6 @@ const HighSchoolApp = () => {
       );
     } catch (error) {
       setLoading(false);
-      console.log(error?.response?.status);
       Report.failure("Error", error?.response?.data.message, "Okay");
     }
   };

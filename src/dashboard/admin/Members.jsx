@@ -5,16 +5,15 @@ import Trainers from "../assets/website/icons/trainers.svg";
 import Alumni from "../assets/website/icons/alumni.svg";
 import Trainees from "../assets/website/icons/trainee.svg";
 import { Outlet, NavLink } from "react-router-dom";
-import {CgMenuRight} from "react-icons/cg";
-import {useState} from "react";
+import { CgMenuRight } from "react-icons/cg";
+import { useState } from "react";
 
 const Members = () => {
   const [sider, setSider] = useState(false);
 
   const handleSider = () => {
     setSider(!sider);
-  }
-  
+  };
 
   return (
     <div className="wrapper">
@@ -57,6 +56,12 @@ const Members = () => {
                   <span>Applicants</span>
                 </li>
               </NavLink>
+              <NavLink to="school" className="members-link">
+                <li>
+                  <img src={Trainees} alt="" />
+                  <span>School</span>
+                </li>
+              </NavLink>
             </ul>
           </div>
           <div className="outlet">
@@ -67,6 +72,6 @@ const Members = () => {
       </section>
     </div>
   );
-}
+};
 
-export default Members
+export default Members;
