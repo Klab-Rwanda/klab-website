@@ -180,7 +180,13 @@ const TechupskillApp = () => {
           <h1 className="font-bold text-base md:text-xl">
             Application Details
           </h1>
-          <img src={LineImg} alt="VectorImage" className="w-1/3" />
+          <img
+            src={
+              "https://res.cloudinary.com/nrob/image/upload/v1696935779/zzupccqfrxe6cchkk80j.png"
+            }
+            alt="VectorImage"
+            className="w-1/3"
+          />
           <p className="w-full font-normal text-slate-800 text-sm xl:text-base lg:text-base md:text-base sm:text-sm">
             The project will be conducted during 5 months from October to
             February, in three phases: Talent detection across the country,

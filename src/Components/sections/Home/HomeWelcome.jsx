@@ -25,7 +25,7 @@ const HomeWelcome = () => {
             </Link> */}
             <Link to="/signUp">
               <button className="border border-slate-900 bg-slate-900 px-8 text-sm font-medium py-4 rounded-3xl">
-                Became member
+                Become member
               </button>
             </Link>
           </span>

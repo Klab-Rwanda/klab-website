@@ -50,7 +50,10 @@ const HighSchoolApp = () => {
       Report.success(
         "Success",
         "You have successfully sent your application! we have sent you a confirmation message to the email you provided.",
-        "Okay"
+        "Okay",
+        () => {
+          window.location.reload();
+        }
       );
     } catch (error) {
       setLoading(false);
@@ -67,7 +70,7 @@ const HighSchoolApp = () => {
           <div className="relative z-20">
             <h1 className="font-semibold  text-3xl text-white">
               {" "}
-              High School Leaver Program
+              High School Leaver's Program
             </h1>
             <p className="font-light mt-5 text-white">
               Unlock your potential in our immersive tech program. Dive into
@@ -83,20 +86,36 @@ const HighSchoolApp = () => {
           <h1 className="font-bold text-base md:text-xl">
             Application Details
           </h1>
+          <img
+            src={
+              "https://res.cloudinary.com/nrob/image/upload/v1696935779/zzupccqfrxe6cchkk80j.png"
+            }
+            alt="VectorImage"
+            className="w-1/3"
+          />
           {/* <img src={LineImg} alt="VectorImage" className="w-1/3" /> */}
           <p className="w-full font-normal text-slate-800 text-sm xl:text-base lg:text-base md:text-base sm:text-sm">
-            The project will be conducted during 5 months from October to
-            February, in three phases: Talent detection across the country,
-            training, and organising a hackathon.
-          </p>
-          <p>
-            By submitting your application you hereby declare that the
-            information provided is true and correct, you also understand any
-            willful dishonesty will lead to disqualification.
+            Join our Real-World Project-Based Learning program for a unique
+            hybrid learning experience that combines online and in-person
+            education. Over the course of 12 weeks, you'll immerse yourself in
+            hands-on, practical learning.
+            <br />
+            <br />
+            The program begins with 4 weeks of self-paced online study, followed
+            by 4 weeks of live facilitator-led sessions. Then, spend 4 exciting
+            weeks in person, collaborating with peers and experts. The
+            culmination of your journey is an exhilarating end-of-program
+            Hackathon where you'll showcase your newfound skills.
+            <br />
+            <br />
+            Upon completion, you'll receive a well-deserved Completion
+            Certificate and exclusive Klab Membership. Don't miss this
+            opportunity to advance your knowledge and gain
+            real-world experience!
           </p>
         </div>
         <form
-          className="flex flex-col mt-4 gap-4"
+          className="flex flex-col mt-8 gap-4"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="form-wrapper">
@@ -355,6 +374,11 @@ const HighSchoolApp = () => {
               </p>
             )}
           </div>
+          <p>
+            By submitting your application you hereby declare that the
+            information provided is true and correct, you also understand any
+            willful dishonesty will lead to disqualification.
+          </p>
           <div className="col-span-2">
             <button
               className="btn"
