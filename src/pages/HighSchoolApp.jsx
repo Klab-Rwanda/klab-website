@@ -81,7 +81,7 @@ const HighSchoolApp = () => {
           </div>
         </div>
       </div>
-      <div className="min-h-screen form-container">
+      <div className="min-h-screen form-container m-4">
         <div className="md:w-4/5 sm:w-11/12 w-full flex flex-col items-start gap-2">
           <h1 className="font-bold text-base md:text-xl">
             Application Details
@@ -95,7 +95,7 @@ const HighSchoolApp = () => {
           />
           {/* <img src={LineImg} alt="VectorImage" className="w-1/3" /> */}
           <p className="w-full font-normal text-slate-800 text-sm xl:text-base lg:text-base md:text-base sm:text-sm">
-            Join our Real-World Project-Based Learning program for a unique
+            Join our Real-World Pr oject-Based Learning program for a unique
             hybrid learning experience that combines online and in-person
             education. Over the course of 12 weeks, you'll immerse yourself in
             hands-on, practical learning.
@@ -115,7 +115,7 @@ const HighSchoolApp = () => {
           </p>
         </div>
         <form
-          className="flex flex-col mt-8 gap-4"
+          className="flex flex-col mt-8 mr-4 gap-4"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="form-wrapper">

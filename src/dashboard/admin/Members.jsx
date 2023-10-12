@@ -21,7 +21,7 @@ const Members = () => {
       <section className="members-content">
         <div className="members-container">
           <div className={sider ? "members-modal" : "members-sider"}>
-            <ul>
+            <ul onClick={handleSider}>
               <NavLink to="/dashboard/members" end className="members-link">
                 <li>
                   <img src={Admin} alt="" /> <span>Team</span>

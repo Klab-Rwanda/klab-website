@@ -43,9 +43,6 @@ const School = () => {
     };
     fetchApplications();
   }, []);
-
-  console.log(applications);
-
   const [filesPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(0);
   const lastFileIndex = (currentPage + 1) * filesPerPage;
@@ -56,17 +53,17 @@ const School = () => {
     setCurrentPage(selectedPage.selected);
   };
   const male = applications?.filter(
-    (applicant) => applicant.gender === "Male"
+    (applicant) => applicant.gender === "male"
   ).length;
   const female = applications?.filter(
-    (applicant) => applicant.gender === "Female"
+    (applicant) => applicant.gender === "female"
   ).length;
 
   return (
     <>
-      <div className="flex flex-col p-8">
+      <div className="flex flex-col p-2 md:p-8">
         <div className="flex justify-between border-b border-gray-100 pb-4">
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 flex-wrap items-center">
             <div className="flex items-center">
               <FaUsers className="text-sm mr-2" />
               <h1 className="text-md">Applicants: {applications?.length}</h1>
@@ -82,11 +79,11 @@ const School = () => {
               <h1 className="text-md">Female: {female}</h1>
             </div>
           </div>
-          <div>Filter by:</div>
+          {/* <div>Filter by:</div> */}
         </div>
 
         <div className="overflow-x-auto my-8">
-          <table className="min-w-screen bg-white p-4">
+          <table className="min-w-screen bg-white md:p-4">
             <thead>
               <tr className="text-left">
                 <th className="py-2 px-4 font-bold">Names</th>
@@ -94,24 +91,26 @@ const School = () => {
                 <th className="py-2 px-4 font-bold">Gender</th>
                 {/* <th className="py-2 px-4 font-bold">Location</th> */}
                 {/* <th className="py-2 px-4 font-bold">Level</th> */}
-                <th className="py-2 px-4 font-bold">School</th>
+                {/* <th className="py-2 px-4 font-bold">School</th> */}
                 <th className="py-2 px-4 font-bold">Combination</th>
                 <th className="py-2 px-4 font-bold">Actions</th>
               </tr>
             </thead>
             <tbody>
-              {applications?.map((application) => (
+              {currentFiles?.map((application) => (
                 <tr key={application._id}>
                   <td className="py-2 text-sm px-4">{application.fullName}</td>
                   <td className="py-2 text-sm px-4">{application.email}</td>
-                  <td className="py-2 text-sm px-4">{application.gender}</td>
+                  <td className="py-2 text-sm px-4 capitalize">
+                    {application.gender}
+                  </td>
                   {/* <td className="py-2 text-sm px-4">{application.location}</td> */}
                   {/* <td className="py-2 text-sm px-4">
                     {application.educationLevel}
                   </td> */}
-                  <td className="py-2 text-sm px-4">
+                  {/* <td className="py-2 text-sm px-4">
                     {application.schoolName}
-                  </td>
+                  </td> */}
                   <td className="py-2 text-sm px-4">
                     {application.combination}
                   </td>
