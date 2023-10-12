@@ -93,7 +93,7 @@ const School = () => {
                 {/* <th className="py-2 px-4 font-bold">Level</th> */}
                 {/* <th className="py-2 px-4 font-bold">School</th> */}
                 <th className="py-2 px-4 font-bold">Combination</th>
-                <th className="py-2 px-4 font-bold">Actions</th>
+                {/* <th className="py-2 px-4 font-bold">Actions</th> */}
               </tr>
             </thead>
             <tbody>
@@ -114,11 +114,11 @@ const School = () => {
                   <td className="py-2 text-sm px-4">
                     {application.combination}
                   </td>
-                  <td className="py-2 text-sm px-4">
+                  {/* <td className="py-2 text-sm px-4">
                     <button className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-700">
                       View
                     </button>
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>
