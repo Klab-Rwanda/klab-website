@@ -4,10 +4,10 @@ import LineImg from "../assets/Vector.svg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import axios from "axios";
 import { useContext, useState } from "react";
 import { Report } from "notiflix/build/notiflix-report-aio";
 import { AuthContext } from "../context/AppProvider";
+import axios from "../axios/axios";
 
 Report.init({
   width: "320px",
@@ -31,7 +31,7 @@ Report.init({
   },
 });
 
-const APPLY_URL = "https://klab-academy-vqy2.onrender.com/api/v1/application";
+
 
 const applicationSchema = yup.object().shape({
   email: yup.string().email("Please enter a valid email").required("Required"),
@@ -140,7 +140,7 @@ const TechupskillApp = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post(APPLY_URL, formData, {
+      const response = await axios.post("/application", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

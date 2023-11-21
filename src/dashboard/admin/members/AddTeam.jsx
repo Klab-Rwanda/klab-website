@@ -1,9 +1,8 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Report } from "notiflix/build/notiflix-report-aio";
+import axios from "../../../axios/axios";
 // import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
-// const TEAM_URL = "https://klab-academy-vqy2.onrender.com/api/v1/team";
 
 export default function AddTeam() {
   const {
@@ -26,15 +25,11 @@ export default function AddTeam() {
 
     console.log(formData.get("profile"));
     try {
-      const result = await axios.post(
-        "https://klab-academy-vqy2.onrender.com/api/v1/team",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const result = await axios.post("/team", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       Report.success("Team ", "is created successful ", "Okay", () => {
         window.location.href = "/dashboard/members";

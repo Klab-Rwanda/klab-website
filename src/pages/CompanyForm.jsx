@@ -4,9 +4,8 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import LineImg from "../assets/Vector.svg";
 import Footer from "../Components/sections/Footer";
-import axios from "axios";
- 
-const PROJECT_URL = "https://klab-academy-vqy2.onrender.com/api/v1/project/";
+import axios from "../axios/axios";
+
 export default function () {
   const {
     register,
@@ -15,7 +14,7 @@ export default function () {
     formState: { errors },
     reset,
   } = useForm({});
-  const onSubmit = async (data,actions) => {
+  const onSubmit = async (data, actions) => {
     const formData = new FormData();
     formData.append("companyName", data.companyName);
     formData.append("email", data.email);
@@ -24,8 +23,8 @@ export default function () {
     formData.append("category", data.category);
     formData.append("desc", data.desc);
     formData.append("profile", data.profile[0]);
-    try  {
-      const response = await axios.post(PROJECT_URL, formData, {
+    try {
+      const response = await axios.post("/project", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           companyauth: `${localStorage.getItem("token")}`,
@@ -35,13 +34,9 @@ export default function () {
       alert("Your Project is Added Successfull");
       console.log(JSON.stringify(response));
       actions.resetForm();
+    } catch (error) {
+      console.log(error);
     }
-    catch(error) {
-      console.log(error)
-    }
-
-
-
 
     // console.log(data);
   };
@@ -127,10 +122,10 @@ export default function () {
                 <div className="px-10">
                   <label>Category</label>
                   <br />
-                  <input type="radio" {...field} value='Paid' />
+                  <input type="radio" {...field} value="Paid" />
                   Paid
                   <br />
-                  <input type="radio" {...field} value='Free' />
+                  <input type="radio" {...field} value="Free" />
                   Free
                 </div>
               )}
