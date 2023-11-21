@@ -1,59 +1,62 @@
-import React, {useState} from 'react'
-import { FaUser } from 'react-icons/fa'
-import FormImage from '../assets/CardImage.jpg'
-import { Link } from 'react-router-dom'
-import { userSchema } from '../validations/UserValidation'
-import { useFormik } from "formik"
-import axios from 'axios'
-import { useNavigate } from "react-router-dom"
-import {Notify} from "notiflix"
+import React, { useState } from "react";
+import { FaUser } from "react-icons/fa";
+import FormImage from "../assets/CardImage.jpg";
+import { Link } from "react-router-dom";
+import { userSchema } from "../validations/UserValidation";
+import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
+import { Notify } from "notiflix";
+import axios from "../axios/axios";
 
-const REGISTER_URL = "https://klab-academy-vqy2.onrender.com/api/v1/users";
+const REGISTER_URL = "users";
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
-    
-    const navigate = useNavigate();
-    const onSubmit = async (values, actions) => {
-        console.log(values);
-        console.log(actions);
-        
-        try {
-          setLoading(true);
-            const response = await axios.post(REGISTER_URL, JSON.stringify(values),
-             {
-                headers: { "Content-Type": "application/json" },
-            });
-            console.log(response.data);
-            console.log(JSON.stringify(response));
-            actions.resetForm();
-            alert("Account created successfully!");
-            navigate("/account");
-        } catch(err){
-            console.log(err);
-            if(err?.response.status === 409){
-              Notify.failure("Email has been taken by other user");
-            } 
-        }
-        setLoading(false);
-        
+
+  const navigate = useNavigate();
+  const onSubmit = async (values, actions) => {
+    console.log(values);
+    console.log(actions);
+
+    try {
+      setLoading(true);
+      const response = await axios.post("/users", JSON.stringify(values), {
+        headers: { "Content-Type": "application/json" },
+      });
+      console.log(response.data);
+      console.log(JSON.stringify(response));
+      actions.resetForm();
+      alert("Account created successfully!");
+      navigate("/account");
+    } catch (err) {
+      console.log(err);
+      if (err?.response.status === 409) {
+        Notify.failure("Email has been taken by other user");
+      }
     }
+    setLoading(false);
+  };
 
-    const { values, errors,touched,isSubmitting, handleBlur, handleChange, handleSubmit} = useFormik({
-        initialValues: {
-            username: "",
-            email: "",
-            phone: "",
-            role: "",
-            password: ""
-            
-        },
-        validationSchema: userSchema,
-        onSubmit,
-    });
-    console.log(errors);
-   
-
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+  } = useFormik({
+    initialValues: {
+      username: "",
+      email: "",
+      phone: "",
+      role: "",
+      password: "",
+    },
+    validationSchema: userSchema,
+    onSubmit,
+  });
+  console.log(errors);
 
   return (
     <div className="bg-white rounded-3xl w-11/12 xl:w-10/12 lg:w-10/12 md:w-11/12 sm:w-11/12 flex duration-500 mt-20">
@@ -197,6 +200,6 @@ const RegisterForm = () => {
       </form>
     </div>
   );
-}
+};
 
-export default RegisterForm
+export default RegisterForm;

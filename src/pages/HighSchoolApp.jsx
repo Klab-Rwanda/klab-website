@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../Components/sections/Footer";
 import Navbar from "../Components/Navs/Navbar";
 import { useForm, useFormState } from "react-hook-form";
@@ -7,15 +7,21 @@ import { AuthContext } from "../context/AppProvider";
 import { useState } from "react";
 import axios from "../axios/axios";
 import { Report } from "notiflix";
+import { useNavigate } from "react-router-dom";
 
 const HighSchoolApp = () => {
   const { programs } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
-
-  const currentProgram = programs?.find(
-    (program) => program?._id === "6426afb02afa3a9515f56028"
-  );
+  console.log(programs);
+  // const currentProgram = programs?.find(
+  //   (program) => program?._id === "6426afb02afa3a9515f56028"
+  // );
+  // console.log(currentProgram);
   // const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  // useEffect(() => {
+  //   navigate("/6524629d9ab1c8c73493e9f7");
+  // }, []);
 
   const {
     register,

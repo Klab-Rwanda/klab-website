@@ -1,40 +1,34 @@
-import React from 'react'
-import { useFormik } from 'formik';
-import { contactSchema } from '../validations/ContactValidation';
-import axios from 'axios';
+import React from "react";
+import { useFormik } from "formik";
+import { contactSchema } from "../validations/ContactValidation";
+import axios from "../axios/axios";
 
-
-const CONTACT_URL = "https://klab-academy-vqy2.onrender.com/api/v1/contact/";
 const RightContact = () => {
-
   const onSubmit = async (values, actions) => {
     // console.log(values);
     try {
-      const response = await axios.post(CONTACT_URL, JSON.stringify(values), {
+      const response = await axios.post("/contact", JSON.stringify(values), {
         headers: { "Content-Type": "application/json" },
       });
       console.log(response.data);
       alert("Your Message is sent Successfull");
-       console.log(JSON.stringify(response));
-       actions.resetForm();
+      console.log(JSON.stringify(response));
+      actions.resetForm();
+    } catch (error) {
+      console.log(error);
     }
-    catch (error) {
-      console.log(error)
-    }
-  }
+  };
 
-
-  const { values, handleSubmit, errors, touched, handleChange} = useFormik({
+  const { values, handleSubmit, errors, touched, handleChange } = useFormik({
     initialValues: {
       fullname: "",
       email: "",
       phone: "",
-      message: ""
+      message: "",
     },
     validationSchema: contactSchema,
     onSubmit,
   });
-
 
   return (
     <div className="p-1 w-full xl:w-1/2 lg:w-1/2 md:w-1/2 sm:w-full">
@@ -112,6 +106,6 @@ const RightContact = () => {
       </form>
     </div>
   );
-}
+};
 
-export default RightContact
+export default RightContact;

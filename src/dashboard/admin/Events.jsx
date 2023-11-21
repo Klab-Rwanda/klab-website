@@ -6,19 +6,15 @@ import { useState, useEffect, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { eventSchema } from "../../validations/EventValidation";
-import axios from "axios";
 import { AuthContext } from "../../context/AppProvider";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { Confirm } from "notiflix/build/notiflix-confirm-aio";
-
-
-
-const CREATE_EVENT_URL = "https://klab-academy-vqy2.onrender.com/api/v1/event";
+import axios from "../../axios/axios";
 
 const Events = () => {
   const { events } = useContext(AuthContext);
   const [selected, setSelected] = useState(null);
-  const[loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -51,18 +47,14 @@ const Events = () => {
     try {
       if (selected) {
         setLoading(true);
-        const response = await axios.put(
-          `https://klab-academy-vqy2.onrender.com/api/v1/event/${selected._id}`,
-          data
-        );
+        const response = await axios.put(`/event/${selected._id}`, data);
         setLoading(false);
         Notify.success("Event updated successfully!");
         console.log(response);
         window.location.reload(true);
-        
       } else {
         setLoading(true);
-        const response = await axios.post(CREATE_EVENT_URL, formData, {
+        const response = await axios.post("/event", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -77,8 +69,6 @@ const Events = () => {
   };
 
   const handleDelete = async (id) => {
-
-
     try {
       Confirm.show(
         "Confirm",
@@ -86,14 +76,10 @@ const Events = () => {
         "Yes",
         "No",
         async () => {
-          await axios.delete(
-            `https://klab-academy-vqy2.onrender.com/api/v1/event/${id}`
-          );
-        window.location.reload(true);
+          await axios.delete(`/event/${id}`);
+          window.location.reload(true);
         },
-        () => {
-          
-        },
+        () => {},
         {}
       );
     } catch (error) {
@@ -277,7 +263,9 @@ const Events = () => {
               {errors.details && (
                 <p className="text-red-400">{errors.details?.message}</p>
               )}
-              <button className="text-[18px]" type="submit">{loading ? "Loading" : "Add Event"}</button>
+              <button className="text-[18px]" type="submit">
+                {loading ? "Loading" : "Add Event"}
+              </button>
             </form>
           </div>
         </div>

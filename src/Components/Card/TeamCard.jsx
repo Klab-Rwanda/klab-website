@@ -1,18 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Image from "../../assets/TeamImg.jpg";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import "../styles/teamCard.css";
 import { Link } from "react-router-dom";
+import axios from "../../axios/axios";
 
 const TeamCard = () => {
   const [team, setTeam] = useState([]);
   const fetchTeam = async () => {
     try {
-      const response = await axios.get(
-        "https://klab-academy-vqy2.onrender.com/api/v1/teams"
-      );
+      const response = await axios.get("/teams");
       setTeam(response.data);
     } catch (error) {
       console.log(error);
@@ -46,9 +44,9 @@ const TeamCard = () => {
               <p className="text-blue-500 font-medium text-sm">
                 {item.details}
               </p>
-                <Link to={`${item.linkedinLink}`} target="_blank">
-                  <FaLinkedin />
-                </Link>
+              <Link to={`${item.linkedinLink}`} target="_blank">
+                <FaLinkedin />
+              </Link>
             </div>
           </div>
         );

@@ -1,12 +1,12 @@
-import Outline from './outline';
+import Outline from "./outline";
 import { FaUsers, FaBell } from "react-icons/fa";
 import { MdApartment } from "react-icons/md";
 import { AiFillDelete, AiOutlineClose } from "react-icons/ai";
 import UserImage from "../assets/website/images/girl.jpg";
-import {AiOutlinePlusCircle} from "react-icons/ai";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import Activity from "../assets/website/icons/activity.png";
 import Mail from "../assets/website/icons/mail.svg";
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -19,8 +19,8 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
-import axios from 'axios';
-import { AuthContext } from '../../context/AppProvider';
+import { AuthContext } from "../../context/AppProvider";
+import axios from "../../axios/axios";
 
 ChartJS.register(
   CategoryScale,
@@ -37,16 +37,16 @@ export const options = {
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      position: 'top',
+      position: "top",
     },
     title: {
       display: true,
-      text: 'Alumi chart',
+      text: "Alumi chart",
     },
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
 export const data = {
   labels,
@@ -67,20 +67,16 @@ export const data = {
 };
 
 const AdminDashboard = () => {
+  const { users } = useContext(AuthContext);
 
-  const {users} = useContext(AuthContext);
+  const members = users.filter((user) => user.role === "member");
+  const companies = users.filter((user) => user.role === "company");
+  const alumni = users.filter((user) => user.role === "alumni");
 
-  const members = users.filter((user) => user.role === 'member');
-  const companies = users.filter((user) => user.role === 'company');
-  const alumni = users.filter((user) => user.role === 'alumni');
-
-  
   const [message, setMessage] = useState([]);
   const fetchMessage = async () => {
     try {
-      const response = await axios.get(
-        "https://klab-academy-vqy2.onrender.com/api/v1/contacts/"
-      );
+      const response = await axios("/contacts/");
       const data = await response.data.data;
       // console.log(data);
       setMessage(data);
@@ -88,37 +84,29 @@ const AdminDashboard = () => {
     } catch (err) {
       console.log(err);
     }
+  };
 
-  }
-
-  useEffect(()=>{
+  useEffect(() => {
     fetchMessage();
-  },[])
- 
+  }, []);
 
   const handleDelete = async (id) => {
     console.log(id);
     window.confirm("are you sure you want to delete this message");
     try {
-      await axios({
-        method: "DELETE",
-        url: `https://klab-academy-vqy2.onrender.com/api/v1/contact/${id}`,
-      });
-    }
-    catch(error) {
+      await axios.delete(
+      `/contact/${id}`,
+      );
+    } catch (error) {
       console.log(error);
     }
- };
+  };
   const [selectedMessage, setSelectedMessage] = useState([]);
   const [model, setModal] = useState(false);
   const handleSelecteMessage = (id) => {
     const selected = message.find((item) => item._id === id);
     setSelectedMessage(selected);
-
   };
-   
-  
-  
 
   return (
     <>
@@ -322,12 +310,8 @@ const AdminDashboard = () => {
             </div>
           </div>
         </section>
-        <div
-          className={model ? "model-holder" : "hidden"}
-         
-        >
-          <div  className={model ? "modal" : "hidden"}
-        >
+        <div className={model ? "model-holder" : "hidden"}>
+          <div className={model ? "modal" : "hidden"}>
             <span className="name-icoo">
               <h1>{selectedMessage.fullname}</h1>
               <AiOutlineClose
@@ -343,6 +327,6 @@ const AdminDashboard = () => {
       </div>
     </>
   );
-}
+};
 
-export default AdminDashboard
+export default AdminDashboard;

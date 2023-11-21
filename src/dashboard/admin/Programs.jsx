@@ -5,7 +5,6 @@ import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../context/AppProvider";
 import { FaPen, FaTrash } from "react-icons/fa";
 import { Confirm } from "notiflix";
-import axios from "axios";
 import { set, useForm } from "react-hook-form";
 import { programSchema } from "../../validations/ProgramValidation";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,6 +12,7 @@ import { Notify } from "notiflix";
 import { IoMdOpen } from "react-icons/io";
 import { BsFillDoorClosedFill } from "react-icons/bs";
 import { MdUpcoming } from "react-icons/md";
+import axios from "../../axios/axios";
 
 const Programs = () => {
   const [modal, setModal] = useState(false);
@@ -56,7 +56,7 @@ const Programs = () => {
         "No",
         async () => {
           await axios.delete(
-            `https://klab-academy-vqy2.onrender.com/api/v1/program/${id}`
+            `/program/${id}`
           );
           window.location.reload(true);
         },
@@ -85,7 +85,7 @@ const Programs = () => {
         setLoading(true);
         console.log(data);
         const response = await axios.put(
-          `https://klab-academy-vqy2.onrender.com/api/v1/program/${selected._id}`,
+          `/program/${selected._id}`,
           formData,
           {
             headers: {
@@ -100,7 +100,7 @@ const Programs = () => {
       } else {
         setLoading(true);
         const response = await axios.post(
-          "https://klab-academy-vqy2.onrender.com/api/v1/program",
+          "/program",
           formData,
           {
             headers: {

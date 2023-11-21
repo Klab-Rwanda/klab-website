@@ -1,77 +1,72 @@
-import React from 'react'
-import { FaUser } from 'react-icons/fa'
-import FormImage from '../assets/CardImage.jpg'
-import { Link } from 'react-router-dom'
-import { useFormik } from "formik"
-import { loginSchema } from '../validations/LoginValidation'
-import axios from "axios"
-import { useNavigate } from 'react-router-dom'
-import {useState, useContext} from "react"
-import { AuthContext} from "../context/AppProvider";
+import React from "react";
+import { FaUser } from "react-icons/fa";
+import FormImage from "../assets/CardImage.jpg";
+import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import { loginSchema } from "../validations/LoginValidation";
+
+import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { AuthContext } from "../context/AppProvider";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
-
-
-const LOGIN_URL = "https://klab-academy-vqy2.onrender.com/api/v1/users/login";
+import axios from "../axios/axios";
 
 const LoginForm = () => {
+  const { loggedUser, isLoged, setIsLoged } = useContext(AuthContext);
 
-  const {loggedUser, isLoged, setIsLoged} = useContext(AuthContext);
-  
+  console.log(loggedUser);
 
-    console.log(loggedUser);
+  const navigate = useNavigate();
+  const [ErrMsg, setErrMsg] = useState("");
+  const [loading, setLoading] = useState(false);
 
-    const navigate = useNavigate();
-    const [ErrMsg, setErrMsg] = useState("");
-    const [loading, setLoading] = useState(false);
-
-    const onSubmit = async (values, actions) => {
-        console.log(values);
-        try {
-            setLoading(true);
-            const response = await axios.post(LOGIN_URL, JSON.stringify(values),
-            {
-                headers: { "Content-Type" : "application/json" }
-            });
-            setLoading(false);          
-            actions.resetForm();
-            console.log(JSON.stringify(response?.data));
-            const token = response?.data?.token;
-            localStorage.setItem("token", token);
-            const name = response?.data?.user.username;
-            localStorage.setItem("username", name);
-            setIsLoged(true);
-            console.log(isLoged);
-            if(response?.data?.user.role === "company"){
-                navigate("/company");
-            } else if(response?.data?.user.role === "member" || response?.data?.user.role === "alumni"){
-                navigate("/");
-            } else if(response?.data?.user.role === "admin"){
-                navigate("/admin/dashboard");
-            } else if(response?.data?.user.role === "parent"){
-                navigate("/parentdashboard")
-            }
-            
-        } catch(err){
-            console.log(err);
-            setLoading(false);
-            if(err?.response.status === 401){
-            Notify.failure("Incorrect email or password");
-            } else if(!err.response){
-              Notify.failure("Network error");
-            } 
-            setLoading(false);
+  const onSubmit = async (values, actions) => {
+    console.log(values);
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        "/users/login",
+        JSON.stringify(values),
+        {
+          headers: { "Content-Type": "application/json" },
         }
+      );
+      setLoading(false);
+      actions.resetForm();
+      console.log(JSON.stringify(response?.data));
+      const token = response?.data?.token;
+      localStorage.setItem("token", token);
+      const name = response?.data?.user.username;
+      localStorage.setItem("username", name);
+      setIsLoged(true);
+      console.log(isLoged);
+      if (response?.data?.user.role === "company") {
+        navigate("/company");
+      } else if (
+        response?.data?.user.role === "member" ||
+        response?.data?.user.role === "alumni"
+      ) {
+        navigate("/");
+      } else if (response?.data?.user.role === "admin") {
+        navigate("/admin/dashboard");
+      } else if (response?.data?.user.role === "parent") {
+        navigate("/parentdashboard");
+      }
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+      if (err?.response.status === 401) {
+        Notify.failure("Incorrect email or password");
+      } else if (!err.response) {
+        Notify.failure("Network error");
+      }
+      setLoading(false);
     }
-    console.log(ErrMsg);
+  };
+  console.log(ErrMsg);
 
-    const {
-      values,
-      errors,
-      touched,
-      isSubmitting,
-      handleChange,
-      handleSubmit,
-    } = useFormik({
+  const { values, errors, touched, isSubmitting, handleChange, handleSubmit } =
+    useFormik({
       initialValues: {
         email: "",
         password: "",
@@ -79,7 +74,7 @@ const LoginForm = () => {
       validationSchema: loginSchema,
       onSubmit,
     });
-    console.log(errors);
+  console.log(errors);
 
   return (
     <div className="bg-white rounded-3xl w-11/12 xl:w-10/12 lg:w-10/12 md:w-11/12 sm:w-11/12 flex duration-500 mt-16">
@@ -136,11 +131,9 @@ const LoginForm = () => {
         )}
         <input
           type="submit"
-          value={ `${loading ? "Loading..." : "Sign in" }`}
+          value={`${loading ? "Loading..." : "Sign in"}`}
           className="bg-blue-500 rounded-2xl p-4 mt-2 text-white cursor-pointer disabled:opacity-75"
           disabled={isSubmitting}
-          
-          
         />
         <span className="w-full flex justify-between">
           <p>
@@ -154,6 +147,6 @@ const LoginForm = () => {
       </form>
     </div>
   );
-}
+};
 
-export default LoginForm
+export default LoginForm;
